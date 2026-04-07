@@ -10,17 +10,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          primary: "#0A1628",
-          secondary: "#0F1F3A",
-          light: "#1A2D4A",
+        dark: {
+          DEFAULT: "#0D0D0D",
+          alt: "#1A1A1A",
         },
+        surface: "#F5F5F5",
         gold: {
-          DEFAULT: "#D4A843",
-          light: "#F0D48A",
-          dark: "#C49A38",
+          DEFAULT: "#DAA520",
+          light: "#F0D060",
+          dark: "#B8860B",
         },
-        muted: "#7A8BA8",
+        muted: {
+          DEFAULT: "#717171",
+          dark: "#999999",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -61,12 +64,12 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "gold-gradient": "linear-gradient(135deg, #D4A843 0%, #F0D48A 50%, #C49A38 100%)",
-        "navy-gradient": "linear-gradient(180deg, #0A1628 0%, #0F1F3A 100%)",
+        "gold-gradient": "linear-gradient(135deg, #B8860B 0%, #DAA520 50%, #F0D060 100%)",
+        "dark-gradient": "linear-gradient(180deg, #0D0D0D 0%, #1A1A1A 100%)",
       },
       boxShadow: {
-        gold: "0 4px 20px rgba(212, 168, 67, 0.3)",
-        "gold-lg": "0 10px 40px rgba(212, 168, 67, 0.2)",
+        gold: "0 4px 20px rgba(218, 165, 32, 0.3)",
+        "gold-lg": "0 10px 40px rgba(218, 165, 32, 0.2)",
       },
     },
   },

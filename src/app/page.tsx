@@ -1,25 +1,31 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
-import ProductsSection from "@/components/ProductsSection";
-import StatsSection from "@/components/StatsSection";
-import CertificationsSection from "@/components/CertificationsSection";
+import WhyAihaaSection from "@/components/sections/WhyAihaaSection";
+import CategoryShowcase from "@/components/CategoryShowcase";
 import CTASection from "@/components/CTASection";
-import CrossSellSection from "@/components/CrossSellSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-navy-primary">
+    <main className="min-h-screen bg-white">
       <Header />
       <HeroSection />
       <BenefitsSection />
-      <ProductsSection />
-      <StatsSection />
-      <CertificationsSection />
+      <WhyAihaaSection />
+      <CategoryShowcase />
+      {/* Gradient divider: white → dark */}
+      <div
+        className="h-10"
+        style={{
+          background:
+            "linear-gradient(to bottom, #FFFFFF 0%, #E8E8E8 30%, #888888 60%, #333333 85%, #0D0D0D 100%)",
+        }}
+      />
       <CTASection />
-      <CrossSellSection />
+      <CertificationsSection />
       <Footer />
       <FloatingButtons />
     </main>

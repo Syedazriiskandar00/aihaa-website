@@ -41,14 +41,14 @@ export default function Logo({ size = "md", showTagline = false }: LogoProps) {
           />
           <defs>
             <linearGradient id="goldGradient1" x1="0" y1="0" x2="40" y2="0">
-              <stop offset="0%" stopColor="#D4A843" />
-              <stop offset="50%" stopColor="#F0D48A" />
-              <stop offset="100%" stopColor="#C49A38" />
+              <stop offset="0%" stopColor="#B8860B" />
+              <stop offset="50%" stopColor="#F0D060" />
+              <stop offset="100%" stopColor="#B8860B" />
             </linearGradient>
             <linearGradient id="goldGradient2" x1="0" y1="0" x2="40" y2="0">
-              <stop offset="0%" stopColor="#D4A843" />
-              <stop offset="50%" stopColor="#F0D48A" />
-              <stop offset="100%" stopColor="#C49A38" />
+              <stop offset="0%" stopColor="#B8860B" />
+              <stop offset="50%" stopColor="#F0D060" />
+              <stop offset="100%" stopColor="#B8860B" />
             </linearGradient>
           </defs>
         </svg>
@@ -76,7 +76,7 @@ export default function Logo({ size = "md", showTagline = false }: LogoProps) {
         </div>
 
         {showTagline && (
-          <span className="text-[10px] text-muted tracking-wider mt-1">
+          <span className="text-[10px] text-muted-dark tracking-wider mt-1">
             PURE WATER, PURE LIFE
           </span>
         )}

@@ -2,25 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
+import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 
-const navItems = [
+const navItems: {
+  name: string;
+  href: string;
+  dropdown?: { name: string; href: string }[];
+}[] = [
   { name: "Home", href: "/" },
-  { name: "Water Purifier", href: "/water-purifier" },
-  { name: "Air Purifier", href: "#" },
-  {
-    name: "Mattress",
-    href: "#",
-    dropdown: [
-      { name: "Ecolite", href: "#" },
-      { name: "Prime II", href: "#" },
-    ],
-  },
-  { name: "Air Conditioner", href: "#" },
-  { name: "Massage Chair", href: "#" },
-  { name: "Washer Dryer", href: "#" },
-  { name: "Promotions", href: "/promotions" },
+  { name: "Penapis Air Dalam", href: "/water-purifier" },
+  { name: "Penapis Air Luar", href: "/water-purifier" },
+  { name: "Promosi", href: "/promotions" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Galeri", href: "/galeri" },
+  { name: "Hubungi Kami", href: "/contact" },
 ];
 
 export default function Header() {
@@ -40,8 +36,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-navy-primary/95 backdrop-blur-md shadow-lg shadow-black/20"
-          : "bg-transparent"
+          ? "bg-dark/95 backdrop-blur-md shadow-lg shadow-black/20"
+          : "bg-dark"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +56,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-white/80 hover:text-gold text-sm font-medium transition-colors py-2"
+                  className="flex items-center gap-1 text-white/80 hover:text-gold text-sm font-medium transition-colors py-2 nav-link-underline"
                 >
                   {item.name}
                   {item.dropdown && <ChevronDown className="w-4 h-4" />}
@@ -68,12 +64,12 @@ export default function Header() {
 
                 {/* Dropdown */}
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 bg-navy-secondary border border-gold/20 rounded-lg shadow-xl py-2 min-w-[160px]">
+                  <div className="absolute top-full left-0 mt-1 bg-dark-alt border border-[rgba(218,165,32,0.3)] rounded-lg shadow-xl py-2 min-w-[160px]">
                     {item.dropdown.map((subItem) => (
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-4 py-2 text-white/80 hover:text-gold hover:bg-navy-light/50 text-sm transition-colors"
+                        className="block px-4 py-2 text-white/80 hover:text-gold hover:bg-white/5 text-sm transition-colors"
                       >
                         {subItem.name}
                       </Link>
@@ -86,13 +82,15 @@ export default function Header() {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
-            {/* Cart */}
-            <button className="relative p-2 text-white/80 hover:text-gold transition-colors">
-              <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-gold text-navy-primary text-[10px] font-bold rounded-full flex items-center justify-center">
-                0
-              </span>
-            </button>
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/60115657084"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white/80 hover:text-gold transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -107,13 +105,13 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-navy-secondary border-t border-gold/20">
+        <div className="lg:hidden bg-dark-alt border-t border-[rgba(218,165,32,0.3)]">
           <div className="px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="block py-3 text-white/80 hover:text-gold transition-colors border-b border-gold/10"
+                  className="block py-3 text-white/80 hover:text-gold transition-colors border-b border-[rgba(218,165,32,0.15)]"
                   onClick={() => !item.dropdown && setIsMenuOpen(false)}
                 >
                   {item.name}

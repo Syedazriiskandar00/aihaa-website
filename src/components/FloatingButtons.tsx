@@ -23,28 +23,28 @@ export default function FloatingButtons() {
     <>
       {/* Promotional Banner */}
       {showBanner && (
-        <div className="fixed bottom-24 right-4 z-50 animate-fade-in-up">
-          <div className="relative bg-navy-secondary border border-gold/30 rounded-xl p-4 pr-10 shadow-gold-lg max-w-xs">
+        <div className="fixed bottom-24 right-4 z-50 promo-slide-in">
+          <div className="relative bg-white border border-[rgba(218,165,32,0.15)] rounded-xl p-4 pr-10 shadow-gold-lg max-w-xs">
             <button
               onClick={() => setShowBanner(false)}
-              className="absolute top-2 right-2 text-muted hover:text-white transition-colors"
+              className="absolute top-2 right-2 text-muted hover:text-dark transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
             <a
-              href="https://wa.me/60123456789?text=Hi%20AIHAA,%20I%20want%20to%20claim%20RM200%20discount"
+              href="https://wa.me/60115657084?text=Hai,%20saya%20nak%20tahu%20tentang%20promosi%20AIHAA"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3"
             >
               <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">
-                <span className="text-gold text-lg">%</span>
+                <span className="text-gold-dark text-lg">%</span>
               </div>
               <div>
-                <p className="text-white font-semibold text-sm">
-                  Get RM200 Discount Now
+                <p className="text-dark font-semibold text-sm">
+                  Pemasangan Percuma + Waranti 2 Tahun
                 </p>
-                <p className="text-muted text-xs">T&C apply</p>
+                <p className="text-muted text-xs">WhatsApp sekarang!</p>
               </div>
             </a>
           </div>
@@ -53,10 +53,10 @@ export default function FloatingButtons() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/60123456789?text=Hi%20AIHAA,%20I%20would%20like%20to%20know%20more%20about%20your%20water%20purifiers"
+        href="https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20penapis%20air%20AIHAA.%20Boleh%20saya%20tahu%20lebih%20lanjut?"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 z-50 bg-[#25D366] hover:bg-[#20BD5A] text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-pulse-gold"
+        className="fixed bottom-4 right-4 z-50 gold-gradient-bg text-white p-4 rounded-full shadow-gold transition-all duration-300 hover:scale-110 hover:opacity-90 animate-pulse-gold whatsapp-bounce"
       >
         <MessageCircle className="w-6 h-6" fill="white" />
       </a>
@@ -65,7 +65,7 @@ export default function FloatingButtons() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 left-4 z-50 bg-navy-secondary border border-gold/30 text-gold p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-gold hover:text-navy-primary animate-fade-in-up"
+          className="fixed bottom-4 left-4 z-50 bg-white border border-[rgba(218,165,32,0.15)] text-gold-dark p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-gold hover:text-white animate-fade-in-up"
         >
           <ChevronUp className="w-5 h-5" />
         </button>

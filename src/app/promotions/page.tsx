@@ -4,68 +4,94 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-import { Clock, Gift, Percent, ChevronDown, ChevronUp } from "lucide-react";
+import { Clock, Gift, ChevronDown, ChevronUp } from "lucide-react";
 
 const promotions = [
   {
     id: 1,
-    title: "Trade-In Offer",
-    description: "Trade in your old water purifier and get up to 50% off on any new AIHAA model",
-    discount: "50% OFF",
-    validUntil: "2024-12-31",
-    color: "from-gold/20 to-amber-500/20",
+    title: "Promosi Sekali Bayar",
+    description:
+      "Beli mana-mana penapis air AIHAA dan dapatkan pemasangan percuma + waranti penuh. Tiada caj tersembunyi, tiada kontrak.",
+    badge: "Sepanjang Masa",
+    cta: "WhatsApp Sekarang",
+    highlight: true,
   },
   {
     id: 2,
-    title: "Free Installation",
-    description: "Get free professional installation worth RM200 on all water purifiers",
-    discount: "RM200 FREE",
-    validUntil: "2024-12-31",
-    color: "from-blue-500/20 to-cyan-500/20",
+    title: "Trade-In Jenama Lain",
+    description:
+      "Tukar penapis air jenama lain kepada AIHAA dan dapatkan diskaun istimewa. Kami terima semua jenama.",
+    badge: "Terhad",
+    cta: "Tanya Harga Trade-In",
+    highlight: false,
   },
   {
     id: 3,
-    title: "Referral Bonus",
-    description: "Refer a friend and both get RM100 rebate on your next payment",
-    discount: "RM100 x2",
-    validUntil: "2024-12-31",
-    color: "from-green-500/20 to-emerald-500/20",
+    title: "Pakej Dalam + Luar Rumah",
+    description:
+      "Beli penapis air dalam rumah dan luar rumah sekali — jimat lagi. Pakej bermula dari RM799.",
+    badge: "Jimat",
+    cta: "Lihat Pakej",
+    highlight: false,
   },
   {
     id: 4,
-    title: "Bundle Deal",
-    description: "Purchase any 2 products and enjoy additional 10% discount",
-    discount: "10% OFF",
-    validUntil: "2024-12-31",
-    color: "from-purple-500/20 to-pink-500/20",
+    title: "Rujuk Kawan, Dapat Hadiah",
+    description:
+      "Rujuk kawan atau keluarga untuk beli AIHAA. Setiap rujukan berjaya, anda dan kawan dapat hadiah istimewa.",
+    badge: "Program Rujukan",
+    cta: "Ketahui Lebih Lanjut",
+    highlight: false,
   },
 ];
 
 const termsAndConditions = [
   {
-    title: "General Terms",
-    content: "All promotions are subject to availability and may be withdrawn at any time without prior notice. AIHAA reserves the right to modify the terms and conditions of any promotion.",
+    title: "Terma Am",
+    content:
+      "Promosi tertakluk kepada stok yang ada. AIHAA berhak mengubah terma promosi tanpa notis awal.",
   },
   {
-    title: "Trade-In Offer",
-    content: "Trade-in offer applies to functional water purifiers only. The discount percentage depends on the brand and condition of the traded item. Assessment will be done by AIHAA technicians.",
+    title: "Pemasangan Percuma",
+    content:
+      "Pemasangan percuma hanya untuk Semenanjung Malaysia. Kawasan luar liputan mungkin dikenakan caj tambahan.",
   },
   {
-    title: "Free Installation",
-    content: "Free installation is available for addresses within Klang Valley. Additional charges may apply for locations outside the service area.",
+    title: "Waranti",
+    content:
+      "Waranti tidak meliputi kerosakan akibat kecuaian pengguna. Waranti sehingga 2 tahun untuk model indoor, 1 tahun untuk outdoor.",
   },
   {
-    title: "Referral Program",
-    content: "Referral bonus will be credited after the referred customer completes their first month of rental payment. Both parties must be active customers to receive the bonus.",
+    title: "Trade-In",
+    content:
+      "Trade-in tertakluk kepada penilaian kondisi unit lama oleh teknisyen AIHAA. Diskaun bergantung kepada jenama dan keadaan unit.",
+  },
+  {
+    title: "Pertanyaan",
+    content:
+      "Untuk sebarang pertanyaan mengenai promosi, hubungi WhatsApp +6011-5657 7084.",
   },
 ];
 
+const timerLabels: Record<string, string> = {
+  days: "Hari",
+  hours: "Jam",
+  minutes: "Minit",
+  seconds: "Saat",
+};
+
 function CountdownTimer({ targetDate }: { targetDate: string }) {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = new Date(targetDate).getTime() - new Date().getTime();
+      const difference =
+        new Date(targetDate).getTime() - new Date().getTime();
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -85,28 +111,46 @@ function CountdownTimer({ targetDate }: { targetDate: string }) {
     <div className="flex gap-4 justify-center">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div key={unit} className="text-center">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-navy-primary border border-gold/30 rounded-xl flex items-center justify-center">
-            <span className="text-2xl md:text-3xl font-bold text-gold">{value}</span>
+          <div className="w-16 h-16 md:w-20 md:h-20 bg-dark border border-[rgba(218,165,32,0.3)] rounded-xl flex items-center justify-center">
+            <span className="text-2xl md:text-3xl font-bold text-gold">
+              {value}
+            </span>
           </div>
-          <p className="text-muted text-xs mt-2 uppercase">{unit}</p>
+          <p className="text-muted-dark text-xs mt-2 uppercase">
+            {timerLabels[unit] || unit}
+          </p>
         </div>
       ))}
     </div>
   );
 }
 
-function AccordionItem({ title, content, isOpen, onClick }: { title: string; content: string; isOpen: boolean; onClick: () => void }) {
+function AccordionItem({
+  title,
+  content,
+  isOpen,
+  onClick,
+}: {
+  title: string;
+  content: string;
+  isOpen: boolean;
+  onClick: () => void;
+}) {
   return (
-    <div className="border border-gold/20 rounded-xl overflow-hidden">
+    <div className="border border-[rgba(218,165,32,0.15)] rounded-xl overflow-hidden">
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between p-4 bg-navy-secondary/50 text-left"
+        className="w-full flex items-center justify-between p-4 bg-surface text-left"
       >
-        <span className="text-white font-medium">{title}</span>
-        {isOpen ? <ChevronUp className="w-5 h-5 text-gold" /> : <ChevronDown className="w-5 h-5 text-gold" />}
+        <span className="text-dark font-medium">{title}</span>
+        {isOpen ? (
+          <ChevronUp className="w-5 h-5 text-gold" />
+        ) : (
+          <ChevronDown className="w-5 h-5 text-gold" />
+        )}
       </button>
       {isOpen && (
-        <div className="p-4 bg-navy-primary/50">
+        <div className="p-4 bg-white">
           <p className="text-muted text-sm">{content}</p>
         </div>
       )}
@@ -118,16 +162,16 @@ export default function PromotionsPage() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
   return (
-    <main className="min-h-screen bg-navy-primary">
+    <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Banner */}
-      <section className="relative pt-20 pb-16 bg-gradient-to-b from-navy-primary to-navy-secondary overflow-hidden">
+      {/* Hero Banner - Dark */}
+      <section className="relative pt-20 pb-16 bg-dark overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, #D4A843 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 2px 2px, #DAA520 1px, transparent 0)`,
               backgroundSize: "40px 40px",
             }}
           />
@@ -135,62 +179,70 @@ export default function PromotionsPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-gold/30 mb-4">
+            <div className="inline-flex items-center gap-2 bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
               <Gift className="w-4 h-4" />
-              Limited Time Offers
+              Tawaran Istimewa
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Current <span className="gold-gradient-text">Promotions</span>
+              Promosi <span className="gold-gradient-text">AIHAA</span>
             </h1>
-            <p className="text-muted text-lg max-w-2xl mx-auto mb-8">
-              Don't miss out on these exclusive deals and discounts on our premium water purifiers
+            <p className="text-muted-dark text-lg max-w-2xl mx-auto mb-8">
+              Jangan lepaskan tawaran eksklusif untuk penapis air premium AIHAA
             </p>
 
             {/* Countdown Timer */}
-            <div className="bg-navy-secondary/50 backdrop-blur-sm rounded-2xl p-6 border border-gold/20 inline-block">
+            <div className="bg-dark-alt/50 backdrop-blur-sm rounded-2xl p-6 border border-[rgba(218,165,32,0.3)] inline-block">
               <div className="flex items-center gap-2 justify-center mb-4">
                 <Clock className="w-5 h-5 text-gold" />
-                <span className="text-white font-medium">Offer Ends In</span>
+                <span className="text-white font-medium">
+                  Tawaran Tamat Dalam
+                </span>
               </div>
-              <CountdownTimer targetDate="2024-12-31" />
+              <CountdownTimer targetDate="2026-07-07" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Promotions Grid */}
-      <section className="bg-navy-secondary py-16">
+      {/* Promotions Grid - Light */}
+      <section className="bg-surface py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {promotions.map((promo) => (
               <div
                 key={promo.id}
-                className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${promo.color} border border-gold/20 p-6 lg:p-8 card-hover`}
+                className={`relative overflow-hidden rounded-2xl border p-6 lg:p-8 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,165,32,0.12)] ${
+                  promo.highlight
+                    ? "border-[rgba(218,165,32,0.4)] md:col-span-2"
+                    : "border-[rgba(218,165,32,0.15)]"
+                }`}
               >
-                <div className="absolute top-4 right-4">
-                  <span className="bg-gold text-navy-primary px-3 py-1 rounded-full text-sm font-bold">
-                    {promo.discount}
-                  </span>
-                </div>
+                {/* Gold accent for highlight */}
+                {promo.highlight && (
+                  <div className="absolute top-0 left-0 right-0 h-[3px] gold-gradient-bg" />
+                )}
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Percent className="w-6 h-6 text-gold" />
-                  </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{promo.title}</h3>
-                    <p className="text-muted mb-4">{promo.description}</p>
-                    <p className="text-gold text-sm">Valid until: {new Date(promo.validUntil).toLocaleDateString()}</p>
+                    <span className="inline-block bg-gold/10 text-[#DAA520] text-xs font-medium px-3 py-1 rounded-full border border-[rgba(218,165,32,0.2)] mb-3">
+                      {promo.badge}
+                    </span>
+                    <h3 className="text-xl font-bold text-dark mb-2">
+                      {promo.title}
+                    </h3>
+                    <p className="text-muted mb-6">{promo.description}</p>
                   </div>
                 </div>
 
                 <a
-                  href={`https://wa.me/60123456789?text=Hi%20AIHAA,%20I'm%20interested%20in%20the%20${promo.title}%20promotion`}
+                  href={`https://wa.me/60115657084?text=${encodeURIComponent(
+                    `Hai, saya berminat dengan promosi ${promo.title}. Boleh saya tahu lebih lanjut?`
+                  )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-block gold-gradient-bg text-navy-primary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-all"
+                  className="inline-block gold-gradient-bg text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
                 >
-                  Claim Now
+                  {promo.cta}
                 </a>
               </div>
             ))}
@@ -198,10 +250,12 @@ export default function PromotionsPage() {
         </div>
       </section>
 
-      {/* Terms and Conditions */}
-      <section className="bg-navy-primary py-16">
+      {/* Terma & Syarat - White */}
+      <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-8 text-center">Terms & Conditions</h2>
+          <h2 className="text-2xl font-bold text-dark mb-8 text-center">
+            Terma & Syarat
+          </h2>
           <div className="space-y-4">
             {termsAndConditions.map((item, index) => (
               <AccordionItem
@@ -209,7 +263,9 @@ export default function PromotionsPage() {
                 title={item.title}
                 content={item.content}
                 isOpen={openAccordion === index}
-                onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
+                onClick={() =>
+                  setOpenAccordion(openAccordion === index ? null : index)
+                }
               />
             ))}
           </div>

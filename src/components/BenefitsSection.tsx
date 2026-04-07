@@ -1,40 +1,43 @@
 "use client";
 
 import { DollarSign, Truck, Wrench, Thermometer } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const benefits = [
   {
     icon: DollarSign,
-    title: "Affordable & Flexible Plan",
-    description: "Starting from RM54/month with flexible payment options",
-    highlight: "From RM54/mo",
+    title: "Sekali Bayar Tanpa Bulanan",
+    description: "Beli sekali, guna bertahun. Tiada komitmen bayaran bulanan. Dari RM399.",
+    highlight: "Dari RM399",
   },
   {
     icon: Truck,
-    title: "Free Delivery",
-    description: "Free delivery and professional installation nationwide",
-    highlight: "Nationwide",
+    title: "Pemasangan Percuma",
+    description: "Penghantaran dan pemasangan percuma ke seluruh Semenanjung Malaysia",
+    highlight: "Semenanjung MY",
   },
   {
     icon: Wrench,
-    title: "Free Maintenance",
-    description: "Up to 7 years of free maintenance service every 2 months",
-    highlight: "Up to 7 Years",
+    title: "Waranti Sehingga 2 Tahun",
+    description: "Setiap pembelian disertakan waranti sehingga 2 tahun untuk ketenangan anda",
+    highlight: "2 Tahun",
   },
   {
     icon: Thermometer,
-    title: "Various Water Temperature",
-    description: "Hot, Ambient, Room & Cold water at your fingertips",
-    highlight: "4 Options",
+    title: "Halal & Bumiputera Certified",
+    description: "Diperakui Halal oleh JAKIM dan syarikat bertaraf Bumiputera",
+    highlight: "JAKIM",
   },
 ];
 
 export default function BenefitsSection() {
+  const revealRef = useScrollReveal();
+
   return (
-    <section className="bg-navy-secondary py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+    <section className="bg-surface py-16 lg:py-20">
+      <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 scroll-reveal-child stagger-1">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
             Why Choose <span className="gold-gradient-text">AIHAA</span>?
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
@@ -46,17 +49,17 @@ export default function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-navy-primary/50 backdrop-blur-sm border border-gold/20 rounded-2xl p-6 text-center card-hover group"
+              className={`bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl p-6 text-center card-hover group scroll-reveal-child stagger-${index + 2}`}
             >
               <div className="w-16 h-16 mx-auto mb-4 bg-gold/10 rounded-2xl flex items-center justify-center group-hover:bg-gold/20 transition-colors">
                 <benefit.icon className="w-8 h-8 text-gold" />
               </div>
 
-              <div className="bg-gold/10 text-gold text-sm font-semibold px-3 py-1 rounded-full inline-block mb-3">
+              <div className="bg-gold/10 text-gold-dark text-sm font-semibold px-3 py-1 rounded-full inline-block mb-3">
                 {benefit.highlight}
               </div>
 
-              <h3 className="text-white font-semibold text-lg mb-2">
+              <h3 className="text-dark font-semibold text-lg mb-2">
                 {benefit.title}
               </h3>
 

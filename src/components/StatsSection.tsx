@@ -5,39 +5,39 @@ import { FlaskRound, Users, Home, Building2, Award } from "lucide-react";
 
 const stats = [
   {
-    icon: FlaskRound,
-    value: 1000000,
-    suffix: "+",
-    label: "Tests Conducted",
-    display: "1 Million",
-  },
-  {
-    icon: Users,
-    value: 370,
-    suffix: "+",
-    label: "World-Class Researchers",
-    display: "370",
-  },
-  {
     icon: Home,
-    value: 6000000,
+    value: 10000,
     suffix: "+",
-    label: "Homes Worldwide",
-    display: "6 Million",
+    label: "Pelanggan Berpuas Hati",
+    display: "10,000",
   },
   {
     icon: Building2,
     value: 1,
     suffix: "",
-    label: "World's Largest R&D Centre",
-    display: "#1",
+    label: "Seluruh Semenanjung Malaysia",
+    display: "SM",
   },
   {
     icon: Award,
     value: 100,
     suffix: "%",
-    label: "WQA Certified Water Test Lab",
-    display: "WQA",
+    label: "Bumiputera & Halal JAKIM",
+    display: "HALAL",
+  },
+  {
+    icon: Users,
+    value: 50,
+    suffix: "+",
+    label: "Teknisyen Bertauliah",
+    display: "50",
+  },
+  {
+    icon: FlaskRound,
+    value: 4,
+    suffix: "",
+    label: "Tahap Penapisan",
+    display: "4",
   },
 ];
 
@@ -71,14 +71,14 @@ export default function StatsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-navy-secondary py-16 lg:py-24 overflow-hidden"
+      className="relative bg-[#111111] py-16 lg:py-24 overflow-hidden border-t border-t-[rgba(218,165,32,0.1)]"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, #D4A843 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 2px 2px, #DAA520 1px, transparent 0)`,
             backgroundSize: "40px 40px",
           }}
         />
@@ -87,14 +87,14 @@ export default function StatsSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-gold text-sm font-semibold tracking-wider uppercase">
-            Our Achievements
+            Kenapa Pilih AIHAA
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">
-            Leading The World In{" "}
-            <span className="gold-gradient-text">Water Purification</span>
+            Dipercayai Ribuan{" "}
+            <span className="gold-gradient-text">Keluarga Malaysia</span>
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
-            Backed by extensive research and trusted by millions worldwide
+          <p className="text-muted-dark max-w-2xl mx-auto">
+            Bumiputera & Halal JAKIM certified. Sekali bayar, tanpa komitmen bulanan.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export default function StatsSection() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`text-center p-6 bg-navy-primary/50 backdrop-blur-sm border border-gold/20 rounded-2xl ${
+              className={`text-center p-6 bg-[#1E1E1E] backdrop-blur-sm border border-[rgba(218,165,32,0.2)] border-t-2 border-t-gold rounded-2xl ${
                 isInView ? "count-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -116,7 +116,7 @@ export default function StatsSection() {
                 {stat.suffix}
               </div>
 
-              <p className="text-muted text-sm">{stat.label}</p>
+              <p className="text-muted-dark text-sm">{stat.label}</p>
             </div>
           ))}
         </div>

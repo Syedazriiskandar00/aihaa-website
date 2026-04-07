@@ -1,0 +1,159 @@
+# AIHAA Website — Lessons Learned
+
+## How To Use This File
+- READ THIS FILE FIRST before starting any work session
+- After ANY correction from user, add a new lesson immediately
+- Format: `[DATE] [CATEGORY] What happened → What to do instead`
+- Categories: DESIGN, CODE, CONTENT, STRUCTURE, PERFORMANCE, GIT, WORKFLOW
+- Review weekly and merge duplicate lessons
+
+---
+
+## Lessons Log
+
+### [2025-XX-XX] WORKFLOW — Project generated via same.new
+- Initial website generated using same.new AI tool
+- Pushed to GitHub as starting point
+- All placeholder images need replacement with real product photos
+- Content needs rewriting with anti-AI rules from `rules/tone.md`
+- Lesson: same.new gives a fast draft but EVERY element needs manual polish for international quality
+
+### [2025-XX-XX] DESIGN — Placeholder images are gradient cards
+- same.new generated gradient placeholder cards instead of real product images
+- These MUST be replaced before any design review
+- Lesson: Always prepare real assets before Phase 3.5 polish begins
+
+---
+
+## Common Patterns To Watch For
+
+### AI-Generated Content Patterns (from rules/tone.md):
+- Starting with "Selamat datang" or "Kami menyediakan"
+- Using buzzwords: "inovatif", "komprehensif", "holistik"
+- All sentences same length and structure
+- Generic content that could apply to any brand
+
+### AI-Generated Design Patterns (from rules/tone.md):
+- All cards exactly same height and width
+- Perfectly symmetrical layouts everywhere
+- Same section pattern repeated throughout
+- Every button looks identical
+
+### Code Quality Patterns:
+- Leaving console.log in commits
+- Using `any` type in TypeScript
+- Missing error handling on async operations
+- Not testing responsive breakpoints
+
+---
+
+### [2026-04-07] DESIGN — Color scheme tukar dari dark navy ke modern contrast
+- What happened: Owner rasa dark navy (#0A1628) terlalu gelap, tak selesa untuk browsing lama
+- Why: Full dark theme nampak premium tapi susah baca, rasa berat, dan tak sesuai untuk product showcase
+- What to do instead: Guna Modern Contrast theme — putih bersih (#FFFFFF) untuk content sections, hitam pekat (#0D0D0D) untuk hero/navbar/footer/CTA, emas segar gradient (#B8860B → #DAA520 → #F0D060). Alternating dark/light sections bagi breathing room.
+- Rule: JANGAN buat full dark theme untuk e-commerce/product website. Guna dark sections untuk emphasis (hero, stats, CTA) dan light sections untuk browsing (products, benefits, contact).
+- Files affected: Semua components, tailwind.config, globals.css
+
+### [2026-04-07] CONTENT — Produk AIHAA sebenar berbeza dari Coway
+- What happened: Website asal guna produk Coway sebagai placeholder (Neon, Neo Plus, Cinnamon, dll). Produk AIHAA sebenar adalah penapis air indoor dan outdoor dengan model sendiri.
+- Key difference: AIHAA jual sekali bayar (one-time payment), BUKAN rental bulanan macam Coway. Ini USP utama AIHAA.
+- Rule: JANGAN guna pricing model "RM__/bulan". AIHAA guna harga sekali bayar. Tagline AIHAA: "Sekali Bayar Tanpa Bulanan"
+- Files affected: Product data, ProductCard, ProductsSection, product detail pages
+
+### [2026-04-07] DESIGN — Dark sections perlu depth separation
+- What happened: Cards hitam (#0D0D0D) di atas background hitam (#0D0D0D) nampak flat, tiada depth
+- Rule: JANGAN guna same exact color untuk background dan cards. Cards mesti SELALU slightly lighter daripada background. Minimum difference 10-15 hex values.
+- Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
+- Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
+
+### [2026-04-07] DESIGN — Cards generic sama saiz nampak template
+- What happened: 4 brand story cards semua sama saiz dan shape, nampak macam AI-generated template
+- Rule: JANGAN buat semua cards dalam satu section sama saiz. Guna bento/asymmetric grid.
+- Rule: Setiap card perlu visual element unik — icon, pattern, atau accent yang berbeza
+- Rule: Vary border-radius, backgrounds, dan accent styles antara cards
+
+### [2026-04-07] DESIGN — Jangan duplicate CTA dalam satu section
+- What happened: CTA section ada 2 WhatsApp buttons — satu di left, satu di right card
+- Rule: Satu section, satu primary CTA sahaja. Jangan confuse user dengan multiple same-action buttons
+- Rule: Guna gambar sebenar bila available, jangan guna placeholder icon
+
+### [2026-04-07] DESIGN — Refined "Kenapa AIHAA" based on critical review
+- What happened: First design attempt masih template-ish (5 sub-sections, over-prescribed pixels, fake comparison, unverified image)
+- Rules:
+  1. VERIFY images sebelum commit kepada design yang depend on image quality
+  2. Max 3 sub-sections untuk satu storytelling section — lebih dari tu user hilang fokus
+  3. Comparison MESTI honest — acknowledge 1-2 competitor strengths untuk credibility
+  4. Jangan over-prescribe dalam prompts — bagi design direction, bukan pixel instructions
+  5. Numbers yang di-display MESTI boleh didefend — tambah footnote/source kalau perlu
+  6. Testimonials: vary EVERYTHING (size, alignment, styling) — sameness = AI tell
+  7. Satu CTA per section sahaja
+
+### [2026-04-07] DESIGN — Kritikan design 30 tahun pengalaman
+- What happened: Website nampak macam AI buat. Semua section same pattern (cards). Gold terlalu banyak. Typography tiada hierarchy. Tiada gambar impactful. Takut whitespace.
+- Rules yang dipelajari:
+  1. JANGAN buat semua section pakai cards. Vary: full-bleed, text-only, timeline, stacked rows
+  2. Gold HANYA untuk accent (max 10 gold elements per section). Bukan untuk semua benda
+  3. Typography MESTI ada 3 saiz berbeza yang jelas: display, title, body
+  4. 40% whitespace minimum. Premium brands berani biarkan ruang kosong
+  5. SATU gambar besar lebih power dari 10 gambar kecil
+  6. Setiap sub-section MESTI ada design yang COMPLETELY DIFFERENT dari yang lain
+  7. CTA SATU sahaja per section. Jangan jerit dari 7 tempat berbeza
+  8. Testimonials: vary saiz, alignment, dan styling. Bukan semua cards sama
+- Apply rules ini untuk SEMUA section design going forward
+
+### [2026-04-07] DESIGN — Animation rules untuk premium feel
+- Rule: Semua scroll animations guna Intersection Observer, trigger sekali sahaja
+- Rule: Guna HANYA transform + opacity untuk animations (GPU accelerated)
+- Rule: Stagger children 0.1s untuk natural feel
+- Rule: Always wrap dalam prefers-reduced-motion media query
+- Rule: Jangan guna heavy animation libraries — CSS + vanilla JS cukup
+- Rule: Animations mesti subtle dan purposeful, bukan decorative
+
+### [2026-04-07] DESIGN — Placeholder images mesti diganti awal
+- What happened: Gradient placeholder masih ada walaupun gambar sebenar dah available
+- Rule: Bila gambar sebenar dah ada dalam public/images, SEGERA ganti placeholder
+- Rule: Scan folder untuk detect available images sebelum guna placeholder
+
+### [2026-04-07] DESIGN — Impact strip items mesti sebaris
+- Rule: Horizontal stat strips MESTI fit dalam satu baris pada desktop. Kalau tak muat, kurangkan items atau font-size.
+
+### [2026-04-07] DESIGN — Guna CSS gradient bukan image file
+- Rule: JANGAN download/save gradient images. CSS linear-gradient boleh buat semua jenis gradient tanpa file tambahan.
+- Rule: CSS gradients lebih ringan, scalable, dan tak ada watermark.
+
+### [2026-04-07] DESIGN — 7 fixes untuk international standard
+- Rule: Homepage MESTI ada gambar produk — even placeholder lebih baik dari abstract gradient
+- Rule: JANGAN letak cart icon kalau bukan e-commerce. Match CTA dengan business model (WhatsApp)
+- Rule: JANGAN copy promotional text dari template/reference website
+- Rule: Footer MESTI ada: navigation, contact, social media, SSM, copyright
+- Rule: Certification badges perlu nampak macam actual stamps, bukan just text
+- Rule: Floating buttons MESTI match brand color scheme
+- Rule: Category sections MESTI ada product imagery
+
+### [2026-04-07] DESIGN — Buang section redundant, jangan repeat data
+- What happened: StatsSection dan WhyAihaaSection impact strip paparkan data hampir sama (10,000+ vs 10,800+, Semenanjung, etc). Redundant.
+- Rule: JANGAN ada 2 sections yang cakap benda sama. Pilih satu yang lebih kuat, buang yang lain.
+- Rule: Kalau data tak cukup untuk isi satu section penuh (contoh "SM" dan "HALAL%" bukan numbers), jangan paksa. Kurang tapi kuat lebih baik dari banyak tapi lemah.
+- Rule: Elak zebra pattern (hitam-putih-hitam). Gabungkan sections yang sama background color.
+
+### [2026-04-07] CODE — Internal Server Error berulang kali
+- What happened: Setiap kali buat perubahan besar, website crash dengan "Internal Server Error"
+- Root cause: .next cache folder corrupt — ENOENT errors pada _buildManifest.js.tmp dan app-build-manifest.json. Disebabkan multiple dev servers running serentak pada ports berbeza, semua menulis ke .next folder yang sama dan corrupt satu sama lain.
+- Fix: KILL semua ports dulu (npx kill-port 3000 3001 3002 3003), kemudian rm -rf .next, kemudian npm run dev
+- Rule: SEBELUM start dev server, WAJIB kill semua port dan delete .next folder
+- Rule: SELEPAS setiap perubahan code, WAJIB run npm run build SEBELUM declare "done"
+- Rule: Jangan buat semua fixes sekaligus. Buat SATU, test, confirm okay, baru buat seterusnya.
+- Rule: Kalau ada TypeScript error, fix SEGERA sebelum proceed ke fix seterusnya
+- Rule: Check browser localhost:3000 selepas SETIAP fix, bukan selepas semua siap
+- Rule: JANGAN biarkan multiple dev servers running serentak — satu sahaja pada satu masa
+
+---
+
+## Template For New Lessons
+```
+### [DATE] CATEGORY — Short title
+- What happened: [describe the mistake]
+- Why it happened: [root cause]
+- What to do instead: [the correct approach]
+- Files affected: [which files to watch]
+```

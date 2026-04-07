@@ -9,23 +9,23 @@ const categories = [
     title: "Air Purifier",
     description: "Breathe clean, purified air with our advanced HEPA filtration systems",
     href: "#",
-    color: "from-blue-500/20 to-cyan-500/20",
+    color: "from-blue-500/10 to-cyan-500/10",
   },
   {
     icon: BedDouble,
     title: "Mattress",
     description: "Experience premium sleep with our certified hypoallergenic mattresses",
     href: "#",
-    color: "from-purple-500/20 to-pink-500/20",
+    color: "from-purple-500/10 to-pink-500/10",
   },
 ];
 
 export default function CrossSellSection() {
   return (
-    <section className="bg-navy-primary py-16 lg:py-20">
+    <section className="bg-surface py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
             Explore More <span className="gold-gradient-text">Products</span>
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export default function CrossSellSection() {
             <Link
               key={index}
               href={category.href}
-              className="group relative overflow-hidden rounded-3xl bg-navy-secondary border border-gold/20 p-8 lg:p-10 card-hover"
+              className="group relative overflow-hidden rounded-3xl bg-white border border-[rgba(218,165,32,0.15)] p-8 lg:p-10 card-hover"
             >
               {/* Background gradient */}
               <div
@@ -51,14 +51,14 @@ export default function CrossSellSection() {
                 </div>
 
                 <div className="text-center lg:text-left flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-2xl font-bold text-dark mb-2">
                     {category.title}
                   </h3>
                   <p className="text-muted mb-4">{category.description}</p>
                 </div>
 
                 <div className="flex-shrink-0">
-                  <span className="inline-flex items-center gap-2 text-gold font-semibold group-hover:gap-4 transition-all">
+                  <span className="inline-flex items-center gap-2 text-gold-dark font-semibold group-hover:gap-4 transition-all">
                     Discover More
                     <svg
                       className="w-5 h-5"

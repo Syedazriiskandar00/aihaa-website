@@ -1,316 +1,550 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import ProductCard from "@/components/ProductCard";
 import { Check } from "lucide-react";
+import Image from "next/image";
 
-const products: Record<string, {
-  name: string;
-  tagline: string;
-  description: string;
-  monthlyPrice: string;
-  retailPrice: string;
-  specs: { label: string; value: string }[];
-  features: string[];
-  gradient: string;
-  angle: number;
-}> = {
-  neon: {
-    name: "Neon",
-    tagline: "Compact & Stylish",
-    description: "The Neon water purifier combines modern aesthetics with powerful filtration technology. Perfect for small spaces and modern homes.",
-    monthlyPrice: "RM54",
-    retailPrice: "RM2,988",
+const products: Record<
+  string,
+  {
+    name: string;
+    tagline: string;
+    description: string;
+    price: string;
+    oldPrice?: string;
+    category: "indoor" | "outdoor";
+    image: string;
+    specs: { label: string; value: string }[];
+    features: string[];
+  }
+> = {
+  "aihaa-bella": {
+    name: "AIHAA BELLA",
+    tagline: "Rekaan Kompak Stand Floor",
+    description:
+      "AIHAA BELLA — penapis air berdiri dengan 4 tahap penapisan dan teknologi mineral alkali. Kapasiti tangki 9.5 liter. Rekaan kompak stand floor.",
+    price: "RM1,080",
+    category: "indoor",
+    image: "/images/products/bella/main.jpg",
     specs: [
-      { label: "Dimensions", value: "260 x 180 x 460mm" },
-      { label: "Weight", value: "8.5kg" },
-      { label: "Tank Capacity", value: "3.0L" },
-      { label: "Filtration", value: "4-Stage RO" },
-      { label: "Power", value: "80W" },
+      { label: "Tahap Penapisan", value: "4 Tahap" },
+      { label: "Teknologi", value: "Mineral Alkali" },
+      { label: "Kapasiti Tangki", value: "9.5 Liter" },
+      { label: "Rekaan", value: "Stand Floor" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
-      "4-stage reverse osmosis filtration",
-      "Hot, cold, and room temperature water",
-      "Child safety lock for hot water",
-      "LED display with temperature indicator",
-      "Auto sterilization function",
-      "Energy-saving eco mode",
+      "4 Tahap Penapisan",
+      "Teknologi Mineral Alkali",
+      "Rekaan Kompak Stand Floor",
+      "Kapasiti Tangki 9.5 Liter",
+      "Percuma pemasangan & penghantaran",
+      "Waranti 2 tahun",
     ],
-    gradient: "from-[#0D1E35] via-navy-secondary to-[#152A4A]",
-    angle: 135,
   },
-  "villaem-iii": {
-    name: "Villaem III",
-    tagline: "Family Size",
-    description: "The Villaem III is designed for larger families, featuring a high-capacity tank and advanced filtration system.",
-    monthlyPrice: "RM74",
-    retailPrice: "RM4,288",
+  "aihaa-big": {
+    name: "AIHAA BIG",
+    tagline: "Kapasiti Besar 17 Liter",
+    description:
+      "AIHAA BIG — penapis air berdiri berkapasiti besar 17 liter. Sesuai untuk keluarga besar dan pejabat.",
+    price: "RM1,280",
+    category: "indoor",
+    image: "/images/products/big/main.jpg",
     specs: [
-      { label: "Dimensions", value: "320 x 220 x 520mm" },
-      { label: "Weight", value: "12kg" },
-      { label: "Tank Capacity", value: "5.0L" },
-      { label: "Filtration", value: "6-Stage RO+UV" },
-      { label: "Power", value: "120W" },
+      { label: "Tahap Penapisan", value: "4 Tahap" },
+      { label: "Kapasiti Tangki", value: "17 Liter" },
+      { label: "Rekaan", value: "Stand Floor" },
+      { label: "Sesuai Untuk", value: "Keluarga Besar" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
-      "6-stage filtration with UV sterilization",
-      "Large 5L tank capacity",
-      "Touch panel control",
-      "Smart water quality indicator",
-      "Self-cleaning function",
-      "Quiet operation technology",
+      "Kapasiti Besar — 17 Liter",
+      "4 Tahap Penapisan",
+      "Rekaan Kompak Stand Floor",
+      "Sesuai untuk keluarga besar",
+      "Percuma pemasangan & penghantaran",
+      "Waranti 2 tahun",
     ],
-    gradient: "from-navy-light via-[#1A3050] to-navy-secondary",
-    angle: 180,
   },
-  "neo-plus": {
-    name: "Neo Plus",
-    tagline: "Advanced Filtration",
-    description: "Neo Plus offers enhanced filtration capabilities with a sleek design that fits any kitchen aesthetic.",
-    monthlyPrice: "RM59",
-    retailPrice: "RM3,288",
+  "aihaa-ean": {
+    name: "AIHAA EAN",
+    tagline: "Pilihan Bajet dengan Digital Feature",
+    description:
+      "AIHAA EAN — pilihan bajet dengan digital feature. Kapasiti tangki 7.5 liter. Mudah dipasang.",
+    price: "RM780",
+    oldPrice: "RM867",
+    category: "indoor",
+    image: "/images/products/ean/main.png",
     specs: [
-      { label: "Dimensions", value: "280 x 190 x 480mm" },
-      { label: "Weight", value: "9.2kg" },
-      { label: "Tank Capacity", value: "3.5L" },
-      { label: "Filtration", value: "5-Stage RO" },
-      { label: "Power", value: "90W" },
+      { label: "Tahap Penapisan", value: "4 Tahap" },
+      { label: "Kapasiti Tangki", value: "7.5 Liter" },
+      { label: "Ciri Khas", value: "Digital Display" },
+      { label: "Pemasangan", value: "Mudah" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
-      "5-stage reverse osmosis filtration",
-      "Hot, cold, and ambient water",
-      "Smart touch controls",
-      "Filter change indicator",
-      "Night mode with dimmed display",
-      "Compact footprint design",
+      "Harga Bajet",
+      "4 Tahap Penapisan",
+      "Pemasangan Mudah",
+      "Digital Display",
+      "Kapasiti Tangki 7.5 Liter",
+      "Percuma pemasangan & waranti 2 tahun",
     ],
-    gradient: "from-navy-primary via-navy-light to-navy-secondary",
-    angle: 45,
+  },
+  "aihaa-fancy": {
+    name: "AIHAA FANCY",
+    tagline: "Rekaan Slim Moden dengan 3 Tangki",
+    description:
+      "AIHAA FANCY — rekaan slim moden dengan 3 tangki berasingan. Operasi senyap, sesuai untuk mana-mana ruang.",
+    price: "RM999",
+    category: "indoor",
+    image: "/images/products/fancy/main.jpg",
+    specs: [
+      { label: "Tahap Penapisan", value: "4 Tahap" },
+      { label: "Rekaan", value: "Slim Moden" },
+      { label: "Tangki", value: "3 Berasingan" },
+      { label: "Operasi", value: "Senyap" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Rekaan Slim Moden",
+      "4 Tahap Penapisan",
+      "3 Tangki Berasingan",
+      "Operasi Senyap",
+      "Percuma pemasangan & penghantaran",
+      "Waranti 2 tahun",
+    ],
+  },
+  "aihaa-winter": {
+    name: "AIHAA WINTER",
+    tagline: "Premium dengan Ice Maker & Teknologi Baru",
+    description:
+      "AIHAA WINTER — model premium dengan fungsi ice maker dan teknologi terbaru. Pilihan terbaik untuk yang mahukan kualiti premium.",
+    price: "RM1,580",
+    category: "indoor",
+    image: "/images/products/winter/main.png",
+    specs: [
+      { label: "Tahap Penapisan", value: "4 Tahap" },
+      { label: "Ciri Khas", value: "Ice Maker" },
+      { label: "Teknologi", value: "Terbaru" },
+      { label: "Kualiti", value: "Premium" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Kualiti Premium",
+      "4 Tahap Penapisan",
+      "Fungsi Ice Maker",
+      "Teknologi Terbaru",
+      "Percuma pemasangan & penghantaran",
+      "Waranti 2 tahun",
+    ],
+  },
+  "ultra-one": {
+    name: "ULTRA ONE",
+    tagline: "All-in-One Direct Minum",
+    description:
+      "ULTRA ONE — model premium dengan unlimited flow capacity. All-in-one system yang boleh direct minum.",
+    price: "RM399",
+    category: "outdoor",
+    image: "/images/products/ultra-one/main.jpg",
+    specs: [
+      { label: "Model", value: "Premium" },
+      { label: "Kadar Aliran", value: "Unlimited" },
+      { label: "Sistem", value: "All-in-One" },
+      { label: "Kegunaan", value: "Direct Minum" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Model Premium",
+      "Kadar Aliran Tanpa Had",
+      "Sistem All-in-One",
+      "Boleh Direct Minum",
+      "Percuma pemasangan & penghantaran",
+      "Waranti 2 tahun",
+    ],
+  },
+  "fiber-9x42": {
+    name: "FIBER 9X42",
+    tagline: "Tangki Fiber Tahan Lasak",
+    description:
+      "FIBER 9X42 — tangki fiber anti-karat yang tahan lasak. Mudah diselenggara.",
+    price: "RM399",
+    category: "outdoor",
+    image: "/images/products/fiber/main.jpg",
+    specs: [
+      { label: "Jenis Tangki", value: "Fiber" },
+      { label: "Bahan", value: "Anti-Karat" },
+      { label: "Penyelenggaraan", value: "Mudah" },
+      { label: "Waranti", value: "1 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Tangki Fiber",
+      "Anti-Karat",
+      "Penyelenggaraan Mudah",
+      "Tahan Lasak",
+      "Percuma pemasangan & penghantaran",
+    ],
+  },
+  "fiber-10x44": {
+    name: "FIBER 10X44",
+    tagline: "Tangki Fiber Besar 10x44",
+    description:
+      "FIBER 10X44 — tangki fiber besar saiz 10x44 inci. Tahan lama dan anti-karat.",
+    price: "RM469",
+    category: "outdoor",
+    image: "/images/products/fiber-10x44/main.png",
+    specs: [
+      { label: "Saiz Tangki", value: "10 x 44 Inci" },
+      { label: "Ketahanan", value: "Tahan Lama" },
+      { label: "Bahan", value: "Anti-Karat" },
+      { label: "Penyelenggaraan", value: "Mudah" },
+      { label: "Waranti", value: "1 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Tangki Fiber Besar 10x44",
+      "Tahan Lama",
+      "Anti-Karat",
+      "Penyelenggaraan Mudah",
+      "Percuma pemasangan & penghantaran",
+    ],
+  },
+  "penapis-boring-13x54": {
+    name: "PENAPIS BORING 13X54",
+    tagline: "Khas Untuk Air Bawah Tanah",
+    description:
+      "PENAPIS BORING 13X54 — khas untuk air bawah tanah (boring). Penapisan pelbagai tahap dengan penapis khas.",
+    price: "RM1,180",
+    category: "outdoor",
+    image: "/images/products/penapis-boring/main.jpg",
+    specs: [
+      { label: "Saiz Tangki", value: "13 x 54 Inci" },
+      { label: "Kegunaan", value: "Air Boring" },
+      { label: "Penapisan", value: "Pelbagai Tahap" },
+      { label: "Penapis", value: "Penapis Khas" },
+      { label: "Waranti", value: "1 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Penapis Air Boring",
+      "Kapasiti Besar",
+      "Penapisan Pelbagai Tahap dengan Penapis Khas",
+      "Tahan Lama",
+      "Anti-Karat",
+      "Percuma pemasangan & penghantaran",
+    ],
+  },
+  pvdf: {
+    name: "PVDF",
+    tagline: "Material PVDF Gred Profesional",
+    description:
+      "PVDF — material gred profesional dengan kadar aliran 5000L/jam. Tahan kimia.",
+    price: "RM899",
+    category: "outdoor",
+    image: "/images/products/pvdf/main.jpg",
+    specs: [
+      { label: "Material", value: "PVDF" },
+      { label: "Ketahanan", value: "Tahan Kimia" },
+      { label: "Kadar Aliran", value: "5000 L/Jam" },
+      { label: "Gred", value: "Profesional" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Material PVDF",
+      "Tahan Kimia",
+      "Kadar Aliran 5000L/Jam",
+      "Gred Profesional",
+      "Percuma pemasangan & penghantaran",
+      "Waranti 2 tahun",
+    ],
+  },
+  "pvdf-plus": {
+    name: "PVDF PLUS",
+    tagline: "PVDF Dipertingkat 6000L/Hour",
+    description:
+      "PVDF PLUS — versi dipertingkat dengan kadar aliran 6000L/jam. Penapis premium dengan jangka hayat panjang.",
+    price: "RM1,299",
+    category: "outdoor",
+    image: "/images/products/pvdf-plus/main.jpg",
+    specs: [
+      { label: "Material", value: "PVDF Dipertingkat" },
+      { label: "Kadar Aliran", value: "6000 L/Jam" },
+      { label: "Penapis", value: "Premium" },
+      { label: "Jangka Hayat", value: "Panjang" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "PVDF Dipertingkat",
+      "Kadar Aliran 6000L/Jam",
+      "Penapis Premium",
+      "Jangka Hayat Panjang",
+      "Gred Profesional",
+      "Percuma pemasangan & penghantaran",
+    ],
+  },
+  "super-pleated": {
+    name: "SUPER PLEATED",
+    tagline: "Kadar Aliran Tinggi & Kompak",
+    description:
+      "SUPER PLEATED — penapis pleated dengan kadar aliran tinggi. Saiz kompak dan kos efektif.",
+    price: "RM580",
+    category: "outdoor",
+    image: "/images/products/super-pleated/main.jpg",
+    specs: [
+      { label: "Jenis Penapis", value: "Pleated" },
+      { label: "Kadar Aliran", value: "Tinggi" },
+      { label: "Saiz", value: "Kompak" },
+      { label: "Kos", value: "Efektif" },
+      { label: "Waranti", value: "1 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Penapis Pleated",
+      "Kadar Aliran Tinggi",
+      "Saiz Kompak",
+      "Kos Efektif",
+      "Percuma pemasangan & penghantaran",
+    ],
+  },
+  "uf-double-backwash": {
+    name: "UF DOUBLE BACKWASH",
+    tagline: "Membran UF dengan Dual Backwash",
+    description:
+      "UF DOUBLE BACKWASH — membran UF dengan dual backwash dan pembersihan automatik. Kadar aliran 4000L/jam.",
+    price: "RM799",
+    oldPrice: "RM888",
+    category: "outdoor",
+    image: "/images/products/uf-double-backwash/main.jpg",
+    specs: [
+      { label: "Teknologi", value: "Membran UF" },
+      { label: "Backwash", value: "Sistem Dual" },
+      { label: "Kadar Aliran", value: "4000 L/Jam" },
+      { label: "Pembersihan", value: "Automatik" },
+      { label: "Waranti", value: "2 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Membran UF",
+      "Dual Backwash",
+      "Kadar Aliran 4000L/Jam",
+      "Pembersihan Automatik",
+      "Saiz Kompak",
+      "Percuma pemasangan & penghantaran",
+    ],
   },
 };
 
-const relatedProducts = [
-  { id: "neo-plus", name: "Neo Plus", tagline: "Advanced Filtration", price: "RM59" },
-  { id: "glaze", name: "Glaze", tagline: "Sleek Modern", price: "RM75" },
-  { id: "core-plus", name: "Core Plus", tagline: "High Performance", price: "RM93" },
-];
-
-const pricingOptions = [
+const relatedIndoor = [
   {
-    title: "Option A",
-    subtitle: "Rental Self-Service",
-    price: "RM54",
-    period: "/month",
-    features: ["Free Installation", "Filter Replacement", "24/7 Support"],
-    highlight: false,
+    id: "aihaa-bella",
+    name: "AIHAA BELLA",
+    tagline: "Rekaan Kompak Stand Floor",
+    price: "RM1,080",
+    image: "/images/products/bella/main.jpg",
   },
   {
-    title: "Option B",
-    subtitle: "Rental Heart-Service",
-    price: "RM64",
-    period: "/month",
-    features: ["Free Installation", "Bi-monthly Maintenance", "Filter Replacement", "Priority Support"],
-    highlight: true,
+    id: "aihaa-ean",
+    name: "AIHAA EAN",
+    tagline: "Pilihan Bajet Digital",
+    price: "RM780",
+    image: "/images/products/ean/main.png",
   },
   {
-    title: "Option C",
-    subtitle: "Retail Purchase",
-    price: "RM2,988",
-    period: "one-time",
-    features: ["Free Installation", "1 Year Warranty", "Optional Maintenance Plan"],
-    highlight: false,
+    id: "aihaa-winter",
+    name: "AIHAA WINTER",
+    tagline: "Premium Ice Maker",
+    price: "RM1,580",
+    image: "/images/products/winter/main.png",
   },
 ];
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = products[params.id] || products.neon;
+const relatedOutdoor = [
+  {
+    id: "pvdf",
+    name: "PVDF",
+    tagline: "Gred Profesional",
+    price: "RM899",
+    image: "/images/products/pvdf/main.jpg",
+  },
+  {
+    id: "fiber-9x42",
+    name: "FIBER 9X42",
+    tagline: "Tangki Fiber",
+    price: "RM399",
+    image: "/images/products/fiber/main.jpg",
+  },
+  {
+    id: "uf-double-backwash",
+    name: "UF DOUBLE BACKWASH",
+    tagline: "Membran UF",
+    price: "RM799",
+    image: "/images/products/uf-double-backwash/main.jpg",
+  },
+];
+
+export default async function ProductDetailPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const product = products[id] || products["aihaa-bella"];
+  const related =
+    product.category === "indoor" ? relatedIndoor : relatedOutdoor;
 
   return (
-    <main className="min-h-screen bg-navy-primary">
+    <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Product Hero */}
-      <section className="pt-20 pb-16 bg-gradient-to-b from-navy-primary to-navy-secondary">
+      {/* Product Hero - Dark section */}
+      <section className="pt-20 pb-16 bg-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Product Image Placeholder */}
+            {/* Product Image */}
             <div className="relative">
-              <div className="bg-navy-secondary/50 backdrop-blur-sm rounded-3xl p-8 border border-gold/20 overflow-hidden">
-                <div
-                  className={`aspect-square bg-gradient-to-br ${product.gradient} rounded-2xl flex items-center justify-center relative overflow-hidden`}
-                  style={{ backgroundImage: `linear-gradient(${product.angle}deg, var(--tw-gradient-stops))` }}
-                >
-                  {/* Grid pattern */}
-                  <div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage: `linear-gradient(rgba(212, 168, 67, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(212, 168, 67, 0.1) 1px, transparent 1px)`,
-                      backgroundSize: "25px 25px",
-                    }}
+              <div className="bg-dark-alt/50 backdrop-blur-sm rounded-3xl p-8 border border-[rgba(218,165,32,0.3)] overflow-hidden">
+                <div className="aspect-square bg-white rounded-2xl flex items-center justify-center relative overflow-hidden">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-6"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
                   />
-
-                  {/* Accent glows */}
-                  <div className="absolute top-1/4 right-1/4 w-40 h-40 bg-gold opacity-10 rounded-full blur-3xl" />
-                  <div className="absolute bottom-1/4 left-1/4 w-32 h-32 bg-gold-light opacity-5 rounded-full blur-2xl" />
-
-                  {/* Water Purifier Silhouette */}
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="w-44 h-60 bg-gradient-to-b from-white/15 to-white/5 rounded-xl border border-gold/30 backdrop-blur-sm relative overflow-hidden shadow-2xl">
-                      {/* Top accent line */}
-                      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-gold/40 via-gold to-gold/40" />
-
-                      {/* Display */}
-                      <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-12 bg-navy-primary/70 rounded-lg border border-gold/30 flex items-center justify-center">
-                        <span className="text-gold font-mono text-xl">25°C</span>
-                      </div>
-
-                      {/* Buttons */}
-                      <div className="absolute top-22 left-1/2 -translate-x-1/2 flex gap-3 mt-2">
-                        <div className="w-3 h-3 rounded-full bg-gold shadow-lg shadow-gold/50" />
-                        <div className="w-3 h-3 rounded-full bg-white/20" />
-                        <div className="w-3 h-3 rounded-full bg-white/20" />
-                        <div className="w-3 h-3 rounded-full bg-white/20" />
-                      </div>
-
-                      {/* Dispenser */}
-                      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-24 h-24 bg-navy-primary/40 rounded-lg border border-gold/20">
-                        <div className="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-3 bg-gold/30 rounded-full" />
-                      </div>
-
-                      {/* Side accent */}
-                      <div className="absolute right-0 top-1/4 bottom-1/4 w-0.5 bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
-                    </div>
-
-                    {/* Product Label */}
-                    <div className="mt-6 px-8 py-3 bg-navy-primary/70 backdrop-blur-sm rounded-xl border border-gold/40">
-                      <span className="text-gold font-bold text-xl tracking-wider">{product.name}</span>
-                    </div>
-                  </div>
-
-                  {/* Decorative water drops */}
-                  <div className="absolute top-10 right-10 w-3 h-4 bg-gold/30 rounded-full" />
-                  <div className="absolute bottom-16 left-10 w-2 h-3 bg-gold/20 rounded-full" />
-                  <div className="absolute top-1/2 right-14 w-2.5 h-3.5 bg-gold/25 rounded-full" />
                 </div>
-              </div>
-              <div className="absolute -top-3 -right-3 bg-gold text-navy-primary px-4 py-2 rounded-full font-bold text-sm shadow-gold">
-                BESTSELLER
               </div>
             </div>
 
             {/* Product Info */}
             <div>
-              <span className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-medium border border-gold/30 mb-4">
-                Water Purifier
+              <span className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
+                {product.category === "indoor"
+                  ? "Penapis Air Dalam Rumah"
+                  : "Penapis Air Luar Rumah"}
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
                 {product.name}
               </h1>
               <p className="text-gold text-xl mb-4">{product.tagline}</p>
-              <p className="text-muted mb-6">{product.description}</p>
+              <p className="text-muted-dark mb-6">{product.description}</p>
 
-              <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-gold text-4xl font-bold">{product.monthlyPrice}</span>
-                <span className="text-muted">/month</span>
-                <span className="text-muted ml-4">or {product.retailPrice} retail</span>
+              {/* Price */}
+              <div className="flex items-baseline gap-3 mb-3">
+                <span className="text-gold text-4xl font-bold">
+                  {product.price}
+                </span>
+                {product.oldPrice && (
+                  <span className="text-muted-dark text-xl line-through">
+                    {product.oldPrice}
+                  </span>
+                )}
               </div>
 
-              <a
-                href={`https://wa.me/60123456789?text=Hi%20AIHAA,%20I'm%20interested%20in%20${product.name}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 gold-gradient-bg text-navy-primary px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold"
-              >
-                Check Promotion
-              </a>
+              {/* Badges */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                <span className="text-xs text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1">
+                  Sekali Bayar
+                </span>
+                <span className="text-xs text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1">
+                  Pemasangan Percuma
+                </span>
+                <span className="text-xs text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1">
+                  Waranti {product.category === "indoor" ? "2" : "1-2"} Tahun
+                </span>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`https://wa.me/60115657084?text=${encodeURIComponent(
+                    `Hai, saya berminat dengan ${product.name}. Boleh saya tahu lebih lanjut?`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
+                >
+                  WhatsApp Untuk Beli
+                </a>
+                <Link
+                  href="/water-purifier"
+                  className="inline-flex items-center justify-center border-2 border-[rgba(218,165,32,0.3)] text-gold px-8 py-4 rounded-full font-semibold hover:bg-gold/10 transition-all"
+                >
+                  Lihat Semua Produk
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Specifications */}
-      <section className="bg-navy-secondary py-16">
+      {/* Spesifikasi */}
+      <section className="bg-surface py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-8">Specifications</h2>
-          <div className="bg-navy-primary/50 rounded-2xl border border-gold/20 overflow-hidden">
+          <div className="w-12 h-[2px] bg-[#DAA520] mb-6" />
+          <h2 className="text-2xl font-bold text-dark mb-8">Spesifikasi</h2>
+          <div className="bg-white rounded-2xl border border-[rgba(218,165,32,0.15)] overflow-hidden">
             {product.specs.map((spec, index) => (
               <div
                 key={index}
-                className={`flex justify-between p-4 ${index !== product.specs.length - 1 ? "border-b border-gold/10" : ""}`}
+                className={`flex justify-between p-4 ${
+                  index % 2 === 1 ? "bg-[#F5F5F5]" : "bg-white"
+                } ${
+                  index !== product.specs.length - 1
+                    ? "border-b border-[rgba(0,0,0,0.04)]"
+                    : ""
+                }`}
               >
                 <span className="text-muted">{spec.label}</span>
-                <span className="text-white font-medium">{spec.value}</span>
+                <span className="text-dark font-medium">{spec.value}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="bg-navy-primary py-16">
+      {/* Ciri-ciri Utama */}
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-8">Key Features</h2>
+          <h2 className="text-2xl font-bold text-dark mb-8">
+            Ciri-ciri Utama
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {product.features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-3 p-4 bg-navy-secondary/50 rounded-xl border border-gold/10">
-                <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center">
-                  <Check className="w-4 h-4 text-gold" />
-                </div>
-                <span className="text-white">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Options */}
-      <section className="bg-navy-secondary py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-8 text-center">Pricing Options</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pricingOptions.map((option, index) => (
               <div
                 key={index}
-                className={`rounded-2xl p-6 ${option.highlight ? "bg-gold/10 border-2 border-gold" : "bg-navy-primary/50 border border-gold/20"}`}
+                className="flex items-center gap-3 p-4 bg-surface rounded-xl border border-[rgba(218,165,32,0.1)]"
               >
-                {option.highlight && (
-                  <span className="inline-block bg-gold text-navy-primary px-3 py-1 rounded-full text-xs font-bold mb-4">
-                    RECOMMENDED
-                  </span>
-                )}
-                <h3 className="text-lg font-semibold text-white">{option.title}</h3>
-                <p className="text-muted text-sm mb-4">{option.subtitle}</p>
-                <div className="flex items-baseline gap-1 mb-6">
-                  <span className="text-3xl font-bold text-gold">{option.price}</span>
-                  <span className="text-muted text-sm">{option.period}</span>
+                <div className="w-8 h-8 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Check className="w-4 h-4 text-gold" />
                 </div>
-                <ul className="space-y-3 mb-6">
-                  {option.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-muted">
-                      <Check className="w-4 h-4 text-gold" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="https://wa.me/60123456789"
-                  className={`block w-full text-center py-3 rounded-lg font-medium transition-all ${option.highlight ? "gold-gradient-bg text-navy-primary" : "border border-gold text-gold hover:bg-gold hover:text-navy-primary"}`}
-                >
-                  Get Started
-                </a>
+                <span className="text-dark">{feature}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Related Products */}
-      <section className="bg-navy-primary py-16">
+      {/* Produk Berkaitan */}
+      <section className="bg-surface py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-8">Related Products</h2>
+          <h2 className="text-2xl font-bold text-dark mb-8">
+            Produk Berkaitan
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {relatedProducts.map((product) => (
-              <ProductCard key={product.id} {...product} />
+            {related.map((p) => (
+              <ProductCard key={p.id} {...p} />
             ))}
           </div>
         </div>
