@@ -66,6 +66,18 @@
 - Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
 - Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
 
+### [2026-04-08] DESIGN — Product page premium transformation
+- Rules:
+  1. SATU featured product besar sebelum grid — bagi first impression premium
+  2. Cards ZERO buttons — seluruh card clickable. Buttons di detail page.
+  3. Repetitive badges jadi noise — cakap sekali sahaja
+  4. Beza-kan sections dengan background color, bukan just heading
+  5. Lonely cards kena di-handle — tambah CTA card untuk fill
+  6. Visual break antara major sections — breathing moment
+  7. Benefits section TAK PERLU di product listing page — redundant dari homepage
+  8. Nav max 6 items — group related items dalam dropdown
+  9. Poster/flyer images perlu subtle overlay supaya kurang distract
+
 ### [2026-04-07] DESIGN — Cards generic sama saiz nampak template
 - What happened: 4 brand story cards semua sama saiz dan shape, nampak macam AI-generated template
 - Rule: JANGAN buat semua cards dalam satu section sama saiz. Guna bento/asymmetric grid.

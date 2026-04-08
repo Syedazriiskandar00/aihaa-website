@@ -11,8 +11,15 @@ const navItems: {
   dropdown?: { name: string; href: string }[];
 }[] = [
   { name: "Home", href: "/" },
-  { name: "Penapis Air Dalam", href: "/water-purifier" },
-  { name: "Penapis Air Luar", href: "/water-purifier" },
+  {
+    name: "Produk",
+    href: "/water-purifier",
+    dropdown: [
+      { name: "Semua Penapis", href: "/water-purifier" },
+      { name: "Dalam Rumah", href: "/water-purifier#indoor" },
+      { name: "Luar Rumah", href: "/water-purifier#outdoor" },
+    ],
+  },
   { name: "Promosi", href: "/promotions" },
   { name: "FAQ", href: "/faq" },
   { name: "Galeri", href: "/galeri" },

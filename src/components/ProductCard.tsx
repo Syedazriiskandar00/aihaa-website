@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -39,9 +37,12 @@ export default function ProductCard({
   };
 
   return (
-    <div className="bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,165,32,0.12)] hover:border-[rgba(218,165,32,0.3)]">
+    <Link
+      href={`/product/${id}`}
+      className="bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:border-[rgba(218,165,32,0.3)] block"
+    >
       {/* Image Container */}
-      <div className="relative aspect-square overflow-hidden bg-surface">
+      <div className="relative aspect-[4/3] overflow-hidden bg-surface">
         {/* Badge */}
         {badge && (
           <div
@@ -56,7 +57,7 @@ export default function ProductCard({
             src={image}
             alt={`AIHAA ${name}`}
             fill
-            className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+            className="object-contain p-4 group-hover:scale-[1.03] transition-transform duration-500"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         ) : (
@@ -75,39 +76,22 @@ export default function ProductCard({
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <h3 className="text-dark font-semibold text-lg mb-1">{name}</h3>
-        <p className="text-muted text-sm mb-3">{tagline}</p>
+      <div className="relative p-5">
+        <h3 className="text-dark font-semibold text-base mb-1">{name}</h3>
+        <p className="text-muted text-sm mb-3 truncate">{tagline}</p>
 
-        <div className="flex items-baseline gap-2 mb-1">
-          <span className="text-gold-dark text-2xl font-bold">{price}</span>
+        <div className="flex items-baseline gap-2">
+          <span className="text-gold-dark text-lg font-semibold">{price}</span>
           {oldPrice && (
             <span className="text-muted text-sm line-through">{oldPrice}</span>
           )}
         </div>
 
-        {/* Sekali Bayar badge */}
-        <span className="inline-block text-[11px] text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-2.5 py-0.5 mb-4">
-          Sekali Bayar
+        {/* Hover arrow */}
+        <span className="absolute bottom-5 right-5 text-gold opacity-0 translate-x-[-8px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-lg">
+          →
         </span>
-
-        <div className="flex gap-3">
-          <Link
-            href={`/product/${id}`}
-            className="flex-1 bg-white border border-[rgba(218,165,32,0.15)] text-dark py-2.5 rounded-lg text-sm font-medium text-center hover:border-gold hover:text-gold-dark transition-all"
-          >
-            Lihat Details
-          </Link>
-          <a
-            href={`https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20${name}.%20Boleh%20saya%20tahu%20lebih%20lanjut?`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 gold-gradient-bg text-white py-2.5 rounded-lg text-sm font-medium text-center hover:opacity-90 transition-all"
-          >
-            WhatsApp
-          </a>
-        </div>
       </div>
-    </div>
+    </Link>
   );
 }
