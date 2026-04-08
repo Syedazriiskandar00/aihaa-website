@@ -176,38 +176,36 @@ export default function PromotionsPage() {
             </div>
 
           </div>
-        </div>
-      </section>
 
-      {/* ── SECTION 4: T&C (footnote, compact) ── */}
-      <section className="bg-white py-10">
-        <div className="max-w-[700px] mx-auto px-4">
-          <h2 className="text-base text-[#999] mb-6">Terma & Syarat</h2>
-          <div className="divide-y divide-[rgba(0,0,0,0.04)]">
-            {termsAndConditions.map((item, index) => (
-              <div key={index}>
-                <button
-                  onClick={() =>
-                    setOpenAccordion(openAccordion === index ? null : index)
-                  }
-                  className="w-full flex items-center justify-between py-3 text-left"
-                >
-                  <span className="text-[13px] text-[#999]">{item.title}</span>
-                  {openAccordion === index ? (
-                    <ChevronUp className="w-4 h-4 text-[#ccc]" />
-                  ) : (
-                    <ChevronDown className="w-4 h-4 text-[#ccc]" />
+          {/* T&C — integrated footnote */}
+          <div className="mt-10 pt-10 border-t border-[rgba(0,0,0,0.06)]">
+            <h2 className="text-[13px] text-[#ccc] font-normal mb-4">Terma & Syarat</h2>
+            <div className="divide-y divide-[rgba(0,0,0,0.04)]">
+              {termsAndConditions.map((item, index) => (
+                <div key={index}>
+                  <button
+                    onClick={() =>
+                      setOpenAccordion(openAccordion === index ? null : index)
+                    }
+                    className="w-full flex items-center justify-between py-2.5 text-left"
+                  >
+                    <span className="text-[12px] text-[#aaa]">{item.title}</span>
+                    {openAccordion === index ? (
+                      <ChevronUp className="w-3.5 h-3.5 text-[#ccc]" />
+                    ) : (
+                      <ChevronDown className="w-3.5 h-3.5 text-[#ccc]" />
+                    )}
+                  </button>
+                  {openAccordion === index && (
+                    <div className="pb-2.5">
+                      <p className="text-[12px] text-[#bbb] leading-relaxed">
+                        {item.content}
+                      </p>
+                    </div>
                   )}
-                </button>
-                {openAccordion === index && (
-                  <div className="pb-3">
-                    <p className="text-[13px] text-[#bbb] leading-relaxed">
-                      {item.content}
-                    </p>
-                  </div>
-                )}
-              </div>
+                </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
