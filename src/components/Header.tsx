@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navItems: {
   name: string;
@@ -89,6 +90,9 @@ export default function Header() {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+
             {/* WhatsApp */}
             <a
               href="https://wa.me/60115657084"

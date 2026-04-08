@@ -66,6 +66,13 @@
 - Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
 - Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
 
+### [2026-04-08] FEATURE — i18n bilingual setup
+- Approach: Client-side React Context, zero dependencies
+- Files: translations.ts (all text), LanguageContext.tsx (provider + hook), LanguageSwitcher.tsx (UI)
+- localStorage key: 'aihaa-lang'
+- Default: 'bm'
+- Rule: SEMUA visible text mesti ada key dalam translations.ts. JANGAN hardcode text dalam components.
+
 ### [2026-04-08] DESIGN — FAQ page GOD MODE
 - Rules:
   1. FAQ page = conversation, bukan list. Design warm dan inviting.

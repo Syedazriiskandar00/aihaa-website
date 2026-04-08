@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
 export const metadata: Metadata = {
   title: "AIHAA | Premium Water Purification Systems Malaysia",
@@ -19,7 +20,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="antialiased bg-white" suppressHydrationWarning>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
