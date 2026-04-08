@@ -1,49 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-import { Clock, Gift, ChevronDown, ChevronUp } from "lucide-react";
-
-const promotions = [
-  {
-    id: 1,
-    title: "Promosi Sekali Bayar",
-    description:
-      "Beli mana-mana penapis air AIHAA dan dapatkan pemasangan percuma + waranti penuh. Tiada caj tersembunyi, tiada kontrak.",
-    badge: "Sepanjang Masa",
-    cta: "WhatsApp Sekarang",
-    highlight: true,
-  },
-  {
-    id: 2,
-    title: "Trade-In Jenama Lain",
-    description:
-      "Tukar penapis air jenama lain kepada AIHAA dan dapatkan diskaun istimewa. Kami terima semua jenama.",
-    badge: "Terhad",
-    cta: "Tanya Harga Trade-In",
-    highlight: false,
-  },
-  {
-    id: 3,
-    title: "Pakej Dalam + Luar Rumah",
-    description:
-      "Beli penapis air dalam rumah dan luar rumah sekali — jimat lagi. Pakej bermula dari RM799.",
-    badge: "Jimat",
-    cta: "Lihat Pakej",
-    highlight: false,
-  },
-  {
-    id: 4,
-    title: "Rujuk Kawan, Dapat Hadiah",
-    description:
-      "Rujuk kawan atau keluarga untuk beli AIHAA. Setiap rujukan berjaya, anda dan kawan dapat hadiah istimewa.",
-    badge: "Program Rujukan",
-    cta: "Ketahui Lebih Lanjut",
-    highlight: false,
-  },
-];
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const termsAndConditions = [
   {
@@ -73,200 +35,178 @@ const termsAndConditions = [
   },
 ];
 
-const timerLabels: Record<string, string> = {
-  days: "Hari",
-  hours: "Jam",
-  minutes: "Minit",
-  seconds: "Saat",
-};
-
-function CountdownTimer({ targetDate }: { targetDate: string }) {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const difference =
-        new Date(targetDate).getTime() - new Date().getTime();
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
-      }
-    };
-
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
-    return () => clearInterval(timer);
-  }, [targetDate]);
-
-  return (
-    <div className="flex gap-4 justify-center">
-      {Object.entries(timeLeft).map(([unit, value]) => (
-        <div key={unit} className="text-center">
-          <div className="w-16 h-16 md:w-20 md:h-20 bg-dark border border-[rgba(218,165,32,0.3)] rounded-xl flex items-center justify-center">
-            <span className="text-2xl md:text-3xl font-bold text-gold">
-              {value}
-            </span>
-          </div>
-          <p className="text-muted-dark text-xs mt-2 uppercase">
-            {timerLabels[unit] || unit}
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function AccordionItem({
-  title,
-  content,
-  isOpen,
-  onClick,
-}: {
-  title: string;
-  content: string;
-  isOpen: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <div className="border border-[rgba(218,165,32,0.15)] rounded-xl overflow-hidden">
-      <button
-        onClick={onClick}
-        className="w-full flex items-center justify-between p-4 bg-surface text-left"
-      >
-        <span className="text-dark font-medium">{title}</span>
-        {isOpen ? (
-          <ChevronUp className="w-5 h-5 text-gold" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-gold" />
-        )}
-      </button>
-      {isOpen && (
-        <div className="p-4 bg-white">
-          <p className="text-muted text-sm">{content}</p>
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function PromotionsPage() {
-  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+  const heroRef = useScrollReveal();
+  const mainRef = useScrollReveal();
+  const cardsRef = useScrollReveal();
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Banner - Dark */}
-      <section className="relative pt-20 pb-16 bg-dark overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, #DAA520 1px, transparent 0)`,
-              backgroundSize: "40px 40px",
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
-              <Gift className="w-4 h-4" />
-              Tawaran Istimewa
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Promosi <span className="gold-gradient-text">AIHAA</span>
-            </h1>
-            <p className="text-muted-dark text-lg max-w-2xl mx-auto mb-8">
-              Jangan lepaskan tawaran eksklusif untuk penapis air premium AIHAA
-            </p>
-
-            {/* Countdown Timer */}
-            <div className="bg-dark-alt/50 backdrop-blur-sm rounded-2xl p-6 border border-[rgba(218,165,32,0.3)] inline-block">
-              <div className="flex items-center gap-2 justify-center mb-4">
-                <Clock className="w-5 h-5 text-gold" />
-                <span className="text-white font-medium">
-                  Tawaran Tamat Dalam
-                </span>
-              </div>
-              <CountdownTimer targetDate="2026-07-07" />
-            </div>
-          </div>
+      {/* ── SECTION 1: Page Header (compact, dark) ── */}
+      <section className="bg-[#0D0D0D] pt-28 pb-16">
+        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 text-center">
+          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-[#DAA520] mb-4">
+            Promosi
+          </p>
+          <h1 className="scroll-reveal-child stagger-2 text-3xl md:text-4xl font-bold text-white mb-3">
+            Tawaran Istimewa AIHAA
+          </h1>
+          <p className="scroll-reveal-child stagger-3 text-sm italic text-[#999]">
+            Sementara stok masih ada
+          </p>
         </div>
       </section>
 
-      {/* Promotions Grid - Light */}
-      <section className="bg-surface py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {promotions.map((promo) => (
-              <div
-                key={promo.id}
-                className={`relative overflow-hidden rounded-2xl border p-6 lg:p-8 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,165,32,0.12)] ${
-                  promo.highlight
-                    ? "border-[rgba(218,165,32,0.4)] md:col-span-2"
-                    : "border-[rgba(218,165,32,0.15)]"
-                }`}
-              >
-                {/* Gold accent for highlight */}
-                {promo.highlight && (
-                  <div className="absolute top-0 left-0 right-0 h-[3px] gold-gradient-bg" />
-                )}
-
-                <div className="flex items-start gap-4">
-                  <div>
-                    <span className="inline-block bg-gold/10 text-[#DAA520] text-xs font-medium px-3 py-1 rounded-full border border-[rgba(218,165,32,0.2)] mb-3">
-                      {promo.badge}
-                    </span>
-                    <h3 className="text-xl font-bold text-dark mb-2">
-                      {promo.title}
-                    </h3>
-                    <p className="text-muted mb-6">{promo.description}</p>
-                  </div>
-                </div>
-
-                <a
-                  href={`https://wa.me/60115657084?text=${encodeURIComponent(
-                    `Hai, saya berminat dengan promosi ${promo.title}. Boleh saya tahu lebih lanjut?`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block gold-gradient-bg text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
-                >
-                  {promo.cta}
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Terma & Syarat - White */}
-      <section className="bg-white py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-dark mb-8 text-center">
-            Terma & Syarat
+      {/* ── SECTION 2: Promo Utama (centered, full impact) ── */}
+      <section className="bg-[#FFFDE7] py-20 lg:py-24">
+        <div ref={mainRef} className="scroll-reveal max-w-2xl mx-auto px-6 text-center">
+          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-[#DAA520] mb-6">
+            Promosi Utama
+          </p>
+          <h2 className="scroll-reveal-child stagger-2 text-3xl lg:text-4xl font-bold text-[#0D0D0D] mb-4 leading-tight">
+            Sekali Bayar. Selamanya Milik Anda.
           </h2>
-          <div className="space-y-4">
+          <div className="w-14 h-px bg-[#DAA520] mx-auto mb-6" />
+          <p className="scroll-reveal-child stagger-3 text-base text-[#555] leading-[1.8] mb-8">
+            Setiap pembelian penapis air AIHAA termasuk pemasangan percuma oleh
+            teknisyen bertauliah dan waranti sehingga 2 tahun. Tiada caj
+            tersembunyi. Tiada kontrak. Bayar sekali, guna bertahun-tahun.
+          </p>
+          <p className="scroll-reveal-child stagger-4 text-2xl md:text-3xl font-bold text-[#DAA520] mb-8">
+            Dari RM399
+          </p>
+          <div className="scroll-reveal-child stagger-5">
+            <a
+              href="https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20promosi%20AIHAA.%20Boleh%20saya%20tahu%20lebih%20lanjut?"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
+            >
+              WhatsApp Sekarang — Reply Dalam 5 Minit
+            </a>
+          </div>
+          <p className="scroll-reveal-child stagger-6 mt-4">
+            <a
+              href="/water-purifier"
+              className="text-[13px] text-[#DAA520] hover:underline"
+            >
+              atau lihat semua produk →
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: Three promo cards (horizontal row) ── */}
+      <section className="bg-white py-16 lg:py-20 overflow-hidden">
+        <div ref={cardsRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+
+            {/* Card 1 — Trade-In (DARK) */}
+            <div className="scroll-reveal-child stagger-1 flex-shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto snap-start bg-[#0D0D0D] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)]">
+              <div>
+                <span className="inline-block text-[11px] text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1 mb-5">
+                  TERHAD
+                </span>
+                <h3 className="text-[22px] font-bold text-white mb-2">
+                  Trade-In Jenama Lain
+                </h3>
+                <p className="text-sm text-[#999] leading-relaxed">
+                  Tukar penapis air jenama lain kepada AIHAA. Diskaun istimewa
+                  menanti.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20tentang%20trade-in%20penapis%20air."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#DAA520] text-sm font-medium mt-6 hover:underline inline-block"
+              >
+                Tanya Harga Trade-In →
+              </a>
+            </div>
+
+            {/* Card 2 — Pakej Bundle (WHITE) */}
+            <div className="scroll-reveal-child stagger-2 flex-shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto snap-start bg-white border border-[rgba(218,165,32,0.15)] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,165,32,0.1)]">
+              <div>
+                <span className="inline-block text-[11px] text-white bg-[#DAA520] rounded-full px-3 py-1 mb-5 font-medium">
+                  JIMAT
+                </span>
+                <h3 className="text-[22px] font-bold text-[#0D0D0D] mb-2">
+                  Pakej Dalam + Luar
+                </h3>
+                <p className="text-sm text-[#717171] leading-relaxed mb-3">
+                  Beli kedua-dua sekali dan jimat lagi. Pakej bermula dari RM799.
+                </p>
+                <p className="text-lg font-bold text-[#DAA520]">Dari RM799</p>
+              </div>
+              <a
+                href="https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20pakej%20dalam%20dan%20luar%20rumah."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#DAA520] text-sm font-medium mt-6 hover:underline inline-block"
+              >
+                Lihat Pakej →
+              </a>
+            </div>
+
+            {/* Card 3 — Rujukan (YELLOW) */}
+            <div className="scroll-reveal-child stagger-3 flex-shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto snap-start bg-[#FFFDE7] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+              <div>
+                <span className="inline-block text-[11px] text-[#717171] border border-[rgba(0,0,0,0.1)] rounded-full px-3 py-1 mb-5">
+                  PROGRAM
+                </span>
+                <h3 className="text-[22px] font-bold text-[#0D0D0D] mb-2">
+                  Rujuk Kawan, Dapat Hadiah
+                </h3>
+                <p className="text-sm text-[#717171] leading-relaxed">
+                  Setiap rujukan berjaya, anda dan kawan dapat hadiah istimewa.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/60115657084?text=Hai,%20saya%20nak%20tahu%20tentang%20program%20rujukan%20AIHAA."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#717171] text-sm font-medium mt-6 hover:underline inline-block"
+              >
+                Ketahui Lebih Lanjut →
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: T&C (footnote, compact) ── */}
+      <section className="bg-white py-10">
+        <div className="max-w-[700px] mx-auto px-4">
+          <h2 className="text-base text-[#999] mb-6">Terma & Syarat</h2>
+          <div className="divide-y divide-[rgba(0,0,0,0.04)]">
             {termsAndConditions.map((item, index) => (
-              <AccordionItem
-                key={index}
-                title={item.title}
-                content={item.content}
-                isOpen={openAccordion === index}
-                onClick={() =>
-                  setOpenAccordion(openAccordion === index ? null : index)
-                }
-              />
+              <div key={index}>
+                <button
+                  onClick={() =>
+                    setOpenAccordion(openAccordion === index ? null : index)
+                  }
+                  className="w-full flex items-center justify-between py-3 text-left"
+                >
+                  <span className="text-[13px] text-[#999]">{item.title}</span>
+                  {openAccordion === index ? (
+                    <ChevronUp className="w-4 h-4 text-[#ccc]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-[#ccc]" />
+                  )}
+                </button>
+                {openAccordion === index && (
+                  <div className="pb-3">
+                    <p className="text-[13px] text-[#bbb] leading-relaxed">
+                      {item.content}
+                    </p>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>

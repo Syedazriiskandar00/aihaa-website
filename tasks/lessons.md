@@ -66,6 +66,16 @@
 - Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
 - Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
 
+### [2026-04-08] DESIGN — Promotions page v2
+- Rules:
+  1. JANGAN repeat same layout across pages. Kalau homepage guna 2-col, promotions guna centered.
+  2. Promo utama = STATEMENT, bukan card. Full-width, centered, authoritative.
+  3. Secondary promos = varied backgrounds (dark, white, yellow). Bukan 3 kotak sama.
+  4. MAX 1 button per page. Selebihnya text links. Button = primary action sahaja.
+  5. Countdown timer lebih dari 30 hari = zero urgency. Buang atau ganti text.
+  6. T&C = footnote. 13px, muted, collapsed. Bukan main content.
+  7. Jangan recycle social proof stats yang dah ada di 3 pages lain.
+
 ### [2026-04-08] DESIGN — Product page premium transformation
 - Rules:
   1. SATU featured product besar sebelum grid — bagi first impression premium
