@@ -4,36 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 import { Droplets, TreePine } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-const categories = [
-  {
-    number: "01",
-    icon: Droplets,
-    title: "Penapis Air Dalam Rumah",
-    subtitle: "Untuk keluarga anda",
-    description:
-      "5 model penapis air dalam rumah dengan teknologi 4 tahap penapisan, mineral alkali, dan rekaan kompak untuk dapur moden. Dari RM780.",
-    href: "/water-purifier",
-    dark: true,
-    image: "/images/products/bella/main.jpg",
-    imageAlt: "AIHAA Bella — penapis air dalam rumah",
-  },
-  {
-    number: "02",
-    icon: TreePine,
-    title: "Penapis Air Luar Rumah",
-    subtitle: "Perlindungan menyeluruh",
-    description:
-      "8 model penapis air luar rumah termasuk sistem fiber, PVDF profesional, dan penapis air boring. Dari RM399.",
-    href: "/water-purifier",
-    dark: false,
-    image: "/images/products/ultra-one/main.jpg",
-    imageAlt: "AIHAA Ultra One — penapis air luar rumah",
-  },
-];
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function CategoryShowcase() {
   const revealRef = useScrollReveal();
+  const { t } = useLanguage();
+
+  const categories = [
+    {
+      number: "01",
+      icon: Droplets,
+      title: t.category_indoor_title,
+      subtitle: t.category_indoor_label,
+      description: t.category_indoor_desc,
+      cta: t.category_indoor_cta,
+      href: "/water-purifier",
+      dark: true,
+      image: "/images/products/bella/main.jpg",
+      imageAlt: "AIHAA Bella",
+    },
+    {
+      number: "02",
+      icon: TreePine,
+      title: t.category_outdoor_title,
+      subtitle: t.category_outdoor_label,
+      description: t.category_outdoor_desc,
+      cta: t.category_outdoor_cta,
+      href: "/water-purifier",
+      dark: false,
+      image: "/images/products/ultra-one/main.jpg",
+      imageAlt: "AIHAA Ultra One",
+    },
+  ];
 
   return (
     <section className="py-16 lg:py-24 bg-white border-t border-t-[rgba(0,0,0,0.06)]">
@@ -41,13 +43,13 @@ export default function CategoryShowcase() {
         {/* Section Header */}
         <div className="text-center mb-14 scroll-reveal-child stagger-1">
           <span className="text-gold text-sm font-semibold tracking-wider uppercase">
-            Koleksi Kami
+            {t.category_title}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
             Pilih <span className="gold-gradient-text">Kategori</span> Anda
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
-            Penapis air untuk setiap keperluan — dari dapur rumah anda hingga ke seluruh rumah
+            {t.category_subtitle}
           </p>
         </div>
 
@@ -143,7 +145,7 @@ export default function CategoryShowcase() {
                         cat.dark ? "text-gold" : "text-gold-dark"
                       }`}
                     >
-                      Lihat Koleksi
+                      {cat.cta}
                       <svg
                         className="w-6 h-6"
                         fill="none"

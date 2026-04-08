@@ -1,6 +1,7 @@
 "use client";
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const certifications = [
   { abbr: "HALAL", name: "JAKIM Certified" },
@@ -13,13 +14,14 @@ const certifications = [
 
 export default function CertificationsSection() {
   const revealRef = useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <section className="bg-[#FFFDE7] py-14 border-y border-[rgba(218,165,32,0.1)]">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-[#717171] text-sm uppercase tracking-wider">
-            Certified & Trusted
+            {t.cert_title}
           </p>
         </div>
 

@@ -2,46 +2,48 @@
 
 import { DollarSign, Truck, Wrench, Thermometer } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-
-const benefits = [
-  {
-    icon: DollarSign,
-    title: "Sekali Bayar Tanpa Bulanan",
-    description: "Beli sekali, guna bertahun. Tiada komitmen bayaran bulanan. Dari RM399.",
-    highlight: "Dari RM399",
-  },
-  {
-    icon: Truck,
-    title: "Pemasangan Percuma",
-    description: "Penghantaran dan pemasangan percuma ke seluruh Semenanjung Malaysia",
-    highlight: "Semenanjung MY",
-  },
-  {
-    icon: Wrench,
-    title: "Waranti Sehingga 2 Tahun",
-    description: "Setiap pembelian disertakan waranti sehingga 2 tahun untuk ketenangan anda",
-    highlight: "2 Tahun",
-  },
-  {
-    icon: Thermometer,
-    title: "Halal & Bumiputera Certified",
-    description: "Diperakui Halal oleh JAKIM dan syarikat bertaraf Bumiputera",
-    highlight: "JAKIM",
-  },
-];
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function BenefitsSection() {
   const revealRef = useScrollReveal();
+  const { t } = useLanguage();
+
+  const benefits = [
+    {
+      icon: DollarSign,
+      title: t.benefits_1_title,
+      description: t.benefits_1_desc,
+      highlight: t.benefits_1_badge,
+    },
+    {
+      icon: Truck,
+      title: t.benefits_2_title,
+      description: t.benefits_2_desc,
+      highlight: t.benefits_2_badge,
+    },
+    {
+      icon: Wrench,
+      title: t.benefits_3_title,
+      description: t.benefits_3_desc,
+      highlight: "2 Tahun",
+    },
+    {
+      icon: Thermometer,
+      title: t.benefits_4_title,
+      description: t.benefits_4_desc,
+      highlight: "JAKIM",
+    },
+  ];
 
   return (
     <section className="bg-surface py-16 lg:py-20">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 scroll-reveal-child stagger-1">
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
-            Kenapa Pilih <span className="gold-gradient-text">AIHAA</span>?
+            {t.benefits_title} <span className="gold-gradient-text">AIHAA</span>?
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
-            Penapis air berkualiti tinggi dengan kelebihan dan servis tiada tandingan
+            {t.benefits_subtitle}
           </p>
         </div>
 

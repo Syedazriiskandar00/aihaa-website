@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-[700px] bg-dark overflow-hidden pt-20">
       {/* Background Effects */}
@@ -28,28 +30,25 @@ export default function HeroSection() {
           <div className="text-center lg:text-left">
             <div className="inline-block mb-4 hero-entrance hero-entrance-1">
               <span className="bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)]">
-                Sekali Bayar Tanpa Bulanan
+                {t.hero_badge}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 hero-entrance hero-entrance-1">
-              Penapis Air
+              {t.hero_title_1}
               <br />
-              <span className="gold-gradient-text">Sekali Bayar</span>
-              <br />
-              <span className="text-3xl md:text-4xl lg:text-5xl">Tanpa Komitmen Bulanan</span>
+              <span className="gold-gradient-text">{t.hero_title_2}</span>
             </h1>
 
             <div className="flex items-baseline gap-2 justify-center lg:justify-start mb-6 hero-entrance hero-entrance-2">
-              <span className="text-gold text-5xl md:text-6xl font-bold">Dari</span>
+              <span className="text-gold text-5xl md:text-6xl font-bold">{t.common_from}</span>
               <div className="flex items-baseline gap-1">
                 <span className="text-gold text-7xl md:text-8xl font-bold">RM399</span>
               </div>
             </div>
 
             <p className="text-muted-dark text-lg mb-8 max-w-md mx-auto lg:mx-0 hero-entrance hero-entrance-2">
-              Penapis air berkualiti tinggi untuk rumah anda.
-              Termasuk pemasangan percuma dan waranti sehingga 2 tahun.
+              {t.hero_subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-entrance hero-entrance-3">
@@ -57,13 +56,13 @@ export default function HeroSection() {
                 href="/water-purifier"
                 className="gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all hover:shadow-gold inline-block text-center btn-shimmer"
               >
-                Lihat Produk
+                {t.hero_cta_products}
               </Link>
               <Link
                 href="/promotions"
                 className="border-2 border-gold text-gold px-8 py-4 rounded-full font-semibold text-lg hover:bg-gold hover:text-white transition-all inline-block text-center"
               >
-                Lihat Promosi
+                {t.hero_cta_promotions}
               </Link>
             </div>
           </div>
