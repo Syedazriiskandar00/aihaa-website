@@ -3,14 +3,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { MessageCircle, Mail, MapPin } from "lucide-react";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Penapis Air Dalam", href: "/water-purifier" },
-  { name: "Penapis Air Luar", href: "/water-purifier" },
-  { name: "Promosi", href: "/promotions" },
-  { name: "Hubungi Kami", href: "/contact" },
-];
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const socialLinks = [
   { name: "Facebook", label: "Penapis Air Aihaa", href: "#" },
@@ -19,6 +12,16 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { name: t.nav_home, href: "/" },
+    { name: t.nav_products_indoor, href: "/water-purifier" },
+    { name: t.nav_products_outdoor, href: "/water-purifier" },
+    { name: t.nav_promotions, href: "/promotions" },
+    { name: t.nav_contact, href: "/contact" },
+  ];
+
   return (
     <footer className="bg-[#0D0D0D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -27,15 +30,14 @@ export default function Footer() {
           <div>
             <Logo size="sm" />
             <p className="text-[#999] text-sm leading-relaxed mt-4">
-              Penapis air premium sekali bayar untuk keluarga Malaysia.
-              Bumiputera & Halal JAKIM certified.
+              {t.footer_desc}
             </p>
             <p className="text-[#666] text-xs mt-3">SSM: 1263314-X</p>
           </div>
 
           {/* Column 2 — Navigation */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4">Navigasi</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">{t.footer_nav}</h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -52,7 +54,7 @@ export default function Footer() {
 
           {/* Column 3 — Contact */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4">Hubungi</h4>
+            <h4 className="text-white text-sm font-semibold mb-4">{t.footer_contact}</h4>
             <ul className="space-y-3">
               <li>
                 <a
@@ -76,7 +78,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-[#999] text-sm">
                 <MapPin className="w-4 h-4 text-[#DAA520]" />
-                Semenanjung Malaysia
+                {t.cta_location}
               </li>
             </ul>
           </div>
@@ -84,7 +86,7 @@ export default function Footer() {
           {/* Column 4 — Social Media */}
           <div>
             <h4 className="text-white text-sm font-semibold mb-4">
-              Media Sosial
+              {t.footer_social}
             </h4>
             <ul className="space-y-2">
               {socialLinks.map((link) => (
@@ -109,11 +111,10 @@ export default function Footer() {
       <div className="border-t border-[rgba(218,165,32,0.1)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[#666] text-xs text-center sm:text-left">
-            © {new Date().getFullYear()} AIHAA Marketing SDN BHD (SSM: 1263314-X). Hak cipta
-            terpelihara.
+            © {new Date().getFullYear()} {t.footer_copyright}
           </p>
           <a href="#" className="text-[#666] text-xs hover:text-[#999] transition-colors">
-            Privacy Policy
+            {t.footer_privacy}
           </a>
         </div>
       </div>

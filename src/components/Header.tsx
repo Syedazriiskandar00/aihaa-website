@@ -5,32 +5,30 @@ import Link from "next/link";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
-
-const navItems: {
-  name: string;
-  href: string;
-  dropdown?: { name: string; href: string }[];
-}[] = [
-  { name: "Home", href: "/" },
-  {
-    name: "Produk",
-    href: "/water-purifier",
-    dropdown: [
-      { name: "Semua Penapis", href: "/water-purifier" },
-      { name: "Dalam Rumah", href: "/water-purifier#indoor" },
-      { name: "Luar Rumah", href: "/water-purifier#outdoor" },
-    ],
-  },
-  { name: "Promosi", href: "/promotions" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Galeri", href: "/galeri" },
-  { name: "Hubungi Kami", href: "/contact" },
-];
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { t } = useLanguage();
+
+  const navItems = [
+    { name: t.nav_home, href: "/" },
+    {
+      name: t.nav_products,
+      href: "/water-purifier",
+      dropdown: [
+        { name: t.nav_products_all, href: "/water-purifier" },
+        { name: t.nav_products_indoor, href: "/water-purifier#indoor" },
+        { name: t.nav_products_outdoor, href: "/water-purifier#outdoor" },
+      ],
+    },
+    { name: t.nav_promotions, href: "/promotions" },
+    { name: t.nav_faq, href: "/faq" },
+    { name: t.nav_gallery, href: "/galeri" },
+    { name: t.nav_contact, href: "/contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {

@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { MessageCircle, ChevronUp } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +24,7 @@ export default function FloatingButtons() {
     <>
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20penapis%20air%20AIHAA.%20Boleh%20saya%20tahu%20lebih%20lanjut?"
+        href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 z-50 gold-gradient-bg text-white p-4 rounded-full shadow-gold transition-all duration-300 hover:scale-110 hover:opacity-90 animate-pulse-gold whatsapp-bounce"
