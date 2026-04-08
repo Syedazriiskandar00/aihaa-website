@@ -162,10 +162,15 @@ export type TranslationKeys = {
   promo_refer_desc: string;
   promo_refer_cta: string;
   promo_tnc_title: string;
+  promo_tnc_label_general: string;
   promo_tnc_general: string;
+  promo_tnc_label_install: string;
   promo_tnc_install: string;
+  promo_tnc_label_warranty: string;
   promo_tnc_warranty: string;
+  promo_tnc_label_trade: string;
   promo_tnc_trade: string;
+  promo_tnc_label_questions: string;
   promo_tnc_questions: string;
   contact_label: string;
   contact_title: string;
@@ -375,10 +380,15 @@ export const translations: Record<Locale, TranslationKeys> = {
     promo_refer_desc: "Setiap rujukan berjaya, anda dan kawan dapat hadiah istimewa.",
     promo_refer_cta: "Ketahui Lebih Lanjut →",
     promo_tnc_title: "Terma & Syarat",
+    promo_tnc_label_general: "Terma Am",
     promo_tnc_general: "Promosi tertakluk kepada stok yang ada. AIHAA berhak mengubah terma promosi tanpa notis awal.",
+    promo_tnc_label_install: "Pemasangan Percuma",
     promo_tnc_install: "Pemasangan percuma hanya untuk Semenanjung Malaysia.",
+    promo_tnc_label_warranty: "Waranti",
     promo_tnc_warranty: "Waranti tidak meliputi kerosakan akibat kecuaian pengguna.",
+    promo_tnc_label_trade: "Trade-In",
     promo_tnc_trade: "Trade-in tertakluk kepada penilaian kondisi unit lama.",
+    promo_tnc_label_questions: "Pertanyaan",
     promo_tnc_questions: "Untuk sebarang pertanyaan, hubungi WhatsApp +6011-5657 7084.",
     contact_label: "HUBUNGI KAMI",
     contact_title: "Hubungi Kami",
@@ -586,10 +596,15 @@ export const translations: Record<Locale, TranslationKeys> = {
     promo_refer_desc: "Every successful referral, you and your friend get special rewards.",
     promo_refer_cta: "Learn More →",
     promo_tnc_title: "Terms & Conditions",
+    promo_tnc_label_general: "General Terms",
     promo_tnc_general: "Promotions are subject to stock availability. AIHAA reserves the right to change terms without prior notice.",
+    promo_tnc_label_install: "Free Installation",
     promo_tnc_install: "Free installation is for Peninsular Malaysia only.",
+    promo_tnc_label_warranty: "Warranty",
     promo_tnc_warranty: "Warranty does not cover damage caused by user negligence.",
+    promo_tnc_label_trade: "Trade-In",
     promo_tnc_trade: "Trade-in is subject to condition assessment of the old unit.",
+    promo_tnc_label_questions: "Questions",
     promo_tnc_questions: "For any inquiries, contact WhatsApp +6011-5657 7084.",
     contact_label: "CONTACT US",
     contact_title: "Contact Us",
