@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 interface ProductCardProps {
   id: string;
@@ -20,6 +23,8 @@ export default function ProductCard({
   oldPrice,
   image,
 }: ProductCardProps) {
+  const { locale } = useLanguage();
+
   const badgeStyles = {
     popular: "bg-gold text-white",
     sale: "bg-red-500 text-white",
@@ -28,12 +33,12 @@ export default function ProductCard({
     "pro-grade": "bg-blue-500 text-white",
   };
 
-  const badgeText = {
-    popular: "Popular",
-    sale: "Jimat",
-    premium: "Premium",
-    "best-value": "Nilai Terbaik",
-    "pro-grade": "Gred Pro",
+  const badgeText: Record<string, Record<string, string>> = {
+    popular: { bm: "Popular", en: "Popular" },
+    sale: { bm: "Jimat", en: "Sale" },
+    premium: { bm: "Premium", en: "Premium" },
+    "best-value": { bm: "Nilai Terbaik", en: "Best Value" },
+    "pro-grade": { bm: "Gred Pro", en: "Pro Grade" },
   };
 
   return (
@@ -48,7 +53,7 @@ export default function ProductCard({
           <div
             className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold z-10 ${badgeStyles[badge]}`}
           >
-            {badgeText[badge]}
+            {badgeText[badge][locale]}
           </div>
         )}
 

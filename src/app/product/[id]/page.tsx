@@ -1,3 +1,6 @@
+"use client";
+
+import { use } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -5,6 +8,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import ProductCard from "@/components/ProductCard";
 import { Check } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const products: Record<
   string,
@@ -393,12 +397,13 @@ const relatedOutdoor = [
   },
 ];
 
-export default async function ProductDetailPage({
+export default function ProductDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;
+  const { id } = use(params);
+  const { t } = useLanguage();
   const product = products[id] || products["aihaa-bella"];
   const related =
     product.category === "indoor" ? relatedIndoor : relatedOutdoor;
@@ -455,13 +460,13 @@ export default async function ProductDetailPage({
               {/* Badges */}
               <div className="flex flex-wrap gap-2 mb-8">
                 <span className="text-xs text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1">
-                  Sekali Bayar
+                  {t.detail_badge_sekali}
                 </span>
                 <span className="text-xs text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1">
-                  Pemasangan Percuma
+                  {t.detail_badge_install}
                 </span>
                 <span className="text-xs text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1">
-                  Waranti {product.category === "indoor" ? "2" : "1-2"} Tahun
+                  {t.detail_badge_warranty}
                 </span>
               </div>
 
@@ -469,19 +474,19 @@ export default async function ProductDetailPage({
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href={`https://wa.me/60115657084?text=${encodeURIComponent(
-                    `Hai, saya berminat dengan ${product.name}. Boleh saya tahu lebih lanjut?`
+                    t.common_whatsapp_message
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
                 >
-                  WhatsApp Untuk Beli
+                  {t.detail_cta_buy}
                 </a>
                 <Link
                   href="/water-purifier"
                   className="inline-flex items-center justify-center border-2 border-[rgba(218,165,32,0.3)] text-gold px-8 py-4 rounded-full font-semibold hover:bg-gold/10 transition-all"
                 >
-                  Lihat Semua Produk
+                  {t.detail_cta_all}
                 </Link>
               </div>
             </div>
@@ -493,7 +498,7 @@ export default async function ProductDetailPage({
       <section className="bg-surface py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-12 h-[2px] bg-[#DAA520] mb-6" />
-          <h2 className="text-2xl font-bold text-dark mb-8">Spesifikasi</h2>
+          <h2 className="text-2xl font-bold text-dark mb-8">{t.detail_specs}</h2>
           <div className="bg-white rounded-2xl border border-[rgba(218,165,32,0.15)] overflow-hidden">
             {product.specs.map((spec, index) => (
               <div
@@ -518,7 +523,7 @@ export default async function ProductDetailPage({
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-dark mb-8">
-            Ciri-ciri Utama
+            {t.detail_features}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {product.features.map((feature, index) => (
@@ -540,7 +545,7 @@ export default async function ProductDetailPage({
       <section className="bg-surface py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-dark mb-8">
-            Produk Berkaitan
+            {t.detail_related}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {related.map((p) => (
