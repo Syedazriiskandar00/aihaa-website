@@ -66,6 +66,16 @@
 - Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
 - Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
 
+### [2026-04-08] DESIGN — FAQ page GOD MODE
+- Rules:
+  1. FAQ page = conversation, bukan list. Design warm dan inviting.
+  2. HIGHLIGHT soalan paling popular BESAR di atas — jangan sorok dalam accordion.
+  3. JANGAN force kategori kalau tak natural. 10 soalan dalam satu list dah cukup clean.
+  4. CTA blend dengan content — inline, bukan section berasingan.
+  5. JANGAN add search untuk <20 items. Visual clutter tanpa benefit.
+  6. Accordion: semua collapsed by default. SATU top question je visible.
+  7. Left-aligned hero = berbeza dari pages lain. Every page patut ada unique layout trait.
+
 ### [2026-04-08] DESIGN — Promotions page v2
 - Rules:
   1. JANGAN repeat same layout across pages. Kalau homepage guna 2-col, promotions guna centered.
