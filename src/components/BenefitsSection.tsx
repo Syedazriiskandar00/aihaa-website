@@ -38,10 +38,10 @@ export default function BenefitsSection() {
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 scroll-reveal-child stagger-1">
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
-            Why Choose <span className="gold-gradient-text">AIHAA</span>?
+            Kenapa Pilih <span className="gold-gradient-text">AIHAA</span>?
           </h2>
           <p className="text-muted max-w-2xl mx-auto">
-            Experience premium water purification with unmatched benefits and services
+            Penapis air berkualiti tinggi dengan kelebihan dan servis tiada tandingan
           </p>
         </div>
 

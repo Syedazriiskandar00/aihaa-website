@@ -15,10 +15,10 @@ export default function CertificationsSection() {
   const revealRef = useScrollReveal();
 
   return (
-    <section className="bg-[#0D0D0D] py-14">
+    <section className="bg-[#FFFDE7] py-14 border-y border-[rgba(218,165,32,0.1)]">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <p className="text-[#999] text-sm uppercase tracking-wider">
+          <p className="text-[#717171] text-sm uppercase tracking-wider">
             Certified & Trusted
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function CertificationsSection() {
               >
                 <path
                   d="M44 2L82 18V50C82 72 66 90 44 98C22 90 6 72 6 50V18L44 2Z"
-                  fill="#1A1A1A"
+                  fill="#FFFFFF"
                   stroke="rgba(218,165,32,0.35)"
                   strokeWidth="1.5"
                   className="group-hover:stroke-[rgba(218,165,32,0.6)] transition-all"
@@ -49,7 +49,7 @@ export default function CertificationsSection() {
                 <span className="text-[#DAA520] font-bold text-base md:text-lg leading-none group-hover:scale-110 transition-transform">
                   {cert.abbr}
                 </span>
-                <span className="text-[#666] text-[9px] md:text-[10px] mt-1.5 text-center leading-tight">
+                <span className="text-[#717171] text-[9px] md:text-[10px] mt-1.5 text-center leading-tight">
                   {cert.name}
                 </span>
               </div>

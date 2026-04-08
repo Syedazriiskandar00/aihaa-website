@@ -8,7 +8,9 @@
 - Website Repo: github.com/Syedazriiskandar00/aihaa-website
 
 ## Brand Identity
-- Color Scheme: Modern Contrast — White (#FFFFFF) + Black (#0D0D0D) + Gold (#DAA520)
+- Color Scheme: Modern Contrast — White (#FFFFFF) + Black (#0D0D0D) + Gold (#DAA520) + Soft Lemon (#FFFDE7)
+- Identity Tone: Soft Lemon (#FFFDE7) — guna untuk section backgrounds, macam biru cair Coway
+- Apply yellow pada: Benefits section, Certifications section, FAQ accordion area
 - Background: #FFFFFF (putih bersih)
 - Surface: #F5F5F5 (light gray untuk cards)
 - Primary Dark: #0D0D0D (navbar, hero, footer, CTA)

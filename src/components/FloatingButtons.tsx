@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MessageCircle, X, ChevronUp } from "lucide-react";
+import { MessageCircle, ChevronUp } from "lucide-react";
 
 export default function FloatingButtons() {
-  const [showBanner, setShowBanner] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -21,36 +20,6 @@ export default function FloatingButtons() {
 
   return (
     <>
-      {/* Promotional Banner */}
-      {showBanner && (
-        <div className="fixed bottom-24 right-4 z-50 promo-slide-in">
-          <div className="relative bg-white border border-[rgba(218,165,32,0.15)] rounded-xl p-4 pr-10 shadow-gold-lg max-w-xs">
-            <button
-              onClick={() => setShowBanner(false)}
-              className="absolute top-2 right-2 text-muted hover:text-dark transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
-            <a
-              href="https://wa.me/60115657084?text=Hai,%20saya%20nak%20tahu%20tentang%20promosi%20AIHAA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3"
-            >
-              <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">
-                <span className="text-gold-dark text-lg">%</span>
-              </div>
-              <div>
-                <p className="text-dark font-semibold text-sm">
-                  Pemasangan Percuma + Waranti 2 Tahun
-                </p>
-                <p className="text-muted text-xs">WhatsApp sekarang!</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      )}
-
       {/* WhatsApp Button */}
       <a
         href="https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20penapis%20air%20AIHAA.%20Boleh%20saya%20tahu%20lebih%20lanjut?"

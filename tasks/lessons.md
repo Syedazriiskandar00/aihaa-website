@@ -109,6 +109,16 @@
 - Rule: Jangan guna heavy animation libraries — CSS + vanilla JS cukup
 - Rule: Animations mesti subtle dan purposeful, bukan decorative
 
+### [2026-04-08] DESIGN — Production review found 6 critical issues
+- What happened: Yellow tone configured but never applied. Placeholder text in production. English in BM page. Wrong phone number. Stale copyright. Too many CTAs.
+- Rules:
+  1. SETIAP warna yang ditambah dalam config MESTI digunakan dalam sekurang-kurangnya 2 sections
+  2. ZERO placeholder/coming soon text allowed in production. Ever.
+  3. Kalau page 90% BM, 10% English tu MESTI ditukar. Consistency.
+  4. Phone numbers: SATU source of truth. Define sekali, guna everywhere.
+  5. Copyright year: ALWAYS dynamic. Hardcoded year = website nampak abandoned.
+  6. Max 4 prominent CTA buttons per homepage. Lebih dari tu = desperation.
+
 ### [2026-04-08] DESIGN — Tambah yellow light sebagai brand identity tone
 - What: Tukar grey surface (#F5F5F5) kepada soft lemon (#FFFDE7) sebagai AIHAA identity
 - Why: Macam Coway ada biru cair, AIHAA ada kuning light — bagi brand recognition

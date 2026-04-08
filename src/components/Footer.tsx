@@ -109,7 +109,7 @@ export default function Footer() {
       <div className="border-t border-[rgba(218,165,32,0.1)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[#666] text-xs text-center sm:text-left">
-            © 2024 AIHAA Marketing SDN BHD (SSM: 1263314-X). Hak cipta
+            © {new Date().getFullYear()} AIHAA Marketing SDN BHD (SSM: 1263314-X). Hak cipta
             terpelihara.
           </p>
           <a href="#" className="text-[#666] text-xs hover:text-[#999] transition-colors">

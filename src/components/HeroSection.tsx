@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -67,20 +68,17 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content - Poster Placeholder */}
+          {/* Right Content - Product Image */}
           <div className="relative hero-entrance hero-entrance-2">
-            <div className="aspect-[4/3] rounded-2xl border-2 border-dashed border-[rgba(218,165,32,0.3)] bg-[#1A1A1A] flex flex-col items-center justify-center gap-4">
-              <div className="w-16 h-16 rounded-full border-2 border-dashed border-[rgba(218,165,32,0.2)] flex items-center justify-center">
-                <svg className="w-8 h-8 text-[#555]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <p className="text-[#555] text-sm font-medium tracking-wider uppercase">
-                Hero Poster Coming Soon
-              </p>
-              <p className="text-[#444] text-xs">
-                Graphic designer akan letak poster di sini
-              </p>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <Image
+                src="/images/products/bella/poster.jpg"
+                alt="AIHAA BELLA Water Purifier"
+                fill
+                className="object-contain"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
           </div>
         </div>
