@@ -66,6 +66,18 @@
 - Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
 - Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
 
+### [2026-04-09] FEATURE — i18n bilingual complete (6 parts)
+- All 7 pages fully bilingual (BM/EN)
+- 200+ translation keys
+- Zero external dependencies — pure React Context + localStorage
+- Language persists across navigation and refresh
+- Rules:
+  1. SEMUA visible text MESTI guna t.key — ZERO hardcoded strings
+  2. Product names, phone numbers, emails — JANGAN translate
+  3. Test KEDUA-DUA bahasa pada SETIAP page sebelum commit
+  4. EN text mungkin lebih panjang — check layout tak pecah
+  5. Kalau tambah content baru kemudian — WAJIB tambah translation key dulu
+
 ### [2026-04-08] FEATURE — i18n bilingual setup
 - Approach: Client-side React Context, zero dependencies
 - Files: translations.ts (all text), LanguageContext.tsx (provider + hook), LanguageSwitcher.tsx (UI)

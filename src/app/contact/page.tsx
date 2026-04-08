@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,10 +14,11 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappMessage = `Hai, saya ${formData.name} ingin bertanya tentang penapis air AIHAA. ${formData.message}`;
+    const whatsappMessage = `${formData.name}: ${formData.message} (${formData.email}, ${formData.phone})`;
     window.open(
       `https://wa.me/60115657084?text=${encodeURIComponent(whatsappMessage)}`,
       "_blank"
@@ -48,14 +50,13 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="text-center">
             <span className="inline-block bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
-              Hubungi Kami
+              {t.contact_label}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Hubungi <span className="gold-gradient-text">Kami</span>
+              {t.contact_title} <span className="gold-gradient-text">AIHAA</span>
             </h1>
             <p className="text-muted-dark text-lg max-w-2xl mx-auto">
-              Ada soalan? Pakar penapis air kami sedia membantu anda mencari
-              penyelesaian terbaik.
+              {t.contact_subtitle}
             </p>
           </div>
         </div>
@@ -68,13 +69,13 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="bg-white rounded-3xl p-8 border border-[rgba(218,165,32,0.15)]">
               <h2 className="text-2xl font-bold text-dark mb-6">
-                Hantar Mesej
+                {t.contact_form_title}
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label className="block text-muted text-sm mb-2">
-                    Nama *
+                    {t.contact_name} *
                   </label>
                   <input
                     type="text"
@@ -83,13 +84,13 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full bg-surface border border-[rgba(218,165,32,0.15)] rounded-xl px-4 py-3 text-dark placeholder-muted focus:outline-none focus:border-gold transition-colors"
-                    placeholder="Nama penuh anda"
+                    placeholder={t.contact_name_placeholder}
                   />
                 </div>
 
                 <div>
                   <label className="block text-muted text-sm mb-2">
-                    Email *
+                    {t.contact_email} *
                   </label>
                   <input
                     type="email"
@@ -98,13 +99,13 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full bg-surface border border-[rgba(218,165,32,0.15)] rounded-xl px-4 py-3 text-dark placeholder-muted focus:outline-none focus:border-gold transition-colors"
-                    placeholder="email@anda.com"
+                    placeholder={t.contact_email_placeholder}
                   />
                 </div>
 
                 <div>
                   <label className="block text-muted text-sm mb-2">
-                    No. Telefon *
+                    {t.contact_phone} *
                   </label>
                   <input
                     type="tel"
@@ -113,13 +114,13 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full bg-surface border border-[rgba(218,165,32,0.15)] rounded-xl px-4 py-3 text-dark placeholder-muted focus:outline-none focus:border-gold transition-colors"
-                    placeholder="+60 12-345 6789"
+                    placeholder={t.contact_phone_placeholder}
                   />
                 </div>
 
                 <div>
                   <label className="block text-muted text-sm mb-2">
-                    Mesej *
+                    {t.contact_message} *
                   </label>
                   <textarea
                     name="message"
@@ -128,7 +129,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full bg-surface border border-[rgba(218,165,32,0.15)] rounded-xl px-4 py-3 text-dark placeholder-muted focus:outline-none focus:border-gold transition-colors resize-none"
-                    placeholder="Beritahu kami bagaimana kami boleh membantu anda..."
+                    placeholder={t.contact_message_placeholder}
                   />
                 </div>
 
@@ -137,23 +138,23 @@ export default function ContactPage() {
                   className="w-full gold-gradient-bg text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
                 >
                   <Send className="w-5 h-5" />
-                  Hantar
+                  {t.contact_submit}
                 </button>
               </form>
 
               {/* WhatsApp Direct Link */}
               <div className="mt-6 pt-6 border-t border-[rgba(218,165,32,0.15)]">
                 <p className="text-muted text-sm text-center mb-4">
-                  Atau hubungi kami terus
+                  {t.contact_or}
                 </p>
                 <a
-                  href="https://wa.me/60115657084?text=Hai,%20saya%20ingin%20bertanya%20tentang%20penapis%20air%20AIHAA."
+                  href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-[#25D366] text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-[#20BD5A] transition-all"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  WhatsApp Kami
+                  {t.contact_whatsapp}
                 </a>
               </div>
             </div>
@@ -164,10 +165,7 @@ export default function ContactPage() {
               <div className="bg-white rounded-2xl p-5 border border-[rgba(218,165,32,0.15)] flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-[#DAA520]" />
                 <p className="text-[#717171] text-sm">
-                  <span className="text-[#0D0D0D] font-medium">
-                    WhatsApp response dalam masa 24 jam
-                  </span>{" "}
-                  · Meliputi seluruh Semenanjung Malaysia
+                  {t.contact_info_strip}
                 </p>
               </div>
 
@@ -177,7 +175,7 @@ export default function ContactPage() {
                   <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4">
                     <Phone className="w-6 h-6 text-gold" />
                   </div>
-                  <h3 className="text-dark font-semibold mb-1">Telefon</h3>
+                  <h3 className="text-dark font-semibold mb-1">{t.contact_phone}</h3>
                   <p className="text-muted">+6011-5657 7084</p>
                 </div>
 
@@ -185,36 +183,26 @@ export default function ContactPage() {
                   <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4">
                     <Mail className="w-6 h-6 text-gold" />
                   </div>
-                  <h3 className="text-dark font-semibold mb-1">Email</h3>
-                  <p className="text-muted text-sm">
-                    aihaa.marketing@gmail.com
-                  </p>
+                  <h3 className="text-dark font-semibold mb-1">{t.contact_email}</h3>
+                  <p className="text-muted text-sm">aihaa.marketing@gmail.com</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-6 border border-[rgba(218,165,32,0.15)]">
                   <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4">
                     <MapPin className="w-6 h-6 text-gold" />
                   </div>
-                  <h3 className="text-dark font-semibold mb-1">Lokasi</h3>
-                  <p className="text-muted text-sm">
-                    AIHAA Marketing SDN BHD, Batu Pahat, Johor, Malaysia
-                  </p>
+                  <h3 className="text-dark font-semibold mb-1">{t.cta_location}</h3>
+                  <p className="text-muted text-sm">AIHAA Marketing SDN BHD, Batu Pahat, Johor</p>
                 </div>
 
                 <div className="bg-white rounded-2xl p-6 border border-[rgba(218,165,32,0.15)]">
                   <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4">
                     <Clock className="w-6 h-6 text-gold" />
                   </div>
-                  <h3 className="text-dark font-semibold mb-1">
-                    Waktu Operasi
-                  </h3>
-                  <p className="text-muted text-sm">
-                    Isnin - Jumaat: 9AM - 6PM
-                  </p>
-                  <p className="text-muted text-sm">Sabtu: 10AM - 4PM</p>
-                  <p className="text-muted text-sm">
-                    Ahad & Cuti Umum: Tutup
-                  </p>
+                  <h3 className="text-dark font-semibold mb-1">{t.contact_hours_title}</h3>
+                  <p className="text-muted text-sm">{t.contact_hours_weekday}</p>
+                  <p className="text-muted text-sm">{t.contact_hours_saturday}</p>
+                  <p className="text-muted text-sm">{t.contact_hours_closed}</p>
                 </div>
               </div>
 
@@ -224,12 +212,8 @@ export default function ContactPage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-surface to-white" />
                   <div className="relative z-10 text-center">
                     <MapPin className="w-12 h-12 text-gold mx-auto mb-2" />
-                    <p className="text-dark font-medium">
-                      AIHAA Marketing SDN BHD
-                    </p>
-                    <p className="text-muted text-sm">
-                      Batu Pahat, Johor, Malaysia
-                    </p>
+                    <p className="text-dark font-medium">AIHAA Marketing SDN BHD</p>
+                    <p className="text-muted text-sm">Batu Pahat, Johor, Malaysia</p>
                   </div>
                   <div
                     className="absolute inset-0 opacity-10"
