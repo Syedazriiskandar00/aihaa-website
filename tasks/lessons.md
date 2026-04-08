@@ -109,6 +109,12 @@
 - Rule: Jangan guna heavy animation libraries — CSS + vanilla JS cukup
 - Rule: Animations mesti subtle dan purposeful, bukan decorative
 
+### [2026-04-08] DESIGN — Tambah yellow light sebagai brand identity tone
+- What: Tukar grey surface (#F5F5F5) kepada soft lemon (#FFFDE7) sebagai AIHAA identity
+- Why: Macam Coway ada biru cair, AIHAA ada kuning light — bagi brand recognition
+- Rule: Yellow light HANYA untuk background sections. BUKAN untuk text, buttons, atau accents.
+- Rule: Gold (#DAA520) kekal sebagai accent utama. Yellow light complement, bukan replace.
+
 ### [2026-04-07] DESIGN — Placeholder images mesti diganti awal
 - What happened: Gradient placeholder masih ada walaupun gambar sebenar dah available
 - Rule: Bila gambar sebenar dah ada dalam public/images, SEGERA ganti placeholder

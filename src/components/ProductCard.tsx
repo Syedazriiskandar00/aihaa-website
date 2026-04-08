@@ -94,7 +94,7 @@ export default function ProductCard({
         <div className="flex gap-3">
           <Link
             href={`/product/${id}`}
-            className="flex-1 bg-surface border border-[rgba(218,165,32,0.15)] text-dark py-2.5 rounded-lg text-sm font-medium text-center hover:border-gold hover:text-gold-dark transition-all"
+            className="flex-1 bg-white border border-[rgba(218,165,32,0.15)] text-dark py-2.5 rounded-lg text-sm font-medium text-center hover:border-gold hover:text-gold-dark transition-all"
           >
             Lihat Details
           </Link>

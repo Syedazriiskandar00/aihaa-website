@@ -6,7 +6,7 @@
 
 :root {
   --bg-primary: #FFFFFF;
-  --bg-surface: #F5F5F5;
+  --bg-surface: #FFFDE7;
   --dark: #0D0D0D;
   --dark-alt: #1A1A1A;
   --gold: #DAA520;
@@ -73,7 +73,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F5F5F5;
+  background: #FFFDE7;
 }
 
 ::-webkit-scrollbar-thumb {

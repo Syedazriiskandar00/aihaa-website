@@ -499,7 +499,7 @@ export default async function ProductDetailPage({
               <div
                 key={index}
                 className={`flex justify-between p-4 ${
-                  index % 2 === 1 ? "bg-[#F5F5F5]" : "bg-white"
+                  index % 2 === 1 ? "bg-[#FFFDE7]" : "bg-white"
                 } ${
                   index !== product.specs.length - 1
                     ? "border-b border-[rgba(0,0,0,0.04)]"

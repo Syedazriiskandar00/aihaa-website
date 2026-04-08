@@ -127,7 +127,7 @@ export default function GaleriPage() {
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   activeTab === tab.value
                     ? "gold-gradient-bg text-white shadow-gold"
-                    : "bg-[#F5F5F5] text-[#717171] hover:bg-[#E8E8E8]"
+                    : "bg-[#FFFDE7] text-[#717171] hover:bg-[#FFF9C4]"
                 }`}
               >
                 {tab.label}
