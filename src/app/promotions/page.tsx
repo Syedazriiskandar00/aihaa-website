@@ -178,7 +178,7 @@ export default function PromotionsPage() {
           </div>
 
           {/* T&C — integrated footnote */}
-          <div className="mt-10 pt-10 border-t border-[rgba(0,0,0,0.06)]">
+          <div className="mt-10 pt-10 border-t border-[rgba(0,0,0,0.06)] max-w-2xl mx-auto">
             <h2 className="text-[13px] text-[#ccc] font-normal mb-4">Terma & Syarat</h2>
             <div className="divide-y divide-[rgba(0,0,0,0.04)]">
               {termsAndConditions.map((item, index) => (
