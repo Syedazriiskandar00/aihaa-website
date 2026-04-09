@@ -82,10 +82,10 @@ export default function PromotionsPage() {
       {/* ── SECTION 3: Three promo cards ── */}
       <section className="bg-white py-16 lg:py-20 overflow-hidden">
         <div ref={cardsRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+          <div className="flex flex-col gap-5 md:grid md:grid-cols-3">
 
             {/* Card 1 — Trade-In (DARK) */}
-            <div className="scroll-reveal-child stagger-1 flex-shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto snap-start bg-[#0D0D0D] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)]">
+            <div className="scroll-reveal-child stagger-1 bg-[#0D0D0D] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)]">
               <div>
                 <span className="inline-block text-[11px] text-[#DAA520] border border-[rgba(218,165,32,0.3)] rounded-full px-3 py-1 mb-5">
                   {t.promo_trade_badge}
@@ -108,7 +108,7 @@ export default function PromotionsPage() {
             </div>
 
             {/* Card 2 — Pakej Bundle (WHITE) */}
-            <div className="scroll-reveal-child stagger-2 flex-shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto snap-start bg-white border border-[rgba(218,165,32,0.15)] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,165,32,0.1)]">
+            <div className="scroll-reveal-child stagger-2 bg-white border border-[rgba(218,165,32,0.15)] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(218,165,32,0.1)]">
               <div>
                 <span className="inline-block text-[11px] text-white bg-[#DAA520] rounded-full px-3 py-1 mb-5 font-medium">
                   {t.promo_bundle_badge}
@@ -132,7 +132,7 @@ export default function PromotionsPage() {
             </div>
 
             {/* Card 3 — Rujukan (YELLOW) */}
-            <div className="scroll-reveal-child stagger-3 flex-shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto snap-start bg-[#FFFDE7] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+            <div className="scroll-reveal-child stagger-3 bg-[#FFFDE7] rounded-[20px] p-8 flex flex-col justify-between min-h-[280px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
               <div>
                 <span className="inline-block text-[11px] text-[#717171] border border-[rgba(0,0,0,0.1)] rounded-full px-3 py-1 mb-5">
                   {t.promo_refer_badge}

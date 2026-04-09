@@ -23,10 +23,10 @@ export default function FloatingButtons() {
 
   return (
     <>
-      {/* Chatbot */}
+      {/* Chatbot — positioned at bottom-[88px] right-4 internally */}
       <Chatbot />
 
-      {/* WhatsApp Button */}
+      {/* WhatsApp Button — below chatbot toggle */}
       <a
         href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
         target="_blank"

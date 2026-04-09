@@ -37,8 +37,8 @@ export default function HeroSection() {
 
       {/* Main content — 2 column */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col md:flex-row items-center gap-12 md:gap-8">
-        {/* LEFT COLUMN */}
-        <div className="flex-1 flex flex-col items-start">
+        {/* LEFT COLUMN — text content, below image on mobile */}
+        <div className="flex-1 flex flex-col items-start order-last md:order-first">
           {/* Eyebrow */}
           <p
             style={{
@@ -148,8 +148,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN — Product image */}
-        <div className="flex-1 flex items-center justify-center w-full">
+        {/* RIGHT COLUMN — Product image, shows first on mobile */}
+        <div className="flex-1 flex items-center justify-center w-full order-first md:order-last">
           <div
             style={{
               width: "100%",
@@ -164,7 +164,8 @@ export default function HeroSection() {
             <img
               src="/images/products/bella/poster.jpg"
               alt="AIHAA BELLA Water Purifier"
-              style={{ width: "100%", height: "auto", display: "block" }}
+              style={{ width: "100%", maxHeight: "280px", objectFit: "contain", display: "block", margin: "0 auto" }}
+              className="md:!max-h-none"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
                 const fallback = e.currentTarget.nextElementSibling as HTMLElement;
