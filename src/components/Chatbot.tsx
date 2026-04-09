@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { MessageSquare, X, Send } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { flows, whatsappUrls, type ChatMessage } from "@/lib/chatbot-flows";
+import { flows, whatsappUrls, matchKeyword, type ChatMessage } from "@/lib/chatbot-flows";
 
 let msgId = 0;
 function nextId() {
@@ -99,7 +99,12 @@ export default function Chatbot() {
     if (!text) return;
     setInput("");
     addUserMessage(text);
-    triggerFlow("fallback", false);
+    const matched = matchKeyword(text);
+    if (matched) {
+      handleAction(matched);
+    } else {
+      triggerFlow("fallback", false);
+    }
   }
 
   return (

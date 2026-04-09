@@ -19,7 +19,29 @@ export const whatsappUrls: Record<string, string> = {
   whatsapp_bella: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20BELLA%20(RM1,080).",
   whatsapp_winter: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20WINTER%20(RM1,580).",
   whatsapp_warranty: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20claim%20warranty%20AIHAA.",
+  whatsapp_support: "https://wa.me/60115657084?text=Hai,%20saya%20pelanggan%20AIHAA%20dan%20ada%20masalah%20dengan%20unit%20saya.",
+  whatsapp_filter: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20order%20filter%20untuk%20penapis%20air%20AIHAA%20saya.",
+  whatsapp_tradein: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20tentang%20program%20trade-in%20AIHAA.",
 };
+
+// Keyword matching for free text input
+const keywordGroups: { keywords: string[]; action: string }[] = [
+  { keywords: ["harga", "price", "berapa", "cost", "rm", "murah", "mahal"], action: "price" },
+  { keywords: ["model", "sesuai", "recommend", "cadang", "pilih", "suggest"], action: "recommend_budget" },
+  { keywords: ["warranty", "waranti", "jaminan", "guarantee"], action: "warranty" },
+  { keywords: ["coverage", "kawasan", "area", "lokasi", "location", "sabah", "sarawak", "semenanjung", "negeri"], action: "coverage" },
+  { keywords: ["pelanggan", "customer", "tukar filter", "filter", "masalah", "problem", "issue", "upgrade", "trade", "rosak", "broken"], action: "existing_customer" },
+];
+
+export function matchKeyword(text: string): string | null {
+  const lower = text.toLowerCase();
+  for (const group of keywordGroups) {
+    if (group.keywords.some((kw) => lower.includes(kw))) {
+      return group.action;
+    }
+  }
+  return null;
+}
 
 export const flows: Record<string, FlowStep> = {
   greeting: {
@@ -31,6 +53,8 @@ export const flows: Record<string, FlowStep> = {
       { label: { bm: "Berapa harga?", en: "What's the price?" }, action: "price" },
       { label: { bm: "Model mana sesuai?", en: "Which model suits me?" }, action: "recommend_budget" },
       { label: { bm: "Pasal warranty", en: "About warranty" }, action: "warranty" },
+      { label: { bm: "Coverage kawasan saya?", en: "Coverage in my area?" }, action: "coverage" },
+      { label: { bm: "Saya pelanggan sedia ada", en: "I'm an existing customer" }, action: "existing_customer" },
       { label: { bm: "WhatsApp terus", en: "WhatsApp directly" }, action: "whatsapp" },
     ],
   },
@@ -102,6 +126,64 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "WhatsApp untuk claim", en: "WhatsApp to claim" }, action: "whatsapp_warranty" },
+      { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
+    ],
+  },
+
+  coverage: {
+    message: {
+      bm: "AIHAA cover seluruh Semenanjung Malaysia! 🇲🇾\n\nJohor, Melaka, N. Sembilan, Selangor, KL, Perak, Pulau Pinang, Kedah, Perlis, Pahang, Terengganu, Kelantan.\n\nPemasangan percuma ke semua lokasi di atas.",
+      en: "AIHAA covers all of Peninsular Malaysia! 🇲🇾\n\nJohor, Melaka, N. Sembilan, Selangor, KL, Perak, Penang, Kedah, Perlis, Pahang, Terengganu, Kelantan.\n\nFree installation to all locations above.",
+    },
+    quickReplies: [
+      { label: { bm: "Nak beli sekarang", en: "Buy now" }, action: "whatsapp" },
+      { label: { bm: "Saya di Sabah/Sarawak", en: "I'm in Sabah/Sarawak" }, action: "no_coverage" },
+      { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
+    ],
+  },
+
+  no_coverage: {
+    message: {
+      bm: "Maaf, buat masa ini kami hanya cover Semenanjung Malaysia 😔 Tapi kami sedang expand! WhatsApp kami untuk check update.",
+      en: "Sorry, we currently only cover Peninsular Malaysia 😔 But we're expanding! WhatsApp us for updates.",
+    },
+    quickReplies: [
+      { label: { bm: "WhatsApp untuk check", en: "WhatsApp to check" }, action: "whatsapp" },
+      { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
+    ],
+  },
+
+  existing_customer: {
+    message: {
+      bm: "Terima kasih jadi pelanggan AIHAA! 🙏 Apa yang boleh saya bantu?",
+      en: "Thank you for being an AIHAA customer! 🙏 How can I help?",
+    },
+    quickReplies: [
+      { label: { bm: "Nak tukar filter", en: "Change filter" }, action: "filter_change" },
+      { label: { bm: "Ada masalah", en: "Having issues" }, action: "whatsapp_support" },
+      { label: { bm: "Nak upgrade", en: "Want to upgrade" }, action: "upgrade" },
+      { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
+    ],
+  },
+
+  filter_change: {
+    message: {
+      bm: "Anda boleh tukar filter sendiri — kami sedia panduan lengkap. Atau book technician kami.\n\nKos filter biasanya RM50-RM150.\n\nWhatsApp kami untuk order! 😊",
+      en: "You can change filters yourself — we provide full guides. Or book our technician.\n\nFilter cost usually RM50-RM150.\n\nWhatsApp us to order! 😊",
+    },
+    quickReplies: [
+      { label: { bm: "WhatsApp untuk order", en: "WhatsApp to order" }, action: "whatsapp_filter" },
+      { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
+    ],
+  },
+
+  upgrade: {
+    message: {
+      bm: "Program Trade-In — tukar model lama ke baru dengan harga istimewa! WhatsApp kami untuk penilaian.",
+      en: "Trade-In Program — exchange old model for new at special price! WhatsApp us for assessment.",
+    },
+    quickReplies: [
+      { label: { bm: "WhatsApp untuk trade-in", en: "WhatsApp for trade-in" }, action: "whatsapp_tradein" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
   },
