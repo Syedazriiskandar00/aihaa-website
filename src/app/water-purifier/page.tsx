@@ -67,7 +67,7 @@ export default function WaterPurifierPage() {
       {/* ── Featured Product Showcase ── */}
       <section className="bg-white py-16 lg:py-20">
         <div ref={featuredRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
+          <div className="md:flex-row md:gap-16" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
             {/* Image */}
             <div className="relative w-full md:w-auto md:flex-1 aspect-[4/3] max-h-[240px] md:max-h-none rounded-2xl overflow-hidden bg-[#FFFDE7] scroll-reveal-child stagger-1">
               <Image
@@ -127,7 +127,7 @@ export default function WaterPurifierPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {indoorProducts.map((product, i) => (
               <div key={product.id} className={`scroll-reveal-child stagger-${Math.min(i + 2, 8)}`}>
                 <ProductCard {...product} />
@@ -177,7 +177,7 @@ export default function WaterPurifierPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {outdoorProducts.map((product, i) => (
               <div key={product.id} className={`scroll-reveal-child stagger-${Math.min(i + 2, 8)}`}>
                 <ProductCard {...product} />

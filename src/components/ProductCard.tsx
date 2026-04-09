@@ -47,7 +47,7 @@ export default function ProductCard({
       className="bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:border-[rgba(218,165,32,0.3)] block"
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#f8f8f8]">
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
         {/* Badge */}
         {badge && (
           <div
@@ -62,7 +62,7 @@ export default function ProductCard({
             src={image}
             alt={`AIHAA ${name}`}
             fill
-            className="object-contain p-4 group-hover:scale-[1.03] transition-transform duration-500"
+            className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
         ) : (
