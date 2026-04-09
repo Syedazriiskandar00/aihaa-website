@@ -66,6 +66,14 @@
 - Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
 - Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
 
+### [2026-04-09] SEO — SEO + Performance optimization
+- Rules:
+  1. SETIAP page MESTI ada unique title dan description
+  2. Sitemap.xml dan robots.txt WAJIB ada di public/
+  3. Schema markup (JSON-LD) untuk LocalBusiness — helps Google understand business
+  4. SEMUA images guna Next.js Image component — bukan raw img
+  5. Alt text descriptive — bukan generic "image" atau "product"
+
 ### [2026-04-09] DESIGN — Contact page WhatsApp-first redesign
 - What happened: Contact page had fake form (redirect to WhatsApp) and 4 same-size template cards
 - Rules:
