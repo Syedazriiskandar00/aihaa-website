@@ -15,9 +15,9 @@ export default function HeroSection() {
       }}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 flex items-center min-h-[calc(90vh-80px)]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center w-full">
           {/* Mobile: Image first */}
-          <div className="lg:hidden flex justify-center hero-entrance hero-entrance-1">
+          <div className="md:hidden flex justify-center hero-entrance hero-entrance-1">
             <div className="relative w-full max-w-[320px] h-[280px] rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.3)]">
               <Image
                 src="/images/products/bella/poster.jpg"
@@ -31,11 +31,11 @@ export default function HeroSection() {
           </div>
 
           {/* Left — Content */}
-          <div className="text-center lg:text-left">
+          <div className="flex-1 text-center md:text-left">
             {/* Eyebrow */}
             <p
-              className="text-[#DAA520] font-semibold uppercase mb-6 hero-entrance hero-entrance-1"
-              style={{ fontSize: "11px", letterSpacing: "0.15em" }}
+              className="text-sm font-semibold uppercase mb-6 hero-entrance hero-entrance-1"
+              style={{ color: "#DAA520", letterSpacing: "0.15em" }}
             >
               PENAPIS AIR PREMIUM · SEKALI BAYAR
             </p>
@@ -74,12 +74,12 @@ export default function HeroSection() {
             </div>
 
             {/* Trust bar */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 lg:gap-6 mt-6 hero-entrance hero-entrance-3">
+            <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-6 mt-6 hero-entrance hero-entrance-3">
               {["Sekali Bayar", "Pemasangan Percuma", "Waranti 2 Tahun"].map(
                 (item) => (
                   <span
                     key={item}
-                    className="flex items-center gap-1.5 text-white text-[11px] lg:text-[12px]"
+                    className="flex items-center gap-1.5 text-white text-[11px] md:text-[12px]"
                   >
                     <svg
                       className="w-4 h-4 text-[#DAA520] flex-shrink-0"
@@ -102,7 +102,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right — Product Image (desktop only) */}
-          <div className="hidden lg:flex items-center justify-center hero-entrance hero-entrance-2">
+          <div className="hidden md:flex flex-1 items-center justify-center hero-entrance hero-entrance-2">
             <div className="relative w-full max-w-[420px] aspect-[4/3] rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.3)]">
               <Image
                 src="/images/products/bella/poster.jpg"
