@@ -19,7 +19,7 @@ export default function CTASection() {
               {t.cta_label}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-6">
-              {t.cta_title} <span className="gold-gradient-text">Sekarang</span>
+              {t.cta_title} <span className="gold-gradient-text">AIHAA</span>
             </h2>
             <p className="text-muted-dark mb-8 max-w-md">
               {t.cta_desc}
@@ -51,7 +51,7 @@ export default function CTASection() {
                   <MapPin className="w-5 h-5 text-gold" />
                 </div>
                 <div>
-                  <p className="text-muted-dark text-sm">Lokasi</p>
+                  <p className="text-muted-dark text-sm">{t.contact_location_title}</p>
                   <p className="text-white font-medium">{t.cta_location}</p>
                 </div>
               </div>

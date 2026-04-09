@@ -75,6 +75,7 @@ export type TranslationKeys = {
   why_impact_footnote: string;
   why_impact_cta: string;
   category_title: string;
+  category_heading: string;
   category_subtitle: string;
   category_indoor_label: string;
   category_indoor_title: string;
@@ -302,6 +303,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     why_impact_footnote: "*Anggaran berdasarkan purata penggunaan air botol per keluarga",
     why_impact_cta: "WhatsApp Kami — Reply Dalam 5 Minit",
     category_title: "Koleksi Kami",
+    category_heading: "Pilih Kategori Anda",
     category_subtitle: "Penapis air untuk setiap keperluan — dari dapur rumah anda hingga ke seluruh rumah",
     category_indoor_label: "Untuk keluarga anda",
     category_indoor_title: "Penapis Air Dalam Rumah",
@@ -537,6 +539,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     why_impact_footnote: "*Estimated based on average bottled water consumption per family",
     why_impact_cta: "WhatsApp Us — Reply Within 5 Minutes",
     category_title: "Our Collection",
+    category_heading: "Choose Your Category",
     category_subtitle: "Water purifiers for every need — from your kitchen to your entire home",
     category_indoor_label: "For your family",
     category_indoor_title: "Indoor Water Purifiers",
