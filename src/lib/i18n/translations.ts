@@ -192,6 +192,24 @@ export type TranslationKeys = {
   contact_hours_saturday: string;
   contact_hours_closed: string;
   contact_info_strip: string;
+  contact_hero_title: string;
+  contact_hero_sub: string;
+  contact_wa_title: string;
+  contact_wa_desc: string;
+  contact_wa_cta: string;
+  contact_wa_alt: string;
+  contact_wa_badge1: string;
+  contact_wa_badge2: string;
+  contact_wa_badge3: string;
+  contact_info_wa_title: string;
+  contact_info_wa_sub: string;
+  contact_info_email_sub: string;
+  contact_location_title: string;
+  contact_maps_link: string;
+  contact_mock_user1: string;
+  contact_mock_bot1: string;
+  contact_mock_user2: string;
+  contact_mock_bot2: string;
   gallery_label: string;
   gallery_title: string;
   gallery_subtitle: string;
@@ -410,6 +428,24 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_hours_saturday: "Sabtu: 10AM - 4PM",
     contact_hours_closed: "Ahad & Cuti Umum: Tutup",
     contact_info_strip: "WhatsApp response dalam masa 24 jam · Meliputi seluruh Semenanjung Malaysia",
+    contact_hero_title: "Kami di hujung jari anda.",
+    contact_hero_sub: "WhatsApp. Reply dalam 5 minit. Itu sahaja yang anda perlukan.",
+    contact_wa_title: "Mulakan Perbualan",
+    contact_wa_desc: "Team kami biasanya reply dalam 5 minit. Tanya apa sahaja — harga, model sesuai, coverage kawasan anda.",
+    contact_wa_cta: "WhatsApp Sekarang →",
+    contact_wa_alt: "atau hubungi +6011-5657 7084",
+    contact_wa_badge1: "Reply 5 minit",
+    contact_wa_badge2: "Semenanjung MY",
+    contact_wa_badge3: "Tiada spam",
+    contact_info_wa_title: "WhatsApp — Cara Paling Cepat",
+    contact_info_wa_sub: "Reply dalam 5 minit pada waktu operasi",
+    contact_info_email_sub: "Response dalam 24 jam",
+    contact_location_title: "Lokasi Kami",
+    contact_maps_link: "Buka di Google Maps →",
+    contact_mock_user1: "Hai, saya berminat dengan penapis air AIHAA 😊",
+    contact_mock_bot1: "Hi! Terima kasih. Boleh saya tahu nama dan kawasan anda?",
+    contact_mock_user2: "Saya Ahmad dari Shah Alam",
+    contact_mock_bot2: "Terima kasih Ahmad! Untuk Shah Alam, kami cadangkan AIHAA Bella. Pemasangan percuma. Nak proceed? 😊",
     gallery_label: "GALERI",
     gallery_title: "Galeri Pemasangan",
     gallery_subtitle: "Lihat sendiri pemasangan AIHAA di rumah pelanggan seluruh Semenanjung Malaysia",
@@ -626,6 +662,24 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_hours_saturday: "Saturday: 10AM - 4PM",
     contact_hours_closed: "Sunday & Public Holidays: Closed",
     contact_info_strip: "WhatsApp response within 24 hours · Coverage throughout Peninsular Malaysia",
+    contact_hero_title: "We're just a tap away.",
+    contact_hero_sub: "WhatsApp. Reply within 5 minutes. That's all you need.",
+    contact_wa_title: "Start a Conversation",
+    contact_wa_desc: "Our team usually replies within 5 minutes. Ask anything — price, suitable model, coverage in your area.",
+    contact_wa_cta: "WhatsApp Now →",
+    contact_wa_alt: "or call +6011-5657 7084",
+    contact_wa_badge1: "5 min reply",
+    contact_wa_badge2: "Peninsular MY",
+    contact_wa_badge3: "No spam",
+    contact_info_wa_title: "WhatsApp — The Fastest Way",
+    contact_info_wa_sub: "Reply within 5 minutes during operating hours",
+    contact_info_email_sub: "Response within 24 hours",
+    contact_location_title: "Our Location",
+    contact_maps_link: "Open in Google Maps →",
+    contact_mock_user1: "Hi, I'm interested in AIHAA water purifiers 😊",
+    contact_mock_bot1: "Hi! Thank you. May I know your name and area?",
+    contact_mock_user2: "I'm Ahmad from Shah Alam",
+    contact_mock_bot2: "Thank you Ahmad! For Shah Alam, we recommend AIHAA Bella. Free installation. Want to proceed? 😊",
     gallery_label: "GALLERY",
     gallery_title: "Installation Gallery",
     gallery_subtitle: "See AIHAA installations at customer homes throughout Peninsular Malaysia",

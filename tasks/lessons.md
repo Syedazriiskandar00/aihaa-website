@@ -66,6 +66,15 @@
 - Rule: SEMUA cards dalam dark sections MESTI ada border (gold subtle atau white subtle)
 - Rule: Tambah accent lines (gold top border atau left border) untuk premium feel dan visual separation
 
+### [2026-04-09] DESIGN — Contact page WhatsApp-first redesign
+- What happened: Contact page had fake form (redirect to WhatsApp) and 4 same-size template cards
+- Rules:
+  1. Kalau business model WhatsApp-first, EMBRACE it. Jangan buat fake form.
+  2. WhatsApp conversation mockup > contact form. Show visitor apa yang akan jadi.
+  3. Info cards BUKAN sama saiz. Most important = biggest card.
+  4. Real Google Maps embed atau link. JANGAN placeholder grey box.
+  5. Trust badges (reply time, coverage, no spam) near CTA = boost confidence.
+
 ### [2026-04-09] FEATURE — i18n bilingual complete (6 parts)
 - All 7 pages fully bilingual (BM/EN)
 - 200+ translation keys
