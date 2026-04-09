@@ -47,11 +47,11 @@ export default function BenefitsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl p-6 text-center card-hover group scroll-reveal-child stagger-${index + 2}`}
+              className={`bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl p-8 text-center card-hover group scroll-reveal-child stagger-${index + 2}`}
             >
               <div className="w-16 h-16 mx-auto mb-4 bg-gold/10 rounded-2xl flex items-center justify-center group-hover:bg-gold/20 transition-colors">
                 <benefit.icon className="w-8 h-8 text-gold" />
@@ -65,7 +65,7 @@ export default function BenefitsSection() {
                 {benefit.title}
               </h3>
 
-              <p className="text-muted text-sm">{benefit.description}</p>
+              <p className="text-muted text-sm line-clamp-2 overflow-hidden">{benefit.description}</p>
             </div>
           ))}
         </div>

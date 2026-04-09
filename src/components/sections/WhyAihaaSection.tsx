@@ -45,8 +45,15 @@ function FounderStory() {
               &ldquo;
             </span>
 
-            <blockquote className="relative">
-              <p className="text-xl lg:text-2xl xl:text-[1.7rem] text-white font-playfair italic leading-relaxed max-w-lg">
+            <blockquote className="relative border-l-[3px] border-l-[#DAA520] pl-6">
+              <p
+                className="text-white font-playfair italic max-w-lg"
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: "clamp(1.25rem, 2.5vw, 1.5rem)",
+                  lineHeight: 1.55,
+                }}
+              >
                 {t.why_founder_quote}
               </p>
             </blockquote>
@@ -140,21 +147,21 @@ function BezaKami() {
                 {row.feature}
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                <p className="text-base font-semibold text-[#0D0D0D] flex items-center gap-2">
-                  {row.aihaaBetter && (
-                    <span className="text-[#DAA520] text-sm">✓</span>
-                  )}
+                <p className="text-base font-bold text-[#0D0D0D] flex items-center gap-2 bg-[rgba(218,165,32,0.08)] px-3 py-1 rounded">
+                  <span className="text-xl font-bold text-[#DAA520]">{row.aihaaBetter ? "✓" : ""}</span>
                   {row.aihaa}
                 </p>
                 <p
-                  className={`text-sm ${
+                  className={`text-sm flex items-center gap-2 ${
                     row.aihaaBetter
                       ? "text-[#999] line-through"
-                      : "text-[#555] flex items-center gap-2"
+                      : "text-[#555]"
                   }`}
                 >
-                  {!row.aihaaBetter && (
-                    <span className="text-green-600 text-sm">✓</span>
+                  {row.aihaaBetter ? (
+                    <span className="text-xl text-[#DC2626]">✗</span>
+                  ) : (
+                    <span className="text-xl font-bold text-[#DAA520]">✓</span>
                   )}
                   {row.other}
                 </p>

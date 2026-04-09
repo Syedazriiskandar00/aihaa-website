@@ -17,6 +17,7 @@ export default function CategoryShowcase() {
       title: t.category_indoor_title,
       subtitle: t.category_indoor_label,
       description: t.category_indoor_desc,
+      products: "BELLA · FANCY · WINTER · EAN · BIG",
       cta: t.category_indoor_cta,
       href: "/water-purifier",
       dark: true,
@@ -29,6 +30,7 @@ export default function CategoryShowcase() {
       title: t.category_outdoor_title,
       subtitle: t.category_outdoor_label,
       description: t.category_outdoor_desc,
+      products: "PVDF · FIBER 9X42 · ULTRA ONE · UF DOUBLE",
       cta: t.category_outdoor_cta,
       href: "/water-purifier",
       dark: false,
@@ -126,6 +128,11 @@ export default function CategoryShowcase() {
                       }`}
                     >
                       {cat.description}
+                    </p>
+
+                    {/* Product preview */}
+                    <p className={`text-sm mt-3 tracking-wide ${cat.dark ? "text-gray-500" : "text-gray-400"}`}>
+                      {cat.products}
                     </p>
                   </div>
 
