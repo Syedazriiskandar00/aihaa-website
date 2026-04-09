@@ -54,7 +54,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-entrance hero-entrance-3">
               <Link
                 href="/water-purifier"
-                className="bg-[#DAA520] text-[#0D0D0D] px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-all hover:shadow-gold inline-block text-center btn-shimmer"
+                className="bg-[#DAA520] text-[#0D0D0D] px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:shadow-gold inline-block text-center btn-shimmer"
               >
                 {t.hero_cta_products}
               </Link>

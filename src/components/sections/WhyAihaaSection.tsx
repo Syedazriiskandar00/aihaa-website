@@ -147,7 +147,7 @@ function BezaKami() {
                 {row.feature}
               </p>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-                <p className="text-base font-bold text-[#0D0D0D] flex items-center gap-2 bg-[rgba(218,165,32,0.08)] px-3 py-1 rounded">
+                <p className="text-base font-bold text-[#0D0D0D] flex items-center gap-2 bg-[rgba(218,165,32,0.15)] px-3 py-1 rounded">
                   <span className="text-xl font-bold text-[#DAA520]">{row.aihaaBetter ? "✓" : ""}</span>
                   {row.aihaa}
                 </p>
