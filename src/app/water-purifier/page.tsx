@@ -67,20 +67,20 @@ export default function WaterPurifierPage() {
       {/* ── Featured Product Showcase ── */}
       <section className="bg-white py-16 lg:py-20">
         <div ref={featuredRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
             {/* Image */}
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#FFFDE7] scroll-reveal-child stagger-1">
+            <div className="relative w-full md:w-auto md:flex-1 aspect-[4/3] max-h-[240px] md:max-h-none rounded-2xl overflow-hidden bg-[#FFFDE7] scroll-reveal-child stagger-1">
               <Image
                 src="/images/products/bella/poster.jpg"
                 alt="AIHAA BELLA — Penapis Air Paling Popular"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
             </div>
             {/* Info */}
-            <div className="scroll-reveal-child stagger-2">
+            <div className="w-full md:flex-1 scroll-reveal-child stagger-2">
               <span className="text-gold text-xs font-medium uppercase tracking-[0.2em]">
                 {t.product_featured_label}
               </span>

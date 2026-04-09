@@ -137,7 +137,7 @@ function BezaKami() {
           </span>
         </div>
 
-        <div className="max-w-[85%]">
+        <div className="max-w-full md:max-w-[85%]">
           {comparisons.map((row, i) => (
             <div
               key={row.feature}
@@ -146,11 +146,12 @@ function BezaKami() {
               <p className="text-[10px] tracking-[0.15em] uppercase text-[#999] mb-2">
                 {row.feature}
               </p>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
                 <p className="text-base font-bold text-[#0D0D0D] flex items-center gap-2 bg-[rgba(218,165,32,0.15)] px-3 py-1 rounded">
                   <span className="text-xl font-bold text-[#DAA520]">{row.aihaaBetter ? "✓" : ""}</span>
                   {row.aihaa}
                 </p>
+                <p className="text-[10px] text-[#bbb] uppercase tracking-wider md:hidden mt-1">vs Competitor</p>
                 <p
                   className={`text-sm flex items-center gap-2 ${
                     row.aihaaBetter
@@ -217,7 +218,7 @@ function SocialProof() {
       {/* Part B — Impact strip */}
       <section className="bg-[#0D0D0D] py-20 lg:py-28">
         <div ref={impactRef} className="scroll-reveal max-w-5xl mx-auto px-8 lg:px-16 text-center">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { number: t.why_impact_families, label: t.why_impact_families_label },
               { number: t.why_impact_bottles, label: t.why_impact_bottles_label },
@@ -226,8 +227,8 @@ function SocialProof() {
             ].map((stat, i) => (
               <div
                 key={stat.label}
-                className={`text-center scroll-reveal-child stagger-${i + 1} ${
-                  i > 0 ? "sm:border-l sm:border-[rgba(218,165,32,0.15)]" : ""
+                className={`text-center p-4 scroll-reveal-child stagger-${i + 1} ${
+                  i > 0 ? "md:border-l md:border-[rgba(218,165,32,0.15)]" : ""
                 }`}
               >
                 <span className="block text-3xl lg:text-4xl font-bold text-[#DAA520]">{stat.number}</span>
