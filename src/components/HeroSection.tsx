@@ -1,81 +1,115 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function HeroSection() {
   const { t } = useLanguage();
+
   return (
-    <section className="relative min-h-[700px] bg-dark overflow-hidden pt-20">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-dark-alt rounded-full blur-3xl opacity-50" />
-      </div>
-
-      {/* Grid Pattern Overlay */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `linear-gradient(rgba(218, 165, 32, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(218, 165, 32, 0.3) 1px, transparent 1px)`,
-          backgroundSize: "50px 50px",
-        }}
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <div className="inline-block mb-4 hero-entrance hero-entrance-1">
-              <span className="bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)]">
-                {t.hero_badge}
-              </span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 hero-entrance hero-entrance-1">
-              {t.hero_title_1}
-              <br />
-              <span className="gold-gradient-text">{t.hero_title_2}</span>
-            </h1>
-
-            <div className="flex items-baseline gap-2 justify-center lg:justify-start mb-6 hero-entrance hero-entrance-2">
-              <span className="text-gold text-5xl md:text-6xl font-bold">{t.common_from}</span>
-              <div className="flex items-baseline gap-1">
-                <span className="text-gold text-7xl md:text-8xl font-bold">RM399</span>
-              </div>
-            </div>
-
-            <p className="text-muted-dark text-lg mb-8 max-w-md mx-auto lg:mx-0 hero-entrance hero-entrance-2">
-              {t.hero_subtitle}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start hero-entrance hero-entrance-3">
-              <Link
-                href="/water-purifier"
-                className="bg-[#DAA520] text-[#0D0D0D] px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all hover:shadow-gold inline-block text-center btn-shimmer"
-              >
-                {t.hero_cta_products}
-              </Link>
-              <Link
-                href="/promotions"
-                className="bg-transparent border-[1.5px] border-[#DAA520] text-[#DAA520] px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#DAA520] hover:text-[#0D0D0D] transition-all inline-block text-center"
-              >
-                {t.hero_cta_promotions}
-              </Link>
-            </div>
-          </div>
-
-          {/* Right Content - Product Image */}
-          <div className="relative hero-entrance hero-entrance-2">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+    <section
+      className="relative min-h-[90vh] bg-[#0D0D0D] overflow-hidden pt-20"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 70% 50%, rgba(218,165,32,0.04) 0%, transparent 60%)",
+      }}
+    >
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 flex items-center min-h-[calc(90vh-80px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+          {/* Mobile: Image first */}
+          <div className="lg:hidden flex justify-center hero-entrance hero-entrance-1">
+            <div className="relative w-full max-w-[320px] h-[280px] rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.3)]">
               <Image
                 src="/images/products/bella/poster.jpg"
                 alt="AIHAA BELLA Water Purifier"
                 fill
                 className="object-contain"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="320px"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Left — Content */}
+          <div className="text-center lg:text-left">
+            {/* Eyebrow */}
+            <p
+              className="text-[#DAA520] font-semibold uppercase mb-6 hero-entrance hero-entrance-1"
+              style={{ fontSize: "11px", letterSpacing: "0.15em" }}
+            >
+              PENAPIS AIR PREMIUM · SEKALI BAYAR
+            </p>
+
+            {/* Headline */}
+            <h1
+              className="text-white font-[800] leading-[1.1] mb-0 hero-entrance hero-entrance-1"
+              style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)" }}
+            >
+              Air Bersih.
+              <br />
+              Tanpa Bayaran Bulanan.
+            </h1>
+
+            {/* Price block */}
+            <div className="mt-8 hero-entrance hero-entrance-2">
+              <p className="text-white/50 text-[13px] mb-1">Bermula dari</p>
+              <p
+                className="text-[#DAA520] font-[900] leading-none"
+                style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
+              >
+                RM399
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-10 hero-entrance hero-entrance-3">
+              <a
+                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full sm:w-auto bg-[#DAA520] text-[#0D0D0D] font-bold text-base px-8 py-4 rounded-full hover:opacity-90 transition-all hover:shadow-gold text-center btn-shimmer"
+              >
+                WhatsApp Untuk Beli Sekarang →
+              </a>
+            </div>
+
+            {/* Trust bar */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 lg:gap-6 mt-6 hero-entrance hero-entrance-3">
+              {["Sekali Bayar", "Pemasangan Percuma", "Waranti 2 Tahun"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="flex items-center gap-1.5 text-white text-[11px] lg:text-[12px]"
+                  >
+                    <svg
+                      className="w-4 h-4 text-[#DAA520] flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {item}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Right — Product Image (desktop only) */}
+          <div className="hidden lg:flex items-center justify-center hero-entrance hero-entrance-2">
+            <div className="relative w-full max-w-[420px] aspect-[4/3] rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.3)]">
+              <Image
+                src="/images/products/bella/poster.jpg"
+                alt="AIHAA BELLA Water Purifier"
+                fill
+                className="object-contain"
+                sizes="420px"
                 priority
               />
             </div>
@@ -83,7 +117,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom Wave - transitions to light section */}
+      {/* Bottom Wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
