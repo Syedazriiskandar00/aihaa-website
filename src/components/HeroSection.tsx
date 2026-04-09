@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function HeroSection() {
@@ -8,123 +7,200 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-[90vh] bg-[#0D0D0D] overflow-hidden pt-20"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle at 70% 50%, rgba(218,165,32,0.04) 0%, transparent 60%)",
-      }}
+      style={{ minHeight: "92vh", background: "#0D0D0D" }}
+      className="relative flex items-center overflow-hidden"
     >
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 flex items-center min-h-[calc(90vh-80px)]">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center w-full">
-          {/* Mobile: Image first */}
-          <div className="md:hidden flex justify-center hero-entrance hero-entrance-1">
-            <div className="relative w-full max-w-[320px] h-[280px] rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.3)]">
-              <Image
-                src="/images/products/bella/poster.jpg"
-                alt="AIHAA BELLA Water Purifier"
-                fill
-                className="object-contain"
-                sizes="320px"
-                priority
-              />
-            </div>
+      {/* Subtle radial glow */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "radial-gradient(ellipse at 65% 50%, rgba(218,165,32,0.06) 0%, transparent 65%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Wave bottom */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "80px",
+          background: "#FFFDE7",
+          clipPath: "ellipse(55% 100% at 50% 100%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Main content — 2 column */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col md:flex-row items-center gap-12 md:gap-8">
+        {/* LEFT COLUMN */}
+        <div className="flex-1 flex flex-col items-start">
+          {/* Eyebrow */}
+          <p
+            style={{
+              fontSize: "12px",
+              letterSpacing: "0.14em",
+              color: "#DAA520",
+              fontWeight: 600,
+              textTransform: "uppercase",
+              marginBottom: "1.5rem",
+            }}
+          >
+            PENAPIS AIR PREMIUM · SEKALI BAYAR
+          </p>
+
+          {/* Headline */}
+          <h1
+            style={{
+              fontSize: "clamp(3rem, 4.5vw, 4.2rem)",
+              fontWeight: 800,
+              color: "#FFFFFF",
+              lineHeight: 1.08,
+              marginBottom: "2rem",
+              fontFamily: "Poppins, sans-serif",
+            }}
+          >
+            Air Bersih.
+            <br />
+            Tanpa Bayaran Bulanan.
+          </h1>
+
+          {/* Price */}
+          <div style={{ marginBottom: "2.5rem" }}>
+            <p
+              style={{
+                fontSize: "13px",
+                color: "rgba(255,255,255,0.5)",
+                marginBottom: "0.25rem",
+              }}
+            >
+              Bermula dari
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(4rem, 7vw, 6rem)",
+                fontWeight: 900,
+                color: "#DAA520",
+                lineHeight: 1,
+                fontFamily: "Poppins, sans-serif",
+              }}
+            >
+              RM399
+            </p>
           </div>
 
-          {/* Left — Content */}
-          <div className="flex-1 text-center md:text-left">
-            {/* Eyebrow */}
-            <p
-              className="text-sm font-semibold uppercase mb-6 hero-entrance hero-entrance-1"
-              style={{ color: "#DAA520", letterSpacing: "0.15em" }}
-            >
-              PENAPIS AIR PREMIUM · SEKALI BAYAR
-            </p>
+          {/* Single CTA */}
+          <a
+            href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              background: "#DAA520",
+              color: "#0D0D0D",
+              fontWeight: 700,
+              fontSize: "16px",
+              padding: "16px 36px",
+              borderRadius: "999px",
+              textDecoration: "none",
+              marginBottom: "2rem",
+              whiteSpace: "nowrap",
+            }}
+          >
+            WhatsApp Untuk Beli Sekarang →
+          </a>
 
-            {/* Headline */}
-            <h1
-              className="text-white font-[800] leading-[1.1] mb-0 hero-entrance hero-entrance-1"
-              style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)" }}
-            >
-              Air Bersih.
-              <br />
-              Tanpa Bayaran Bulanan.
-            </h1>
-
-            {/* Price block */}
-            <div className="mt-8 hero-entrance hero-entrance-2">
-              <p className="text-white/50 text-[13px] mb-1">Bermula dari</p>
-              <p
-                className="text-[#DAA520] font-[900] leading-none"
-                style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
-              >
-                RM399
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className="mt-10 hero-entrance hero-entrance-3">
-              <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block w-full sm:w-auto bg-[#DAA520] text-[#0D0D0D] font-bold text-base px-8 py-4 rounded-full hover:opacity-90 transition-all hover:shadow-gold text-center btn-shimmer"
-              >
-                WhatsApp Untuk Beli Sekarang →
-              </a>
-            </div>
-
-            {/* Trust bar */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-6 mt-6 hero-entrance hero-entrance-3">
-              {["Sekali Bayar", "Pemasangan Percuma", "Waranti 2 Tahun"].map(
-                (item) => (
+          {/* Trust bar */}
+          <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+            {["Sekali Bayar", "Pemasangan Percuma", "Waranti 2 Tahun"].map(
+              (item) => (
+                <div
+                  key={item}
+                  style={{ display: "flex", alignItems: "center", gap: "6px" }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="7" fill="rgba(218,165,32,0.2)" />
+                    <path
+                      d="M4 7l2 2 4-4"
+                      stroke="#DAA520"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                   <span
-                    key={item}
-                    className="flex items-center gap-1.5 text-white text-[11px] md:text-[12px]"
+                    style={{
+                      fontSize: "12px",
+                      color: "rgba(255,255,255,0.65)",
+                    }}
                   >
-                    <svg
-                      className="w-4 h-4 text-[#DAA520] flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
                     {item}
                   </span>
-                )
-              )}
-            </div>
+                </div>
+              )
+            )}
           </div>
+        </div>
 
-          {/* Right — Product Image (desktop only) */}
-          <div className="hidden md:flex flex-1 items-center justify-center hero-entrance hero-entrance-2">
-            <div className="relative w-full max-w-[420px] aspect-[4/3] rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.3)]">
-              <Image
-                src="/images/products/bella/poster.jpg"
-                alt="AIHAA BELLA Water Purifier"
-                fill
-                className="object-contain"
-                sizes="420px"
-                priority
-              />
+        {/* RIGHT COLUMN — Product image */}
+        <div className="flex-1 flex items-center justify-center w-full">
+          <div
+            style={{
+              width: "100%",
+              maxWidth: "460px",
+              border: "1px solid rgba(218,165,32,0.25)",
+              borderRadius: "16px",
+              overflow: "hidden",
+              background: "#1A1A1A",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/products/bella/poster.jpg"
+              alt="AIHAA BELLA Water Purifier"
+              style={{ width: "100%", height: "auto", display: "block" }}
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+                const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                if (fallback) fallback.style.display = "flex";
+              }}
+            />
+            <div
+              style={{
+                display: "none",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "400px",
+                gap: "8px",
+              }}
+            >
+              <p
+                style={{
+                  color: "#DAA520",
+                  fontWeight: 700,
+                  fontSize: "20px",
+                }}
+              >
+                AIHAA BELLA
+              </p>
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.5)",
+                  fontSize: "14px",
+                }}
+              >
+                RM1,080
+              </p>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="#FFFDE7"
-          />
-        </svg>
       </div>
     </section>
   );
