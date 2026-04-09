@@ -27,8 +27,10 @@ export default function Header() {
     { name: t.nav_promotions, href: "/promotions" },
     { name: t.nav_faq, href: "/faq" },
     { name: t.nav_gallery, href: "/galeri" },
-    { name: t.nav_contact, href: "/contact" },
   ];
+
+  // Contact shown as gold button on desktop, normal link in mobile menu
+  const contactItem = { name: t.nav_contact, href: "/contact" };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,6 +90,14 @@ export default function Header() {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
+            {/* Contact CTA Button — desktop only */}
+            <Link
+              href={contactItem.href}
+              className="hidden lg:inline-block gold-gradient-bg text-white px-5 py-2 rounded-full font-semibold text-sm hover:opacity-90 hover:shadow-gold transition-all"
+            >
+              {contactItem.name}
+            </Link>
+
             {/* Language Switcher */}
             <LanguageSwitcher />
 
@@ -141,6 +151,16 @@ export default function Header() {
                 )}
               </div>
             ))}
+            {/* Contact — in mobile menu as normal link */}
+            <div>
+              <Link
+                href={contactItem.href}
+                className="block py-3 text-white/80 hover:text-gold transition-colors border-b border-[rgba(218,165,32,0.15)]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {contactItem.name}
+              </Link>
+            </div>
           </div>
         </div>
       )}
