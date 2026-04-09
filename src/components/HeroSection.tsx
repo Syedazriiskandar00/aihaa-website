@@ -56,7 +56,7 @@ export default function HeroSection() {
           {/* Headline */}
           <h1
             style={{
-              fontSize: "clamp(3rem, 4.5vw, 4.2rem)",
+              fontSize: "clamp(2.2rem, 2.6vw, 3.2rem)",
               fontWeight: 800,
               color: "#FFFFFF",
               lineHeight: 1.08,

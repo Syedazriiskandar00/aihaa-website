@@ -158,7 +158,7 @@ export default function PromotionsPage() {
 
           {/* T&C — integrated footnote */}
           <div className="mt-10 pt-10 border-t border-[rgba(0,0,0,0.06)] max-w-2xl mx-auto">
-            <h2 className="text-[13px] text-[#999] font-normal mb-4">{t.promo_tnc_title}</h2>
+            <h2 className="text-xl font-semibold text-[#0D0D0D] mb-4 border-l-[3px] border-l-[#DAA520] pl-3">{t.promo_tnc_title}</h2>
             <div>
               {termsAndConditions.map((item, index) => (
                 <div key={index} className="border-b border-[#e5e7eb]">

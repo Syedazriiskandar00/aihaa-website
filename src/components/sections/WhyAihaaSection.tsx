@@ -117,7 +117,7 @@ function BezaKami() {
   ];
 
   return (
-    <section className="bg-white py-28 lg:py-36">
+    <section className="bg-white py-12 lg:py-16">
       <div ref={ref} className="scroll-reveal max-w-7xl mx-auto px-10 lg:pl-10 lg:pr-20">
         <div className="w-12 h-[2px] bg-[#DAA520] mb-10 scroll-reveal-child stagger-1" />
 
