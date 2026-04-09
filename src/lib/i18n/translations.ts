@@ -219,6 +219,7 @@ export type TranslationKeys = {
   gallery_cta_title: string;
   gallery_cta_sub: string;
   gallery_cta_button: string;
+  gallery_more_coming: string;
   common_whatsapp_message: string;
   common_sekali_bayar: string;
   common_from: string;
@@ -455,6 +456,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     gallery_cta_title: "Nak tengok AIHAA di rumah anda?",
     gallery_cta_sub: "WhatsApp kami untuk konsultasi percuma dan pemasangan.",
     gallery_cta_button: "WhatsApp Kami",
+    gallery_more_coming: "Lebih banyak gambar pemasangan akan datang tidak lama lagi.",
     common_whatsapp_message: "Hai, saya berminat dengan penapis air AIHAA. Boleh saya tahu lebih lanjut?",
     common_sekali_bayar: "Sekali Bayar",
     common_from: "Dari",
@@ -689,6 +691,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     gallery_cta_title: "Want to see AIHAA in your home?",
     gallery_cta_sub: "WhatsApp us for free consultation and installation.",
     gallery_cta_button: "WhatsApp Us",
+    gallery_more_coming: "More installation photos coming soon.",
     common_whatsapp_message: "Hi, I'm interested in AIHAA water purifiers. Can I know more?",
     common_sekali_bayar: "One-Time Payment",
     common_from: "From",

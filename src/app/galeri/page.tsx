@@ -10,16 +10,21 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 type Category = "semua" | "dalam" | "luar";
 
 const galleryItems = [
+  // Indoor — best lifestyle/clean shots first
   { src: "/images/products/bella/main.jpg", name: "AIHAA Bella", location: "Shah Alam, Selangor", category: "dalam" as const, tall: true },
   { src: "/images/products/big/main.jpg", name: "AIHAA Big", location: "Johor Bahru, Johor", category: "dalam" as const, tall: false },
   { src: "/images/products/ean/main.png", name: "AIHAA Ean", location: "Petaling Jaya, Selangor", category: "dalam" as const, tall: false },
   { src: "/images/products/fancy/main.jpg", name: "AIHAA Fancy", location: "Klang, Selangor", category: "dalam" as const, tall: true },
   { src: "/images/products/winter/main.png", name: "AIHAA Winter", location: "Melaka", category: "dalam" as const, tall: false },
-  { src: "/images/products/pvdf/main.jpg", name: "PVDF", location: "Batu Pahat, Johor", category: "luar" as const, tall: false },
-  { src: "/images/products/pvdf-plus/main.jpg", name: "PVDF Plus", location: "Muar, Johor", category: "luar" as const, tall: true },
+  // Outdoor — all products included
   { src: "/images/products/ultra-one/main.jpg", name: "Ultra One", location: "Seremban, N. Sembilan", category: "luar" as const, tall: false },
-  { src: "/images/products/fiber/main.jpg", name: "Fiber 9x42", location: "Perak", category: "luar" as const, tall: true },
-  { src: "/images/products/fiber-10x44/main.png", name: "Fiber 10x44", location: "Kedah", category: "luar" as const, tall: false },
+  { src: "/images/products/pvdf/main.jpg", name: "PVDF", location: "Batu Pahat, Johor", category: "luar" as const, tall: true },
+  { src: "/images/products/pvdf-plus/main.jpg", name: "PVDF Plus", location: "Muar, Johor", category: "luar" as const, tall: false },
+  { src: "/images/products/fiber/main.jpg", name: "Fiber 9x42", location: "Perak", category: "luar" as const, tall: false },
+  { src: "/images/products/fiber-10x44/main.png", name: "Fiber 10x44", location: "Kedah", category: "luar" as const, tall: true },
+  { src: "/images/products/penapis-boring/main.jpg", name: "Penapis Boring 13x54", location: "Pahang", category: "luar" as const, tall: false },
+  { src: "/images/products/super-pleated/main.jpg", name: "Super Pleated", location: "Terengganu", category: "luar" as const, tall: false },
+  { src: "/images/products/uf-double-backwash/main.jpg", name: "UF Double Backwash", location: "Kelantan", category: "luar" as const, tall: true },
 ];
 
 export default function GaleriPage() {
@@ -107,6 +112,11 @@ export default function GaleriPage() {
               </div>
             ))}
           </div>
+
+          {/* More coming note */}
+          <p className="text-center text-[13px] text-[#999] italic py-6 mt-4">
+            {t.gallery_more_coming}
+          </p>
         </div>
       </section>
 
