@@ -123,43 +123,38 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── 3. INFO — 1 big + 2 small ── */}
+      {/* ── 3. INFO — 3-column grid ── */}
       <section className="bg-white py-16">
-        <div ref={infoRef} className="scroll-reveal max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Big card — WhatsApp */}
-          <div className="scroll-reveal-child stagger-1 bg-[#FFFDE7] rounded-2xl p-6 lg:p-8 border border-[rgba(218,165,32,0.15)] mb-5">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center flex-shrink-0">
+        <div ref={infoRef} className="scroll-reveal max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* WhatsApp */}
+            <div className="scroll-reveal-child stagger-1 bg-[#FFFDE7] rounded-2xl p-6 border border-[rgba(218,165,32,0.15)]">
+              <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4">
                 <MessageCircle className="w-6 h-6 text-gold" />
               </div>
-              <div>
-                <h3 className="text-[20px] font-bold text-[#0D0D0D] mb-1">{t.contact_info_wa_title}</h3>
-                <a href="tel:+60115657084" className="text-[24px] font-bold text-[#DAA520] hover:opacity-80 transition-opacity">
-                  +6011-5657 7084
-                </a>
-                <p className="text-sm text-[#717171] mt-1">{t.contact_info_wa_sub}</p>
-              </div>
+              <h3 className="text-base font-bold text-[#0D0D0D] mb-2">{t.contact_info_wa_title}</h3>
+              <a href="tel:+60115657084" className="text-lg font-bold text-[#DAA520] hover:opacity-80 transition-opacity block mb-1">
+                +6011-5657 7084
+              </a>
+              <p className="text-xs text-[#717171]">{t.contact_info_wa_sub}</p>
             </div>
-          </div>
 
-          {/* 2 small cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Email */}
-            <div className="scroll-reveal-child stagger-2 bg-white rounded-xl p-6 border border-[rgba(0,0,0,0.06)]">
-              <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mb-3">
-                <Mail className="w-5 h-5 text-gold" />
+            <div className="scroll-reveal-child stagger-2 bg-white rounded-2xl p-6 border border-[rgba(0,0,0,0.06)]">
+              <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4">
+                <Mail className="w-6 h-6 text-gold" />
               </div>
-              <h3 className="text-base font-bold text-[#0D0D0D] mb-1">{t.contact_email}</h3>
-              <p className="text-sm text-[#717171]">aihaa.marketing@gmail.com</p>
-              <p className="text-xs text-[#999] mt-1">{t.contact_info_email_sub}</p>
+              <h3 className="text-base font-bold text-[#0D0D0D] mb-2">{t.contact_email}</h3>
+              <p className="text-sm text-[#717171] mb-1">aihaa.marketing@gmail.com</p>
+              <p className="text-xs text-[#999]">{t.contact_info_email_sub}</p>
             </div>
 
             {/* Operating Hours */}
-            <div className="scroll-reveal-child stagger-3 bg-white rounded-xl p-6 border border-[rgba(0,0,0,0.06)]">
-              <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center mb-3">
-                <Clock className="w-5 h-5 text-gold" />
+            <div className="scroll-reveal-child stagger-3 bg-white rounded-2xl p-6 border border-[rgba(0,0,0,0.06)]">
+              <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4">
+                <Clock className="w-6 h-6 text-gold" />
               </div>
-              <h3 className="text-base font-bold text-[#0D0D0D] mb-1">{t.contact_hours_title}</h3>
+              <h3 className="text-base font-bold text-[#0D0D0D] mb-2">{t.contact_hours_title}</h3>
               <p className="text-sm text-[#717171]">{t.contact_hours_weekday}</p>
               <p className="text-sm text-[#717171]">{t.contact_hours_saturday}</p>
               <p className="text-sm text-[#717171]">{t.contact_hours_closed}</p>
@@ -177,22 +172,18 @@ export default function ContactPage() {
             <p className="text-sm text-[#717171]">Batu Pahat, Johor, Malaysia</p>
             <p className="text-xs text-[#999] mt-1">SSM: 1263314-X</p>
           </div>
-          {/* Google Maps embed */}
-          <div className="rounded-xl overflow-hidden border border-[rgba(0,0,0,0.06)]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127504.4!2d102.89!3d1.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d05a5a5bfc2c6f%3A0x4a8b0f1b4e5e5e5e!2sBatu%20Pahat%2C%20Johor!5e0!3m2!1sen!2smy!4v1234567890"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="AIHAA Location — Batu Pahat, Johor"
-            />
+          {/* Map Placeholder */}
+          <div className="rounded-xl overflow-hidden bg-[#1a1a1a] min-h-[320px] flex flex-col items-center justify-center border border-[rgba(218,165,32,0.15)]">
+            <svg className="w-12 h-12 text-[#DAA520] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <p className="text-[#DAA520] text-xl font-bold mb-1">Batu Pahat, Johor</p>
+            <p className="text-[#777] text-sm">Malaysia</p>
           </div>
           <p className="text-center mt-4">
             <a
-              href="https://www.google.com/maps/search/Batu+Pahat+Johor+Malaysia"
+              href="https://maps.google.com/?q=Batu+Pahat,Johor"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-[#DAA520] hover:underline"

@@ -9,6 +9,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
+  const [topExpanded, setTopExpanded] = useState(false);
   const heroRef = useScrollReveal();
   const topRef = useScrollReveal();
   const listRef = useScrollReveal();
@@ -55,9 +56,15 @@ export default function FAQPage() {
             {t.faq_q1}
           </h2>
           <div className="scroll-reveal-child stagger-3 border-l-[3px] border-l-[#DAA520] pl-6">
-            <p className="text-[15px] text-[#555] leading-[1.8]">
+            <p className={`text-[15px] text-[#555] leading-[1.8] ${!topExpanded ? "line-clamp-3" : ""}`}>
               {t.faq_a1}
             </p>
+            <button
+              onClick={() => setTopExpanded(!topExpanded)}
+              className="text-sm text-[#DAA520] font-medium mt-2 hover:underline"
+            >
+              {topExpanded ? "Tutup" : "Baca lebih lanjut \u2192"}
+            </button>
           </div>
         </div>
       </section>

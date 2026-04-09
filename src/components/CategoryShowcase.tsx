@@ -17,7 +17,8 @@ export default function CategoryShowcase() {
       title: t.category_indoor_title,
       subtitle: t.category_indoor_label,
       description: t.category_indoor_desc,
-      products: "BELLA (RM1,080) · FANCY (RM999) · WINTER (RM1,580) · EAN (RM780) · BIG (RM1,280)",
+      products: "BELLA, FANCY, WINTER",
+      productsMore: "dan 2 lagi \u2192",
       cta: t.category_indoor_cta,
       href: "/water-purifier",
       dark: true,
@@ -30,7 +31,8 @@ export default function CategoryShowcase() {
       title: t.category_outdoor_title,
       subtitle: t.category_outdoor_label,
       description: t.category_outdoor_desc,
-      products: "ULTRA ONE (RM399) · FIBER 9X42 (RM399) · PVDF (RM899) · UF DOUBLE (RM799)",
+      products: "PVDF, FIBER 9X42, ULTRA ONE",
+      productsMore: "dan 5 lagi \u2192",
       cta: t.category_outdoor_cta,
       href: "/water-purifier",
       dark: false,
@@ -131,8 +133,8 @@ export default function CategoryShowcase() {
                     </p>
 
                     {/* Product preview */}
-                    <p className={`text-sm mt-3 tracking-wide ${cat.dark ? "text-gray-500" : "text-gray-400"}`}>
-                      {cat.products}
+                    <p className={`text-xs mt-3 ${cat.dark ? "text-gray-500" : "text-gray-400"}`}>
+                      {cat.products} <span className="text-[#DAA520]">{cat.productsMore}</span>
                     </p>
                   </div>
 

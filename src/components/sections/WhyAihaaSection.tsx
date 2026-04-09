@@ -29,7 +29,7 @@ function FounderStory() {
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[#0D0D0D]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[rgba(0,0,0,0.15)] lg:to-[#0D0D0D]" />
           </div>
 
           {/* Right — Quote */}

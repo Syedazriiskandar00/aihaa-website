@@ -4,7 +4,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -158,30 +158,33 @@ export default function PromotionsPage() {
 
           {/* T&C — integrated footnote */}
           <div className="mt-10 pt-10 border-t border-[rgba(0,0,0,0.06)] max-w-2xl mx-auto">
-            <h2 className="text-[13px] text-[#ccc] font-normal mb-4">{t.promo_tnc_title}</h2>
-            <div className="divide-y divide-[rgba(0,0,0,0.04)]">
+            <h2 className="text-[13px] text-[#999] font-normal mb-4">{t.promo_tnc_title}</h2>
+            <div>
               {termsAndConditions.map((item, index) => (
-                <div key={index}>
+                <div key={index} className="border-b border-[#e5e7eb]">
                   <button
                     onClick={() =>
                       setOpenAccordion(openAccordion === index ? null : index)
                     }
-                    className="w-full flex items-center justify-between py-2.5 text-left"
+                    className="w-full flex items-center justify-between py-3.5 text-left group"
                   >
-                    <span className="text-[12px] text-[#aaa]">{item.title}</span>
-                    {openAccordion === index ? (
-                      <ChevronUp className="w-3.5 h-3.5 text-[#ccc]" />
-                    ) : (
-                      <ChevronDown className="w-3.5 h-3.5 text-[#ccc]" />
-                    )}
+                    <span className="text-[13px] text-[#777] group-hover:text-[#555] transition-colors">{item.title}</span>
+                    <ChevronDown
+                      className="w-4 h-4 text-[#999] transition-transform duration-200 flex-shrink-0"
+                      style={{ transform: openAccordion === index ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
                   </button>
-                  {openAccordion === index && (
-                    <div className="pb-2.5">
-                      <p className="text-[12px] text-[#bbb] leading-relaxed">
-                        {item.content}
-                      </p>
-                    </div>
-                  )}
+                  <div
+                    className="overflow-hidden transition-all duration-300 ease-in-out"
+                    style={{
+                      maxHeight: openAccordion === index ? "200px" : "0",
+                      opacity: openAccordion === index ? 1 : 0,
+                    }}
+                  >
+                    <p className="text-[12px] text-[#999] leading-relaxed pb-3.5">
+                      {item.content}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

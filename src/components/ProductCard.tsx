@@ -26,9 +26,9 @@ export default function ProductCard({
   const { locale } = useLanguage();
 
   const badgeStyles = {
-    popular: "bg-gold text-white",
-    sale: "bg-red-500 text-white",
-    premium: "bg-gold text-white",
+    popular: "bg-[#DAA520] text-[#0D0D0D]",
+    sale: "bg-red-600 text-white",
+    premium: "bg-[#0D0D0D] text-[#DAA520]",
     "best-value": "bg-green-500 text-white",
     "pro-grade": "bg-blue-500 text-white",
   };
@@ -47,11 +47,11 @@ export default function ProductCard({
       className="bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:border-[rgba(218,165,32,0.3)] block"
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#f8f8f8]">
         {/* Badge */}
         {badge && (
           <div
-            className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold z-10 ${badgeStyles[badge]}`}
+            className={`absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-semibold z-10 ${badgeStyles[badge]}`}
           >
             {badgeText[badge][locale]}
           </div>
