@@ -9,31 +9,29 @@ import ProductCard from "@/components/ProductCard";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
+import {
+  indoorProducts as indoorCatalog,
+  outdoorProducts as outdoorCatalog,
+  type Product,
+} from "@/lib/data/products";
 
-const indoorProducts = [
-  { id: "aihaa-bella", name: "AIHAA BELLA", tagline: "Rekaan Kompak Stand Floor", price: "RM1,080", image: "/images/products/bella/main.jpg" },
-  { id: "aihaa-big", name: "AIHAA BIG", tagline: "Kapasiti Besar 17 Liter", price: "RM1,280", image: "/images/products/big/main.jpg", badge: "popular" as const },
-  { id: "aihaa-ean", name: "AIHAA EAN", tagline: "Pilihan Bajet dengan Digital Feature", price: "RM780", oldPrice: "RM867", image: "/images/products/ean/main.png", badge: "sale" as const },
-  { id: "aihaa-fancy", name: "AIHAA FANCY", tagline: "Rekaan Slim Moden dengan 3 Tangki", price: "RM999", image: "/images/products/fancy/main.jpg" },
-  { id: "aihaa-winter", name: "AIHAA WINTER", tagline: "Premium dengan Ice Maker & Teknologi Baru", price: "RM1,580", image: "/images/products/winter/main.png", badge: "premium" as const },
-];
-
-const outdoorProducts = [
-  { id: "ultra-one", name: "ULTRA ONE", tagline: "All-in-One Direct Minum", price: "RM399", image: "/images/products/ultra-one/main.jpg", badge: "best-value" as const },
-  { id: "fiber-9x42", name: "FIBER 9X42", tagline: "Tangki Fiber Tahan Lasak", price: "RM399", image: "/images/products/fiber/main.jpg" },
-  { id: "fiber-10x44", name: "FIBER 10X44", tagline: "Tangki Fiber Besar 10x44", price: "RM469", image: "/images/products/fiber-10x44/main.png" },
-  { id: "penapis-boring-13x54", name: "PENAPIS BORING 13X54", tagline: "Khas Untuk Air Bawah Tanah", price: "RM1,180", image: "/images/products/penapis-boring/main.jpg" },
-  { id: "pvdf", name: "PVDF", tagline: "Material PVDF Gred Profesional", price: "RM899", image: "/images/products/pvdf/main.jpg", badge: "pro-grade" as const },
-  { id: "pvdf-plus", name: "PVDF PLUS", tagline: "PVDF Dipertingkat 6000L/Hour", price: "RM1,299", image: "/images/products/pvdf-plus/main.jpg", badge: "premium" as const },
-  { id: "super-pleated", name: "SUPER PLEATED", tagline: "Kadar Aliran Tinggi & Kompak", price: "RM580", image: "/images/products/super-pleated/main.jpg" },
-  { id: "uf-double-backwash", name: "UF DOUBLE BACKWASH", tagline: "Membran UF dengan Dual Backwash", price: "RM799", oldPrice: "RM888", image: "/images/products/uf-double-backwash/main.jpg", badge: "sale" as const },
-];
+const toCard = (p: Product, locale: "bm" | "en") => ({
+  id: p.slug,
+  name: p.name,
+  tagline: p.tagline[locale],
+  price: p.price,
+  oldPrice: p.oldPrice,
+  image: p.mainImage,
+  badge: p.badge,
+});
 
 export default function WaterPurifierPage() {
   const featuredRef = useScrollReveal();
   const indoorRef = useScrollReveal();
   const outdoorRef = useScrollReveal();
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const indoorProducts = indoorCatalog.map((p) => toCard(p, locale));
+  const outdoorProducts = outdoorCatalog.map((p) => toCard(p, locale));
 
   return (
     <main className="min-h-screen bg-white">

@@ -5,10 +5,25 @@ import Image from "next/image";
 import { Droplets, TreePine } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { indoorProducts, outdoorProducts } from "@/lib/data/products";
+
+// Derive the "X, Y, Z" sample string and the "dan N lagi" tail from the
+// live catalogue so this showcase stays in sync as products are added
+// or removed.
+const sampleNames = (list: { name: string }[], n: number) =>
+  list
+    .slice(0, n)
+    .map((p) => p.name.replace(/^AIHAA\s+/, ""))
+    .join(", ");
 
 export default function CategoryShowcase() {
   const revealRef = useScrollReveal();
   const { t } = useLanguage();
+
+  const indoorSample = sampleNames(indoorProducts, 3);
+  const indoorMore = Math.max(indoorProducts.length - 3, 0);
+  const outdoorSample = sampleNames(outdoorProducts, 3);
+  const outdoorMore = Math.max(outdoorProducts.length - 3, 0);
 
   const categories = [
     {
@@ -17,8 +32,8 @@ export default function CategoryShowcase() {
       title: t.category_indoor_title,
       subtitle: t.category_indoor_label,
       description: t.category_indoor_desc,
-      products: "BELLA, FANCY, WINTER",
-      productsMore: "dan 2 lagi \u2192",
+      products: indoorSample,
+      productsMore: `dan ${indoorMore} lagi \u2192`,
       cta: t.category_indoor_cta,
       href: "/water-purifier",
       dark: true,
@@ -31,8 +46,8 @@ export default function CategoryShowcase() {
       title: t.category_outdoor_title,
       subtitle: t.category_outdoor_label,
       description: t.category_outdoor_desc,
-      products: "PVDF, FIBER 9X42, ULTRA ONE",
-      productsMore: "dan 5 lagi \u2192",
+      products: outdoorSample,
+      productsMore: `dan ${outdoorMore} lagi \u2192`,
       cta: t.category_outdoor_cta,
       href: "/water-purifier",
       dark: false,

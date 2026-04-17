@@ -10,393 +10,24 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { whatsappUrl } from "@/lib/config/contact";
+import {
+  getProductBySlug,
+  indoorProducts,
+  outdoorProducts,
+  type Product,
+} from "@/lib/data/products";
 
-const products: Record<
-  string,
-  {
-    name: string;
-    tagline: string;
-    description: string;
-    price: string;
-    oldPrice?: string;
-    category: "indoor" | "outdoor";
-    image: string;
-    specs: { label: string; value: string }[];
-    features: string[];
-  }
-> = {
-  "aihaa-bella": {
-    name: "AIHAA BELLA",
-    tagline: "Rekaan Kompak Stand Floor",
-    description:
-      "AIHAA BELLA — penapis air berdiri dengan 4 tahap penapisan dan teknologi mineral alkali. Kapasiti tangki 9.5 liter. Rekaan kompak stand floor.",
-    price: "RM1,080",
-    category: "indoor",
-    image: "/images/products/bella/main.jpg",
-    specs: [
-      { label: "Tahap Penapisan", value: "4 Tahap" },
-      { label: "Teknologi", value: "Mineral Alkali" },
-      { label: "Kapasiti Tangki", value: "9.5 Liter" },
-      { label: "Rekaan", value: "Stand Floor" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "4 Tahap Penapisan",
-      "Teknologi Mineral Alkali",
-      "Rekaan Kompak Stand Floor",
-      "Kapasiti Tangki 9.5 Liter",
-      "Percuma pemasangan & penghantaran",
-      "Waranti 2 tahun",
-    ],
-  },
-  "aihaa-big": {
-    name: "AIHAA BIG",
-    tagline: "Kapasiti Besar 17 Liter",
-    description:
-      "AIHAA BIG — penapis air berdiri berkapasiti besar 17 liter. Sesuai untuk keluarga besar dan pejabat.",
-    price: "RM1,280",
-    category: "indoor",
-    image: "/images/products/big/main.jpg",
-    specs: [
-      { label: "Tahap Penapisan", value: "4 Tahap" },
-      { label: "Kapasiti Tangki", value: "17 Liter" },
-      { label: "Rekaan", value: "Stand Floor" },
-      { label: "Sesuai Untuk", value: "Keluarga Besar" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Kapasiti Besar — 17 Liter",
-      "4 Tahap Penapisan",
-      "Rekaan Kompak Stand Floor",
-      "Sesuai untuk keluarga besar",
-      "Percuma pemasangan & penghantaran",
-      "Waranti 2 tahun",
-    ],
-  },
-  "aihaa-ean": {
-    name: "AIHAA EAN",
-    tagline: "Pilihan Bajet dengan Digital Feature",
-    description:
-      "AIHAA EAN — pilihan bajet dengan digital feature. Kapasiti tangki 7.5 liter. Mudah dipasang.",
-    price: "RM780",
-    oldPrice: "RM867",
-    category: "indoor",
-    image: "/images/products/ean/main.png",
-    specs: [
-      { label: "Tahap Penapisan", value: "4 Tahap" },
-      { label: "Kapasiti Tangki", value: "7.5 Liter" },
-      { label: "Ciri Khas", value: "Digital Display" },
-      { label: "Pemasangan", value: "Mudah" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Harga Bajet",
-      "4 Tahap Penapisan",
-      "Pemasangan Mudah",
-      "Digital Display",
-      "Kapasiti Tangki 7.5 Liter",
-      "Percuma pemasangan & waranti 2 tahun",
-    ],
-  },
-  "aihaa-fancy": {
-    name: "AIHAA FANCY",
-    tagline: "Rekaan Slim Moden dengan 3 Tangki",
-    description:
-      "AIHAA FANCY — rekaan slim moden dengan 3 tangki berasingan. Operasi senyap, sesuai untuk mana-mana ruang.",
-    price: "RM999",
-    category: "indoor",
-    image: "/images/products/fancy/main.jpg",
-    specs: [
-      { label: "Tahap Penapisan", value: "4 Tahap" },
-      { label: "Rekaan", value: "Slim Moden" },
-      { label: "Tangki", value: "3 Berasingan" },
-      { label: "Operasi", value: "Senyap" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Rekaan Slim Moden",
-      "4 Tahap Penapisan",
-      "3 Tangki Berasingan",
-      "Operasi Senyap",
-      "Percuma pemasangan & penghantaran",
-      "Waranti 2 tahun",
-    ],
-  },
-  "aihaa-winter": {
-    name: "AIHAA WINTER",
-    tagline: "Premium dengan Ice Maker & Teknologi Baru",
-    description:
-      "AIHAA WINTER — model premium dengan fungsi ice maker dan teknologi terbaru. Pilihan terbaik untuk yang mahukan kualiti premium.",
-    price: "RM1,580",
-    category: "indoor",
-    image: "/images/products/winter/main.png",
-    specs: [
-      { label: "Tahap Penapisan", value: "4 Tahap" },
-      { label: "Ciri Khas", value: "Ice Maker" },
-      { label: "Teknologi", value: "Terbaru" },
-      { label: "Kualiti", value: "Premium" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Kualiti Premium",
-      "4 Tahap Penapisan",
-      "Fungsi Ice Maker",
-      "Teknologi Terbaru",
-      "Percuma pemasangan & penghantaran",
-      "Waranti 2 tahun",
-    ],
-  },
-  "ultra-one": {
-    name: "ULTRA ONE",
-    tagline: "All-in-One Direct Minum",
-    description:
-      "ULTRA ONE — model premium dengan unlimited flow capacity. All-in-one system yang boleh direct minum.",
-    price: "RM399",
-    category: "outdoor",
-    image: "/images/products/ultra-one/main.jpg",
-    specs: [
-      { label: "Model", value: "Premium" },
-      { label: "Kadar Aliran", value: "Unlimited" },
-      { label: "Sistem", value: "All-in-One" },
-      { label: "Kegunaan", value: "Direct Minum" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Model Premium",
-      "Kadar Aliran Tanpa Had",
-      "Sistem All-in-One",
-      "Boleh Direct Minum",
-      "Percuma pemasangan & penghantaran",
-      "Waranti 2 tahun",
-    ],
-  },
-  "fiber-9x42": {
-    name: "FIBER 9X42",
-    tagline: "Tangki Fiber Tahan Lasak",
-    description:
-      "FIBER 9X42 — tangki fiber anti-karat yang tahan lasak. Mudah diselenggara.",
-    price: "RM399",
-    category: "outdoor",
-    image: "/images/products/fiber/main.jpg",
-    specs: [
-      { label: "Jenis Tangki", value: "Fiber" },
-      { label: "Bahan", value: "Anti-Karat" },
-      { label: "Penyelenggaraan", value: "Mudah" },
-      { label: "Waranti", value: "1 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Tangki Fiber",
-      "Anti-Karat",
-      "Penyelenggaraan Mudah",
-      "Tahan Lasak",
-      "Percuma pemasangan & penghantaran",
-    ],
-  },
-  "fiber-10x44": {
-    name: "FIBER 10X44",
-    tagline: "Tangki Fiber Besar 10x44",
-    description:
-      "FIBER 10X44 — tangki fiber besar saiz 10x44 inci. Tahan lama dan anti-karat.",
-    price: "RM469",
-    category: "outdoor",
-    image: "/images/products/fiber-10x44/main.png",
-    specs: [
-      { label: "Saiz Tangki", value: "10 x 44 Inci" },
-      { label: "Ketahanan", value: "Tahan Lama" },
-      { label: "Bahan", value: "Anti-Karat" },
-      { label: "Penyelenggaraan", value: "Mudah" },
-      { label: "Waranti", value: "1 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Tangki Fiber Besar 10x44",
-      "Tahan Lama",
-      "Anti-Karat",
-      "Penyelenggaraan Mudah",
-      "Percuma pemasangan & penghantaran",
-    ],
-  },
-  "penapis-boring-13x54": {
-    name: "PENAPIS BORING 13X54",
-    tagline: "Khas Untuk Air Bawah Tanah",
-    description:
-      "PENAPIS BORING 13X54 — khas untuk air bawah tanah (boring). Penapisan pelbagai tahap dengan penapis khas.",
-    price: "RM1,180",
-    category: "outdoor",
-    image: "/images/products/penapis-boring/main.jpg",
-    specs: [
-      { label: "Saiz Tangki", value: "13 x 54 Inci" },
-      { label: "Kegunaan", value: "Air Boring" },
-      { label: "Penapisan", value: "Pelbagai Tahap" },
-      { label: "Penapis", value: "Penapis Khas" },
-      { label: "Waranti", value: "1 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Penapis Air Boring",
-      "Kapasiti Besar",
-      "Penapisan Pelbagai Tahap dengan Penapis Khas",
-      "Tahan Lama",
-      "Anti-Karat",
-      "Percuma pemasangan & penghantaran",
-    ],
-  },
-  pvdf: {
-    name: "PVDF",
-    tagline: "Material PVDF Gred Profesional",
-    description:
-      "PVDF — material gred profesional dengan kadar aliran 5000L/jam. Tahan kimia.",
-    price: "RM899",
-    category: "outdoor",
-    image: "/images/products/pvdf/main.jpg",
-    specs: [
-      { label: "Material", value: "PVDF" },
-      { label: "Ketahanan", value: "Tahan Kimia" },
-      { label: "Kadar Aliran", value: "5000 L/Jam" },
-      { label: "Gred", value: "Profesional" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Material PVDF",
-      "Tahan Kimia",
-      "Kadar Aliran 5000L/Jam",
-      "Gred Profesional",
-      "Percuma pemasangan & penghantaran",
-      "Waranti 2 tahun",
-    ],
-  },
-  "pvdf-plus": {
-    name: "PVDF PLUS",
-    tagline: "PVDF Dipertingkat 6000L/Hour",
-    description:
-      "PVDF PLUS — versi dipertingkat dengan kadar aliran 6000L/jam. Penapis premium dengan jangka hayat panjang.",
-    price: "RM1,299",
-    category: "outdoor",
-    image: "/images/products/pvdf-plus/main.jpg",
-    specs: [
-      { label: "Material", value: "PVDF Dipertingkat" },
-      { label: "Kadar Aliran", value: "6000 L/Jam" },
-      { label: "Penapis", value: "Premium" },
-      { label: "Jangka Hayat", value: "Panjang" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "PVDF Dipertingkat",
-      "Kadar Aliran 6000L/Jam",
-      "Penapis Premium",
-      "Jangka Hayat Panjang",
-      "Gred Profesional",
-      "Percuma pemasangan & penghantaran",
-    ],
-  },
-  "super-pleated": {
-    name: "SUPER PLEATED",
-    tagline: "Kadar Aliran Tinggi & Kompak",
-    description:
-      "SUPER PLEATED — penapis pleated dengan kadar aliran tinggi. Saiz kompak dan kos efektif.",
-    price: "RM580",
-    category: "outdoor",
-    image: "/images/products/super-pleated/main.jpg",
-    specs: [
-      { label: "Jenis Penapis", value: "Pleated" },
-      { label: "Kadar Aliran", value: "Tinggi" },
-      { label: "Saiz", value: "Kompak" },
-      { label: "Kos", value: "Efektif" },
-      { label: "Waranti", value: "1 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Penapis Pleated",
-      "Kadar Aliran Tinggi",
-      "Saiz Kompak",
-      "Kos Efektif",
-      "Percuma pemasangan & penghantaran",
-    ],
-  },
-  "uf-double-backwash": {
-    name: "UF DOUBLE BACKWASH",
-    tagline: "Membran UF dengan Dual Backwash",
-    description:
-      "UF DOUBLE BACKWASH — membran UF dengan dual backwash dan pembersihan automatik. Kadar aliran 4000L/jam.",
-    price: "RM799",
-    oldPrice: "RM888",
-    category: "outdoor",
-    image: "/images/products/uf-double-backwash/main.jpg",
-    specs: [
-      { label: "Teknologi", value: "Membran UF" },
-      { label: "Backwash", value: "Sistem Dual" },
-      { label: "Kadar Aliran", value: "4000 L/Jam" },
-      { label: "Pembersihan", value: "Automatik" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Membran UF",
-      "Dual Backwash",
-      "Kadar Aliran 4000L/Jam",
-      "Pembersihan Automatik",
-      "Saiz Kompak",
-      "Percuma pemasangan & penghantaran",
-    ],
-  },
-};
+// Legacy inline products + related arrays have been replaced by
+// src/lib/data/products.ts. The helper below extracts a ProductCard-shaped
+// subset for the "Related Products" strip at the bottom of this page.
+const toRelatedCard = (p: Product, locale: "bm" | "en") => ({
+  id: p.slug,
+  name: p.name,
+  tagline: p.tagline[locale],
+  price: p.price,
+  image: p.mainImage,
+});
 
-const relatedIndoor = [
-  {
-    id: "aihaa-bella",
-    name: "AIHAA BELLA",
-    tagline: "Rekaan Kompak Stand Floor",
-    price: "RM1,080",
-    image: "/images/products/bella/main.jpg",
-  },
-  {
-    id: "aihaa-ean",
-    name: "AIHAA EAN",
-    tagline: "Pilihan Bajet Digital",
-    price: "RM780",
-    image: "/images/products/ean/main.png",
-  },
-  {
-    id: "aihaa-winter",
-    name: "AIHAA WINTER",
-    tagline: "Premium Ice Maker",
-    price: "RM1,580",
-    image: "/images/products/winter/main.png",
-  },
-];
-
-const relatedOutdoor = [
-  {
-    id: "pvdf",
-    name: "PVDF",
-    tagline: "Gred Profesional",
-    price: "RM899",
-    image: "/images/products/pvdf/main.jpg",
-  },
-  {
-    id: "fiber-9x42",
-    name: "FIBER 9X42",
-    tagline: "Tangki Fiber",
-    price: "RM399",
-    image: "/images/products/fiber/main.jpg",
-  },
-  {
-    id: "uf-double-backwash",
-    name: "UF DOUBLE BACKWASH",
-    tagline: "Membran UF",
-    price: "RM799",
-    image: "/images/products/uf-double-backwash/main.jpg",
-  },
-];
 
 export default function ProductDetailPage({
   params,
@@ -404,10 +35,14 @@ export default function ProductDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = use(params);
-  const { t } = useLanguage();
-  const product = products[id] || products["aihaa-bella"];
-  const related =
-    product.category === "indoor" ? relatedIndoor : relatedOutdoor;
+  const { t, locale } = useLanguage();
+  const product = getProductBySlug(id) ?? getProductBySlug("aihaa-bella")!;
+  const relatedPool =
+    product.category === "indoor" ? indoorProducts : outdoorProducts;
+  const related = relatedPool
+    .filter((p) => p.slug !== product.slug)
+    .slice(0, 3)
+    .map((p) => toRelatedCard(p, locale));
 
   return (
     <main className="min-h-screen bg-white">
@@ -422,7 +57,7 @@ export default function ProductDetailPage({
               <div className="bg-dark-alt/50 backdrop-blur-sm rounded-3xl p-8 border border-[rgba(218,165,32,0.3)] overflow-hidden">
                 <div className="aspect-square bg-white rounded-2xl flex items-center justify-center relative overflow-hidden">
                   <Image
-                    src={product.image}
+                    src={product.mainImage}
                     alt={product.name}
                     fill
                     className="object-contain p-6"
@@ -443,8 +78,8 @@ export default function ProductDetailPage({
               <h1 className="font-editorial text-4xl md:text-6xl text-white mb-2">
                 {product.name}
               </h1>
-              <p className="text-gold text-xl mb-4">{product.tagline}</p>
-              <p className="text-muted-dark mb-6">{product.description}</p>
+              <p className="text-gold text-xl mb-4">{product.tagline[locale]}</p>
+              <p className="text-muted-dark mb-6">{product.description[locale]}</p>
 
               {/* Price */}
               <div className="flex items-baseline gap-3 mb-3">
