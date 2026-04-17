@@ -56,6 +56,21 @@ These look minimal but are the agreed final design per SECTION_SPEC:
 
 ---
 
-## Phase 2+ Placeholders (tracked here for future phases)
+## Phase 2 — /produk-luar Landing
 
-*To be populated when Phase 2 (Outdoor product detail) begins.*
+### Contact config placeholders (config-level, not visual)
+- `src/lib/config/contact.ts` — `WHATSAPP_NUMBER`, `PHONE_NUMBER`, and `PHONE_NUMBER_DISPLAY` are all set to `60000000000` / `+60 00-0000 0000` placeholders.
+  - Search for `60000000000` and `+60 00-0000 0000` across the repo to find every touchpoint (~8 call sites after Parts A + Phase 1 refactors).
+  - Also referenced directly in 6 translation string values (`faq_a6`, `promo_tnc_questions`, `contact_wa_alt` × bm + en). When the real number is confirmed, update config AND those 6 translation strings.
+  - **Priority:** HIGH — live production CTAs route to a dead number until fixed.
+
+### §3.1 SageHeroLineup featured photography
+- **Current:** PVDF PLUS + ULTRA ONE hero cards use their existing `public/images/products/*/main.jpg` assets. Both render but weren't shot for a hero-scale presentation.
+- **Needed:** Dedicated photoshoot of PVDF PLUS and ULTRA ONE on a premium cream / sage backdrop, studio lighting, 4:5 crop ratio. Could also be replaced with a single wide lifestyle shot showing both products installed.
+- **Priority:** Medium (current images work but are catalogue-style, not hero-grade).
+
+### §3 Product grid low-contrast thumbnails (pre-existing)
+- `super-pleated/main.jpg` and `uf-double-backwash/main.jpg` render as near-white tiles inside the ProductCard because the source photos have white backgrounds that blend with the card fill.
+- **Not a Phase 2 regression** — same appearance on the pre-existing `/water-purifier` outdoor grid.
+- **Needed:** Replace with isolated-product cutouts on a subtle grey backdrop for better contrast. OR modify `ProductCard.tsx` to use a `#f0eee9` container instead of white — a single component change would improve both `/produk-luar` and `/water-purifier` simultaneously.
+- **Priority:** Low (legible, just softly-contrasted).
