@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { whatsappUrl } from "@/lib/config/contact";
+import { whatsappUrl, PHONE_NUMBER_DISPLAY } from "@/lib/config/contact";
 
 export default function CTASection() {
   const revealRef = useScrollReveal();
@@ -33,7 +33,7 @@ export default function CTASection() {
                 </div>
                 <div>
                   <p className="text-muted-dark text-sm">{t.cta_phone_label}</p>
-                  <p className="text-white font-medium">+6011-5657 7084</p>
+                  <p className="text-white font-medium">{PHONE_NUMBER_DISPLAY}</p>
                 </div>
               </div>
 

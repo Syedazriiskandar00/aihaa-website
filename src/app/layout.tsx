@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
+import { PHONE_NUMBER } from "@/lib/config/contact";
 
 export const metadata: Metadata = {
   title: "AIHAA | Penapis Air Premium Sekali Bayar Malaysia",
@@ -34,7 +35,7 @@ export default function RootLayout({
               name: "AIHAA Marketing SDN BHD",
               description: "Penapis air premium sekali bayar untuk keluarga Malaysia. Bumiputera & Halal JAKIM certified.",
               url: "https://aihaa-website-five.vercel.app",
-              telephone: "+60115657084",
+              telephone: `+${PHONE_NUMBER}`,
               email: "aihaa.marketing@gmail.com",
               address: {
                 "@type": "PostalAddress",

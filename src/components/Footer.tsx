@@ -4,7 +4,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { MessageCircle, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
+import { whatsappUrl, whatsappMessages, PHONE_NUMBER_DISPLAY } from "@/lib/config/contact";
 
 const socialLinks = [
   { name: "Facebook", label: "Penapis Air Aihaa", href: "#" },
@@ -65,7 +65,7 @@ export default function Footer() {
                   className="flex items-center gap-2 text-[#999] text-sm hover:text-[#DAA520] transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 text-[#DAA520]" />
-                  +6011-5657 7084
+                  {PHONE_NUMBER_DISPLAY}
                 </a>
               </li>
               <li>

@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Mail, Clock, MapPin, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { whatsappUrl } from "@/lib/config/contact";
+import { whatsappUrl, telHref, PHONE_NUMBER_DISPLAY } from "@/lib/config/contact";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -115,7 +115,7 @@ export default function ContactPage() {
                 {t.contact_wa_cta}
               </a>
               <p className="mt-4 text-[13px] text-[#999]">
-                <a href="tel:+60115657084" className="hover:text-[#717171] transition-colors">
+                <a href={telHref()} className="hover:text-[#717171] transition-colors">
                   {t.contact_wa_alt}
                 </a>
               </p>
@@ -134,8 +134,8 @@ export default function ContactPage() {
                 <MessageCircle className="w-6 h-6 text-gold" />
               </div>
               <h3 className="text-base font-bold text-[#0D0D0D] mb-2">{t.contact_info_wa_title}</h3>
-              <a href="tel:+60115657084" className="text-lg font-bold text-[#DAA520] hover:opacity-80 transition-opacity block mb-1">
-                +6011-5657 7084
+              <a href={telHref()} className="text-lg font-bold text-[#DAA520] hover:opacity-80 transition-opacity block mb-1">
+                {PHONE_NUMBER_DISPLAY}
               </a>
               <p className="text-xs text-[#717171]">{t.contact_info_wa_sub}</p>
             </div>
