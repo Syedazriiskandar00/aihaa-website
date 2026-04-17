@@ -225,6 +225,107 @@ export type TranslationKeys = {
   common_sekali_bayar: string;
   common_from: string;
   common_month: string;
+  // Service page — Q2 2026 corporate rebuild
+  nav_service: string;
+  service_meta_title: string;
+  service_meta_description: string;
+  // §4.1 Heart Service Hero
+  service_hero_eyebrow: string;
+  service_hero_script: string;
+  service_hero_tagline: string;
+  service_hero_heading: string;
+  service_hero_subheading: string;
+  service_heart_speedy_title: string;
+  service_heart_speedy_desc: string;
+  service_heart_expert_title: string;
+  service_heart_expert_desc: string;
+  service_heart_caring_title: string;
+  service_heart_caring_desc: string;
+  service_heart_alert_title: string;
+  service_heart_alert_desc: string;
+  // §4.2 Indoor Service Header + Filter Row
+  service_indoor_eyebrow: string;
+  service_indoor_heading: string;
+  service_indoor_body: string;
+  service_filter_row_heading: string;
+  service_filter_1_name: string;
+  service_filter_1_desc: string;
+  service_filter_2_name: string;
+  service_filter_2_desc: string;
+  service_filter_3_name: string;
+  service_filter_3_desc: string;
+  service_filter_4_name: string;
+  service_filter_4_desc: string;
+  // §4.3 13 Check Point
+  service_check13_eyebrow: string;
+  service_check13_heading: string;
+  service_check13_subheading: string;
+  service_check13_item_1: string;
+  service_check13_item_2: string;
+  service_check13_item_3: string;
+  service_check13_item_4: string;
+  service_check13_item_5: string;
+  service_check13_item_6: string;
+  service_check13_item_7: string;
+  service_check13_item_8: string;
+  service_check13_item_9: string;
+  service_check13_item_10: string;
+  service_check13_item_11: string;
+  service_check13_item_12: string;
+  service_check13_item_13: string;
+  service_check13_placeholder: string;
+  // §4.4 8 Step Gallery
+  service_8step_eyebrow: string;
+  service_8step_heading: string;
+  service_8step_subheading: string;
+  service_8step_step_1: string;
+  service_8step_step_2: string;
+  service_8step_step_3: string;
+  service_8step_step_4: string;
+  service_8step_step_5: string;
+  service_8step_step_6: string;
+  service_8step_step_7: string;
+  service_8step_step_8: string;
+  // §4.5 Filter Pricing
+  service_pricing_filter_eyebrow: string;
+  service_pricing_filter_heading: string;
+  service_pricing_filter_subheading: string;
+  service_pricing_filter_aihaa_badge: string;
+  service_pricing_filter_aihaa_caption: string;
+  service_pricing_filter_other_badge: string;
+  service_pricing_filter_other_caption: string;
+  service_pricing_filter_note: string;
+  service_pricing_filter_cta: string;
+  // §4.6 Sand Types Showcase
+  service_sand_eyebrow: string;
+  service_sand_heading: string;
+  service_sand_subheading: string;
+  service_sand_type_metal_earse: string;
+  service_sand_type_active_carbon: string;
+  service_sand_type_zeolite: string;
+  service_sand_type_fine_silica: string;
+  service_sand_type_medium_silica: string;
+  service_sand_type_coarse_silica: string;
+  // §4.7 5 Check Point Outdoor
+  service_check5_eyebrow: string;
+  service_check5_heading: string;
+  service_check5_subheading: string;
+  service_check5_item_1: string;
+  service_check5_item_2: string;
+  service_check5_item_3: string;
+  service_check5_item_4: string;
+  service_check5_item_5: string;
+  service_check5_placeholder: string;
+  // §4.8 Sand Replacement Pricing
+  service_pricing_sand_eyebrow: string;
+  service_pricing_sand_heading: string;
+  service_pricing_sand_subheading: string;
+  service_pricing_sand_5layer_badge: string;
+  service_pricing_sand_5layer_note: string;
+  service_pricing_sand_6layer_badge: string;
+  service_pricing_sand_6layer_note: string;
+  service_pricing_sand_note: string;
+  service_pricing_sand_cta: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -463,6 +564,107 @@ export const translations: Record<Locale, TranslationKeys> = {
     common_sekali_bayar: "Sekali Bayar",
     common_from: "Dari",
     common_month: "/bulan",
+    // Service page — Q2 2026 corporate rebuild
+    nav_service: "Servis",
+    service_meta_title: "Servis Penapis Air AIHAA — Jadual, Harga & Titik Pemeriksaan",
+    service_meta_description: "Servis penyelenggaraan setiap 6 bulan untuk penapis air dalam (13 titik) dan luar (5 titik). Juruteknik terlatih. Harga telus RM160 ke atas.",
+    // §4.1 Heart Service Hero
+    service_hero_eyebrow: "SERVIS CEMERLANG, PENGALAMAN PREMIUM",
+    service_hero_script: "AIHAA Care",
+    service_hero_tagline: "Salah satu sebab keluarga Malaysia memilih AIHAA.",
+    service_hero_heading: "Khidmat Sepenuh Hati",
+    service_hero_subheading: "Empat janji kami pada setiap lawatan juruteknik — supaya air bersih di rumah anda sentiasa terjaga.",
+    service_heart_speedy_title: "PANTAS",
+    service_heart_speedy_desc: "Pantas dan menyeluruh — itulah reputasi juruteknik AIHAA. Setiap lawatan dijalankan cekap tanpa kompromi pada kualiti kerja.",
+    service_heart_expert_title: "BERTAULIAH",
+    service_heart_expert_desc: "Juruteknik bertauliah dengan latihan rasmi dalam pemasangan dan penyelenggaraan sistem penapisan air indoor dan outdoor.",
+    service_heart_caring_title: "MESRA",
+    service_heart_caring_desc: "Mesra, sabar, dan hormat ruang anda. Juruteknik AIHAA dilatih untuk berurusan dengan tetamu rumah seperti keluarga sendiri.",
+    service_heart_alert_title: "RESPONSIF",
+    service_heart_alert_desc: "Bila timbul isu, tindak balas dalam 24 jam. Tiada panggilan tidak berjawab, tiada janji yang dilupakan — kami pantau setiap tiket sehingga selesai.",
+    // §4.2 Indoor Service Header + Filter Row
+    service_indoor_eyebrow: "SERVIS PENJAGAAN PENAPIS AIR AIHAA",
+    service_indoor_heading: "Penyelenggaraan 6 Bulan Sekali",
+    service_indoor_body: "Penapis air AIHAA diselenggara setiap 6 bulan bagi memastikan prestasi sentiasa optimum. Juruteknik terlatih akan menukar semua empat filter, membersihkan bahagian dalaman dan luaran mesin, serta menjalankan pemeriksaan lengkap pada setiap titik servis.",
+    service_filter_row_heading: "Filter Penapis Air Dalam",
+    service_filter_1_name: "Sediment Filter",
+    service_filter_1_desc: "Menapis pasir, karat, dan zarah kasar daripada air masuk.",
+    service_filter_2_name: "Pre-Carbon Filter",
+    service_filter_2_desc: "Menyingkirkan klorin, bau, dan rasa yang tidak diingini.",
+    service_filter_3_name: "UF Membrane",
+    service_filter_3_desc: "Membran 0.01 mikron — menghalang bakteria dan zarah halus.",
+    service_filter_4_name: "Post-Carbon Filter",
+    service_filter_4_desc: "Penapis akhir untuk rasa air yang bersih dan segar.",
+    // §4.3 13 Check Point
+    service_check13_eyebrow: "SERVIS PENAPIS AIR DALAM",
+    service_check13_heading: "13 Titik Pemeriksaan Servis",
+    service_check13_subheading: "Setiap sesi servis menyeluruh meliputi 13 komponen utama pada mesin anda.",
+    service_check13_item_1: "Adapter",
+    service_check13_item_2: "Powerpoint",
+    service_check13_item_3: "Top Cover",
+    service_check13_item_4: "Water Tank",
+    service_check13_item_5: "Connector",
+    service_check13_item_6: "Tubing",
+    service_check13_item_7: "Faucet",
+    service_check13_item_8: "Bottom Cover",
+    service_check13_item_9: "Tray",
+    service_check13_item_10: "Child Lock Safety Button",
+    service_check13_item_11: "Filter",
+    service_check13_item_12: "Servis Sticker",
+    service_check13_item_13: "Cold/Hot Switch",
+    service_check13_placeholder: "Diagram teknikal 13 titik pemeriksaan — gambar rasmi akan dimuat naik.",
+    // §4.4 8 Step Gallery
+    service_8step_eyebrow: "PROSES SERVIS",
+    service_8step_heading: "8 Langkah Servis",
+    service_8step_subheading: "Urutan kerja standard juruteknik pada setiap lawatan penyelenggaraan.",
+    service_8step_step_1: "Suis Off",
+    service_8step_step_2: "Check Panas Sejuk",
+    service_8step_step_3: "Drain Water",
+    service_8step_step_4: "Cuci Tangki",
+    service_8step_step_5: "Tukar Filter",
+    service_8step_step_6: "Flushing Filter Baru",
+    service_8step_step_7: "Lap Body Mesin",
+    service_8step_step_8: "Update Sticker Servis",
+    // §4.5 Filter Pricing
+    service_pricing_filter_eyebrow: "HARGA TELUS",
+    service_pricing_filter_heading: "Harga Servis Filter",
+    service_pricing_filter_subheading: "Harga sekali bayar — merangkumi gantian keempat-empat filter dan upah pemasangan.",
+    service_pricing_filter_aihaa_badge: "Servis Filter (Jenama AIHAA)",
+    service_pricing_filter_aihaa_caption: "Untuk pelanggan penapis indoor AIHAA — semua model 9 indoor.",
+    service_pricing_filter_other_badge: "Servis Filter (Jenama Lain)",
+    service_pricing_filter_other_caption: "Kami juga menyelenggara jenama lain — Coway, Cuckoo, dan yang seumpama.",
+    service_pricing_filter_note: "Harga termasuk gantian filter dan upah pemasangan. Tiada caj tersembunyi.",
+    service_pricing_filter_cta: "Tempah Servis via WhatsApp",
+    // §4.6 Sand Types Showcase
+    service_sand_eyebrow: "SERVIS PENAPIS AIR LUAR",
+    service_sand_heading: "Pasir Penapis Air Luar",
+    service_sand_subheading: "Enam jenis bahan penapis yang digunakan dalam tabung outdoor — setiap lapisan memainkan peranan berbeza dalam membersihkan air masuk ke rumah anda.",
+    service_sand_type_metal_earse: "Metal Earse",
+    service_sand_type_active_carbon: "Active Carbon",
+    service_sand_type_zeolite: "Zeolite",
+    service_sand_type_fine_silica: "Fine Silica",
+    service_sand_type_medium_silica: "Medium Silica",
+    service_sand_type_coarse_silica: "Coarse Silica",
+    // §4.7 5 Check Point Outdoor
+    service_check5_eyebrow: "SERVIS PENAPIS AIR LUAR",
+    service_check5_heading: "5 Titik Pemeriksaan",
+    service_check5_subheading: "Pemeriksaan standard pada setiap lawatan servis outdoor.",
+    service_check5_item_1: "Sumber Air",
+    service_check5_item_2: "Kualiti Body",
+    service_check5_item_3: "Kebersihan Produk",
+    service_check5_item_4: "Performance Filter",
+    service_check5_item_5: "Leakage Test",
+    service_check5_placeholder: "Foto juruteknik di lapangan — akan dimuat naik.",
+    // §4.8 Sand Replacement Pricing
+    service_pricing_sand_eyebrow: "HARGA TELUS",
+    service_pricing_sand_heading: "Harga Servis Tukar Pasir",
+    service_pricing_sand_subheading: "Harga bergantung pada jenis bekalan air di kawasan anda.",
+    service_pricing_sand_5layer_badge: "5 Lapisan Pasir",
+    service_pricing_sand_5layer_note: "Untuk penggunaan air kerajaan (SYABAS / SAJ / JBA).",
+    service_pricing_sand_6layer_badge: "6 Lapisan Pasir",
+    service_pricing_sand_6layer_note: "Untuk penggunaan air boring (sumber bawah tanah).",
+    service_pricing_sand_note: "Harga termasuk buang pasir lama, cuci tabung, dan isi pasir baru.",
+    service_pricing_sand_cta: "Tempah Servis via WhatsApp",
   },
   en: {
     nav_home: "Home",
@@ -699,5 +901,106 @@ export const translations: Record<Locale, TranslationKeys> = {
     common_sekali_bayar: "One-Time Payment",
     common_from: "From",
     common_month: "/month",
+    // Service page — Q2 2026 corporate rebuild
+    nav_service: "Service",
+    service_meta_title: "AIHAA Water Purifier Service — Schedule, Pricing & Check Points",
+    service_meta_description: "Six-month maintenance service for indoor (13-point) and outdoor (5-point) purifiers. Certified technicians. Transparent pricing from RM 160.",
+    // §4.1 Heart Service Hero
+    service_hero_eyebrow: "EXCEPTIONAL SERVICE, PREMIUM EXPERIENCE",
+    service_hero_script: "AIHAA Care",
+    service_hero_tagline: "One of the reasons Malaysian families choose AIHAA.",
+    service_hero_heading: "Heart-Winning Excellence",
+    service_hero_subheading: "Four promises we keep on every technician visit — so the clean water in your home is always cared for.",
+    service_heart_speedy_title: "SPEEDY",
+    service_heart_speedy_desc: "Quick and thorough — the reputation AIHAA technicians are known for. Every visit runs efficiently, with no compromise on workmanship.",
+    service_heart_expert_title: "EXPERT",
+    service_heart_expert_desc: "Certified technicians with formal training in the installation and maintenance of indoor and outdoor water filtration systems.",
+    service_heart_caring_title: "CARING",
+    service_heart_caring_desc: "Friendly, patient, and respectful of your space. AIHAA technicians are trained to treat every household like family.",
+    service_heart_alert_title: "ALERT",
+    service_heart_alert_desc: "When an issue arises, response within 24 hours. No missed calls, no forgotten promises — we track every ticket through to resolution.",
+    // §4.2 Indoor Service Header + Filter Row
+    service_indoor_eyebrow: "AIHAA WATER PURIFIER CARE SERVICE",
+    service_indoor_heading: "Every 6 Months Maintenance",
+    service_indoor_body: "AIHAA water purifiers are serviced every 6 months to keep performance at its peak. Trained technicians replace all four filters, clean the unit inside and out, and run a full check across every service point.",
+    service_filter_row_heading: "Indoor Water Purifier Filters",
+    service_filter_1_name: "Sediment Filter",
+    service_filter_1_desc: "Captures sand, rust, and coarse particles from incoming water.",
+    service_filter_2_name: "Pre-Carbon Filter",
+    service_filter_2_desc: "Removes chlorine, odours, and unwanted taste.",
+    service_filter_3_name: "UF Membrane",
+    service_filter_3_desc: "0.01-micron membrane — blocks bacteria and fine particulates.",
+    service_filter_4_name: "Post-Carbon Filter",
+    service_filter_4_desc: "Final polish for clean, fresh-tasting water.",
+    // §4.3 13 Check Point
+    service_check13_eyebrow: "INDOOR PURIFIER SERVICE",
+    service_check13_heading: "13 Service Check Points",
+    service_check13_subheading: "Every thorough service session covers 13 key components on your machine.",
+    service_check13_item_1: "Adapter",
+    service_check13_item_2: "Power point",
+    service_check13_item_3: "Top Cover",
+    service_check13_item_4: "Water Tank",
+    service_check13_item_5: "Connector",
+    service_check13_item_6: "Tubing",
+    service_check13_item_7: "Faucet",
+    service_check13_item_8: "Bottom Cover",
+    service_check13_item_9: "Tray",
+    service_check13_item_10: "Child Lock Safety Button",
+    service_check13_item_11: "Filter",
+    service_check13_item_12: "Service Sticker",
+    service_check13_item_13: "Cold/Hot Switch",
+    service_check13_placeholder: "13-point technical diagram — official photo to be uploaded.",
+    // §4.4 8 Step Gallery
+    service_8step_eyebrow: "SERVICE PROCESS",
+    service_8step_heading: "8 Service Steps",
+    service_8step_subheading: "Standard technician workflow on every maintenance visit.",
+    service_8step_step_1: "Power Off",
+    service_8step_step_2: "Hot/Cold Check",
+    service_8step_step_3: "Drain Water",
+    service_8step_step_4: "Clean Tank",
+    service_8step_step_5: "Replace Filters",
+    service_8step_step_6: "Flush New Filters",
+    service_8step_step_7: "Wipe Down Body",
+    service_8step_step_8: "Update Service Sticker",
+    // §4.5 Filter Pricing
+    service_pricing_filter_eyebrow: "TRANSPARENT PRICING",
+    service_pricing_filter_heading: "Filter Service Pricing",
+    service_pricing_filter_subheading: "One-time pricing — covers replacement of all four filters plus installation labour.",
+    service_pricing_filter_aihaa_badge: "Filter Service (AIHAA Brand)",
+    service_pricing_filter_aihaa_caption: "For AIHAA indoor purifier customers — all nine indoor models.",
+    service_pricing_filter_other_badge: "Filter Service (Other Brands)",
+    service_pricing_filter_other_caption: "We also service other brands — Coway, Cuckoo, and similar.",
+    service_pricing_filter_note: "Price includes filter replacement and installation. No hidden charges.",
+    service_pricing_filter_cta: "Book Service via WhatsApp",
+    // §4.6 Sand Types Showcase
+    service_sand_eyebrow: "OUTDOOR FILTER SERVICE",
+    service_sand_heading: "Outdoor Filter Sand",
+    service_sand_subheading: "Six filter media used in the outdoor tank — each layer plays a distinct role in cleaning water before it enters your home.",
+    service_sand_type_metal_earse: "Metal Earse",
+    service_sand_type_active_carbon: "Active Carbon",
+    service_sand_type_zeolite: "Zeolite",
+    service_sand_type_fine_silica: "Fine Silica",
+    service_sand_type_medium_silica: "Medium Silica",
+    service_sand_type_coarse_silica: "Coarse Silica",
+    // §4.7 5 Check Point Outdoor
+    service_check5_eyebrow: "OUTDOOR FILTER SERVICE",
+    service_check5_heading: "5 Check Points",
+    service_check5_subheading: "Standard inspection on every outdoor service visit.",
+    service_check5_item_1: "Water Source",
+    service_check5_item_2: "Body Condition",
+    service_check5_item_3: "Product Cleanliness",
+    service_check5_item_4: "Filter Performance",
+    service_check5_item_5: "Leakage Test",
+    service_check5_placeholder: "Field technician photo — to be uploaded.",
+    // §4.8 Sand Replacement Pricing
+    service_pricing_sand_eyebrow: "TRANSPARENT PRICING",
+    service_pricing_sand_heading: "Sand Replacement Pricing",
+    service_pricing_sand_subheading: "Pricing depends on the type of water supply in your area.",
+    service_pricing_sand_5layer_badge: "5-Layer Sand",
+    service_pricing_sand_5layer_note: "For municipal water supply (SYABAS / SAJ / JBA).",
+    service_pricing_sand_6layer_badge: "6-Layer Sand",
+    service_pricing_sand_6layer_note: "For borehole water (underground source).",
+    service_pricing_sand_note: "Price includes disposal of old sand, tank cleaning, and new sand fill.",
+    service_pricing_sand_cta: "Book Service via WhatsApp",
   },
 };
