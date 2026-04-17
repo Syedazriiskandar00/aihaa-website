@@ -22,7 +22,7 @@ export default function Header() {
       dropdown: [
         { name: t.nav_products_all, href: "/water-purifier" },
         { name: t.nav_products_indoor, href: "/water-purifier#indoor" },
-        { name: t.nav_products_outdoor, href: "/water-purifier#outdoor" },
+        { name: t.nav_products_outdoor, href: "/produk-luar" },
       ],
     },
     { name: t.nav_promotions, href: "/promotions" },
