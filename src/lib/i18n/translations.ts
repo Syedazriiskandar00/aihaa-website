@@ -326,6 +326,34 @@ export type TranslationKeys = {
   service_pricing_sand_6layer_note: string;
   service_pricing_sand_note: string;
   service_pricing_sand_cta: string;
+  // /produk-luar — Phase 2 premium outdoor landing
+  produk_luar_meta_title: string;
+  produk_luar_meta_description: string;
+  // §3.1 Sage Hero Lineup
+  produk_luar_hero_eyebrow: string;
+  produk_luar_hero_heading: string;
+  produk_luar_hero_italic: string;
+  produk_luar_hero_tagline: string;
+  produk_luar_hero_featured_label: string;
+  produk_luar_hero_featured_premium_badge: string;
+  produk_luar_hero_featured_value_badge: string;
+  produk_luar_hero_cta: string;
+  // Outdoor use-cases band
+  produk_luar_usecase_eyebrow: string;
+  produk_luar_usecase_boring: string;
+  produk_luar_usecase_kolam: string;
+  produk_luar_usecase_pejabat: string;
+  produk_luar_usecase_kilang: string;
+  // Outdoor grid
+  produk_luar_grid_eyebrow: string;
+  produk_luar_grid_heading: string;
+  produk_luar_grid_subheading: string;
+  // Cross-link on /water-purifier
+  produk_luar_cross_link: string;
+  // Footer CTA
+  produk_luar_footer_cta_heading: string;
+  produk_luar_footer_cta_body: string;
+  produk_luar_footer_cta_button: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -665,6 +693,38 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_6layer_note: "Untuk penggunaan air boring (sumber bawah tanah).",
     service_pricing_sand_note: "Harga termasuk buang pasir lama, cuci tabung, dan isi pasir baru.",
     service_pricing_sand_cta: "Tempah Servis via WhatsApp",
+    // /produk-luar — Phase 2 premium outdoor landing
+    produk_luar_meta_title: "Penapis Air Luar AIHAA — Koleksi Penuh 8 Model",
+    produk_luar_meta_description:
+      "Penapis air luar rumah AIHAA — 8 model dari RM399. PVDF, Fiber, Super Pleated, UF Double Backwash, dan lebih. Sesuai untuk air boring, kolam, pejabat, kilang. Sekali bayar, pemasangan percuma.",
+    // §3.1 Sage Hero Lineup
+    produk_luar_hero_eyebrow: "PENAPIS AIR LUAR RUMAH",
+    produk_luar_hero_heading: "Outdoor Filter",
+    produk_luar_hero_italic: "Perlindungan Pertama Anda.",
+    produk_luar_hero_tagline:
+      "Direka khas untuk menangani masalah air kotor pada kos mampu milik — dari air kerajaan sehingga sumber boring.",
+    produk_luar_hero_featured_label: "PILIHAN UTAMA",
+    produk_luar_hero_featured_premium_badge: "PREMIUM",
+    produk_luar_hero_featured_value_badge: "PILIHAN JIMAT",
+    produk_luar_hero_cta: "Lihat Semua Model",
+    // Outdoor use-cases band
+    produk_luar_usecase_eyebrow: "SESUAI UNTUK",
+    produk_luar_usecase_boring: "Air Boring",
+    produk_luar_usecase_kolam: "Kolam Ikan",
+    produk_luar_usecase_pejabat: "Pejabat",
+    produk_luar_usecase_kilang: "Kilang",
+    // Outdoor grid
+    produk_luar_grid_eyebrow: "KATALOG LENGKAP",
+    produk_luar_grid_heading: "Semua Penapis Luar AIHAA",
+    produk_luar_grid_subheading:
+      "Lapan model penapis luar — setiap satu direka untuk sumber air dan keperluan berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
+    // Cross-link on /water-purifier
+    produk_luar_cross_link: "Lihat Koleksi Penapis Luar Premium",
+    // Footer CTA
+    produk_luar_footer_cta_heading: "Tak pasti model yang sesuai?",
+    produk_luar_footer_cta_body:
+      "WhatsApp kami — pakar akan cadangkan mengikut sumber air dan keperluan rumah anda.",
+    produk_luar_footer_cta_button: "WhatsApp Pakar AIHAA",
   },
   en: {
     nav_home: "Home",
@@ -1002,5 +1062,37 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_6layer_note: "For borehole water (underground source).",
     service_pricing_sand_note: "Price includes disposal of old sand, tank cleaning, and new sand fill.",
     service_pricing_sand_cta: "Book Service via WhatsApp",
+    // /produk-luar — Phase 2 premium outdoor landing
+    produk_luar_meta_title: "AIHAA Outdoor Water Filters — Full 8-Model Collection",
+    produk_luar_meta_description:
+      "AIHAA outdoor water filters — 8 models from RM399. PVDF, Fiber, Super Pleated, UF Double Backwash, and more. Suited for borehole water, ponds, offices, and factories. One-time payment, free installation.",
+    // §3.1 Sage Hero Lineup
+    produk_luar_hero_eyebrow: "OUTDOOR WATER FILTRATION",
+    produk_luar_hero_heading: "Outdoor Filter",
+    produk_luar_hero_italic: "Your First Protector.",
+    produk_luar_hero_tagline:
+      "Crafted to address dirty water problems at an affordable cost — from municipal supply to borehole sources.",
+    produk_luar_hero_featured_label: "FEATURED",
+    produk_luar_hero_featured_premium_badge: "PREMIUM",
+    produk_luar_hero_featured_value_badge: "BEST VALUE",
+    produk_luar_hero_cta: "View All Models",
+    // Outdoor use-cases band
+    produk_luar_usecase_eyebrow: "SUITED FOR",
+    produk_luar_usecase_boring: "Borehole Water",
+    produk_luar_usecase_kolam: "Fish Ponds",
+    produk_luar_usecase_pejabat: "Offices",
+    produk_luar_usecase_kilang: "Factories",
+    // Outdoor grid
+    produk_luar_grid_eyebrow: "FULL CATALOGUE",
+    produk_luar_grid_heading: "Every AIHAA Outdoor Filter",
+    produk_luar_grid_subheading:
+      "Eight outdoor models — each built for a distinct water source and use case. Click any product for full specifications.",
+    // Cross-link on /water-purifier
+    produk_luar_cross_link: "View Premium Outdoor Collection",
+    // Footer CTA
+    produk_luar_footer_cta_heading: "Not sure which model fits?",
+    produk_luar_footer_cta_body:
+      "WhatsApp us — a specialist will recommend based on your water source and household needs.",
+    produk_luar_footer_cta_button: "WhatsApp an AIHAA Specialist",
   },
 };
