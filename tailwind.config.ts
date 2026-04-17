@@ -15,6 +15,7 @@ const config: Config = {
           alt: "#1A1A1A",
         },
         surface: "#FFFDE7",
+        cream: "#F9F2DE",
         "yellow-light": "#FFF9C4",
         "yellow-lemon": "#FFF176",
         gold: {

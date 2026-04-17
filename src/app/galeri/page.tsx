@@ -49,7 +49,7 @@ export default function GaleriPage() {
           <p className="text-xs tracking-[0.2em] uppercase text-[#DAA520] mb-4">
             {t.gallery_label}
           </p>
-          <h1 className="text-3xl lg:text-5xl font-bold text-white mb-4">
+          <h1 className="font-editorial text-4xl lg:text-6xl text-white mb-4">
             {t.gallery_title}
           </h1>
           <p className="text-[#999] text-base lg:text-lg max-w-xl">
@@ -136,7 +136,7 @@ export default function GaleriPage() {
       {/* CTA */}
       <section className="bg-[#0D0D0D] py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+          <h2 className="font-editorial text-3xl lg:text-5xl text-white mb-3">
             {t.gallery_cta_title}
           </h2>
           <p className="text-[#999] text-base mb-8 max-w-md mx-auto">

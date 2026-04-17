@@ -16,14 +16,6 @@ export default function Home() {
       <BenefitsSection />
       <WhyAihaaSection />
       <CategoryShowcase />
-      {/* Gradient divider: white → dark */}
-      <div
-        className="h-10"
-        style={{
-          background:
-            "linear-gradient(to bottom, #FFFFFF 0%, #E8E8E8 30%, #888888 60%, #333333 85%, #0D0D0D 100%)",
-        }}
-      />
       <CTASection />
       <CertificationsSection />
       <Footer />

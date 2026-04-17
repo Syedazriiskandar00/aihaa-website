@@ -7,6 +7,7 @@
 :root {
   --bg-primary: #FFFFFF;
   --bg-surface: #FFFDE7;
+  --bg-cream: #F9F2DE;
   --dark: #0D0D0D;
   --dark-alt: #1A1A1A;
   --gold: #DAA520;
@@ -88,6 +89,83 @@ body {
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+/* Editorial typography — Playfair for display headings, tight tracking */
+.font-editorial {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  font-weight: 500;
+}
+
+.font-editorial-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+/* Pill primary button — editorial CTA */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #DAA520;
+  color: #0D0D0D;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 999px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px rgba(218, 165, 32, 0.5);
+}
+
+/* Image frame — offset cream decorative bg */
+.image-frame {
+  position: relative;
+  z-index: 10;
+}
+.image-frame::after {
+  content: '';
+  position: absolute;
+  inset: 20px -20px -20px 20px;
+  background-color: #F9F2DE;
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* Editorial watermark numeral — used behind category cards */
+.watermark-numeral {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(120px, 16vw, 200px);
+  line-height: 1;
+  position: absolute;
+  color: #F9F2DE;
+  z-index: 0;
+  user-select: none;
+  opacity: 0.7;
+  top: -24px;
+  left: -12px;
+  font-weight: 400;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .watermark-numeral {
+  transform: translateY(-10px);
+}
+
+/* Gold divider under card titles */
+.gold-divider {
+  border-bottom: 1px solid rgba(218, 165, 32, 0.22);
+  padding-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 /* Gold gradient text */

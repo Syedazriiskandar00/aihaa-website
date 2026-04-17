@@ -84,7 +84,7 @@ export default function WaterPurifierPage() {
               <span className="text-gold text-xs font-medium uppercase tracking-[0.2em]">
                 {t.product_featured_label}
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark mt-3 mb-3">
+              <h2 className="font-editorial text-4xl md:text-5xl text-dark mt-3 mb-3">
                 AIHAA BELLA
               </h2>
               <p className="text-muted mb-4">
@@ -119,7 +119,7 @@ export default function WaterPurifierPage() {
             <span className="text-gold text-[10px] font-medium uppercase tracking-[0.2em]">
               {t.product_indoor_label}
             </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-dark mt-2 mb-2">
+            <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
               {t.product_indoor_title}
             </h2>
             <p className="text-muted text-sm max-w-lg">
@@ -169,7 +169,7 @@ export default function WaterPurifierPage() {
       <section id="outdoor" className="scroll-mt-24 bg-surface py-16 lg:py-20">
         <div ref={outdoorRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 scroll-reveal-child stagger-1">
-            <h2 className="text-2xl md:text-3xl font-bold text-dark mt-2 mb-2">
+            <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
               {t.product_outdoor_title}
             </h2>
             <p className="text-muted text-sm max-w-lg">

@@ -42,17 +42,17 @@ export default function CategoryShowcase() {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white border-t border-t-[rgba(0,0,0,0.06)]">
+    <section className="py-24 lg:py-32 bg-white">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-14 scroll-reveal-child stagger-1">
-          <span className="text-gold text-sm font-semibold tracking-wider uppercase">
+        {/* Section Header — editorial centered */}
+        <div className="text-center mb-20 scroll-reveal-child stagger-1">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-gold-dark font-semibold mb-4">
             {t.category_title}
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mt-2 mb-4">
+          </p>
+          <h2 className="font-editorial text-4xl md:text-5xl text-dark mb-4">
             {t.category_heading}
           </h2>
-          <p className="text-muted max-w-2xl mx-auto">
+          <p className="text-muted text-[14px] leading-relaxed max-w-xl mx-auto">
             {t.category_subtitle}
           </p>
         </div>
@@ -81,42 +81,50 @@ export default function CategoryShowcase() {
               )}
 
               <div className="relative z-10 p-8 md:p-12 lg:p-16">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                {/* Editorial watermark numeral */}
+                <span
+                  className="font-editorial pointer-events-none select-none"
+                  style={{
+                    position: "absolute",
+                    top: "12px",
+                    left: "24px",
+                    fontSize: "clamp(100px, 12vw, 160px)",
+                    lineHeight: 1,
+                    fontWeight: 400,
+                    color: cat.dark ? "rgba(218,165,32,0.12)" : "rgba(218,165,32,0.18)",
+                    zIndex: 1,
+                  }}
+                  aria-hidden
+                >
+                  {cat.number}
+                </span>
+
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 relative z-10">
                   {/* Left content */}
                   <div className="flex-1">
                     <div className="flex items-center gap-4 mb-6">
-                      {/* Number */}
-                      <span
-                        className={`text-6xl lg:text-8xl font-bold leading-none ${
-                          cat.dark
-                            ? "text-white/20"
-                            : "text-dark/10"
-                        }`}
-                      >
-                        {cat.number}
-                      </span>
                       {/* Icon */}
                       <div
-                        className={`w-14 h-14 rounded-2xl flex items-center justify-center ${
-                          cat.dark ? "bg-gold/10" : "bg-gold/10"
-                        }`}
+                        className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                          cat.dark ? "bg-white/5" : "bg-white"
+                        } shadow-sm`}
                       >
-                        <cat.icon className="w-7 h-7 text-gold" />
+                        <cat.icon className="w-5 h-5 text-gold" />
                       </div>
                     </div>
 
                     {/* Subtitle */}
                     <p
-                      className={`text-sm font-medium mb-2 ${
+                      className={`text-[10px] uppercase tracking-[0.22em] font-semibold mb-3 ${
                         cat.dark ? "text-gold" : "text-gold-dark"
                       }`}
                     >
                       {cat.subtitle}
                     </p>
 
-                    {/* Title */}
+                    {/* Title — editorial serif */}
                     <h3
-                      className={`text-3xl lg:text-4xl font-bold mb-4 ${
+                      className={`font-editorial text-3xl lg:text-4xl mb-5 ${
                         cat.dark ? "text-white" : "text-dark"
                       }`}
                     >

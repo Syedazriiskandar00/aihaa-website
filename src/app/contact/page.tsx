@@ -23,7 +23,7 @@ export default function ContactPage() {
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-4">
             {t.contact_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 text-[28px] lg:text-[32px] font-bold text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-white mb-3">
             {t.contact_hero_title}
           </h1>
           <p className="scroll-reveal-child stagger-3 text-sm text-[#999]">
@@ -90,7 +90,7 @@ export default function ContactPage() {
 
             {/* Right — CTA content */}
             <div className="scroll-reveal-child stagger-2">
-              <h2 className="text-2xl lg:text-[28px] font-bold text-[#0D0D0D] mb-4">
+              <h2 className="font-editorial text-3xl lg:text-[36px] text-[#0D0D0D] mb-4">
                 {t.contact_wa_title}
               </h2>
               <p className="text-[15px] text-[#555] leading-relaxed mb-6">

@@ -33,7 +33,7 @@ export default function PromotionsPage() {
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-[#DAA520] mb-4">
             {t.promo_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 text-3xl md:text-4xl font-bold text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-4xl md:text-6xl text-white mb-3">
             {t.promo_title}
           </h1>
           <p className="scroll-reveal-child stagger-3 text-sm italic text-[#999]">
@@ -48,7 +48,7 @@ export default function PromotionsPage() {
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-[#DAA520] mb-6">
             {t.promo_main_label}
           </p>
-          <h2 className="scroll-reveal-child stagger-2 text-3xl lg:text-4xl font-bold text-[#0D0D0D] mb-4 leading-tight">
+          <h2 className="scroll-reveal-child stagger-2 font-editorial text-4xl lg:text-5xl text-[#0D0D0D] mb-4 leading-tight">
             {t.promo_main_title}
           </h2>
           <div className="w-14 h-px bg-[#DAA520] mx-auto mb-6" />

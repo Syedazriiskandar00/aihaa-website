@@ -10,16 +10,16 @@ export default function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-dark py-16 lg:py-20">
+    <section className="bg-dark py-24 lg:py-32">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <span className="text-gold text-sm font-semibold tracking-wider uppercase">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-4">
               {t.cta_label}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 mb-6">
-              {t.cta_title} <span className="gold-gradient-text">AIHAA</span>
+            </p>
+            <h2 className="font-editorial text-4xl md:text-5xl text-white mb-6">
+              {t.cta_title} <span className="font-editorial-italic text-gold">AIHAA</span>
             </h2>
             <p className="text-muted-dark mb-8 max-w-md">
               {t.cta_desc}

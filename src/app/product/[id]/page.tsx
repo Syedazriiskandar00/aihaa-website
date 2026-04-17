@@ -439,7 +439,7 @@ export default function ProductDetailPage({
                   ? "Penapis Air Dalam Rumah"
                   : "Penapis Air Luar Rumah"}
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <h1 className="font-editorial text-4xl md:text-6xl text-white mb-2">
                 {product.name}
               </h1>
               <p className="text-gold text-xl mb-4">{product.tagline}</p>

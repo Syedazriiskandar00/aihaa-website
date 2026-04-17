@@ -37,7 +37,7 @@ export default function FAQPage() {
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-4">
             {t.faq_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 text-[28px] lg:text-[32px] font-bold text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-white mb-3">
             {t.faq_title}
           </h1>
           <p className="scroll-reveal-child stagger-3 text-sm text-[#999]">
@@ -52,7 +52,7 @@ export default function FAQPage() {
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-5">
             {t.faq_top_label}
           </p>
-          <h2 className="scroll-reveal-child stagger-2 text-[22px] font-bold text-[#0D0D0D] mb-5">
+          <h2 className="scroll-reveal-child stagger-2 font-editorial text-[26px] lg:text-[30px] text-[#0D0D0D] mb-5">
             {t.faq_q1}
           </h2>
           <div className="scroll-reveal-child stagger-3 border-l-[3px] border-l-[#DAA520] pl-6">
