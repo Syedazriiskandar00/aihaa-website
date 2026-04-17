@@ -8,6 +8,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import ProductCard from "@/components/ProductCard";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 const indoorProducts = [
   { id: "aihaa-bella", name: "AIHAA BELLA", tagline: "Rekaan Kompak Stand Floor", price: "RM1,080", image: "/images/products/bella/main.jpg" },
@@ -142,7 +143,7 @@ export default function WaterPurifierPage() {
               <p className="font-semibold text-white mb-1">{t.product_cta_title}</p>
               <p className="text-[#999] text-sm mb-4">{t.product_cta_sub}</p>
               <a
-                href="https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20penapis%20air%20mana%20yang%20sesuai%20untuk%20saya."
+                href={whatsappUrl(whatsappMessages.modelAdvice)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#DAA520] text-[#0D0D0D] px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all"

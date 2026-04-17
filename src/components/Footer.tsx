@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { MessageCircle, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 const socialLinks = [
   { name: "Facebook", label: "Penapis Air Aihaa", href: "#" },
@@ -58,7 +59,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="https://wa.me/60115657084"
+                  href={whatsappUrl(whatsappMessages.general)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-[#999] text-sm hover:text-[#DAA520] transition-colors"

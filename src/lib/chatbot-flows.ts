@@ -1,4 +1,5 @@
 import type { Locale } from "./i18n/translations";
+import { whatsappUrl, whatsappMessages } from "./config/contact";
 
 export type ChatMessage = {
   id: string;
@@ -13,15 +14,15 @@ export type FlowStep = {
 };
 
 export const whatsappUrls: Record<string, string> = {
-  whatsapp: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20penapis%20air%20AIHAA.",
-  whatsapp_price: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20harga%20penapis%20air%20AIHAA.",
-  whatsapp_ean: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20EAN%20(RM780).",
-  whatsapp_bella: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20BELLA%20(RM1,080).",
-  whatsapp_winter: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20WINTER%20(RM1,580).",
-  whatsapp_warranty: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20claim%20warranty%20AIHAA.",
-  whatsapp_support: "https://wa.me/60115657084?text=Hai,%20saya%20pelanggan%20AIHAA%20dan%20ada%20masalah%20dengan%20unit%20saya.",
-  whatsapp_filter: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20order%20filter%20untuk%20penapis%20air%20AIHAA%20saya.",
-  whatsapp_tradein: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20tentang%20program%20trade-in%20AIHAA.",
+  whatsapp: whatsappUrl("Hai, saya berminat dengan penapis air AIHAA."),
+  whatsapp_price: whatsappUrl(whatsappMessages.priceQuestion),
+  whatsapp_ean: whatsappUrl(whatsappMessages.productInquiry("AIHAA EAN (RM780)")),
+  whatsapp_bella: whatsappUrl(whatsappMessages.productInquiry("AIHAA BELLA (RM1,080)")),
+  whatsapp_winter: whatsappUrl(whatsappMessages.productInquiry("AIHAA WINTER (RM1,580)")),
+  whatsapp_warranty: whatsappUrl(whatsappMessages.warrantyClaim),
+  whatsapp_support: whatsappUrl(whatsappMessages.support),
+  whatsapp_filter: whatsappUrl(whatsappMessages.filterOrder),
+  whatsapp_tradein: whatsappUrl(whatsappMessages.tradeIn),
 };
 
 // Keyword matching for free text input

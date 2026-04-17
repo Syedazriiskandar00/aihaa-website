@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 type Category = "semua" | "dalam" | "luar";
 
@@ -100,7 +101,7 @@ export default function GaleriPage() {
             <p className="text-base font-semibold text-[#0D0D0D] mb-2">Hantar gambar pemasangan anda</p>
             <p className="text-sm text-[#717171] mb-4">Kongsi pengalaman anda dan dapatkan hadiah istimewa</p>
             <a
-              href={`https://wa.me/60115657084?text=${encodeURIComponent("Hai, saya nak hantar gambar pemasangan AIHAA saya!")}`}
+              href={whatsappUrl(whatsappMessages.galleryUpload)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block gold-gradient-bg text-white px-6 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
@@ -143,7 +144,7 @@ export default function GaleriPage() {
             {t.gallery_cta_sub}
           </p>
           <a
-            href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+            href={whatsappUrl(t.common_whatsapp_message)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"

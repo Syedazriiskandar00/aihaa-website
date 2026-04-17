@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/config/contact";
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number>(-1);
@@ -116,7 +117,7 @@ export default function FAQPage() {
               {t.faq_cta_sub}
             </p>
             <a
-              href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+              href={whatsappUrl(t.common_whatsapp_message)}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-bold text-[#DAA520] hover:underline"

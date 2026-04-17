@@ -9,6 +9,7 @@ import ProductCard from "@/components/ProductCard";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/config/contact";
 
 const products: Record<
   string,
@@ -476,9 +477,7 @@ export default function ProductDetailPage({
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={`https://wa.me/60115657084?text=${encodeURIComponent(
-                    t.common_whatsapp_message
-                  )}`}
+                  href={whatsappUrl(t.common_whatsapp_message)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"

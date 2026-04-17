@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/config/contact";
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -134,7 +135,7 @@ export default function HeroSection() {
 
           {/* Single CTA — pill editorial */}
           <a
-            href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+            href={whatsappUrl(t.common_whatsapp_message)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-pill btn-shimmer"

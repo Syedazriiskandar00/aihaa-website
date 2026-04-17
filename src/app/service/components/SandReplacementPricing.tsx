@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import SectionHeading from "@/components/shared/SectionHeading";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 const FIVE_LAYER_PRICE = "RM 250";
 const SIX_LAYER_PRICE = "RM 650";
-const WHATSAPP_URL =
-  "https://wa.me/60123456789?text=Saya%20nak%20tempah%20servis%20tukar%20pasir%20penapis%20luar%20AIHAA";
 
 // Layer rendering: top-down bands in the tank illustration.
 // Kept minimal (not 6 separate colored bands) to stay visually calm.
@@ -114,7 +113,7 @@ export default function SandReplacementPricing() {
             {t.service_pricing_sand_note}
           </p>
           <Link
-            href={WHATSAPP_URL}
+            href={whatsappUrl(whatsappMessages.serviceSand)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gold text-dark px-8 py-3.5 rounded-full text-[13.5px] font-semibold tracking-wide hover:bg-gold-light transition-colors shadow-gold"

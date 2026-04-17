@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/config/contact";
 
 export default function CTASection() {
   const revealRef = useScrollReveal();
@@ -58,7 +59,7 @@ export default function CTASection() {
             </div>
 
             <a
-              href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+              href={whatsappUrl(t.common_whatsapp_message)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold"

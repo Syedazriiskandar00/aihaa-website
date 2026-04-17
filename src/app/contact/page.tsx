@@ -6,6 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Mail, Clock, MapPin, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { whatsappUrl } from "@/lib/config/contact";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -106,7 +107,7 @@ export default function ContactPage() {
               </div>
               {/* CTA button */}
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full sm:w-auto sm:inline-block gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold text-center hover:opacity-90 transition-all hover:shadow-gold btn-shimmer text-lg"

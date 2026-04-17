@@ -3,11 +3,10 @@
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import SectionHeading from "@/components/shared/SectionHeading";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 const AIHAA_PRICE = "RM 160";
 const OTHER_PRICE = "RM 260";
-const WHATSAPP_URL =
-  "https://wa.me/60123456789?text=Saya%20nak%20tempah%20servis%20filter%20penapis%20air%20AIHAA";
 
 export default function FilterPricingCards() {
   const { t } = useLanguage();
@@ -65,7 +64,7 @@ export default function FilterPricingCards() {
             {t.service_pricing_filter_note}
           </p>
           <Link
-            href={WHATSAPP_URL}
+            href={whatsappUrl(whatsappMessages.serviceFilter)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gold text-dark px-8 py-3.5 rounded-full text-[13.5px] font-semibold tracking-wide hover:bg-gold-light transition-colors shadow-gold"

@@ -7,6 +7,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { ChevronDown } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/config/contact";
 
 export default function PromotionsPage() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
@@ -60,7 +61,7 @@ export default function PromotionsPage() {
           </p>
           <div className="scroll-reveal-child stagger-5">
             <a
-              href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+              href={whatsappUrl(t.common_whatsapp_message)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
@@ -98,7 +99,7 @@ export default function PromotionsPage() {
                 </p>
               </div>
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#DAA520] text-sm font-medium mt-6 hover:underline inline-block"
@@ -122,7 +123,7 @@ export default function PromotionsPage() {
                 <p className="text-lg font-bold text-[#DAA520]">{t.promo_bundle_price}</p>
               </div>
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#DAA520] text-sm font-medium mt-6 hover:underline inline-block"
@@ -145,7 +146,7 @@ export default function PromotionsPage() {
                 </p>
               </div>
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#717171] text-sm font-medium mt-6 hover:underline inline-block"

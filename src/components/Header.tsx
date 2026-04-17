@@ -6,6 +6,7 @@ import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -104,7 +105,7 @@ export default function Header() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/60115657084"
+              href={whatsappUrl(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white/80 hover:text-gold transition-colors"
