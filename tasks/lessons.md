@@ -240,6 +240,18 @@
 - Rule: Check browser localhost:3000 selepas SETIAP fix, bukan selepas semua siap
 - Rule: JANGAN biarkan multiple dev servers running serentak — satu sahaja pada satu masa
 
+### [2026-04-17] DESIGN — 8 rules dari brainstorm Q2 2026 rebuild
+Decisions locked from the corporate-rebuild brainstorm. Apply across all new work.
+
+1. **Hero lineup pattern:** For product showcase, use pedestal layout (AIHAA/Hijrah style). Never grid of 4 boxes.
+2. **Spec & Price always at bottom** of product detail pages — never at top. Hybrid corporate positioning: story & spec first, price last.
+3. **Soft lemon yellow #FFFDE7 is ONLY used in "Kenapa Pilih AIHAA"** section as a visual rest stop. Never in multiple sections — terlampau kuning kill premium feel.
+4. **Service page uses TRANSPARENT pricing** — prices shown large and clear up-front. Opposite of product pages where price is at the bottom. Servis = predictable cost, customer perlu tahu cepat.
+5. **Filter cartridge horizontal row is a REUSABLE component** — single source in `src/components/shared/IndoorFilterRow.tsx`, used in both Service page and Product Detail. Jangan buat dua versi.
+6. **Coway "Heart Service" 4-pillar pattern** (Speedy / Expert / Caring / Alert) — use for service value prop. Editorial style, not corporate kering.
+7. **Sage green #B5C5A5 is ONLY for Outdoor product hero.** Never elsewhere. Beri rasa "natural water purification" khusus untuk outdoor.
+8. **Gold #DAA520 usage rule:** only for brand logo, eyebrow text, primary CTA, service price emphasis, halal badge. NEVER on every heading, every card, or more than 4 visible gold elements per mobile-size screen.
+
 ---
 
 ## Template For New Lessons
