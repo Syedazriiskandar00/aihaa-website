@@ -69,6 +69,19 @@ These look minimal but are the agreed final design per SECTION_SPEC:
 - **Needed:** Dedicated photoshoot of PVDF PLUS and ULTRA ONE on a premium cream / sage backdrop, studio lighting, 4:5 crop ratio. Could also be replaced with a single wide lifestyle shot showing both products installed.
 - **Priority:** Medium (current images work but are catalogue-style, not hero-grade).
 
+### §5 (Phase 5) /tentang-kami About page assets
+
+Five placeholder surfaces on the new /tentang-kami page. All render cleanly but none ship real content — swap the listed i18n values or component assets when Azri supplies.
+
+- **§5.1 Founder photo** — `KisahKami.tsx` left column is a dark block with a dashed gold frame stroke and caption "Gambar pengasas — akan dimuat naik". Swap the whole `<div>` block for an `<Image>` wrapped around the same grid cell when the photo lands.
+- **§5.2 JAKIM cert reference** — `MS 1500 / Ref: 6 126-03 / 2014` values are verbatim from SECTION_SPEC's brainstorm section. **Azri to verify against the actual current JAKIM certificate.** Update `about_halal_cert_label` / `about_halal_cert_ref` translations when confirmed. The centered dark Halal mark is a CSS-drawn placeholder (HALAL / JAKIM text in a green-ringed black disc) — swap for the real JAKIM Halal logo SVG when available.
+- **§5.2 Halal integrity checkpoints** — 3 placeholder bullets written as category-level (components inspected / packaging / internal audit). Replace with the actual AIHAA-specific checkpoint items when legal / compliance supplies them.
+- **§5.3 AIHAA × Azlee video** — placeholder 16:9 dark frame with gold play button and caption "Video kolaborasi — akan dimuat naik". When video URL lands, replace the entire placeholder `<div>` with a YouTube embed or `<video>` element.
+- **§5.4 Team group photo** — placeholder 21:9 dark block with Users icon and caption. Swap for `<Image>` once the team photo is shot.
+- **§5.5 CSR cards** — all 3 cards (Sumbangan Peralatan / Bantuan Bencana / Program Komuniti) use **category-level** titles/descriptions so no fabricated specific events leaked to production. Year shown as "TBD". Swap via `about_csr_card_{1,2,3}_{title,year,desc}` i18n values when Azri supplies real activity data.
+
+**Priority:** Medium-High for the JAKIM cert verification (§5.2 reference number) — legal/compliance risk if the placeholder number conflicts with the actual cert. Low for photography/video/CSR details (all work as placeholders, visually premium, just empty of specific content).
+
 ### §1 (Phase 4) Homepage hero photography
 - **Current:** Homepage hero (`HomeHero.tsx`) reuses the exact same 5-product pedestal composition as `/produk-dalam` via the shared `ProductPedestalLineup` component. Renders cleanly at desktop BM/EN and 375px mobile.
 - **Hero-grade upgrade:** SECTION_SPEC §1.1 originally envisioned a custom AIHAA poster lineup image (single studio shot with all products on real cream pedestals). A dedicated photoshoot would replace the CSS pedestals entirely with a single hero composition image.
