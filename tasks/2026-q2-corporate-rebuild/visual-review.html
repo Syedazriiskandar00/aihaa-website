@@ -226,6 +226,14 @@
   .issues ul { margin: 0; padding-left: 22px; color: var(--ink-soft); font-size: 13.5px; }
   .issues li { margin: 6px 0; }
   .issues code { color: var(--ink); }
+  .issues .phase7-issues-heading {
+    margin: 26px 0 8px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--border);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: var(--warn);
+  }
 
   footer.end {
     text-align: center;
@@ -256,12 +264,12 @@
     <p class="meta">
       Q2 2026 Corporate Rebuild ·
       Branch <code>feat/corporate-rebuild-2026-q2</code> ·
-      75 commits on branch ·
-      Tip <code>3e71eb6</code> ·
-      Generated 2026-04-18
+      89 commits on branch ·
+      Tip <code>3066cfb</code> ·
+      Regenerated 2026-04-18 with Phase 7 detail pages
     </p>
     <div class="hdr-stats">
-      <div class="stat"><strong>6</strong>phases shipped</div>
+      <div class="stat"><strong>7</strong>phases shipped</div>
       <div class="stat"><strong>23</strong>routes captured</div>
       <div class="stat"><strong>46</strong>screenshots (desktop + mobile)</div>
       <div class="stat ok"><strong>tsc · lint · build</strong>all green</div>
@@ -280,7 +288,7 @@
   <a href="#phase-1">Phase 1 · Service</a>
   <a href="#phase-5">Phase 5 · Tentang Kami</a>
   <a href="#legacy">Legacy · Water Purifier</a>
-  <h3>Phase 6 · Product Detail</h3>
+  <h3>Phase 6+7 · Product Detail (Premium)</h3>
   <a href="#product-indoor">Indoor (5)</a>
   <a href="#product-outdoor">Outdoor (8)</a>
   <h3>Untouched</h3>
@@ -401,12 +409,12 @@
 
 <!-- ─────── Phase 6 Indoor Products ─────── -->
 <section id="product-indoor" class="phase">
-  <h2>Phase 6 — Product Detail · Indoor (5)</h2>
-  <p class="phase-caption">Dark hero + gold accents (indoor category tone). One dynamic template at <code>/product/[id]</code> renders all 13 products — tone adapts via <code>product.category</code>.</p>
+  <h2>Phase 6+7 — Product Detail · Indoor (5)</h2>
+  <p class="phase-caption">Dark hero + gold accents (indoor category tone). One dynamic template at <code>/product/[id]</code> renders all 13 products — tone adapts via <code>product.category</code>. <strong>Phase 7 sections added below the hero:</strong> Kitchen Context Split (§D.2) · Capacity Functionalities with 5–6 temperature icons (§D.3) · Features Overview 3×2 grid (§D.4) · Filter Cartridge SVG row (§D.5) · SpecPriceDark with blueprint drawing (§D.6, replaces the old light specs card).</p>
 
   <article class="route">
-    <header><h3>AIHAA BELLA</h3><span class="url mono">/product/aihaa-bella</span><span class="tag">Phase 6</span></header>
-    <p class="caption">Check: dark hero with gold italic tagline; Features section icons mapped by keyword (Mineral Alkali → Sparkles, 4 Tahap Penapisan → Filter); ServiceInfo shows RM 160 / 2 Tahun / Setiap 6 Bulan / RM 320.</p>
+    <header><h3>AIHAA BELLA</h3><span class="url mono">/product/aihaa-bella</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">Check: dark hero with gold italic tagline → Kitchen Context Split (Modern cream backdrop + Industrial charcoal backdrop side-by-side) → Capacity row with 5 temperature icons (Coffee 85° · Tea 70° · Baby 50° · Cold 8° · Ambient 25°) → Features Overview 3×2 warm-gradient tiles → Filter Cartridge SVG row (Sediment · Antibacterial · Pre-Carbon · Post-Carbon) with blue flow arrows → SpecPriceDark with blueprint drawing + RM 1,080 gold price → ServiceInfo shows RM 160 / 2 Tahun / Setiap 6 Bulan / RM 320.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-bella-desktop.png" alt="AIHAA BELLA desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-bella-mobile.png" alt="AIHAA BELLA mobile"></div>
@@ -414,8 +422,8 @@
   </article>
 
   <article class="route">
-    <header><h3>AIHAA BIG</h3><span class="url mono">/product/aihaa-big</span><span class="tag">Phase 6</span></header>
-    <p class="caption">Popular badge in hero. Kapasiti 17 Liter spec. Related products show BELLA / EAN / FANCY (indoor peers).</p>
+    <header><h3>AIHAA BIG</h3><span class="url mono">/product/aihaa-big</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">POPULAR badge in hero. Same Phase 7 indoor section stack as BELLA (Kitchen · Capacity · FeaturesOverview · CartridgeRow · SpecDark). Kapasiti 17 Liter spec visible in the dark specs table. Related products: BELLA / EAN / FANCY.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-big-desktop.png" alt="AIHAA BIG desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-big-mobile.png" alt="AIHAA BIG mobile"></div>
@@ -423,8 +431,8 @@
   </article>
 
   <article class="route">
-    <header><h3>AIHAA EAN</h3><span class="url mono">/product/aihaa-ean</span><span class="tag">Phase 6</span></header>
-    <p class="caption">SALE badge (red) with RM780 (from RM867). Digital Display feature.</p>
+    <header><h3>AIHAA EAN</h3><span class="url mono">/product/aihaa-ean</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">SALE badge (red) with RM780 (from RM867). Digital Display feature in the Features Overview grid. Phase 7 stack identical to BELLA (Kitchen · Capacity · FeaturesOverview · CartridgeRow · SpecDark).</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-ean-desktop.png" alt="AIHAA EAN desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-ean-mobile.png" alt="AIHAA EAN mobile"></div>
@@ -432,8 +440,8 @@
   </article>
 
   <article class="route">
-    <header><h3>AIHAA FANCY</h3><span class="url mono">/product/aihaa-fancy</span><span class="tag">Phase 6</span></header>
-    <p class="caption">No tier badge (data has no badge field). Slim modern 3-tank design feature line.</p>
+    <header><h3>AIHAA FANCY</h3><span class="url mono">/product/aihaa-fancy</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">No tier badge (data has no badge field). Slim modern 3-tank design feature line surfaces as a highlighted caption inside the Features Overview 3×2 grid. Phase 7 stack standard for indoor.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-fancy-desktop.png" alt="AIHAA FANCY desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-fancy-mobile.png" alt="AIHAA FANCY mobile"></div>
@@ -441,8 +449,8 @@
   </article>
 
   <article class="route">
-    <header><h3>AIHAA WINTER</h3><span class="url mono">/product/aihaa-winter</span><span class="tag">Phase 6</span></header>
-    <p class="caption">PREMIUM badge. Ice Maker feature → Snowflake icon in Features grid (keyword mapper).</p>
+    <header><h3>AIHAA WINTER</h3><span class="url mono">/product/aihaa-winter</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">PREMIUM badge. <strong>Only product with a 6th Capacity tile:</strong> WINTER overrides <code>capacityOptions</code> in products.ts to add the Ice Maker tile (Snowflake icon, −5° pill) next to the 5 standard temperatures. Rest of the Phase 7 stack identical to other indoor products.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-winter-desktop.png" alt="AIHAA WINTER desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-winter-mobile.png" alt="AIHAA WINTER mobile"></div>
@@ -452,12 +460,12 @@
 
 <!-- ─────── Phase 6 Outdoor Products ─────── -->
 <section id="product-outdoor" class="phase">
-  <h2>Phase 6 — Product Detail · Outdoor (8)</h2>
-  <p class="phase-caption">Sage hero + dark text (outdoor tone). Same template, same sections; tone switches via <code>product.category</code>.</p>
+  <h2>Phase 6+7 — Product Detail · Outdoor (8)</h2>
+  <p class="phase-caption">Sage hero + dark text (outdoor tone). Same template, different mid-page sections. <strong>Phase 7 outdoor sections:</strong> House Cross-Section SVG with 6 use-case pins (§D.2 outdoor) · Seven-Layer Filtration cylinder + layer list (§D.3 outdoor) · PVDF Micron Funnel 100→0.01μm (§D.4 outdoor) · Features Overview 3×2 grid (shared §D.4) · SpecPriceDark with blueprint drawing (§D.6).</p>
 
   <article class="route">
-    <header><h3>ULTRA ONE</h3><span class="url mono">/product/ultra-one</span><span class="tag">Phase 6</span></header>
-    <p class="caption">BEST VALUE badge. Service classified as membrane-grade: RM 160 / 2 Tahun / RM 320 yearly.</p>
+    <header><h3>ULTRA ONE</h3><span class="url mono">/product/ultra-one</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">BEST VALUE badge. Sage hero → House Cross-Section SVG (6 use-case pins around a rumah cutaway) → 7-Layer Filtration cylinder (Anthracite → Zeolite Plus → KDF → Nano Silver → Super Quick Sand → Fine Sand → Silica Sand) → PVDF Micron Funnel 100→0.01μm → FeaturesOverview → SpecPriceDark. Service tier: RM 160 / 2 Tahun / RM 320 yearly.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-ultra-one-desktop.png" alt="ULTRA ONE desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-ultra-one-mobile.png" alt="ULTRA ONE mobile"></div>
@@ -465,8 +473,8 @@
   </article>
 
   <article class="route">
-    <header><h3>FIBER 9X42</h3><span class="url mono">/product/fiber-9x42</span><span class="tag">Phase 6</span></header>
-    <p class="caption">Sand-media tier: RM 250 / 2 Tahun / RM 500 yearly.</p>
+    <header><h3>FIBER 9X42</h3><span class="url mono">/product/fiber-9x42</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">Same Phase 7 outdoor stack as ULTRA ONE (House · SevenLayers · PvdfFunnel · FeaturesOverview · SpecDark). Sand-media tier: RM 250 / 2 Tahun / RM 500 yearly.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-fiber-9x42-desktop.png" alt="FIBER 9X42 desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-fiber-9x42-mobile.png" alt="FIBER 9X42 mobile"></div>
@@ -474,8 +482,8 @@
   </article>
 
   <article class="route">
-    <header><h3>FIBER 10X44</h3><span class="url mono">/product/fiber-10x44</span><span class="tag">Phase 6</span></header>
-    <p class="caption">Sand-media tier. Related products strip shows other outdoor models.</p>
+    <header><h3>FIBER 10X44</h3><span class="url mono">/product/fiber-10x44</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">Same Phase 7 outdoor stack. Sand-media tier. Related products strip shows other outdoor models.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-fiber-10x44-desktop.png" alt="FIBER 10X44 desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-fiber-10x44-mobile.png" alt="FIBER 10X44 mobile"></div>
@@ -483,8 +491,8 @@
   </article>
 
   <article class="route">
-    <header><h3>PENAPIS BORING 13X54</h3><span class="url mono">/product/penapis-boring-13x54</span><span class="tag">Phase 6</span></header>
-    <p class="caption"><strong>Azri flagged:</strong> ServiceInfo currently shows RM 250 (sand-standard); should be RM 650 per Phase 1 SPEC §4.8 (boring = 6-layer). One-line fix in <code>src/lib/data/services.ts</code> — batched with other fixes later.</p>
+    <header><h3>PENAPIS BORING 13X54</h3><span class="url mono">/product/penapis-boring-13x54</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">Same Phase 7 outdoor stack. <strong>Azri flagged:</strong> ServiceInfo currently shows RM 250 (sand-standard); should be RM 650 per Phase 1 SPEC §4.8 (boring = 6-layer). One-line fix in <code>src/lib/data/services.ts</code> — batched with other fixes later.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-penapis-boring-13x54-desktop.png" alt="PENAPIS BORING 13X54 desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-penapis-boring-13x54-mobile.png" alt="PENAPIS BORING 13X54 mobile"></div>
@@ -492,8 +500,8 @@
   </article>
 
   <article class="route">
-    <header><h3>PVDF</h3><span class="url mono">/product/pvdf</span><span class="tag">Phase 6</span></header>
-    <p class="caption">PRO GRADE badge. Membrane-tier service pricing.</p>
+    <header><h3>PVDF</h3><span class="url mono">/product/pvdf</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">PRO GRADE badge. Same Phase 7 outdoor stack. Membrane-tier service pricing. PVDF Micron Funnel section particularly on-brand here — the product name matches the filtration narrative.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-pvdf-desktop.png" alt="PVDF desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-pvdf-mobile.png" alt="PVDF mobile"></div>
@@ -501,8 +509,8 @@
   </article>
 
   <article class="route">
-    <header><h3>PVDF PLUS</h3><span class="url mono">/product/pvdf-plus</span><span class="tag">Phase 6</span></header>
-    <p class="caption">PREMIUM badge. 6000 L/hour flow rate in specs.</p>
+    <header><h3>PVDF PLUS</h3><span class="url mono">/product/pvdf-plus</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">PREMIUM badge. Full Phase 7 outdoor stack renders cleanly; 6000 L/hour flow rate shown in SpecPriceDark table. Representative outdoor reference for review.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-pvdf-plus-desktop.png" alt="PVDF PLUS desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-pvdf-plus-mobile.png" alt="PVDF PLUS mobile"></div>
@@ -510,8 +518,8 @@
   </article>
 
   <article class="route">
-    <header><h3>SUPER PLEATED</h3><span class="url mono">/product/super-pleated</span><span class="tag">Phase 6</span></header>
-    <p class="caption">No tier badge. Photo renders faintly against sage hero (known — flagged in PLACEHOLDERS.md, photo has white background).</p>
+    <header><h3>SUPER PLEATED</h3><span class="url mono">/product/super-pleated</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">No tier badge. Same Phase 7 outdoor stack. Photo renders faintly against sage hero (known — flagged in PLACEHOLDERS.md, photo has white background).</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-super-pleated-desktop.png" alt="SUPER PLEATED desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-super-pleated-mobile.png" alt="SUPER PLEATED mobile"></div>
@@ -519,8 +527,8 @@
   </article>
 
   <article class="route">
-    <header><h3>UF DOUBLE BACKWASH</h3><span class="url mono">/product/uf-double-backwash</span><span class="tag">Phase 6</span></header>
-    <p class="caption">SALE badge (RM 799 from RM 888). Warranty displays "10 Tahun (UF Membrane)" — the only product in the catalogue with an extended-warranty variant.</p>
+    <header><h3>UF DOUBLE BACKWASH</h3><span class="url mono">/product/uf-double-backwash</span><span class="tag">Phase 6+7</span></header>
+    <p class="caption">SALE badge (RM 799 from RM 888). Same Phase 7 outdoor stack. ServiceInfo displays "10 Tahun (UF Membrane)" warranty — the only product in the catalogue with an extended-warranty variant.</p>
     <div class="shots">
       <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-uf-double-backwash-desktop.png" alt="UF DOUBLE BACKWASH desktop"></div>
       <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-uf-double-backwash-mobile.png" alt="UF DOUBLE BACKWASH mobile"></div>
@@ -584,6 +592,19 @@
     <li><strong>/water-purifier destiny TBD</strong> — legacy route kept live; navbar "All Products" dropdown is a stopgap pointing at <code>/produk-luar</code>. A future phase decides: redesign, redirect, or retire.</li>
     <li><strong>Comparison table (BezaKami) + impact stats</strong> — previously lived in WhyAihaaSection; removed in Phase 5 since no SECTION_SPEC home exists for them. Future phase may re-introduce with new design direction.</li>
     <li><strong>Hero photography (LOW)</strong> — pedestal composition + low-contrast thumbnails (super-pleated, uf-double-backwash) currently use CSS and existing catalogue shots. Reshoot is an aesthetic upgrade, not a blocker.</li>
+  </ul>
+
+  <h3 class="phase7-issues-heading">Phase 7 detail-page placeholders</h3>
+  <p class="lead">Every new Phase 7 visual ships as CSS/SVG-drawn inline — no broken image URLs, no stock photos. Swap-in points are documented per component in <code>PLACEHOLDERS.md §Phase 7</code>.</p>
+  <ul>
+    <li><strong>Kitchen Context photography — 5 indoor products × 2 shots (MEDIUM)</strong> — <code>KitchenContextSplit.tsx</code> currently renders cream/grey gradient ("Modern") and dark charcoal ("Industrial") backdrops. Need real product-in-kitchen photography for both variants at 4:5 aspect, studio-lit. Swap the KitchenScene gradient <code>&lt;div&gt;</code> with <code>&lt;Image&gt;</code>.</li>
+    <li><strong>Capacity icon artwork — indoor products (LOW)</strong> — <code>CapacityFunctionalities.tsx</code> uses lucide-react icons (Coffee, Leaf, Baby, Droplets, CupSoda, Snowflake) inside 80px dark circles with per-icon temperature pills. Upgrade to custom SVG aligned with AIHAA brand, or photographed water-state shots. Works cleanly today.</li>
+    <li><strong>Features Overview close-ups — 13 products × 6 shots (MEDIUM)</strong> — <code>FeaturesOverviewGrid.tsx</code> renders warm-gradient frames with numbered captions pulled from <code>product.features[]</code>. Caption text is already wired; only the image block needs swapping. 78 shots total when photography lands.</li>
+    <li><strong>Filter Cartridge product photography — 4 types (MEDIUM)</strong> — <code>FilterCartridgeRow.tsx</code> draws 4 vertical SVG cartridges with patterned liquid fills and blue flow-arrows. Need isolated product photos of AIHAA Sediment / Antibacterial / Pre-Carbon / Post-Carbon cartridges (transparent background).</li>
+    <li><strong>House Cross-Section custom illustration — outdoor (MEDIUM)</strong> — <code>HouseCrossSection.tsx</code> renders an inline SVG silhouette house with 6 use-case pins anchored around an AIHAA filter tank + dashed distribution lines. Need a commissioned isometric render or CAD export; replace the inline SVG with a single <code>&lt;Image&gt;</code>.</li>
+    <li><strong>7-Layer Filtration cross-section art — outdoor (MEDIUM)</strong> — <code>SevenLayerFiltration.tsx</code> renders a CSS-drawn 7-segment cylinder with per-layer earth-tone fills + grain patterns. Need either a lab-style cross-section photo OR a CAD render with real tank dimensions.</li>
+    <li><strong>PVDF microscopy imagery — outdoor (LOW)</strong> — <code>PvdfMicronFunnel.tsx</code> renders an inline SVG 4-tier trapezoid funnel (100μm → 10μm → 1μm → 0.01μm) with scattered particle dots. Microscopy imagery would uplift credibility; SVG version ships fine today.</li>
+    <li><strong>SpecPriceDark blueprint drawings — 13 products (MEDIUM-HIGH)</strong> — <code>ProductSpecs.tsx</code> (upgraded from Phase 6's light specs card) renders a generic SVG purifier silhouette on a gold grid with W/H dimension callouts + 4 numbered lead-lines to unlabelled points. Need per-product engineering blueprints (CAD-to-SVG or commissioned technical illustrations). Add <code>blueprint?: string</code> field to Product type and replace the <code>&lt;BlueprintDrawing&gt;</code> component body with <code>&lt;Image src={product.blueprint} /&gt;</code>.</li>
   </ul>
 </section>
 
