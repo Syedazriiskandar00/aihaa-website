@@ -34,6 +34,34 @@ export type ProductVariant = {
   image: string;
 };
 
+// ────────────── Phase 7 detail-page enums ──────────────
+// Kept as union-of-strings rather than data-heavy objects so the visible
+// labels live in i18n (single source, BM+EN parity). Each kind maps to a
+// translation key prefix inside the corresponding section component.
+export type CapacityKind =
+  | "coffee" // 85°C
+  | "tea" // 70°C
+  | "baby" // 50°C
+  | "cold" // 8°C
+  | "ambient" // 25°C
+  | "ice"; // Ice maker
+
+export type FilterStageKind =
+  | "sediment"
+  | "antibacterial"
+  | "pre-carbon"
+  | "post-carbon"
+  | "uf-membrane";
+
+export type OutdoorLayerKind =
+  | "anthracite"
+  | "zeolite-plus"
+  | "kdf"
+  | "nano-silver"
+  | "super-quick-sand"
+  | "fine-sand"
+  | "silica-sand";
+
 export type Product = {
   slug: string;
   name: string; // brand identifier, never translated
@@ -48,6 +76,11 @@ export type Product = {
   variants?: ProductVariant[];
   specs: ProductSpec[];
   features: string[];
+  // Phase 7 overrides — all optional, components fall back to category
+  // defaults (see CATEGORY_DEFAULTS inside each detail-section component).
+  capacityOptions?: CapacityKind[]; // Indoor only
+  filterStages?: FilterStageKind[]; // Indoor only
+  outdoorLayers?: OutdoorLayerKind[]; // Outdoor only
   seo: {
     titleBm: string;
     descriptionBm: string;
@@ -240,6 +273,8 @@ export const products: Product[] = [
     },
     price: "RM1,580",
     badge: "premium",
+    // WINTER's defining feature — surface on CapacityFunctionalities
+    capacityOptions: ["coffee", "tea", "baby", "cold", "ambient", "ice"],
     mainImage: "/images/products/winter/main.png",
     gallery: [
       "/images/products/winter/main.png",
