@@ -354,6 +354,33 @@ export type TranslationKeys = {
   produk_luar_footer_cta_heading: string;
   produk_luar_footer_cta_body: string;
   produk_luar_footer_cta_button: string;
+  // /produk-dalam — Phase 3 premium indoor landing
+  produk_dalam_meta_title: string;
+  produk_dalam_meta_description: string;
+  // Indoor Hero Lineup (dark, 5-pedestal, BELLA + WINTER featured)
+  produk_dalam_hero_eyebrow: string;
+  produk_dalam_hero_heading: string;
+  produk_dalam_hero_italic: string;
+  produk_dalam_hero_tagline: string;
+  produk_dalam_hero_featured_bestseller_badge: string;
+  produk_dalam_hero_featured_premium_badge: string;
+  produk_dalam_hero_cta: string;
+  // Indoor use-cases band (Set A: Keluarga Muda/Besar/Bayi Baru/Apartment Compact)
+  produk_dalam_usecase_eyebrow: string;
+  produk_dalam_usecase_muda: string;
+  produk_dalam_usecase_besar: string;
+  produk_dalam_usecase_bayi: string;
+  produk_dalam_usecase_compact: string;
+  // Indoor grid
+  produk_dalam_grid_eyebrow: string;
+  produk_dalam_grid_heading: string;
+  produk_dalam_grid_subheading: string;
+  // Cross-link on /water-purifier
+  produk_dalam_cross_link: string;
+  // Footer CTA
+  produk_dalam_footer_cta_heading: string;
+  produk_dalam_footer_cta_body: string;
+  produk_dalam_footer_cta_button: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -725,6 +752,37 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_footer_cta_body:
       "WhatsApp kami — pakar akan cadangkan mengikut sumber air dan keperluan rumah anda.",
     produk_luar_footer_cta_button: "WhatsApp Pakar AIHAA",
+    // /produk-dalam — Phase 3 premium indoor landing
+    produk_dalam_meta_title: "Penapis Air Dalam AIHAA — 5 Model Premium",
+    produk_dalam_meta_description:
+      "Penapis air dalam rumah AIHAA — 5 model premium dari RM780. BELLA, BIG, EAN, FANCY, WINTER. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
+    // Indoor Hero Lineup
+    produk_dalam_hero_eyebrow: "PENAPIS AIR DALAM RUMAH",
+    produk_dalam_hero_heading: "Penapis Untuk Rumah",
+    produk_dalam_hero_italic: "Rasa Bersih, Setiap Titik.",
+    produk_dalam_hero_tagline:
+      "Lima model dalam rumah — dari pilihan bajet hingga premium dengan ice maker. Dipilih ribuan keluarga Malaysia.",
+    produk_dalam_hero_featured_bestseller_badge: "PILIHAN RAMAI",
+    produk_dalam_hero_featured_premium_badge: "PREMIUM",
+    produk_dalam_hero_cta: "Lihat Semua Model",
+    // Indoor use-cases band
+    produk_dalam_usecase_eyebrow: "SESUAI UNTUK",
+    produk_dalam_usecase_muda: "Keluarga Muda",
+    produk_dalam_usecase_besar: "Keluarga Besar",
+    produk_dalam_usecase_bayi: "Bayi Baru",
+    produk_dalam_usecase_compact: "Apartment Compact",
+    // Indoor grid
+    produk_dalam_grid_eyebrow: "KATALOG LENGKAP",
+    produk_dalam_grid_heading: "Semua Penapis Dalam AIHAA",
+    produk_dalam_grid_subheading:
+      "Lima model penapis dalam — setiap satu direka untuk saiz keluarga dan gaya dapur berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
+    // Cross-link on /water-purifier
+    produk_dalam_cross_link: "Lihat Koleksi Penapis Dalam Premium",
+    // Footer CTA
+    produk_dalam_footer_cta_heading: "Tak pasti model mana sesuai untuk keluarga anda?",
+    produk_dalam_footer_cta_body:
+      "WhatsApp kami — pakar akan bantu pilih ikut saiz keluarga, ruang dapur, dan bajet anda.",
+    produk_dalam_footer_cta_button: "WhatsApp Pakar AIHAA",
   },
   en: {
     nav_home: "Home",
@@ -1094,5 +1152,36 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_footer_cta_body:
       "WhatsApp us — a specialist will recommend based on your water source and household needs.",
     produk_luar_footer_cta_button: "WhatsApp an AIHAA Specialist",
+    // /produk-dalam — Phase 3 premium indoor landing
+    produk_dalam_meta_title: "AIHAA Indoor Water Purifiers — 5 Premium Models",
+    produk_dalam_meta_description:
+      "AIHAA indoor water purifiers — 5 premium models from RM780. BELLA, BIG, EAN, FANCY, WINTER. One-time payment, free installation across Peninsular Malaysia.",
+    // Indoor Hero Lineup
+    produk_dalam_hero_eyebrow: "INDOOR WATER PURIFICATION",
+    produk_dalam_hero_heading: "Purifiers for the Home",
+    produk_dalam_hero_italic: "Clean Taste, Every Drop.",
+    produk_dalam_hero_tagline:
+      "Five indoor models — from budget pick to premium with built-in ice maker. Chosen by thousands of Malaysian families.",
+    produk_dalam_hero_featured_bestseller_badge: "BESTSELLER",
+    produk_dalam_hero_featured_premium_badge: "PREMIUM",
+    produk_dalam_hero_cta: "View All Models",
+    // Indoor use-cases band
+    produk_dalam_usecase_eyebrow: "SUITED FOR",
+    produk_dalam_usecase_muda: "Young Families",
+    produk_dalam_usecase_besar: "Big Households",
+    produk_dalam_usecase_bayi: "Newborn Care",
+    produk_dalam_usecase_compact: "Apartment Living",
+    // Indoor grid
+    produk_dalam_grid_eyebrow: "FULL CATALOGUE",
+    produk_dalam_grid_heading: "Every AIHAA Indoor Purifier",
+    produk_dalam_grid_subheading:
+      "Five indoor models — each built for a distinct family size and kitchen style. Click any product for full specifications.",
+    // Cross-link on /water-purifier
+    produk_dalam_cross_link: "View Premium Indoor Collection",
+    // Footer CTA
+    produk_dalam_footer_cta_heading: "Not sure which model fits your family?",
+    produk_dalam_footer_cta_body:
+      "WhatsApp us — a specialist will help you pick based on family size, kitchen space, and budget.",
+    produk_dalam_footer_cta_button: "WhatsApp an AIHAA Specialist",
   },
 };
