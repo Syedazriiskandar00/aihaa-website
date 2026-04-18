@@ -1,7 +1,7 @@
 // Single source of truth for all AIHAA product data.
-// Consumed by: /product/[id], /water-purifier, CategoryShowcase,
-// and future Phase 2 /produk-luar. When editing, change here once —
-// routes pick it up automatically.
+// Consumed by: /product/[id], /water-purifier, /produk-luar,
+// /produk-dalam, and the homepage SignatureCollection. When editing,
+// change here once — routes pick it up automatically.
 //
 // i18n note: specs and features remain BM-only (reflects the current
 // state of the existing catalogue). tagline and description are the
