@@ -115,3 +115,58 @@ Five placeholder surfaces on the new /tentang-kami page. All render cleanly but 
 - **Residual issue:** `super-pleated/main.jpg` and `uf-double-backwash/main.jpg` still appear faint because the subjects themselves were photographed against white. This is now a pure photo problem, not a UI problem.
 - **Needed:** Reshoot or re-cut those two product photos with a subtle grey backdrop (or isolated cutouts on transparent PNG so the new #F0EEE9 tile shows through).
 - **Priority:** Low — tiles are legible, product names + prices visible, cards clickable.
+
+---
+
+## Phase 7 — /product/[id] Premium Detail Sections
+
+The detail-page template ships eight new sections spec'd against
+SECTION_SPEC §D.2–§D.6. Every new visual is **CSS/SVG-drawn inline** —
+no stock photos, no third-party assets, no missing images rendered as
+broken UI. Real photography/illustration slots in later without changing
+section logic.
+
+### §D.2 indoor — `KitchenContextSplit.tsx`
+- **Current:** Two side-by-side "kitchen scene" blocks. Modern = cream-grey gradient with soft radial highlights. Industrial = dark charcoal with concrete-grain overlay. Product image floats in front of an implied counter horizon. Label chip top-left, caption strip below each scene.
+- **Needed:** Two real product-in-kitchen photos (4:5 aspect, studio-lit) — Modern (soft cabinetry) + Industrial (dark steel / concrete). Replace each KitchenScene's gradient `<div>` with a full-bleed `<Image>` once photography is delivered.
+- **Priority:** Medium — gradient version reads premium at full-bleed aspect-[4/5] but the shot would make it magazine-grade.
+
+### §D.2 outdoor — `HouseCrossSection.tsx`
+- **Current:** Inline SVG isometric-ish house silhouette with 6 use-case pins (cooking, washing, showering, laundry, hygiene, outdoor) anchored around an AIHAA filter tank beneath the foundation. Grid-paper backdrop + dashed water distribution lines from tank to house taps.
+- **Needed:** Commissioned isometric illustration (or 3D render) of a full AIHAA installation with labelled call-outs. Replace the inline `<svg>` block with a single `<Image>` once the render lands.
+- **Priority:** Medium — signals intent clearly but real render would be significantly more persuasive.
+
+### §D.3 indoor — `CapacityFunctionalities.tsx`
+- **Current:** Five lucide-react icon circles (Coffee, Leaf, Baby, Droplets, CupSoda) with per-icon temperature pills. WINTER auto-adds a sixth Snowflake tile for the ice maker via `capacityOptions` override in products.ts.
+- **Needed:** Either custom SVG iconography aligned with AIHAA brand, or real photos of each water state (steaming cup / chilled glass / ice cubes). Current lucide-react set works but is identifiable third-party iconography.
+- **Priority:** Low — lucide icons read clean at 80px circles; upgrade is optional.
+
+### §D.3 outdoor — `SevenLayerFiltration.tsx`
+- **Current:** CSS-drawn seven-segment cylinder with top/bottom caps. Each layer has a distinct earth-tone colour + per-layer grain pattern (dots for granular media, stripes for KDF). Right column: 7 numbered cards with BM+EN layer name + description.
+- **Needed:** Cross-section photo of an actual outdoor cylinder cut open (lab-style shot), OR a CAD-rendered cross-section with the actual AIHAA tank dimensions. Replace the `<div>` cylinder stack with an `<Image>` keyed by tank size.
+- **Priority:** Medium — current version is premium but distinctly "illustrated schematic"; a real cross-section is the magazine-cover upgrade.
+
+### §D.4 indoor — `FilterCartridgeRow.tsx`
+- **Current:** Four inline-SVG cartridges (100×200 viewBox) with caps, nozzles, coloured liquid fills, per-stage pattern overlay (dots/stripes/wave), gloss gradient, and 34×14 blue flow-arrows between. Not reused from `/service/IndoorFilterRow.tsx` — this version is the hero-grade editorial edition.
+- **Needed:** Four studio close-up product photos of the actual AIHAA cartridges (sediment, antibacterial, pre-carbon, post-carbon) on transparent background. Replace each `<CartridgeSvg>` block with an `<Image>` wrapped in the same flex-column container.
+- **Priority:** Medium — SVG version reads clean but real cartridge photography would differentiate this from generic water-filter websites.
+
+### §D.4 outdoor — `PvdfMicronFunnel.tsx`
+- **Current:** Inline SVG trapezoid funnel (100μm → 10μm → 1μm → 0.01μm) with progressively-narrower widths, scattered "particle" dots through upper tiers, gold callout pins on the right side. Left column: 4 tier description cards.
+- **Needed:** Either keep the SVG (it's intentional infographic styling), or commission a high-res microscopy composite showing actual membrane porosity. Real microscopy would dramatically uplift the "technical credibility" story.
+- **Priority:** Low — SVG funnel is purpose-built for this section; microscopy is a nice-to-have.
+
+### §D.5 — `FeaturesOverviewGrid.tsx` (shared)
+- **Current:** 3×2 grid of warm-toned gradient "frames" (six preset colour tones), each showing `01`–`06` number + product feature caption pulled from `product.features[]`. Bottom-right placeholder note `"Close-up produk — akan dimuat naik"`.
+- **Needed:** Six close-up photography shots per product — one per feature listed in `product.features[]`. The caption text is already wired; only the image block needs swapping. When photos arrive, replace the gradient `<div>` with `<Image>`.
+- **Priority:** Medium — this section is deliberately placeholder-forward (the caption literally asks for photos). Works today, dramatically better with real close-ups.
+
+### §D.6 — `ProductSpecs.tsx` (SpecPriceDark, shared)
+- **Current blueprint drawing:** Inline SVG generic purifier silhouette with gold grid-paper backdrop, W/H dimension callouts, and 4 numbered lead-lines to unlabelled call-out points.
+- **Needed:** Per-product engineering blueprint (can be CAD export converted to SVG, or a commissioned technical illustration). The 4 numbered call-outs should label actual product features. When blueprints land, replace `<BlueprintDrawing>` function body with an `<Image src={product.blueprint} />` and add a `blueprint?: string` field to Product.
+- **Priority:** Medium-High — the spec page is where purchase conviction happens. A real technical drawing per product signals "professional engineering" at first glance.
+
+### Phase 7 data-driven overrides (no new config placeholders)
+- `capacityOptions` on products.ts — only WINTER overrides today (adds `"ice"`). Every other indoor product uses the default 5-tile set. No action needed unless a new SKU breaks the pattern.
+- `filterStages` on products.ts — all indoor products use the default 4-stage set. Override per-product only if an SKU ships with a different filter stack.
+- `outdoorLayers` on products.ts — all outdoor products use the default 7-layer set. Override only for the fiber-tank SKUs that use a simpler stack, if Azri confirms the media is different (currently assumed identical across outdoor range).
