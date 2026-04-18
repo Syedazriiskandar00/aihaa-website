@@ -381,6 +381,27 @@ export type TranslationKeys = {
   produk_dalam_footer_cta_heading: string;
   produk_dalam_footer_cta_body: string;
   produk_dalam_footer_cta_button: string;
+  // Homepage — Phase 4
+  home_hero_eyebrow: string;
+  home_hero_title_1: string;
+  home_hero_title_2: string;
+  home_hero_title_3: string;
+  home_hero_subtitle: string;
+  home_hero_cta_primary: string;
+  home_hero_cta_secondary: string;
+  home_collection_eyebrow: string;
+  home_collection_heading: string;
+  home_collection_tab_indoor: string;
+  home_collection_tab_outdoor: string;
+  home_collection_view_all_indoor: string;
+  home_collection_view_all_outdoor: string;
+  home_testi_eyebrow: string;
+  home_testi_quote_1_text: string;
+  home_testi_quote_1_author: string;
+  home_testi_quote_1_location: string;
+  home_testi_quote_2_text: string;
+  home_testi_quote_2_author: string;
+  home_testi_quote_2_location: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -783,6 +804,30 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_dalam_footer_cta_body:
       "WhatsApp kami — pakar akan bantu pilih ikut saiz keluarga, ruang dapur, dan bajet anda.",
     produk_dalam_footer_cta_button: "WhatsApp Pakar AIHAA",
+    // Homepage — Phase 4
+    home_hero_eyebrow: "PENAPIS AIR PREMIUM",
+    home_hero_title_1: "PENAPIS AIR",
+    home_hero_title_2: "JIMAT",
+    home_hero_title_3: "SEKALI BAYAR",
+    home_hero_subtitle:
+      "Tiada sewa bulanan. Pemilikan penuh. Liputan penyelenggaraan sehingga 10 tahun.",
+    home_hero_cta_primary: "WhatsApp Kami",
+    home_hero_cta_secondary: "Lihat Produk",
+    home_collection_eyebrow: "KOLEKSI PILIHAN",
+    home_collection_heading: "Koleksi Pilihan Kami",
+    home_collection_tab_indoor: "Dalam Rumah",
+    home_collection_tab_outdoor: "Luar Rumah",
+    home_collection_view_all_indoor: "Lihat semua penapis dalam",
+    home_collection_view_all_outdoor: "Lihat semua penapis luar",
+    home_testi_eyebrow: "SUARA PELANGGAN",
+    home_testi_quote_1_text:
+      "Sebelum guna AIHAA, kami spend RM200 sebulan untuk air botol. Sekarang jimat lebih RM2,000 setahun! Yang paling penting, anak-anak tak sakit perut macam dulu.",
+    home_testi_quote_1_author: "Encik Rizal Abdullah",
+    home_testi_quote_1_location: "Shah Alam, Selangor",
+    home_testi_quote_2_text:
+      "Saya compare 5 jenama sebelum pilih AIHAA. Harga paling transparent, servis paling responsive. Bila ada issue, team datang dalam masa 24 jam.",
+    home_testi_quote_2_author: "Puan Farah",
+    home_testi_quote_2_location: "Johor Bahru",
   },
   en: {
     nav_home: "Home",
@@ -1183,5 +1228,29 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_dalam_footer_cta_body:
       "WhatsApp us — a specialist will help you pick based on family size, kitchen space, and budget.",
     produk_dalam_footer_cta_button: "WhatsApp an AIHAA Specialist",
+    // Homepage — Phase 4
+    home_hero_eyebrow: "PREMIUM WATER PURIFIERS",
+    home_hero_title_1: "WATER PURIFIERS",
+    home_hero_title_2: "ONE-TIME",
+    home_hero_title_3: "PAYMENT",
+    home_hero_subtitle:
+      "No monthly rental. Full ownership. Up to 10 years of maintenance coverage.",
+    home_hero_cta_primary: "WhatsApp Us",
+    home_hero_cta_secondary: "View Products",
+    home_collection_eyebrow: "SIGNATURE COLLECTION",
+    home_collection_heading: "Our Signature Collection",
+    home_collection_tab_indoor: "Indoor",
+    home_collection_tab_outdoor: "Outdoor",
+    home_collection_view_all_indoor: "View all indoor purifiers",
+    home_collection_view_all_outdoor: "View all outdoor filters",
+    home_testi_eyebrow: "CUSTOMER VOICES",
+    home_testi_quote_1_text:
+      "Before AIHAA, we spent RM200 a month on bottled water. Now we save more than RM2,000 a year — and the kids stopped getting upset stomachs.",
+    home_testi_quote_1_author: "Encik Rizal Abdullah",
+    home_testi_quote_1_location: "Shah Alam, Selangor",
+    home_testi_quote_2_text:
+      "I compared five brands before picking AIHAA. Most transparent pricing, most responsive service — when we had an issue, a technician arrived within 24 hours.",
+    home_testi_quote_2_author: "Puan Farah",
+    home_testi_quote_2_location: "Johor Bahru",
   },
 };
