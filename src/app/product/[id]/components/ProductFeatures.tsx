@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentType } from "react";
+import type { LucideIcon } from "lucide-react";
 import {
   Filter,
   Sparkles,
@@ -32,7 +32,7 @@ import type { Product } from "@/lib/data/products";
 // and traceable rather than random variety (lessons.md: no icon soup).
 const ICON_RULES: Array<{
   patterns: RegExp;
-  icon: ComponentType<{ className?: string; strokeWidth?: number }>;
+  icon: LucideIcon;
 }> = [
   { patterns: /ice\s*maker|ice\b|ais/i, icon: Snowflake },
   { patterns: /membran|uf\s*membrane|layer|lapisan/i, icon: Layers },
