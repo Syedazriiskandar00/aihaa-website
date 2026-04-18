@@ -402,6 +402,56 @@ export type TranslationKeys = {
   home_testi_quote_2_text: string;
   home_testi_quote_2_author: string;
   home_testi_quote_2_location: string;
+  // About page (/tentang-kami) — Phase 5
+  nav_about: string;
+  about_meta_title: string;
+  about_meta_description: string;
+  // §5.1 Kisah Kami
+  about_kisah_eyebrow: string;
+  about_kisah_heading: string;
+  about_kisah_quote: string;
+  about_kisah_credit: string;
+  about_kisah_credit_sub: string;
+  about_kisah_timeline_heading: string;
+  about_kisah_timeline_2018: string;
+  about_kisah_timeline_2020: string;
+  about_kisah_timeline_2023: string;
+  about_kisah_timeline_2025: string;
+  about_kisah_photo_caption: string;
+  // §5.2 Halal Commitment
+  about_halal_eyebrow: string;
+  about_halal_heading: string;
+  about_halal_italic: string;
+  about_halal_body: string;
+  about_halal_cert_label: string;
+  about_halal_cert_ref: string;
+  about_halal_checkpoints_heading: string;
+  about_halal_checkpoint_1: string;
+  about_halal_checkpoint_2: string;
+  about_halal_checkpoint_3: string;
+  // §5.3 Azlee Collab
+  about_azlee_eyebrow: string;
+  about_azlee_heading: string;
+  about_azlee_subheading: string;
+  about_azlee_placeholder: string;
+  // §5.4 Team
+  about_team_eyebrow: string;
+  about_team_heading: string;
+  about_team_subheading: string;
+  about_team_placeholder: string;
+  // §5.5 CSR
+  about_csr_eyebrow: string;
+  about_csr_heading: string;
+  about_csr_card_1_title: string;
+  about_csr_card_1_year: string;
+  about_csr_card_1_desc: string;
+  about_csr_card_2_title: string;
+  about_csr_card_2_year: string;
+  about_csr_card_2_desc: string;
+  about_csr_card_3_title: string;
+  about_csr_card_3_year: string;
+  about_csr_card_3_desc: string;
+  about_csr_note: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -828,6 +878,65 @@ export const translations: Record<Locale, TranslationKeys> = {
       "Saya compare 5 jenama sebelum pilih AIHAA. Harga paling transparent, servis paling responsive. Bila ada issue, team datang dalam masa 24 jam.",
     home_testi_quote_2_author: "Puan Farah",
     home_testi_quote_2_location: "Johor Bahru",
+    // About page (/tentang-kami) — Phase 5
+    nav_about: "Tentang Kami",
+    about_meta_title: "Tentang AIHAA — Kisah, Halal Commitment & Pasukan",
+    about_meta_description:
+      "Kisah AIHAA dari 2018. Sijil Halal JAKIM, kolaborasi jenama, pasukan, dan aktiviti tanggungjawab sosial di seluruh Semenanjung Malaysia.",
+    // §5.1 Kisah Kami
+    about_kisah_eyebrow: "KISAH KAMI",
+    about_kisah_heading: "Dari Rumah Kami, Untuk Rumah Anda.",
+    about_kisah_quote:
+      "Pada 2018, saya perasan ramai keluarga Malaysia menghadapi masalah yang sama — harga penapis air terlalu mahal dengan kontrak yang membebankan. Anak-anak saya sendiri pernah mengalami masalah kesihatan akibat kualiti air yang kurang baik. Dari situlah idea AIHAA lahir.",
+    about_kisah_credit: "Pengasas AIHAA",
+    about_kisah_credit_sub: "12+ tahun dalam industri penapis air",
+    about_kisah_timeline_heading: "PERJALANAN KAMI",
+    about_kisah_timeline_2018: "Syarikat ditubuhkan",
+    about_kisah_timeline_2020: "Sijil Halal JAKIM",
+    about_kisah_timeline_2023: "Pelancaran 5 model indoor",
+    about_kisah_timeline_2025: "Cawangan Kelantan dibuka",
+    about_kisah_photo_caption: "Gambar pengasas — akan dimuat naik",
+    // §5.2 Halal Commitment
+    about_halal_eyebrow: "OUR HALAL COMMITMENT",
+    about_halal_heading: "Kepatuhan Halal, Janji Kami",
+    about_halal_italic: "Kepercayaan Anda, Janji Kami",
+    about_halal_body:
+      "Di AIHAA, kami sangat komited untuk memastikan bukan sahaja produk kami memenuhi standard Halal, tetapi perjalanan perniagaan kami juga patuh-Syariah. Setiap produk diperakui Halal oleh Jabatan Kemajuan Islam Malaysia (JAKIM) dan dinilai semula pada setiap lot pengeluaran.",
+    about_halal_cert_label: "MS 1500",
+    about_halal_cert_ref: "Ref: 6 126-03 / 2014",
+    about_halal_checkpoints_heading: "HALAL INTEGRITY CHECKPOINTS",
+    about_halal_checkpoint_1: "Bahan binaan & komponen diperiksa pada setiap lot",
+    about_halal_checkpoint_2: "Proses pembungkusan bebas silang-cemar",
+    about_halal_checkpoint_3: "Pengauditan dalaman setiap 6 bulan",
+    // §5.3 Azlee Collab
+    about_azlee_eyebrow: "BRAND COLLABORATION",
+    about_azlee_heading: "AIHAA × Azlee",
+    about_azlee_subheading:
+      "Bersama Azlee dalam misi membawa air bersih ke setiap rumah Malaysia.",
+    about_azlee_placeholder: "Video kolaborasi — akan dimuat naik",
+    // §5.4 Team
+    about_team_eyebrow: "PASUKAN KAMI",
+    about_team_heading: "Berkenalan Dengan Pasukan AIHAA",
+    about_team_subheading:
+      "Pasukan juruteknik, operasi, dan khidmat pelanggan yang menyokong setiap pemasangan di seluruh Semenanjung Malaysia.",
+    about_team_placeholder: "Gambar pasukan — akan dimuat naik",
+    // §5.5 CSR
+    about_csr_eyebrow: "TANGGUNGJAWAB SOSIAL",
+    about_csr_heading: "Aktiviti & Sumbangan AIHAA",
+    about_csr_card_1_title: "Sumbangan Peralatan",
+    about_csr_card_1_year: "TBD",
+    about_csr_card_1_desc:
+      "Penyerahan penapis air ke institusi dan komuniti terpilih.",
+    about_csr_card_2_title: "Bantuan Bencana",
+    about_csr_card_2_year: "TBD",
+    about_csr_card_2_desc:
+      "Sokongan ketika musibah banjir dan bencana alam.",
+    about_csr_card_3_title: "Program Komuniti",
+    about_csr_card_3_year: "TBD",
+    about_csr_card_3_desc:
+      "Inisiatif bulanan bersama komuniti tempatan.",
+    about_csr_note:
+      "Butiran aktiviti akan dikemaskini apabila data rasmi disediakan.",
   },
   en: {
     nav_home: "Home",
@@ -1252,5 +1361,64 @@ export const translations: Record<Locale, TranslationKeys> = {
       "I compared five brands before picking AIHAA. Most transparent pricing, most responsive service — when we had an issue, a technician arrived within 24 hours.",
     home_testi_quote_2_author: "Puan Farah",
     home_testi_quote_2_location: "Johor Bahru",
+    // About page (/tentang-kami) — Phase 5
+    nav_about: "About Us",
+    about_meta_title: "About AIHAA — Our Story, Halal Commitment & Team",
+    about_meta_description:
+      "The AIHAA story from 2018. Halal JAKIM certification, brand collaborations, team, and community CSR work across Peninsular Malaysia.",
+    // §5.1 Kisah Kami
+    about_kisah_eyebrow: "OUR STORY",
+    about_kisah_heading: "From Our Home, For Yours.",
+    about_kisah_quote:
+      "In 2018 I noticed so many Malaysian families facing the same problem — water purifier prices that were too high, tied to contracts that kept on squeezing. My own kids had suffered stomach issues from poor water quality. That's where AIHAA was born.",
+    about_kisah_credit: "Founder, AIHAA",
+    about_kisah_credit_sub: "12+ years in the water purification industry",
+    about_kisah_timeline_heading: "OUR JOURNEY",
+    about_kisah_timeline_2018: "Company founded",
+    about_kisah_timeline_2020: "Halal JAKIM certification",
+    about_kisah_timeline_2023: "Launched 5 indoor models",
+    about_kisah_timeline_2025: "Opened Kelantan branch",
+    about_kisah_photo_caption: "Founder photo — to be uploaded",
+    // §5.2 Halal Commitment
+    about_halal_eyebrow: "OUR HALAL COMMITMENT",
+    about_halal_heading: "Halal Compliance, Our Promise",
+    about_halal_italic: "Your Trust, Our Promise",
+    about_halal_body:
+      "At AIHAA we are deeply committed to ensuring that not only our products meet Halal standards, but that our business operations are Shariah-compliant end to end. Every product is certified Halal by the Department of Islamic Development Malaysia (JAKIM) and re-audited at every production lot.",
+    about_halal_cert_label: "MS 1500",
+    about_halal_cert_ref: "Ref: 6 126-03 / 2014",
+    about_halal_checkpoints_heading: "HALAL INTEGRITY CHECKPOINTS",
+    about_halal_checkpoint_1: "Components inspected at every production lot",
+    about_halal_checkpoint_2: "Packaging process free from cross-contamination",
+    about_halal_checkpoint_3: "Internal audit every 6 months",
+    // §5.3 Azlee Collab
+    about_azlee_eyebrow: "BRAND COLLABORATION",
+    about_azlee_heading: "AIHAA × Azlee",
+    about_azlee_subheading:
+      "Working with Azlee on the mission to bring clean water into every Malaysian home.",
+    about_azlee_placeholder: "Collaboration video — to be uploaded",
+    // §5.4 Team
+    about_team_eyebrow: "OUR TEAM",
+    about_team_heading: "Meet the AIHAA Team",
+    about_team_subheading:
+      "The technicians, operations, and customer care teams that back every installation across Peninsular Malaysia.",
+    about_team_placeholder: "Team photo — to be uploaded",
+    // §5.5 CSR
+    about_csr_eyebrow: "SOCIAL RESPONSIBILITY",
+    about_csr_heading: "AIHAA Community Work",
+    about_csr_card_1_title: "Equipment Donations",
+    about_csr_card_1_year: "TBD",
+    about_csr_card_1_desc:
+      "Delivering water purifiers to selected institutions and communities.",
+    about_csr_card_2_title: "Disaster Relief",
+    about_csr_card_2_year: "TBD",
+    about_csr_card_2_desc:
+      "Support during floods and natural disaster response.",
+    about_csr_card_3_title: "Community Programmes",
+    about_csr_card_3_year: "TBD",
+    about_csr_card_3_desc:
+      "Monthly initiatives alongside local communities.",
+    about_csr_note:
+      "Activity details will be updated as official data becomes available.",
   },
 };
