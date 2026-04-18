@@ -17,8 +17,8 @@ export default function Footer() {
 
   const navLinks = [
     { name: t.nav_home, href: "/" },
-    { name: t.nav_products_indoor, href: "/water-purifier" },
-    { name: t.nav_products_outdoor, href: "/water-purifier" },
+    { name: t.nav_products_indoor, href: "/produk-dalam" },
+    { name: t.nav_products_outdoor, href: "/produk-luar" },
     { name: t.nav_promotions, href: "/promotions" },
     { name: t.nav_contact, href: "/contact" },
   ];
