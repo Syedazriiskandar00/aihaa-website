@@ -69,6 +69,23 @@ These look minimal but are the agreed final design per SECTION_SPEC:
 - **Needed:** Dedicated photoshoot of PVDF PLUS and ULTRA ONE on a premium cream / sage backdrop, studio lighting, 4:5 crop ratio. Could also be replaced with a single wide lifestyle shot showing both products installed.
 - **Priority:** Medium (current images work but are catalogue-style, not hero-grade).
 
+### Phase 6 — /product/[slug] service-info categorization
+
+Service-info cards on product detail pages pull from `src/lib/data/services.ts`. The slug-based mapping follows Azri's Phase 6 brief exactly:
+
+- indoor (all 5) → RM 160 / 2 Tahun / RM 320 annual
+- outdoor `uf-double-backwash` → RM 650 / 10 Tahun (UF Membrane) / RM 1,300 annual
+- outdoor `penapis-boring-13x54`, `fiber-9x42`, `fiber-10x44` → RM 250 / 2 Tahun / RM 500 annual
+- outdoor `pvdf`, `pvdf-plus`, `ultra-one`, `super-pleated` → RM 160 / 2 Tahun / RM 320 annual
+
+**Flag for Azri review (non-blocking):** the mapping places `penapis-boring-13x54` in the RM 250 (5-layer sand) bucket, but the Phase 1 service page copy states RM 650 6-layer is for "penggunaan air boring (sumber bawah tanah)". There's a potential conflict between "service complexity by tank type" (Phase 6 brief) and "service price by water source" (Phase 1 SPEC §4.8). Current implementation honours the Phase 6 brief verbatim — if Azri wants boring → RM 650 service pricing alignment with Phase 1 copy, one line change in `services.ts` (`penapis-boring-13x54: OUTDOOR_UF_DOUBLE_BACKWASH` or a new `OUTDOOR_SAND_BORING` tier). No user-facing copy needs to change — only the service-info card value.
+
+**Priority:** Medium — customer-visible service price on the boring-specific product page should match what the /service page quotes for boring water.
+
+### Phase 6 — product-detail photography
+
+Detail-page hero uses existing `main.jpg|main.png` per product from `public/images/products/`. Current shots render well on the dark indoor hero and on the sage outdoor hero (verified in 3 sample screenshots), BUT several products have catalogue-style photos (product-on-white) that look pale on the sage background — specifically `super-pleated` and `uf-double-backwash`. The Phase 2 ProductCard contrast fix (`#F0EEE9` card tone) doesn't apply at hero scale. **Priority:** Low — fully legible and clickable, just not hero-grade premium for those two.
+
 ### §5 (Phase 5) /tentang-kami About page assets
 
 Five placeholder surfaces on the new /tentang-kami page. All render cleanly but none ship real content — swap the listed i18n values or component assets when Azri supplies.
