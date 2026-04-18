@@ -114,16 +114,25 @@ export default function WaterPurifierPage() {
       {/* ── Indoor Section ── */}
       <section id="indoor" className="scroll-mt-24 bg-white py-16 lg:py-20">
         <div ref={indoorRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 scroll-reveal-child stagger-1">
-            <span className="text-gold text-[10px] font-medium uppercase tracking-[0.2em]">
-              {t.product_indoor_label}
-            </span>
-            <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
-              {t.product_indoor_title}
-            </h2>
-            <p className="text-muted text-sm max-w-lg">
-              {t.product_indoor_subtitle}
-            </p>
+          <div className="mb-10 scroll-reveal-child stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <span className="text-gold text-[10px] font-medium uppercase tracking-[0.2em]">
+                {t.product_indoor_label}
+              </span>
+              <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
+                {t.product_indoor_title}
+              </h2>
+              <p className="text-muted text-sm max-w-lg">
+                {t.product_indoor_subtitle}
+              </p>
+            </div>
+            <Link
+              href="/produk-dalam"
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-dark hover:text-gold transition-colors whitespace-nowrap"
+            >
+              {t.produk_dalam_cross_link}
+              <span aria-hidden className="text-gold">→</span>
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
