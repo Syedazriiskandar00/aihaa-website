@@ -69,8 +69,8 @@ These look minimal but are the agreed final design per SECTION_SPEC:
 - **Needed:** Dedicated photoshoot of PVDF PLUS and ULTRA ONE on a premium cream / sage backdrop, studio lighting, 4:5 crop ratio. Could also be replaced with a single wide lifestyle shot showing both products installed.
 - **Priority:** Medium (current images work but are catalogue-style, not hero-grade).
 
-### §3 Product grid low-contrast thumbnails (pre-existing)
-- `super-pleated/main.jpg` and `uf-double-backwash/main.jpg` render as near-white tiles inside the ProductCard because the source photos have white backgrounds that blend with the card fill.
-- **Not a Phase 2 regression** — same appearance on the pre-existing `/water-purifier` outdoor grid.
-- **Needed:** Replace with isolated-product cutouts on a subtle grey backdrop for better contrast. OR modify `ProductCard.tsx` to use a `#f0eee9` container instead of white — a single component change would improve both `/produk-luar` and `/water-purifier` simultaneously.
-- **Priority:** Low (legible, just softly-contrasted).
+### §3 Product grid low-contrast thumbnails (photo issue only)
+- **Card-frame fix landed** in commit `d772706` — `ProductCard.tsx` image container swapped from `#f8f8f8` to the warm `#F0EEE9` off-white so every tile now reads as a distinct card even when the product photo has a white background.
+- **Residual issue:** `super-pleated/main.jpg` and `uf-double-backwash/main.jpg` still appear faint because the subjects themselves were photographed against white. This is now a pure photo problem, not a UI problem.
+- **Needed:** Reshoot or re-cut those two product photos with a subtle grey backdrop (or isolated cutouts on transparent PNG so the new #F0EEE9 tile shows through).
+- **Priority:** Low — tiles are legible, product names + prices visible, cards clickable.
