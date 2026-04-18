@@ -69,6 +69,12 @@ These look minimal but are the agreed final design per SECTION_SPEC:
 - **Needed:** Dedicated photoshoot of PVDF PLUS and ULTRA ONE on a premium cream / sage backdrop, studio lighting, 4:5 crop ratio. Could also be replaced with a single wide lifestyle shot showing both products installed.
 - **Priority:** Medium (current images work but are catalogue-style, not hero-grade).
 
+### §1 (Phase 4) Homepage hero photography
+- **Current:** Homepage hero (`HomeHero.tsx`) reuses the exact same 5-product pedestal composition as `/produk-dalam` via the shared `ProductPedestalLineup` component. Renders cleanly at desktop BM/EN and 375px mobile.
+- **Hero-grade upgrade:** SECTION_SPEC §1.1 originally envisioned a custom AIHAA poster lineup image (single studio shot with all products on real cream pedestals). A dedicated photoshoot would replace the CSS pedestals entirely with a single hero composition image.
+- **Also noted:** The homepage testimonials (`HomeTestimonials.tsx`) use the two SECTION_SPEC §1.4 quotes verbatim. When real customer reviews come in, copy-swap via `home_testi_quote_*` keys in `src/lib/i18n/translations.ts` — no layout changes needed.
+- **Priority:** Low (both pages ship premium without reshoots; aesthetic upgrade only).
+
 ### §3 (Phase 3) Indoor hero pedestal photography
 - **Current:** `IndoorHeroLineup` uses the existing `main.jpg` / `main.png` for each of the 5 indoor products. All render OK on dark background (verified in screenshots) because indoor photography is shot with neutral backdrops.
 - **Hero-grade upgrade available:** SECTION_SPEC §2.1 originally called for a single studio-shot lineup with all 5 products on an actual cream pedestal surface. Our implementation approximates this via CSS-drawn pedestal blocks. A real photoshoot would make the hero more magazine-grade.
