@@ -466,6 +466,99 @@ export type TranslationKeys = {
   product_detail_service_frequency_default: string;
   product_detail_service_disclaimer: string;
   product_detail_related_subheading: string;
+  // Phase 7 — detail-page premium sections
+  // Kitchen Context Split (indoor)
+  product_kitchen_eyebrow: string;
+  product_kitchen_heading: string;
+  product_kitchen_tagline: string;
+  product_kitchen_modern_label: string;
+  product_kitchen_modern_caption: string;
+  product_kitchen_industrial_label: string;
+  product_kitchen_industrial_caption: string;
+  // Capacity Functionalities (indoor)
+  product_capacity_eyebrow: string;
+  product_capacity_heading: string;
+  product_capacity_subheading: string;
+  product_capacity_coffee_label: string;
+  product_capacity_coffee_desc: string;
+  product_capacity_tea_label: string;
+  product_capacity_tea_desc: string;
+  product_capacity_baby_label: string;
+  product_capacity_baby_desc: string;
+  product_capacity_cold_label: string;
+  product_capacity_cold_desc: string;
+  product_capacity_ambient_label: string;
+  product_capacity_ambient_desc: string;
+  product_capacity_ice_label: string;
+  product_capacity_ice_desc: string;
+  // Features Overview Grid (shared)
+  product_features_overview_eyebrow: string;
+  product_features_overview_heading: string;
+  product_features_overview_subheading: string;
+  product_features_overview_caption_placeholder: string;
+  // Filter Cartridge Row (indoor)
+  product_cartridge_eyebrow: string;
+  product_cartridge_heading: string;
+  product_cartridge_subheading: string;
+  product_cartridge_sediment_name: string;
+  product_cartridge_sediment_desc: string;
+  product_cartridge_antibacterial_name: string;
+  product_cartridge_antibacterial_desc: string;
+  product_cartridge_pre_carbon_name: string;
+  product_cartridge_pre_carbon_desc: string;
+  product_cartridge_post_carbon_name: string;
+  product_cartridge_post_carbon_desc: string;
+  product_cartridge_uf_name: string;
+  product_cartridge_uf_desc: string;
+  // House Cross-Section (outdoor)
+  product_house_eyebrow: string;
+  product_house_heading: string;
+  product_house_subheading: string;
+  product_house_use_cooking: string;
+  product_house_use_washing: string;
+  product_house_use_showering: string;
+  product_house_use_laundry: string;
+  product_house_use_hygiene: string;
+  product_house_use_outdoor: string;
+  product_house_caption: string;
+  // Seven Layer Filtration (outdoor)
+  product_layers_eyebrow: string;
+  product_layers_heading: string;
+  product_layers_subheading: string;
+  product_layers_anthracite_name: string;
+  product_layers_anthracite_desc: string;
+  product_layers_zeolite_plus_name: string;
+  product_layers_zeolite_plus_desc: string;
+  product_layers_kdf_name: string;
+  product_layers_kdf_desc: string;
+  product_layers_nano_silver_name: string;
+  product_layers_nano_silver_desc: string;
+  product_layers_super_quick_sand_name: string;
+  product_layers_super_quick_sand_desc: string;
+  product_layers_fine_sand_name: string;
+  product_layers_fine_sand_desc: string;
+  product_layers_silica_sand_name: string;
+  product_layers_silica_sand_desc: string;
+  // PVDF Micron Funnel (outdoor)
+  product_funnel_eyebrow: string;
+  product_funnel_heading: string;
+  product_funnel_subheading: string;
+  product_funnel_tier_100_label: string;
+  product_funnel_tier_100_desc: string;
+  product_funnel_tier_10_label: string;
+  product_funnel_tier_10_desc: string;
+  product_funnel_tier_1_label: string;
+  product_funnel_tier_1_desc: string;
+  product_funnel_tier_001_label: string;
+  product_funnel_tier_001_desc: string;
+  product_funnel_caption: string;
+  // Spec & Price Dark (shared)
+  product_specprice_eyebrow: string;
+  product_specprice_heading: string;
+  product_specprice_blueprint_caption: string;
+  product_specprice_cash_label: string;
+  product_specprice_tech_badge: string;
+  product_specprice_cta: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -968,6 +1061,120 @@ export const translations: Record<Locale, TranslationKeys> = {
       "Maklumat servis tertakluk kepada notis. Sila WhatsApp kami untuk butiran terkini.",
     product_detail_related_subheading:
       "Produk lain dalam kategori yang sama — mungkin sesuai untuk keperluan anda.",
+    // Phase 7 — detail-page premium sections (BM)
+    product_kitchen_eyebrow: "KESESUAIAN DAPUR",
+    product_kitchen_heading: "Compact To All Type Kitchen",
+    product_kitchen_tagline:
+      "Rekaan yang serasi untuk mana-mana gaya dapur — dari moden ke industri.",
+    product_kitchen_modern_label: "Dapur Moden",
+    product_kitchen_modern_caption:
+      "Warna lembut dan permukaan kemas. Penapis duduk harmoni dengan kabinet minimalis.",
+    product_kitchen_industrial_label: "Dapur Industri",
+    product_kitchen_industrial_caption:
+      "Tekstur konkrit dan besi hitam. Penapis seimbang dengan peralatan profesional.",
+    // Capacity Functionalities
+    product_capacity_eyebrow: "FUNGSI AIR",
+    product_capacity_heading:
+      "Functionalities, Perfectly Suited to Your Lifestyle",
+    product_capacity_subheading:
+      "Suhu yang sesuai untuk setiap keperluan keluarga anda.",
+    product_capacity_coffee_label: "Coffee",
+    product_capacity_coffee_desc: "85°C untuk seduhan kopi dan teh herba.",
+    product_capacity_tea_label: "Tea",
+    product_capacity_tea_desc: "70°C — panas ideal untuk teh harian.",
+    product_capacity_baby_label: "Baby Milk",
+    product_capacity_baby_desc: "50°C — suhu selamat untuk susu bayi.",
+    product_capacity_cold_label: "Cold Water",
+    product_capacity_cold_desc: "8°C — sejuk segar tanpa ais.",
+    product_capacity_ambient_label: "Ambient Water",
+    product_capacity_ambient_desc: "25°C — suhu bilik, segera minum.",
+    product_capacity_ice_label: "Ice Maker",
+    product_capacity_ice_desc: "Ais siap tanpa perlu beg ais tambahan.",
+    // Features Overview Grid
+    product_features_overview_eyebrow: "FEATURES OVERVIEW",
+    product_features_overview_heading: "Setiap Ciri Yang Penting",
+    product_features_overview_subheading:
+      "Close-up pada reka bentuk dan kejuruteraan — enam butiran yang membezakan model ini.",
+    product_features_overview_caption_placeholder:
+      "Close-up produk — akan dimuat naik",
+    // Filter Cartridge Row
+    product_cartridge_eyebrow: "SISTEM PENAPISAN",
+    product_cartridge_heading: "Filter Penapis Air Dalam",
+    product_cartridge_subheading:
+      "Empat peringkat yang menukar air paip menjadi air minuman bersih.",
+    product_cartridge_sediment_name: "Sediment",
+    product_cartridge_sediment_desc:
+      "Menapis pasir, karat dan zarah kasar dari paip.",
+    product_cartridge_antibacterial_name: "Antibacterial",
+    product_cartridge_antibacterial_desc:
+      "Membunuh bakteria dan mikroorganisma berbahaya.",
+    product_cartridge_pre_carbon_name: "Pre-Carbon",
+    product_cartridge_pre_carbon_desc:
+      "Menyingkir klorin, bau dan rasa yang tidak diingini.",
+    product_cartridge_post_carbon_name: "Post-Carbon",
+    product_cartridge_post_carbon_desc:
+      "Pemurnian akhir — air lembut, segar dan selamat diminum.",
+    product_cartridge_uf_name: "UF Membrane",
+    product_cartridge_uf_desc:
+      "Ultra-filtrasi — menapis zarah sehingga 0.01 mikron.",
+    // House Cross-Section
+    product_house_eyebrow: "KEGUNAAN SELURUH RUMAH",
+    product_house_heading: "Satu Penapis, Enam Kegunaan",
+    product_house_subheading:
+      "Dipasang di pintu masuk air utama — setiap pili di rumah anda terus mendapat air bersih.",
+    product_house_use_cooking: "Memasak",
+    product_house_use_washing: "Mencuci",
+    product_house_use_showering: "Mandian",
+    product_house_use_laundry: "Laundri",
+    product_house_use_hygiene: "Kebersihan Diri",
+    product_house_use_outdoor: "Kegunaan Luar",
+    product_house_caption:
+      "Illustration keratan rumah — akan diganti dengan render rasmi.",
+    // Seven Layer Filtration
+    product_layers_eyebrow: "7 LAPISAN PENAPISAN",
+    product_layers_heading: "Tujuh Lapisan. Perlindungan Penuh.",
+    product_layers_subheading:
+      "Setiap lapisan menjalankan tugas spesifik — bersama-sama mengeluarkan kekotoran, bahan kimia dan bau dari sumber air anda.",
+    product_layers_anthracite_name: "Anthracite",
+    product_layers_anthracite_desc: "Menapis zarah besar dan karat.",
+    product_layers_zeolite_plus_name: "Zeolite Plus",
+    product_layers_zeolite_plus_desc: "Menyerap logam berat dan ammonia.",
+    product_layers_kdf_name: "KDF",
+    product_layers_kdf_desc: "Menyingkir klorin dan menghalang pembiakan bakteria.",
+    product_layers_nano_silver_name: "Nano Silver Activated Carbon",
+    product_layers_nano_silver_desc:
+      "Karbon teraktif dengan nano silver — antibacterial dan menapis bau.",
+    product_layers_super_quick_sand_name: "Super Quick Sand",
+    product_layers_super_quick_sand_desc:
+      "Pasir halus berkadar aliran tinggi untuk penapisan pantas.",
+    product_layers_fine_sand_name: "Fine Sand",
+    product_layers_fine_sand_desc: "Menapis zarah halus sebelum peringkat akhir.",
+    product_layers_silica_sand_name: "Silica Sand",
+    product_layers_silica_sand_desc:
+      "Lapisan dasar — stabilkan aliran dan saring sisa terakhir.",
+    // PVDF Micron Funnel
+    product_funnel_eyebrow: "PVDF ULTRAFILTRATION",
+    product_funnel_heading: "Dari 100 Mikron ke 0.01 Mikron",
+    product_funnel_subheading:
+      "Membran PVDF menapis empat peringkat bersaiz mikroskopik — cukup halus untuk menyekat bakteria dan virus.",
+    product_funnel_tier_100_label: "100 μm",
+    product_funnel_tier_100_desc: "Pasir, karat, zarah besar.",
+    product_funnel_tier_10_label: "10 μm",
+    product_funnel_tier_10_desc: "Debu dan sedimen halus.",
+    product_funnel_tier_1_label: "1 μm",
+    product_funnel_tier_1_desc: "Bakteria dan cyst.",
+    product_funnel_tier_001_label: "0.01 μm",
+    product_funnel_tier_001_desc: "Virus dan koloid.",
+    product_funnel_caption:
+      "Ukuran mikron rujukan industri — bukan pengukuran langsung dari unit anda.",
+    // Spec & Price Dark
+    product_specprice_eyebrow: "SPEC & PRICE",
+    product_specprice_heading: "Technical Specifications",
+    product_specprice_blueprint_caption:
+      "Lukisan teknikal — Dimensi W × D × H",
+    product_specprice_cash_label: "HARGA TUNAI:",
+    product_specprice_tech_badge: "GREEN TECHNOLOGY · Auto Cut-Off Energy",
+    product_specprice_cta: "Tempah via WhatsApp",
   },
   en: {
     nav_home: "Home",
@@ -1468,5 +1675,120 @@ export const translations: Record<Locale, TranslationKeys> = {
       "Service details are subject to change. WhatsApp us for current information.",
     product_detail_related_subheading:
       "Other products in the same category — may suit your needs.",
+    // Phase 7 — detail-page premium sections (EN)
+    product_kitchen_eyebrow: "KITCHEN FIT",
+    product_kitchen_heading: "Compact To All Type Kitchen",
+    product_kitchen_tagline:
+      "A form factor that sits comfortably in any kitchen — modern to industrial.",
+    product_kitchen_modern_label: "Modern Kitchen",
+    product_kitchen_modern_caption:
+      "Soft tones, clean surfaces. Sits in harmony with minimalist cabinetry.",
+    product_kitchen_industrial_label: "Industrial Kitchen",
+    product_kitchen_industrial_caption:
+      "Concrete textures, black steel. Balanced against professional equipment.",
+    // Capacity Functionalities
+    product_capacity_eyebrow: "WATER FUNCTIONS",
+    product_capacity_heading:
+      "Functionalities, Perfectly Suited to Your Lifestyle",
+    product_capacity_subheading:
+      "Every temperature your family needs, on demand.",
+    product_capacity_coffee_label: "Coffee",
+    product_capacity_coffee_desc: "85°C for brewing coffee and herbal tea.",
+    product_capacity_tea_label: "Tea",
+    product_capacity_tea_desc: "70°C — the ideal daily tea temperature.",
+    product_capacity_baby_label: "Baby Milk",
+    product_capacity_baby_desc: "50°C — safe for infant formula.",
+    product_capacity_cold_label: "Cold Water",
+    product_capacity_cold_desc: "8°C — crisp and chilled without ice.",
+    product_capacity_ambient_label: "Ambient Water",
+    product_capacity_ambient_desc: "25°C — room temperature, ready to drink.",
+    product_capacity_ice_label: "Ice Maker",
+    product_capacity_ice_desc: "Built-in ice — no extra tray needed.",
+    // Features Overview Grid
+    product_features_overview_eyebrow: "FEATURES OVERVIEW",
+    product_features_overview_heading: "Every Detail That Matters",
+    product_features_overview_subheading:
+      "Close-ups of the design and engineering — six details that set this model apart.",
+    product_features_overview_caption_placeholder:
+      "Product close-up — to be uploaded",
+    // Filter Cartridge Row
+    product_cartridge_eyebrow: "FILTRATION SYSTEM",
+    product_cartridge_heading: "Indoor Filter Cartridges",
+    product_cartridge_subheading:
+      "Four stages that turn tap water into clean drinking water.",
+    product_cartridge_sediment_name: "Sediment",
+    product_cartridge_sediment_desc:
+      "Captures sand, rust, and large particles from the pipe.",
+    product_cartridge_antibacterial_name: "Antibacterial",
+    product_cartridge_antibacterial_desc:
+      "Kills bacteria and harmful microorganisms.",
+    product_cartridge_pre_carbon_name: "Pre-Carbon",
+    product_cartridge_pre_carbon_desc:
+      "Removes chlorine, odour, and unwanted taste.",
+    product_cartridge_post_carbon_name: "Post-Carbon",
+    product_cartridge_post_carbon_desc:
+      "Final polish — soft, fresh, drink-ready water.",
+    product_cartridge_uf_name: "UF Membrane",
+    product_cartridge_uf_desc:
+      "Ultra-filtration — filters particles down to 0.01 micron.",
+    // House Cross-Section
+    product_house_eyebrow: "WHOLE-HOUSE PROTECTION",
+    product_house_heading: "One Filter, Six Uses",
+    product_house_subheading:
+      "Installed at your main water inlet — every tap in the house receives filtered water.",
+    product_house_use_cooking: "Cooking",
+    product_house_use_washing: "Washing",
+    product_house_use_showering: "Showering",
+    product_house_use_laundry: "Laundry",
+    product_house_use_hygiene: "Personal Hygiene",
+    product_house_use_outdoor: "Outdoor Usage",
+    product_house_caption:
+      "House cutaway illustration — to be replaced with an official render.",
+    // Seven Layer Filtration
+    product_layers_eyebrow: "7 FILTRATION LAYERS",
+    product_layers_heading: "Seven Layers. Full Protection.",
+    product_layers_subheading:
+      "Each layer does a specific job — together they strip contaminants, chemicals, and odours from your water source.",
+    product_layers_anthracite_name: "Anthracite",
+    product_layers_anthracite_desc: "Filters large particles and rust.",
+    product_layers_zeolite_plus_name: "Zeolite Plus",
+    product_layers_zeolite_plus_desc: "Absorbs heavy metals and ammonia.",
+    product_layers_kdf_name: "KDF",
+    product_layers_kdf_desc: "Removes chlorine and inhibits bacterial growth.",
+    product_layers_nano_silver_name: "Nano Silver Activated Carbon",
+    product_layers_nano_silver_desc:
+      "Activated carbon with nano silver — antibacterial, removes odour.",
+    product_layers_super_quick_sand_name: "Super Quick Sand",
+    product_layers_super_quick_sand_desc:
+      "High-flow fine sand for fast filtration.",
+    product_layers_fine_sand_name: "Fine Sand",
+    product_layers_fine_sand_desc:
+      "Catches fine particles before the final stage.",
+    product_layers_silica_sand_name: "Silica Sand",
+    product_layers_silica_sand_desc:
+      "Base layer — stabilises flow and strains out final residue.",
+    // PVDF Micron Funnel
+    product_funnel_eyebrow: "PVDF ULTRAFILTRATION",
+    product_funnel_heading: "From 100 Micron to 0.01 Micron",
+    product_funnel_subheading:
+      "The PVDF membrane filters four microscopic tiers — fine enough to block bacteria and viruses.",
+    product_funnel_tier_100_label: "100 μm",
+    product_funnel_tier_100_desc: "Sand, rust, large particles.",
+    product_funnel_tier_10_label: "10 μm",
+    product_funnel_tier_10_desc: "Dust and fine sediment.",
+    product_funnel_tier_1_label: "1 μm",
+    product_funnel_tier_1_desc: "Bacteria and cysts.",
+    product_funnel_tier_001_label: "0.01 μm",
+    product_funnel_tier_001_desc: "Viruses and colloids.",
+    product_funnel_caption:
+      "Industry-reference micron sizes — not a direct measurement from your unit.",
+    // Spec & Price Dark
+    product_specprice_eyebrow: "SPEC & PRICE",
+    product_specprice_heading: "Technical Specifications",
+    product_specprice_blueprint_caption:
+      "Technical drawing — dimensions W × D × H",
+    product_specprice_cash_label: "CASH PRICE:",
+    product_specprice_tech_badge: "GREEN TECHNOLOGY · Auto Cut-Off Energy",
+    product_specprice_cta: "Order via WhatsApp",
   },
 };
