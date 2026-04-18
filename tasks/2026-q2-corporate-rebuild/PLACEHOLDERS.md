@@ -69,6 +69,11 @@ These look minimal but are the agreed final design per SECTION_SPEC:
 - **Needed:** Dedicated photoshoot of PVDF PLUS and ULTRA ONE on a premium cream / sage backdrop, studio lighting, 4:5 crop ratio. Could also be replaced with a single wide lifestyle shot showing both products installed.
 - **Priority:** Medium (current images work but are catalogue-style, not hero-grade).
 
+### §3 (Phase 3) Indoor hero pedestal photography
+- **Current:** `IndoorHeroLineup` uses the existing `main.jpg` / `main.png` for each of the 5 indoor products. All render OK on dark background (verified in screenshots) because indoor photography is shot with neutral backdrops.
+- **Hero-grade upgrade available:** SECTION_SPEC §2.1 originally called for a single studio-shot lineup with all 5 products on an actual cream pedestal surface. Our implementation approximates this via CSS-drawn pedestal blocks. A real photoshoot would make the hero more magazine-grade.
+- **Priority:** Low — current version ships a premium feel; reshoot is an aesthetic upgrade, not a blocker.
+
 ### §3 Product grid low-contrast thumbnails (photo issue only)
 - **Card-frame fix landed** in commit `d772706` — `ProductCard.tsx` image container swapped from `#f8f8f8` to the warm `#F0EEE9` off-white so every tile now reads as a distinct card even when the product photo has a white background.
 - **Residual issue:** `super-pleated/main.jpg` and `uf-double-backwash/main.jpg` still appear faint because the subjects themselves were photographed against white. This is now a pure photo problem, not a UI problem.
