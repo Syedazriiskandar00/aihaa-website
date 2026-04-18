@@ -32,6 +32,7 @@ export default function Header() {
     { name: t.nav_faq, href: "/faq" },
     { name: t.nav_gallery, href: "/galeri" },
     { name: t.nav_service, href: "/service" },
+    { name: t.nav_about, href: "/tentang-kami" },
   ];
 
   // Contact shown as gold button on desktop, normal link in mobile menu

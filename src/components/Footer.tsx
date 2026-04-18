@@ -20,6 +20,7 @@ export default function Footer() {
     { name: t.nav_products_indoor, href: "/produk-dalam" },
     { name: t.nav_products_outdoor, href: "/produk-luar" },
     { name: t.nav_promotions, href: "/promotions" },
+    { name: t.nav_about, href: "/tentang-kami" },
     { name: t.nav_contact, href: "/contact" },
   ];
 

@@ -22,4 +22,5 @@
   <url><loc>https://aihaa-website-five.vercel.app/galeri</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://aihaa-website-five.vercel.app/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://aihaa-website-five.vercel.app/service</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://aihaa-website-five.vercel.app/tentang-kami</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 </urlset>
