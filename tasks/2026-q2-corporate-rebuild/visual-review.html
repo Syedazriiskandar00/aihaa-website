@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AIHAA Website — Visual Review (Q2 2026 Rebuild)</title>
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --ink: #0d0d0d;
+    --ink-soft: #3b3b3b;
+    --muted: #6f6f6f;
+    --border: #e5e4df;
+    --gold: #daa520;
+    --gold-dark: #b8860b;
+    --warn: #b45309;
+    --max: 1200px;
+    --sidebar: 240px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111111;
+      --surface: #1a1a1a;
+      --ink: #eaeaea;
+      --ink-soft: #c4c4c4;
+      --muted: #8a8a8a;
+      --border: #2a2a2a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+      system-ui, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--bg);
+  }
+  code, .mono {
+    font-family: "SF Mono", Menlo, Consolas, "Courier New", monospace;
+    font-size: 12.5px;
+  }
+
+  /* ─ Header ─ */
+  .hdr {
+    padding: 36px 28px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .hdr-inner { max-width: var(--max); margin: 0 auto; }
+  .hdr h1 {
+    font-size: 26px;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+  }
+  .hdr .meta {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .hdr .meta code { color: var(--ink-soft); }
+  .hdr-stats {
+    display: flex; flex-wrap: wrap;
+    gap: 18px 32px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border);
+  }
+  .stat { font-size: 13px; color: var(--muted); }
+  .stat strong {
+    display: block;
+    font-size: 22px;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .stat.ok strong { color: #156d2c; }
+
+  /* ─ Layout ─ */
+  .layout {
+    display: grid;
+    grid-template-columns: var(--sidebar) 1fr;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; padding: 0 16px; }
+    aside.nav { display: none; }
+  }
+
+  aside.nav {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 20px 0 40px;
+  }
+  aside.nav h3 {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 18px 0 6px;
+    font-weight: 600;
+  }
+  aside.nav a {
+    display: block;
+    padding: 4px 0;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+  }
+  aside.nav a:hover { color: var(--gold-dark); }
+
+  main { padding: 40px 0 120px; min-width: 0; }
+
+  section.phase {
+    margin-bottom: 72px;
+    scroll-margin-top: 16px;
+  }
+  section.phase h2 {
+    font-size: 20px;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.01em;
+  }
+  section.phase .phase-caption {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+
+  article.route {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 28px;
+  }
+  article.route header {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    gap: 14px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+  article.route h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  article.route .url {
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+  article.route .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(218, 165, 32, 0.12);
+    color: var(--gold-dark);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  article.route .tag.legacy { background: rgba(180, 83, 9, 0.12); color: var(--warn); }
+  article.route .tag.untouched { background: rgba(111, 111, 111, 0.12); color: var(--muted); }
+  article.route .caption {
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    margin: 0 0 18px;
+    max-width: 68ch;
+  }
+
+  .shots {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .shot {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+  }
+  .shot-label {
+    padding: 8px 14px;
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+  }
+  .shot img { display: block; max-width: 100%; height: auto; }
+  .shot.desktop img { width: 100%; }
+  .shot.mobile { max-width: 430px; margin: 0 auto; background: var(--surface); }
+  .shot.mobile img { width: 100%; max-width: 390px; margin: 0 auto; display: block; }
+
+  .issues {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--warn);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-top: 80px;
+  }
+  .issues h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+    color: var(--warn);
+    letter-spacing: -0.01em;
+  }
+  .issues p.lead {
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    font-size: 13.5px;
+  }
+  .issues ul { margin: 0; padding-left: 22px; color: var(--ink-soft); font-size: 13.5px; }
+  .issues li { margin: 6px 0; }
+  .issues code { color: var(--ink); }
+
+  footer.end {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  footer.end code { color: var(--ink-soft); }
+
+  /* ─ Print ─ */
+  @media print {
+    body { background: #fff; color: #000; }
+    aside.nav { display: none; }
+    .layout { grid-template-columns: 1fr; padding: 0; }
+    main { padding: 0; }
+    section.phase { page-break-before: always; break-before: page; }
+    section.phase:first-of-type { page-break-before: auto; }
+    article.route { border: 0; break-inside: avoid; padding: 0 0 30px; }
+    .issues { page-break-before: always; break-before: page; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <h1>AIHAA Website — Visual Review</h1>
+    <p class="meta">
+      Q2 2026 Corporate Rebuild ·
+      Branch <code>feat/corporate-rebuild-2026-q2</code> ·
+      75 commits on branch ·
+      Tip <code>3e71eb6</code> ·
+      Generated 2026-04-18
+    </p>
+    <div class="hdr-stats">
+      <div class="stat"><strong>6</strong>phases shipped</div>
+      <div class="stat"><strong>23</strong>routes captured</div>
+      <div class="stat"><strong>46</strong>screenshots (desktop + mobile)</div>
+      <div class="stat ok"><strong>tsc · lint · build</strong>all green</div>
+      <div class="stat"><strong>0</strong>console errors on capture</div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+<aside class="nav">
+  <h3>Rebuild Phases</h3>
+  <a href="#phase-4">Phase 4 · Home</a>
+  <a href="#phase-3">Phase 3 · Produk Dalam</a>
+  <a href="#phase-2">Phase 2 · Produk Luar</a>
+  <a href="#phase-1">Phase 1 · Service</a>
+  <a href="#phase-5">Phase 5 · Tentang Kami</a>
+  <a href="#legacy">Legacy · Water Purifier</a>
+  <h3>Phase 6 · Product Detail</h3>
+  <a href="#product-indoor">Indoor (5)</a>
+  <a href="#product-outdoor">Outdoor (8)</a>
+  <h3>Untouched</h3>
+  <a href="#untouched">FAQ / Galeri / Promosi / Contact</a>
+  <h3>Issues</h3>
+  <a href="#issues">Known issues</a>
+</aside>
+
+<main>
+
+<!-- ─────── Phase 4 — Home ─────── -->
+<section id="phase-4" class="phase">
+  <h2>Phase 4 — Homepage</h2>
+  <p class="phase-caption">Dark hero with 5-pedestal lineup + dual CTA (SPEC §1.1). Signature Collection tab toggle 4 + 4 (SPEC §1.2). Benefits retained (SPEC §1.3). Zigzag testimonials (SPEC §1.4). Certifications + pre-footer CTA retained.</p>
+  <article class="route">
+    <header>
+      <h3>Home</h3>
+      <span class="url mono">/</span>
+      <span class="tag">Phase 4</span>
+    </header>
+    <p class="caption">Check: PENAPIS AIR / JIMAT (italic gold larger) / SEKALI BAYAR 3-line title; BELLA + WINTER tier badges on pedestal; tab toggle swaps between 4 indoor and 4 outdoor products; testimonials alternate left/right with gold borders.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/4-home-desktop.png" alt="Home desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/4-home-mobile.png" alt="Home mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Phase 3 — Produk Dalam ─────── -->
+<section id="phase-3" class="phase">
+  <h2>Phase 3 — Produk Dalam (Premium Indoor Landing)</h2>
+  <p class="phase-caption">Dark hero mirrors homepage composition (same 5-pedestal, same badges) but copy emphasises "Penapis Untuk Rumah" vs homepage's "JIMAT SEKALI BAYAR".</p>
+  <article class="route">
+    <header>
+      <h3>Produk Dalam</h3>
+      <span class="url mono">/produk-dalam</span>
+      <span class="tag">Phase 3</span>
+    </header>
+    <p class="caption">Check: 5-pedestal hero matches homepage; Keluarga Muda / Besar / Bayi Baru / Apartment Compact use-case band; 5-product grid below.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/3-produk-dalam-desktop.png" alt="Produk Dalam desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/3-produk-dalam-mobile.png" alt="Produk Dalam mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Phase 2 — Produk Luar ─────── -->
+<section id="phase-2" class="phase">
+  <h2>Phase 2 — Produk Luar (Premium Outdoor Landing)</h2>
+  <p class="phase-caption">Sage green (#B5C5A5) editorial hero with 2 featured products (PVDF PLUS + ULTRA ONE), 4 use-case icons, 8-product grid.</p>
+  <article class="route">
+    <header>
+      <h3>Produk Luar</h3>
+      <span class="url mono">/produk-luar</span>
+      <span class="tag">Phase 2</span>
+    </header>
+    <p class="caption">Check: sage hero reads as category shift from dark indoor; PVDF PLUS (PREMIUM dark) + ULTRA ONE (PILIHAN JIMAT light) tier badges; all 8 products in grid; footer CTA gold.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/2-produk-luar-desktop.png" alt="Produk Luar desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/2-produk-luar-mobile.png" alt="Produk Luar mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Phase 1 — Service ─────── -->
+<section id="phase-1" class="phase">
+  <h2>Phase 1 — Service</h2>
+  <p class="phase-caption">Heart Service hero → indoor header → 13-point check → RM 160 / RM 260 filter pricing → 8-step gallery → sand types → 5-point outdoor check → RM 250 / RM 650 sand pricing.</p>
+  <article class="route">
+    <header>
+      <h3>Service</h3>
+      <span class="url mono">/service</span>
+      <span class="tag">Phase 1</span>
+    </header>
+    <p class="caption">Check: Coway-style 4-pillar hero (Pantas/Bertauliah/Mesra/Responsif); filter row cartridges render cleanly; 13-point numbered list (2 cols 1-9 / 10-13); forest-green 8-step tiles; both pricing sections show a single gold WhatsApp CTA only.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/1-service-desktop.png" alt="Service desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/1-service-mobile.png" alt="Service mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Phase 5 — Tentang Kami ─────── -->
+<section id="phase-5" class="phase">
+  <h2>Phase 5 — Tentang Kami</h2>
+  <p class="phase-caption">Kisah Kami (founder + timeline) → Halal Commitment (MS 1500) → AIHAA × Azlee video placeholder → Team placeholder → CSR 3-card grid.</p>
+  <article class="route">
+    <header>
+      <h3>Tentang Kami</h3>
+      <span class="url mono">/tentang-kami</span>
+      <span class="tag">Phase 5</span>
+    </header>
+    <p class="caption">Check: founder photo placeholder left column has dashed gold frame; 2018→2025 timeline reads chronologically; MS 1500 cert mark centered — NOTE: cert reference needs JAKIM verification (see Known Issues). Video / team / CSR are intentional placeholders.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/5-tentang-kami-desktop.png" alt="Tentang Kami desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/5-tentang-kami-mobile.png" alt="Tentang Kami mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Legacy — Water Purifier ─────── -->
+<section id="legacy" class="phase">
+  <h2>Legacy — Water Purifier</h2>
+  <p class="phase-caption">Pre-rebuild unified listing. Kept live and cross-linked from both premium landings. Destiny (redesign / redirect / retire) deferred to a future phase.</p>
+  <article class="route">
+    <header>
+      <h3>Water Purifier</h3>
+      <span class="url mono">/water-purifier</span>
+      <span class="tag legacy">Legacy</span>
+    </header>
+    <p class="caption">Check: "Lihat Koleksi Penapis Dalam Premium →" cross-link in indoor section header; "Lihat Koleksi Penapis Luar Premium →" in outdoor section header (both added in Phases 2 + 3). Grids unchanged otherwise.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/legacy-water-purifier-desktop.png" alt="Water Purifier desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/legacy-water-purifier-mobile.png" alt="Water Purifier mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Phase 6 Indoor Products ─────── -->
+<section id="product-indoor" class="phase">
+  <h2>Phase 6 — Product Detail · Indoor (5)</h2>
+  <p class="phase-caption">Dark hero + gold accents (indoor category tone). One dynamic template at <code>/product/[id]</code> renders all 13 products — tone adapts via <code>product.category</code>.</p>
+
+  <article class="route">
+    <header><h3>AIHAA BELLA</h3><span class="url mono">/product/aihaa-bella</span><span class="tag">Phase 6</span></header>
+    <p class="caption">Check: dark hero with gold italic tagline; Features section icons mapped by keyword (Mineral Alkali → Sparkles, 4 Tahap Penapisan → Filter); ServiceInfo shows RM 160 / 2 Tahun / Setiap 6 Bulan / RM 320.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-bella-desktop.png" alt="AIHAA BELLA desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-bella-mobile.png" alt="AIHAA BELLA mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>AIHAA BIG</h3><span class="url mono">/product/aihaa-big</span><span class="tag">Phase 6</span></header>
+    <p class="caption">Popular badge in hero. Kapasiti 17 Liter spec. Related products show BELLA / EAN / FANCY (indoor peers).</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-big-desktop.png" alt="AIHAA BIG desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-big-mobile.png" alt="AIHAA BIG mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>AIHAA EAN</h3><span class="url mono">/product/aihaa-ean</span><span class="tag">Phase 6</span></header>
+    <p class="caption">SALE badge (red) with RM780 (from RM867). Digital Display feature.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-ean-desktop.png" alt="AIHAA EAN desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-ean-mobile.png" alt="AIHAA EAN mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>AIHAA FANCY</h3><span class="url mono">/product/aihaa-fancy</span><span class="tag">Phase 6</span></header>
+    <p class="caption">No tier badge (data has no badge field). Slim modern 3-tank design feature line.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-fancy-desktop.png" alt="AIHAA FANCY desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-fancy-mobile.png" alt="AIHAA FANCY mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>AIHAA WINTER</h3><span class="url mono">/product/aihaa-winter</span><span class="tag">Phase 6</span></header>
+    <p class="caption">PREMIUM badge. Ice Maker feature → Snowflake icon in Features grid (keyword mapper).</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-aihaa-winter-desktop.png" alt="AIHAA WINTER desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-aihaa-winter-mobile.png" alt="AIHAA WINTER mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Phase 6 Outdoor Products ─────── -->
+<section id="product-outdoor" class="phase">
+  <h2>Phase 6 — Product Detail · Outdoor (8)</h2>
+  <p class="phase-caption">Sage hero + dark text (outdoor tone). Same template, same sections; tone switches via <code>product.category</code>.</p>
+
+  <article class="route">
+    <header><h3>ULTRA ONE</h3><span class="url mono">/product/ultra-one</span><span class="tag">Phase 6</span></header>
+    <p class="caption">BEST VALUE badge. Service classified as membrane-grade: RM 160 / 2 Tahun / RM 320 yearly.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-ultra-one-desktop.png" alt="ULTRA ONE desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-ultra-one-mobile.png" alt="ULTRA ONE mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>FIBER 9X42</h3><span class="url mono">/product/fiber-9x42</span><span class="tag">Phase 6</span></header>
+    <p class="caption">Sand-media tier: RM 250 / 2 Tahun / RM 500 yearly.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-fiber-9x42-desktop.png" alt="FIBER 9X42 desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-fiber-9x42-mobile.png" alt="FIBER 9X42 mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>FIBER 10X44</h3><span class="url mono">/product/fiber-10x44</span><span class="tag">Phase 6</span></header>
+    <p class="caption">Sand-media tier. Related products strip shows other outdoor models.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-fiber-10x44-desktop.png" alt="FIBER 10X44 desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-fiber-10x44-mobile.png" alt="FIBER 10X44 mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>PENAPIS BORING 13X54</h3><span class="url mono">/product/penapis-boring-13x54</span><span class="tag">Phase 6</span></header>
+    <p class="caption"><strong>Azri flagged:</strong> ServiceInfo currently shows RM 250 (sand-standard); should be RM 650 per Phase 1 SPEC §4.8 (boring = 6-layer). One-line fix in <code>src/lib/data/services.ts</code> — batched with other fixes later.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-penapis-boring-13x54-desktop.png" alt="PENAPIS BORING 13X54 desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-penapis-boring-13x54-mobile.png" alt="PENAPIS BORING 13X54 mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>PVDF</h3><span class="url mono">/product/pvdf</span><span class="tag">Phase 6</span></header>
+    <p class="caption">PRO GRADE badge. Membrane-tier service pricing.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-pvdf-desktop.png" alt="PVDF desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-pvdf-mobile.png" alt="PVDF mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>PVDF PLUS</h3><span class="url mono">/product/pvdf-plus</span><span class="tag">Phase 6</span></header>
+    <p class="caption">PREMIUM badge. 6000 L/hour flow rate in specs.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-pvdf-plus-desktop.png" alt="PVDF PLUS desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-pvdf-plus-mobile.png" alt="PVDF PLUS mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>SUPER PLEATED</h3><span class="url mono">/product/super-pleated</span><span class="tag">Phase 6</span></header>
+    <p class="caption">No tier badge. Photo renders faintly against sage hero (known — flagged in PLACEHOLDERS.md, photo has white background).</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-super-pleated-desktop.png" alt="SUPER PLEATED desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-super-pleated-mobile.png" alt="SUPER PLEATED mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>UF DOUBLE BACKWASH</h3><span class="url mono">/product/uf-double-backwash</span><span class="tag">Phase 6</span></header>
+    <p class="caption">SALE badge (RM 799 from RM 888). Warranty displays "10 Tahun (UF Membrane)" — the only product in the catalogue with an extended-warranty variant.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/6-uf-double-backwash-desktop.png" alt="UF DOUBLE BACKWASH desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/6-uf-double-backwash-mobile.png" alt="UF DOUBLE BACKWASH mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Untouched pages ─────── -->
+<section id="untouched" class="phase">
+  <h2>Untouched — FAQ / Galeri / Promosi / Contact</h2>
+  <p class="phase-caption">Per IMPLEMENTATION_PLAN rule these four pages were NOT part of the Q2 2026 rebuild scope. Included here for completeness — routing + WhatsApp CTA touch points did get the Phase 2 centralisation refactor.</p>
+
+  <article class="route">
+    <header><h3>FAQ</h3><span class="url mono">/faq</span><span class="tag untouched">Untouched</span></header>
+    <p class="caption">Pre-rebuild layout retained. WhatsApp CTA now routes through central config.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/u-faq-desktop.png" alt="FAQ desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/u-faq-mobile.png" alt="FAQ mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>Galeri</h3><span class="url mono">/galeri</span><span class="tag untouched">Untouched</span></header>
+    <p class="caption">Pre-rebuild installation gallery. No visual changes.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/u-galeri-desktop.png" alt="Galeri desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/u-galeri-mobile.png" alt="Galeri mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>Promosi</h3><span class="url mono">/promotions</span><span class="tag untouched">Untouched</span></header>
+    <p class="caption">Pre-rebuild promotions page. CTAs centralised.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/u-promotions-desktop.png" alt="Promotions desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/u-promotions-mobile.png" alt="Promotions mobile"></div>
+    </div>
+  </article>
+
+  <article class="route">
+    <header><h3>Contact</h3><span class="url mono">/contact</span><span class="tag untouched">Untouched</span></header>
+    <p class="caption">Pre-rebuild contact page. tel: + WhatsApp links now route through central config.</p>
+    <div class="shots">
+      <div class="shot desktop"><div class="shot-label">Desktop 1440×900</div><img src="review-screenshots/u-contact-desktop.png" alt="Contact desktop"></div>
+      <div class="shot mobile"><div class="shot-label">Mobile 390×844</div><img src="review-screenshots/u-contact-mobile.png" alt="Contact mobile"></div>
+    </div>
+  </article>
+</section>
+
+<!-- ─────── Known Issues ─────── -->
+<section id="issues" class="issues">
+  <h2>Known Issues & Placeholders</h2>
+  <p class="lead">Full detail in <code>tasks/2026-q2-corporate-rebuild/PLACEHOLDERS.md</code>. These are the items Azri needs to resolve before a production deploy.</p>
+  <ul>
+    <li><strong>Contact placeholders (HIGH)</strong> — WhatsApp + phone everywhere resolve to <code>60000000000</code> via <code>src/lib/config/contact.ts</code>. One-line edit when the real AIHAA number lands. Also update 6 display strings in <code>translations.ts</code> (<code>faq_a6</code>, <code>promo_tnc_questions</code>, <code>contact_wa_alt</code> × bm + en).</li>
+    <li><strong>Halal cert verification (HIGH)</strong> — <code>MS 1500 / Ref: 6 126-03 / 2014</code> on the Tentang Kami page is verbatim from the brainstorm. Azri to verify against the current JAKIM certificate; swap <code>about_halal_cert_label</code> / <code>about_halal_cert_ref</code> i18n values when confirmed.</li>
+    <li><strong>Penapis Boring 13x54 service price (CONFIRMED PENDING)</strong> — ServiceInfo currently reports <code>RM 250 / 2 Tahun / RM 500</code>. Azri approved correction to <code>RM 650</code> (6-layer boring); one-line fix in <code>src/lib/data/services.ts</code>. Batched with other fixes later per Azri's note.</li>
+    <li><strong>Photography backlog</strong> — founder photo, team group photo, AIHAA × Azlee video, real CSR activity images. All render as intentional placeholder blocks with captions; swap when assets arrive.</li>
+    <li><strong>CSR cards</strong> — 3 category-level placeholders (Sumbangan Peralatan / Bantuan Bencana / Program Komuniti) with year "TBD". Swap via <code>about_csr_card_*</code> i18n values when real activity data available.</li>
+    <li><strong>Real customer testimonials</strong> — 2 homepage testimonials use the SECTION_SPEC sample quotes. Swap via <code>home_testi_quote_*</code> i18n values when real reviews arrive.</li>
+    <li><strong>/water-purifier destiny TBD</strong> — legacy route kept live; navbar "All Products" dropdown is a stopgap pointing at <code>/produk-luar</code>. A future phase decides: redesign, redirect, or retire.</li>
+    <li><strong>Comparison table (BezaKami) + impact stats</strong> — previously lived in WhyAihaaSection; removed in Phase 5 since no SECTION_SPEC home exists for them. Future phase may re-introduce with new design direction.</li>
+    <li><strong>Hero photography (LOW)</strong> — pedestal composition + low-contrast thumbnails (super-pleated, uf-double-backwash) currently use CSS and existing catalogue shots. Reshoot is an aesthetic upgrade, not a blocker.</li>
+  </ul>
+</section>
+
+<footer class="end">
+  AIHAA Website Q2 2026 Rebuild · Review artefacts in <code>tasks/2026-q2-corporate-rebuild/</code><br>
+  Page count: 23 routes · Screenshots: 46 PNGs (desktop + mobile)
+</footer>
+
+</main>
+</div>
+
+</body>
+</html>
