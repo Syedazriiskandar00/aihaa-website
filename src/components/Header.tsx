@@ -21,10 +21,10 @@ export default function Header() {
       href: "/water-purifier",
       dropdown: [
         // TODO(phase-4): revisit "All Products" destination once /water-purifier
-        // is redesigned — current stopgap points at /produk-luar so users land
+        // is redesigned. Current stopgap points at /produk-luar so users land
         // on premium rebuild surface rather than the older unified listing.
         { name: t.nav_products_all, href: "/produk-luar" },
-        { name: t.nav_products_indoor, href: "/water-purifier#indoor" },
+        { name: t.nav_products_indoor, href: "/produk-dalam" },
         { name: t.nav_products_outdoor, href: "/produk-luar" },
       ],
     },
