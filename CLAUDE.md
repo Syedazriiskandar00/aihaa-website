@@ -45,11 +45,12 @@ Every output must pass this test: "Would a Fortune 500 company use this on their
 
 Active feature branch: `feat/corporate-rebuild-2026-q2` (local only, do not push without explicit Azri approval). Source of truth docs in `tasks/2026-q2-corporate-rebuild/` — `IMPLEMENTATION_PLAN.md`, `SECTION_SPEC.md`, `PLACEHOLDERS.md`.
 
-Phases shipped to the branch (as of 2026-04-18): Phase 1 `/service`, Phase 2 `/produk-luar`, Phase 3 `/produk-dalam`, Phase 4 homepage `/`, Phase 5 `/tentang-kami`. Product detail pages `/product/[slug]` still use the pre-rebuild template — deferred to a later phase.
+Phases shipped to the branch (as of 2026-04-18): Phase 1 `/service`, Phase 2 `/produk-luar`, Phase 3 `/produk-dalam`, Phase 4 homepage `/`, Phase 5 `/tentang-kami`, Phase 6 `/product/[id]` premium detail template.
 
 Single-source modules introduced during the rebuild — reuse these, never re-hardcode:
 - `src/lib/config/contact.ts` — WhatsApp + phone helpers. All `wa.me` URLs and `tel:` links must route through `whatsappUrl(msg)` or `telHref()`. The current value is the placeholder `60000000000` — real number is a one-line config edit away.
 - `src/lib/data/products.ts` — the 13 AIHAA products (5 indoor + 8 outdoor) with bilingual `tagline` + `description`. Consumers use `indoorProducts`, `outdoorProducts`, `getProductBySlug(slug)`.
+- `src/lib/data/services.ts` — per-product service info (price, warranty, frequency, yearly estimate). Returns i18n keys for translated fields; prices + estimates stay hardcoded. Consumer: `getServiceInfo(product)`.
 - `src/lib/i18n/translations.ts` — single flat file, type-safe via `TranslationKeys`. Locale codes are `"bm" | "en"` (never `"ms"`). New keys go here with both locales, snake_case, no nesting.
 - `src/components/shared/` — reusable across pages (`SectionHeading`, `BrandLogoBadge`, `IndoorFilterRow`, `ProductPedestalLineup`).
 - `src/components/home/` — homepage section components (hero, collection, testimonials).
@@ -59,4 +60,4 @@ Anti-hardcode rules:
 - Brand identifiers (AIHAA, product names like `AIHAA BELLA`) are never translated.
 - WhatsApp / phone numbers never inline — always import from `contact.ts`.
 
-Routing IA (post-Phase-5): Navbar dropdown "Luar Rumah" → `/produk-luar`, "Dalam Rumah" → `/produk-dalam`, "Semua Penapis" → `/produk-luar` (stopgap pending `/water-purifier` redesign). Top-level nav includes Service, About, Contact.
+Routing IA (post-Phase-6): Navbar dropdown "Luar Rumah" → `/produk-luar`, "Dalam Rumah" → `/produk-dalam`, "Semua Penapis" → `/produk-luar` (stopgap pending `/water-purifier` redesign). Top-level nav includes Service, About, Contact. Product detail route is `/product/[id]` (folder name `[id]`, param value is the product slug like `aihaa-bella`). One dynamic template renders all 13 products with tone adapting to `product.category` (indoor=dark hero, outdoor=sage hero).
