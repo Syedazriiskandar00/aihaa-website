@@ -46,8 +46,10 @@ export default function ProductCard({
       href={`/product/${id}`}
       className="bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:border-[rgba(218,165,32,0.3)] block"
     >
-      {/* Image Container */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+      {/* Image Container — warm off-white (#F0EEE9) so product photos with
+          pure-white backgrounds (e.g. super-pleated, uf-double-backwash)
+          don't blend into the card fill. */}
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#F0EEE9]">
         {/* Badge */}
         {badge && (
           <div
