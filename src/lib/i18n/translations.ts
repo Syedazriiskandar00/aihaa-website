@@ -452,6 +452,20 @@ export type TranslationKeys = {
   about_csr_card_3_year: string;
   about_csr_card_3_desc: string;
   about_csr_note: string;
+  // Product detail — Phase 6
+  product_detail_hero_cta_secondary: string;
+  product_detail_features_heading: string;
+  product_detail_service_heading: string;
+  product_detail_service_subheading: string;
+  product_detail_service_label_price: string;
+  product_detail_service_label_warranty: string;
+  product_detail_service_label_frequency: string;
+  product_detail_service_label_yearly: string;
+  product_detail_service_warranty_default: string;
+  product_detail_service_warranty_uf: string;
+  product_detail_service_frequency_default: string;
+  product_detail_service_disclaimer: string;
+  product_detail_related_subheading: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -937,6 +951,23 @@ export const translations: Record<Locale, TranslationKeys> = {
       "Inisiatif bulanan bersama komuniti tempatan.",
     about_csr_note:
       "Butiran aktiviti akan dikemaskini apabila data rasmi disediakan.",
+    // Product detail — Phase 6
+    product_detail_hero_cta_secondary: "Lihat Spesifikasi",
+    product_detail_features_heading: "Ciri-Ciri Utama",
+    product_detail_service_heading: "Info Servis",
+    product_detail_service_subheading:
+      "Maklumat servis utama untuk produk ini. Butiran penuh semasa konsultasi.",
+    product_detail_service_label_price: "Harga Servis",
+    product_detail_service_label_warranty: "Tempoh Waranti",
+    product_detail_service_label_frequency: "Frekuensi Servis Disyorkan",
+    product_detail_service_label_yearly: "Anggaran Kos Tahunan",
+    product_detail_service_warranty_default: "2 Tahun",
+    product_detail_service_warranty_uf: "10 Tahun (UF Membrane)",
+    product_detail_service_frequency_default: "Setiap 6 Bulan",
+    product_detail_service_disclaimer:
+      "Maklumat servis tertakluk kepada notis. Sila WhatsApp kami untuk butiran terkini.",
+    product_detail_related_subheading:
+      "Produk lain dalam kategori yang sama — mungkin sesuai untuk keperluan anda.",
   },
   en: {
     nav_home: "Home",
@@ -1420,5 +1451,22 @@ export const translations: Record<Locale, TranslationKeys> = {
       "Monthly initiatives alongside local communities.",
     about_csr_note:
       "Activity details will be updated as official data becomes available.",
+    // Product detail — Phase 6
+    product_detail_hero_cta_secondary: "View Specifications",
+    product_detail_features_heading: "Key Features",
+    product_detail_service_heading: "Service Information",
+    product_detail_service_subheading:
+      "Core service details for this product. Full specifics during consultation.",
+    product_detail_service_label_price: "Service Price",
+    product_detail_service_label_warranty: "Warranty Period",
+    product_detail_service_label_frequency: "Recommended Service Frequency",
+    product_detail_service_label_yearly: "Estimated Annual Cost",
+    product_detail_service_warranty_default: "2 Years",
+    product_detail_service_warranty_uf: "10 Years (UF Membrane)",
+    product_detail_service_frequency_default: "Every 6 Months",
+    product_detail_service_disclaimer:
+      "Service details are subject to change. WhatsApp us for current information.",
+    product_detail_related_subheading:
+      "Other products in the same category — may suit your needs.",
   },
 };
