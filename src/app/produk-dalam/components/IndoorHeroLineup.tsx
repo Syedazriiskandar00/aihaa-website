@@ -1,42 +1,49 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { getProductBySlug } from "@/lib/data/products";
+import { getProductBySlug, type Product } from "@/lib/data/products";
+import ProductPedestalLineup, {
+  type PedestalBadge,
+} from "@/components/shared/ProductPedestalLineup";
 
 // Hybrid hero layout per Azri's direction:
 // - All 5 indoor products on cream pedestals (AIHAA poster aesthetic)
 // - Varying pedestal heights create deliberate compositional rhythm
-// - BELLA (bestseller) + WINTER (flagship) still get tier-badge treatment
-// - Grid below hero carries complementary info (price, specs) — not a mirror
+// - BELLA (bestseller) + WINTER (flagship) get tier-badge treatment
 //
 // Pedestal height rhythm (px), reading EAN → WINTER:
-//   [ tall, short, medium-tall, medium, medium-tall ]
-// EAN lifted so a small desktop unit gets presence; BIG grounded so its
-// natural 17L-floor-standing form doesn't dominate; featured pair slightly
-// elevated without dwarfing the non-featured three. Badges float on the
-// pedestal face, not competing with gold accents elsewhere in the hero.
+//   [ 56, 24, 44, 36, 44 ] — TALL, SHORT, MED-TALL, MED, MED-TALL
+// creates an UP-DOWN-UP-DOWN-UP visual wave.
 
-const HERO_LINEUP: Array<{
-  slug: string;
-  pedestalHeight: number;
-  badgeKind?: "bestseller" | "premium";
-}> = [
-  { slug: "aihaa-ean", pedestalHeight: 56 },
-  { slug: "aihaa-big", pedestalHeight: 24 },
-  { slug: "aihaa-bella", pedestalHeight: 44, badgeKind: "bestseller" },
-  { slug: "aihaa-fancy", pedestalHeight: 36 },
-  { slug: "aihaa-winter", pedestalHeight: 44, badgeKind: "premium" },
-];
+const LINEUP_SLUGS = [
+  "aihaa-ean",
+  "aihaa-big",
+  "aihaa-bella",
+  "aihaa-fancy",
+  "aihaa-winter",
+] as const;
+
+const PEDESTAL_HEIGHTS = [56, 24, 44, 36, 44];
 
 export default function IndoorHeroLineup() {
   const { t } = useLanguage();
 
-  const columns = HERO_LINEUP.map((entry) => ({
-    ...entry,
-    product: getProductBySlug(entry.slug),
-  })).filter((c) => c.product !== undefined);
+  const products: Product[] = LINEUP_SLUGS.map((slug) =>
+    getProductBySlug(slug)
+  ).filter((p): p is Product => p !== undefined);
+
+  const badges: PedestalBadge[] = [
+    {
+      slug: "aihaa-bella",
+      label: t.produk_dalam_hero_featured_bestseller_badge,
+      tone: "white",
+    },
+    {
+      slug: "aihaa-winter",
+      label: t.produk_dalam_hero_featured_premium_badge,
+      tone: "gold",
+    },
+  ];
 
   return (
     <section className="relative overflow-hidden bg-dark pt-28 pb-16 lg:pt-36 lg:pb-20">
@@ -49,7 +56,7 @@ export default function IndoorHeroLineup() {
             "radial-gradient(ellipse at center top, #DAA520 0, transparent 60%)",
         }}
       />
-      {/* Dotted texture — same pattern language as /produk-luar but tuned for dark */}
+      {/* Dotted texture */}
       <div
         aria-hidden
         className="absolute inset-0 opacity-[0.06]"
@@ -87,62 +94,12 @@ export default function IndoorHeroLineup() {
           </p>
         </div>
 
-        {/* Pedestal lineup — all 5 products */}
-        <div className="relative">
-          <div className="flex items-end justify-start md:justify-center gap-3 md:gap-5 lg:gap-6 overflow-x-auto md:overflow-visible pb-2 snap-x snap-mandatory md:snap-none -mx-4 px-4 md:mx-0 md:px-0 no-scrollbar">
-            {columns.map(({ product, pedestalHeight, badgeKind }) => {
-              if (!product) return null;
-              const badgeText =
-                badgeKind === "bestseller"
-                  ? t.produk_dalam_hero_featured_bestseller_badge
-                  : badgeKind === "premium"
-                  ? t.produk_dalam_hero_featured_premium_badge
-                  : null;
-              const badgeTone =
-                badgeKind === "premium"
-                  ? "bg-gold text-dark"
-                  : "bg-white text-dark";
-
-              return (
-                <Link
-                  key={product.slug}
-                  href={`/product/${product.slug}`}
-                  className="group flex flex-col items-center shrink-0 w-[148px] md:w-[176px] lg:w-[192px] snap-center transition-transform hover:-translate-y-1"
-                >
-                  {/* Product image container — fixed height, product bottom-anchored */}
-                  <div className="relative w-full h-[220px] md:h-[260px] lg:h-[300px] flex items-end justify-center">
-                    <Image
-                      src={product.mainImage}
-                      alt={product.name}
-                      fill
-                      className="object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.03]"
-                      sizes="(max-width: 768px) 148px, 192px"
-                    />
-                    {/* Floating tier badge — only for BELLA + WINTER */}
-                    {badgeText ? (
-                      <span
-                        className={`absolute top-0 left-1/2 -translate-x-1/2 inline-flex items-center px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.16em] font-semibold shadow-sm ${badgeTone}`}
-                      >
-                        {badgeText}
-                      </span>
-                    ) : null}
-                  </div>
-
-                  {/* Cream pedestal — variable height creates the rhythm */}
-                  <div
-                    className="w-full bg-cream text-dark flex flex-col items-center justify-center px-3 rounded-sm"
-                    style={{ minHeight: `${pedestalHeight}px` }}
-                  >
-                    <span className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] leading-tight text-center">
-                      {product.name.replace(/^AIHAA\s+/, "")}
-                    </span>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-        </div>
+        {/* Shared 5-pedestal lineup */}
+        <ProductPedestalLineup
+          products={products}
+          pedestalHeights={PEDESTAL_HEIGHTS}
+          badges={badges}
+        />
 
         {/* Scroll CTA → #indoor-grid */}
         <div className="text-center mt-12 lg:mt-14">
