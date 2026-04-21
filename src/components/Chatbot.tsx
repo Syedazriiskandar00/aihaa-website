@@ -150,7 +150,7 @@ export default function Chatbot() {
 
           {/* Messages */}
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#F8F8F8]">
-            {messages.map((msg) => (
+            {messages.map((msg, idx) => (
               <div key={msg.id}>
                 {/* Message bubble */}
                 <div className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}>
@@ -165,8 +165,8 @@ export default function Chatbot() {
                   </div>
                 </div>
 
-                {/* Quick replies */}
-                {msg.type === "bot" && msg.quickReplies && (
+                {/* Quick replies — only on the latest bot message to avoid stale button accumulation */}
+                {msg.type === "bot" && msg.quickReplies && idx === messages.length - 1 && (
                   <div className="flex flex-wrap gap-2 mt-2 ml-1">
                     {msg.quickReplies.map((qr) => (
                       <button
