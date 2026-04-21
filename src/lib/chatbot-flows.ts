@@ -122,8 +122,8 @@ export const flows: Record<string, FlowStep> = {
 
   warranty: {
     message: {
-      bm: "Waranti AIHAA:\n\n🔹 Indoor — 2 tahun\n🔹 Outdoor — 1 tahun\n\nMeliputi motor, sistem penapisan, dan tangki. Claim mudah via WhatsApp!",
-      en: "AIHAA Warranty:\n\n🔹 Indoor — 2 years\n🔹 Outdoor — 1 year\n\nCovers motor, filtration system, and tank. Easy claim via WhatsApp!",
+      bm: "Waranti AIHAA:\n\n🔹 Indoor — 2 tahun\n🔹 Outdoor — 2 tahun\n🔹 UF Double Backwash — 10 tahun (UF Membrane)\n\nMeliputi motor, sistem penapisan, dan tangki. Claim mudah via WhatsApp!",
+      en: "AIHAA Warranty:\n\n🔹 Indoor — 2 years\n🔹 Outdoor — 2 years\n🔹 UF Double Backwash — 10 years (UF Membrane)\n\nCovers motor, filtration system, and tank. Easy claim via WhatsApp!",
     },
     quickReplies: [
       { label: { bm: "WhatsApp untuk claim", en: "WhatsApp to claim" }, action: "whatsapp_warranty" },

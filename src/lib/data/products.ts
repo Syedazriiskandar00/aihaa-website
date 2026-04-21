@@ -366,7 +366,7 @@ export const products: Product[] = [
       { label: "Jenis Tangki", value: "Fiber" },
       { label: "Bahan", value: "Anti-Karat" },
       { label: "Penyelenggaraan", value: "Mudah" },
-      { label: "Waranti", value: "1 Tahun" },
+      { label: "Waranti", value: "2 Tahun" },
       { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
@@ -402,7 +402,7 @@ export const products: Product[] = [
       { label: "Ketahanan", value: "Tahan Lama" },
       { label: "Bahan", value: "Anti-Karat" },
       { label: "Penyelenggaraan", value: "Mudah" },
-      { label: "Waranti", value: "1 Tahun" },
+      { label: "Waranti", value: "2 Tahun" },
       { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
@@ -438,7 +438,7 @@ export const products: Product[] = [
       { label: "Kegunaan", value: "Air Boring" },
       { label: "Penapisan", value: "Pelbagai Tahap" },
       { label: "Penapis", value: "Penapis Khas" },
-      { label: "Waranti", value: "1 Tahun" },
+      { label: "Waranti", value: "2 Tahun" },
       { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
@@ -557,7 +557,7 @@ export const products: Product[] = [
       { label: "Kadar Aliran", value: "Tinggi" },
       { label: "Saiz", value: "Kompak" },
       { label: "Kos", value: "Efektif" },
-      { label: "Waranti", value: "1 Tahun" },
+      { label: "Waranti", value: "2 Tahun" },
       { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
@@ -598,7 +598,7 @@ export const products: Product[] = [
       { label: "Backwash", value: "Sistem Dual" },
       { label: "Kadar Aliran", value: "4000 L/Jam" },
       { label: "Pembersihan", value: "Automatik" },
-      { label: "Waranti", value: "2 Tahun" },
+      { label: "Waranti", value: "10 Tahun (UF Membrane)" },
       { label: "Pemasangan", value: "Percuma" },
     ],
     features: [
