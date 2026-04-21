@@ -8,10 +8,12 @@
 // arrives (e.g. real filter lifespan per model), extend this module —
 // never inline in components.
 //
-// Categorization rule (from Phase 6 spec):
+// Categorization rule (Phase 1 spec is source of truth, overrides Phase 6
+// brief for Penapis Boring):
 //   - indoor (all 5 models)                        → RM 160 filter service
 //   - outdoor UF Double Backwash                   → RM 650 (10yr membrane)
-//   - outdoor sand-media (Penapis Boring + Fiber)  → RM 250
+//   - outdoor Penapis Boring 13x54 (air boring)    → RM 650 (6-layer sand)
+//   - outdoor Fiber 9x42 / 10x44 (air kerajaan)    → RM 250 (5-layer sand)
 //   - outdoor cartridge/membrane (PVDF, PVDF Plus,
 //       Ultra One, Super Pleated)                  → RM 160
 //
@@ -51,6 +53,17 @@ const OUTDOOR_SAND_STANDARD: ServiceInfo = {
   frequencyKey: "product_detail_service_frequency_default",
 };
 
+// Boring-water tier: 6-layer sand service matches Phase 1 SPEC §4.8 pricing.
+// Penapis Boring 13x54 is the sole SKU designed for underground water
+// (air boring), so its service profile is the heavier 6-layer tier — not
+// the 5-layer municipal profile shared by the fiber tanks.
+const OUTDOOR_SAND_BORING: ServiceInfo = {
+  servicePrice: "RM 650",
+  yearlyEstimate: "RM 1,300",
+  warrantyKey: "product_detail_service_warranty_default",
+  frequencyKey: "product_detail_service_frequency_default",
+};
+
 const OUTDOOR_UF_DOUBLE_BACKWASH: ServiceInfo = {
   servicePrice: "RM 650",
   yearlyEstimate: "RM 1,300",
@@ -62,7 +75,7 @@ const OUTDOOR_UF_DOUBLE_BACKWASH: ServiceInfo = {
 // keyword-sniffing in the function body).
 const OUTDOOR_SERVICE_MAP: Record<string, ServiceInfo> = {
   "uf-double-backwash": OUTDOOR_UF_DOUBLE_BACKWASH,
-  "penapis-boring-13x54": OUTDOOR_SAND_STANDARD,
+  "penapis-boring-13x54": OUTDOOR_SAND_BORING,
   "fiber-9x42": OUTDOOR_SAND_STANDARD,
   "fiber-10x44": OUTDOOR_SAND_STANDARD,
   pvdf: OUTDOOR_MEMBRANE,
