@@ -74,19 +74,23 @@ export default function Chatbot() {
       return;
     }
 
-    // WhatsApp actions — show redirect message, then open
+    // WhatsApp actions — show redirect message (with typing delay), then open
     if (action.startsWith("whatsapp")) {
       const redirectFlow = flows.whatsapp_redirect;
-      addBotMessage(redirectFlow.message[locale]);
       const url = whatsappUrls[action] || whatsappUrls.whatsapp;
+      setIsTyping(true);
       setTimeout(() => {
-        window.open(url, "_blank");
-      }, 1000);
+        setIsTyping(false);
+        addBotMessage(redirectFlow.message[locale]);
+        setTimeout(() => {
+          window.open(url, "_blank");
+        }, 1000);
+      }, 800);
       return;
     }
 
-    // Regular flow
-    triggerFlow(action, false);
+    // Regular flow — always with typing delay so every bot reply feels human
+    triggerFlow(action, true);
   }
 
   function handleQuickReply(label: string, action: string) {
@@ -103,7 +107,7 @@ export default function Chatbot() {
     if (matched) {
       handleAction(matched);
     } else {
-      triggerFlow("fallback", false);
+      triggerFlow("fallback", true);
     }
   }
 
