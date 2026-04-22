@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { getProductBySlug } from "@/lib/data/products";
 
 const SAGE = "#B5C5A5";
 
 export default function SageHeroLineup() {
+  const featuredRef = useScrollReveal();
   const { t, locale } = useLanguage();
   const pvdfPlus = getProductBySlug("pvdf-plus");
   const ultraOne = getProductBySlug("ultra-one");
@@ -46,27 +48,27 @@ export default function SageHeroLineup() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Headline block */}
         <div className="text-center mb-14 lg:mb-16">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-dark/70 font-semibold mb-5">
+          <p className="hero-entrance text-[11px] uppercase tracking-[0.22em] text-dark/70 font-semibold mb-5">
             {t.produk_luar_hero_eyebrow}
           </p>
-          <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl text-white leading-[1.02] mb-3">
+          <h1 className="hero-entrance hero-entrance-1 font-editorial text-5xl md:text-6xl lg:text-7xl text-white leading-[1.02] mb-3">
             {t.produk_luar_hero_heading}
           </h1>
-          <p className="font-editorial-italic text-2xl md:text-3xl text-dark/80 mb-6">
+          <p className="hero-entrance hero-entrance-2 font-editorial-italic text-2xl md:text-3xl text-dark/80 mb-6">
             {t.produk_luar_hero_italic}
           </p>
-          <p className="text-[14px] md:text-[15px] leading-relaxed text-dark/75 max-w-xl mx-auto">
+          <p className="hero-entrance hero-entrance-3 text-[14px] md:text-[15px] leading-relaxed text-dark/75 max-w-xl mx-auto">
             {t.produk_luar_hero_tagline}
           </p>
         </div>
 
         {/* Featured pair — not a symmetric 2-card grid; tier badge gives hierarchy */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-          {featured.map(({ product, badge, badgeTone }) => (
+        <div ref={featuredRef} className="scroll-reveal grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+          {featured.map(({ product, badge, badgeTone }, idx) => (
             <Link
               key={product.slug}
               href={`/product/${product.slug}`}
-              className="group relative bg-cream rounded-2xl overflow-hidden transition-transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
+              className={`scroll-reveal-child stagger-${idx + 4} group relative bg-cream rounded-2xl overflow-hidden transition-transform hover:-translate-y-1 shadow-sm hover:shadow-lg`}
             >
               <span
                 className={`absolute top-5 left-5 z-10 inline-flex items-center px-3 py-1 rounded-full text-[11px] uppercase tracking-[0.16em] font-semibold ${

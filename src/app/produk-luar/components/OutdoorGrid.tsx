@@ -3,40 +3,52 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/shared/SectionHeading";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { outdoorProducts } from "@/lib/data/products";
 import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 export default function OutdoorGrid() {
+  const gridRef = useScrollReveal();
+  const ctaRef = useScrollReveal();
   const { t, locale } = useLanguage();
 
   return (
     <section id="outdoor-grid" className="bg-white py-20 lg:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow={t.produk_luar_grid_eyebrow}
-          heading={t.produk_luar_grid_heading}
-          subheading={t.produk_luar_grid_subheading}
-          className="mb-14"
-        />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {outdoorProducts.map((product) => (
-            <ProductCard
-              key={product.slug}
-              id={product.slug}
-              name={product.name}
-              tagline={product.tagline[locale]}
-              price={product.price}
-              oldPrice={product.oldPrice}
-              image={product.mainImage}
-              badge={product.badge}
-            />
-          ))}
+      <div ref={gridRef} className="scroll-reveal max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="scroll-reveal-child stagger-1">
+          <SectionHeading
+            eyebrow={t.produk_luar_grid_eyebrow}
+            heading={t.produk_luar_grid_heading}
+            subheading={t.produk_luar_grid_subheading}
+            className="mb-14"
+          />
         </div>
 
-        {/* Footer CTA — single WhatsApp action, gold accent, no competing button */}
-        <div className="mt-20 lg:mt-24 text-center max-w-xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {outdoorProducts.map((product, i) => (
+            <div
+              key={product.slug}
+              className="scroll-reveal-child"
+              style={{ transitionDelay: `${0.1 + i * 0.08}s` }}
+            >
+              <ProductCard
+                id={product.slug}
+                name={product.name}
+                tagline={product.tagline[locale]}
+                price={product.price}
+                oldPrice={product.oldPrice}
+                image={product.mainImage}
+                badge={product.badge}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer CTA — own reveal wrapper so it fades in after grid scrolls into view */}
+      <div ref={ctaRef} className="scroll-reveal max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="scroll-reveal-child stagger-1 mt-20 lg:mt-24 text-center max-w-xl mx-auto">
           <h3 className="font-editorial text-2xl md:text-3xl text-dark mb-3">
             {t.produk_luar_footer_cta_heading}
           </h3>
@@ -47,7 +59,7 @@ export default function OutdoorGrid() {
             href={whatsappUrl(whatsappMessages.modelAdvice)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gold text-dark px-8 py-3.5 rounded-full text-[13.5px] font-semibold tracking-wide hover:bg-gold-light transition-colors shadow-gold"
+            className="inline-flex items-center gap-2 bg-gold text-dark px-8 py-3.5 rounded-full text-[13.5px] font-semibold tracking-wide hover:bg-gold-light transition-colors hover:shadow-[0_0_20px_rgba(218,165,32,0.4)] motion-reduce:transition-none"
           >
             {t.produk_luar_footer_cta_button}
             <span aria-hidden>→</span>
