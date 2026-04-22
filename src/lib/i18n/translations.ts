@@ -1098,22 +1098,18 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_features_overview_caption_placeholder:
       "Close-up produk — akan dimuat naik",
     // Filter Cartridge Row
-    product_cartridge_eyebrow: "SISTEM PENAPISAN",
+    product_cartridge_eyebrow: "FILTER TECHNOLOGY",
     product_cartridge_heading: "Filter Penapis Air Dalam",
     product_cartridge_subheading:
-      "Empat peringkat yang menukar air paip menjadi air minuman bersih.",
+      "Empat peringkat penapisan yang menjamin air bersih dan selamat.",
     product_cartridge_sediment_name: "Sediment",
-    product_cartridge_sediment_desc:
-      "Menapis pasir, karat dan zarah kasar dari paip.",
+    product_cartridge_sediment_desc: "Buang zarah kasar & karat",
     product_cartridge_antibacterial_name: "Antibacterial",
-    product_cartridge_antibacterial_desc:
-      "Membunuh bakteria dan mikroorganisma berbahaya.",
+    product_cartridge_antibacterial_desc: "Halang pertumbuhan bakteria",
     product_cartridge_pre_carbon_name: "Pre-Carbon",
-    product_cartridge_pre_carbon_desc:
-      "Menyingkir klorin, bau dan rasa yang tidak diingini.",
+    product_cartridge_pre_carbon_desc: "Buang klorin & bau",
     product_cartridge_post_carbon_name: "Post-Carbon",
-    product_cartridge_post_carbon_desc:
-      "Pemurnian akhir — air lembut, segar dan selamat diminum.",
+    product_cartridge_post_carbon_desc: "Polish rasa air & kejernihan",
     product_cartridge_uf_name: "UF Membrane",
     product_cartridge_uf_desc:
       "Ultra-filtrasi — menapis zarah sehingga 0.01 mikron.",
@@ -1712,22 +1708,18 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_features_overview_caption_placeholder:
       "Product close-up — to be uploaded",
     // Filter Cartridge Row
-    product_cartridge_eyebrow: "FILTRATION SYSTEM",
-    product_cartridge_heading: "Indoor Filter Cartridges",
+    product_cartridge_eyebrow: "FILTER TECHNOLOGY",
+    product_cartridge_heading: "Inside The Filter",
     product_cartridge_subheading:
-      "Four stages that turn tap water into clean drinking water.",
+      "Four filtration stages for clean, safe water.",
     product_cartridge_sediment_name: "Sediment",
-    product_cartridge_sediment_desc:
-      "Captures sand, rust, and large particles from the pipe.",
+    product_cartridge_sediment_desc: "Remove coarse particles & rust",
     product_cartridge_antibacterial_name: "Antibacterial",
-    product_cartridge_antibacterial_desc:
-      "Kills bacteria and harmful microorganisms.",
+    product_cartridge_antibacterial_desc: "Prevent bacteria growth",
     product_cartridge_pre_carbon_name: "Pre-Carbon",
-    product_cartridge_pre_carbon_desc:
-      "Removes chlorine, odour, and unwanted taste.",
+    product_cartridge_pre_carbon_desc: "Remove chlorine & odor",
     product_cartridge_post_carbon_name: "Post-Carbon",
-    product_cartridge_post_carbon_desc:
-      "Final polish — soft, fresh, drink-ready water.",
+    product_cartridge_post_carbon_desc: "Polish taste & clarity",
     product_cartridge_uf_name: "UF Membrane",
     product_cartridge_uf_desc:
       "Ultra-filtration — filters particles down to 0.01 micron.",
