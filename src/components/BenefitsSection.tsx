@@ -57,8 +57,8 @@ export default function BenefitsSection() {
               className={`group scroll-reveal-child stagger-${index + 2} bg-white rounded-2xl p-8 flex flex-col items-center text-center border border-[rgba(218,165,32,0.15)] transition-shadow hover:shadow-[0_12px_32px_-16px_rgba(218,165,32,0.35)]`}
             >
               {/* Icon circle — larger, centered */}
-              <div className="w-16 h-16 mb-5 bg-gold/10 rounded-full flex items-center justify-center border border-[rgba(218,165,32,0.2)]">
-                <benefit.icon className="w-7 h-7 text-gold" strokeWidth={1.5} />
+              <div className="w-16 h-16 mb-5 bg-gold/10 rounded-full flex items-center justify-center border border-[rgba(218,165,32,0.2)] transition-all duration-200 group-hover:bg-gold/20 group-hover:border-gold/40 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+                <benefit.icon className="w-7 h-7 text-gold transition-colors duration-200 group-hover:text-gold-light" strokeWidth={1.5} />
               </div>
 
               {/* Pill badge — proper spacing, not overlapping */}
