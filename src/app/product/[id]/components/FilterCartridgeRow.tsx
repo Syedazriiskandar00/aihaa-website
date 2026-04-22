@@ -74,7 +74,7 @@ export default function FilterCartridgeRow({ product: _product }: Props) {
 
       {/* Cartridge images row */}
       <div
-        className={`grid ${gridCols} items-center gap-3 max-w-[1100px] mx-auto mb-10`}
+        className={`grid ${gridCols} items-center gap-3 max-w-[1100px] mx-auto mb-5`}
       >
         {STAGES.map((stage, i) => (
           <div key={`img-${stage.key}`} className="contents">
