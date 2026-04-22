@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // Client-provided collection visual. Single image with two invisible
@@ -9,11 +10,12 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 // half routes to /produk-dalam (indoor).
 
 export default function SignatureCollection() {
+  const revealRef = useScrollReveal();
   const { t } = useLanguage();
 
   return (
     <section className="bg-white">
-      <div className="relative w-full group">
+      <div ref={revealRef} className="scroll-reveal relative w-full group">
         <Image
           src="/images/product-collection.jpg.webp"
           alt={t.home_collection_heading}
