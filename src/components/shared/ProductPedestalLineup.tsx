@@ -54,7 +54,7 @@ export default function ProductPedestalLineup({
             >
             <Link
               href={`/product/${product.slug}`}
-              className="group flex flex-col items-center shrink-0 w-[148px] md:w-[176px] lg:w-[192px] snap-center transition-transform hover:-translate-y-1"
+              className="group flex flex-col items-center shrink-0 w-[148px] md:w-[176px] lg:w-[192px] snap-center transition-transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               {/* Product image container — fixed height, product bottom-anchored */}
               <div className="relative w-full h-[220px] md:h-[260px] lg:h-[300px] flex items-end justify-center">

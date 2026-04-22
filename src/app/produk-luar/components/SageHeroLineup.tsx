@@ -68,7 +68,7 @@ export default function SageHeroLineup() {
             <Link
               key={product.slug}
               href={`/product/${product.slug}`}
-              className={`scroll-reveal-child stagger-${idx + 4} group relative bg-cream rounded-2xl overflow-hidden transition-transform hover:-translate-y-1 shadow-sm hover:shadow-lg`}
+              className={`scroll-reveal-child stagger-${idx + 4} group relative bg-cream rounded-2xl overflow-hidden transition-transform hover:-translate-y-1 shadow-sm hover:shadow-lg motion-reduce:transition-none motion-reduce:hover:translate-y-0`}
             >
               <span
                 className={`absolute top-5 left-5 z-10 inline-flex items-center px-3 py-1 rounded-full text-[11px] uppercase tracking-[0.16em] font-semibold ${
