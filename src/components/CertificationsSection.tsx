@@ -19,7 +19,7 @@ export default function CertificationsSection() {
   return (
     <section className="bg-[#FFFDE7] py-14 border-y border-[rgba(218,165,32,0.1)]">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+        <div className="scroll-reveal-child stagger-1 text-center mb-10">
           <p className="text-[#717171] text-sm uppercase tracking-wider">
             {t.cert_title}
           </p>
@@ -29,7 +29,7 @@ export default function CertificationsSection() {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="group relative flex flex-col items-center justify-center w-[76px] h-[88px] md:w-[88px] md:h-[100px]"
+              className={`scroll-reveal-child stagger-${index + 2} group relative flex flex-col items-center justify-center w-[76px] h-[88px] md:w-[88px] md:h-[100px] transition-transform duration-200 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(218,165,32,0.4)] motion-reduce:transition-none motion-reduce:hover:scale-100`}
             >
               {/* Shield SVG shape */}
               <svg
