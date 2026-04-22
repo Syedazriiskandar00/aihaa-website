@@ -162,15 +162,14 @@ export default function WaterPurifierPage() {
         </div>
       </section>
 
-      {/* ── Visual Break ── */}
+      {/* ── Visual Break ── pure gold divider; eyebrow label removed to
+          eliminate duplicate-heading appearance with the outdoor section
+          title immediately below. */}
       <div
-        className="h-[120px] flex flex-col items-center justify-center"
+        className="h-[96px] flex items-center justify-center"
         style={{ background: "linear-gradient(to bottom, #FFFFFF, #FFFDE7)" }}
       >
         <div className="w-20 h-px bg-[rgba(218,165,32,0.3)]" />
-        <span className="text-gold text-[10px] font-medium uppercase tracking-[0.3em] mt-4">
-          {t.product_outdoor_label}
-        </span>
       </div>
 
       {/* ── Outdoor Section ── */}
