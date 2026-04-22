@@ -48,7 +48,7 @@ export default function CertificationsSection() {
               </svg>
               {/* Content */}
               <div className="relative z-10 flex flex-col items-center pt-1">
-                <span className="text-[#DAA520] font-bold text-base md:text-lg leading-none group-hover:scale-110 transition-transform">
+                <span className="text-[#DAA520] font-bold text-base md:text-lg leading-none group-hover:scale-110 transition-transform motion-reduce:transition-none motion-reduce:group-hover:scale-100">
                   {cert.abbr}
                 </span>
                 <span className="text-[#717171] text-[9px] md:text-[10px] mt-1.5 text-center leading-tight">
