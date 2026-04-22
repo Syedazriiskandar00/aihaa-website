@@ -1,5 +1,6 @@
 "use client";
 
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { getProductBySlug, type Product } from "@/lib/data/products";
 import ProductPedestalLineup, {
@@ -26,6 +27,7 @@ const LINEUP_SLUGS = [
 const PEDESTAL_HEIGHTS = [56, 24, 44, 36, 44];
 
 export default function IndoorHeroLineup() {
+  const lineupRef = useScrollReveal();
   const { t } = useLanguage();
 
   const products: Product[] = LINEUP_SLUGS.map((slug) =>
@@ -69,7 +71,7 @@ export default function IndoorHeroLineup() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* AIHAA wordmark — gold, small, centered */}
-        <div className="text-center mb-10 lg:mb-12">
+        <div className="hero-entrance text-center mb-10 lg:mb-12">
           <span className="font-editorial text-gold text-xl md:text-2xl tracking-[0.22em] leading-none">
             AIHAA
           </span>
@@ -80,29 +82,32 @@ export default function IndoorHeroLineup() {
 
         {/* Headline block */}
         <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-5">
+          <p className="hero-entrance hero-entrance-1 text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-5">
             {t.produk_dalam_hero_eyebrow}
           </p>
-          <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-white leading-[1.04] mb-3">
+          <h1 className="hero-entrance hero-entrance-2 font-editorial text-4xl md:text-5xl lg:text-6xl text-white leading-[1.04] mb-3">
             {t.produk_dalam_hero_heading}
           </h1>
-          <p className="font-editorial-italic text-2xl md:text-3xl text-gold mb-6">
+          <p className="hero-entrance hero-entrance-3 font-editorial-italic text-2xl md:text-3xl text-gold mb-6">
             {t.produk_dalam_hero_italic}
           </p>
-          <p className="text-[14px] md:text-[15px] leading-relaxed text-white/70 max-w-xl mx-auto">
+          <p className="hero-entrance hero-entrance-4 text-[14px] md:text-[15px] leading-relaxed text-white/70 max-w-xl mx-auto">
             {t.produk_dalam_hero_tagline}
           </p>
         </div>
 
-        {/* Shared 5-pedestal lineup */}
-        <ProductPedestalLineup
-          products={products}
-          pedestalHeights={PEDESTAL_HEIGHTS}
-          badges={badges}
-        />
+        {/* Shared 5-pedestal lineup — opt-in stagger via withStagger prop */}
+        <div ref={lineupRef} className="scroll-reveal">
+          <ProductPedestalLineup
+            products={products}
+            pedestalHeights={PEDESTAL_HEIGHTS}
+            badges={badges}
+            withStagger
+          />
+        </div>
 
         {/* Scroll CTA → #indoor-grid */}
-        <div className="text-center mt-12 lg:mt-14">
+        <div className="hero-entrance hero-entrance-5 text-center mt-12 lg:mt-14">
           <a
             href="#indoor-grid"
             className="inline-flex items-center gap-2 text-white/80 text-[13px] font-semibold tracking-wide hover:text-gold transition-colors"

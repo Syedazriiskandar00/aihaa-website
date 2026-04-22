@@ -14,6 +14,10 @@ type ProductPedestalLineupProps = {
   products: Product[];
   pedestalHeights: number[];
   badges?: PedestalBadge[];
+  /** When true, each pedestal cell opts into scroll-reveal staggered appearance.
+   *  Requires an ancestor with .scroll-reveal class (e.g. via useScrollReveal).
+   *  Off by default so the component stays safe in any placement. */
+  withStagger?: boolean;
 };
 
 // Reusable lineup of products on cream pedestals at varying heights — the
@@ -28,6 +32,7 @@ export default function ProductPedestalLineup({
   products,
   pedestalHeights,
   badges,
+  withStagger = false,
 }: ProductPedestalLineupProps) {
   const badgeFor = (slug: string): PedestalBadge | undefined =>
     badges?.find((b) => b.slug === slug);
@@ -42,8 +47,12 @@ export default function ProductPedestalLineup({
             badge?.tone === "gold" ? "bg-gold text-dark" : "bg-white text-dark";
 
           return (
-            <Link
+            <div
               key={product.slug}
+              className={withStagger ? "scroll-reveal-child shrink-0 snap-center" : "contents"}
+              style={withStagger ? { transitionDelay: `${i * 0.1}s` } : undefined}
+            >
+            <Link
               href={`/product/${product.slug}`}
               className="group flex flex-col items-center shrink-0 w-[148px] md:w-[176px] lg:w-[192px] snap-center transition-transform hover:-translate-y-1"
             >
@@ -75,6 +84,7 @@ export default function ProductPedestalLineup({
                 </span>
               </div>
             </Link>
+            </div>
           );
         })}
       </div>

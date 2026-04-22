@@ -84,7 +84,7 @@ export default function ProductCard({
 
       {/* Content */}
       <div className="relative p-5">
-        <h3 className="text-dark font-semibold text-base mb-1">{name}</h3>
+        <h3 className="text-dark font-semibold text-base mb-1 group-hover:text-gold-dark transition-colors duration-200 motion-reduce:transition-none">{name}</h3>
         <p className="text-muted text-sm mb-3 truncate">{tagline}</p>
 
         <div className="flex items-baseline gap-2">
