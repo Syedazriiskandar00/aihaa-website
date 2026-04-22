@@ -50,13 +50,13 @@ export default function WaterPurifierPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="text-center">
-            <span className="inline-block bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
+            <span className="hero-entrance inline-block bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
               {t.product_hero_badge}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="hero-entrance hero-entrance-1 text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               {t.product_hero_title} <span className="gold-gradient-text">AIHAA</span>
             </h1>
-            <p className="text-muted-dark text-lg max-w-2xl mx-auto">
+            <p className="hero-entrance hero-entrance-2 text-muted-dark text-lg max-w-2xl mx-auto">
               {t.product_hero_subtitle}
             </p>
           </div>
@@ -153,7 +153,7 @@ export default function WaterPurifierPage() {
                 href={whatsappUrl(whatsappMessages.modelAdvice)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#DAA520] text-[#0D0D0D] px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all"
+                className="inline-block bg-[#DAA520] text-[#0D0D0D] px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all hover:shadow-[0_0_20px_rgba(218,165,32,0.4)] motion-reduce:transition-none"
               >
                 WhatsApp Kami
               </a>
