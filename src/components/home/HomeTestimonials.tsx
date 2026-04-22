@@ -1,5 +1,6 @@
 "use client";
 
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // SPEC §1.4 Feedback / Suara Pelanggan — zigzag layout, serif italic
@@ -10,6 +11,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 // — cleaner rhythm with just 2 and room to add a 3rd later when a real
 // customer review lands.
 export default function HomeTestimonials() {
+  const revealRef = useScrollReveal();
   const { t } = useLanguage();
 
   const quotes = [
@@ -29,18 +31,21 @@ export default function HomeTestimonials() {
 
   return (
     <section className="bg-white py-20 lg:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-14 text-center">
+      <div
+        ref={revealRef}
+        className="scroll-reveal max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
+        <p className="scroll-reveal-child stagger-1 text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-14 text-center">
           {t.home_testi_eyebrow}
         </p>
 
         <div className="space-y-16 lg:space-y-20">
-          {quotes.map((q) => {
+          {quotes.map((q, index) => {
             const isLeft = q.align === "left";
             return (
               <figure
                 key={q.author}
-                className={`max-w-[60%] ${
+                className={`scroll-reveal-child stagger-${index + 2} max-w-[60%] ${
                   isLeft ? "mr-auto" : "ml-auto text-right"
                 }`}
               >
