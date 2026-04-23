@@ -7,24 +7,22 @@ import ProductPedestalLineup, {
   type PedestalBadge,
 } from "@/components/shared/ProductPedestalLineup";
 
-// Hybrid hero layout per Azri's direction:
-// - All 5 indoor products on cream pedestals (AIHAA poster aesthetic)
-// - Varying pedestal heights create deliberate compositional rhythm
-// - BELLA (bestseller) + WINTER (flagship) get tier-badge treatment
-//
-// Pedestal height rhythm (px), reading EAN → WINTER:
-//   [ 56, 24, 44, 36, 44 ] — TALL, SHORT, MED-TALL, MED, MED-TALL
-// creates an UP-DOWN-UP-DOWN-UP visual wave.
+// Spotlight-champions hero layout:
+// - EAN (PILIHAN RAMAI, white badge) + WINTER (PREMIUM, gold badge)
+//   render as 2 pedestals side-by-side — the rest of the indoor
+//   catalog (BELLA, BIG, FANCY) lives in IndoorGrid below.
+// - Equal pedestal heights (44/44) keep the two champions on the
+//   same footing visually, reinforcing they are both flagships.
 
+// Hero now showcases only the 2 spotlight champions — EAN (PILIHAN
+// RAMAI) and WINTER (PREMIUM). The full 5-model catalog remains
+// browsable in IndoorGrid below (via indoorProducts from products.ts).
 const LINEUP_SLUGS = [
   "aihaa-ean",
-  "aihaa-big",
-  "aihaa-bella",
-  "aihaa-fancy",
   "aihaa-winter",
 ] as const;
 
-const PEDESTAL_HEIGHTS = [56, 24, 44, 36, 44];
+const PEDESTAL_HEIGHTS = [44, 44];
 
 export default function IndoorHeroLineup() {
   const { t } = useLanguage();
@@ -35,7 +33,7 @@ export default function IndoorHeroLineup() {
 
   const badges: PedestalBadge[] = [
     {
-      slug: "aihaa-bella",
+      slug: "aihaa-ean",
       label: t.produk_dalam_hero_featured_bestseller_badge,
       tone: "white",
     },
