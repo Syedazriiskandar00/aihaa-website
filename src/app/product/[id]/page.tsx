@@ -67,41 +67,29 @@ export default function ProductDetailPage({
           <ProductHeroPremium product={product} />
         )}
 
-        {/* EAN-only inserts: Color Variants + Smart Design */}
+        {/* EAN-only inserts: Color Variants + Smart Design (full-width) */}
         {isEan && (
           <>
-            <section className="py-12 md:py-16 lg:py-20 bg-surface">
-              <div className="container mx-auto px-4">
-                <div className="max-w-6xl mx-auto">
-                  <div className="relative rounded-2xl overflow-hidden shadow-sm bg-surface">
-                    <Image
-                      src="/images/products/color-variants.webp"
-                      alt="AIHAA EAN tersedia dalam 4 pilihan warna — BEIGE, WHITE, SOFT PINK, BLACK. Padankan dengan dapur anda."
-                      width={4300}
-                      height={1447}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
+            <section className="relative">
+              <Image
+                src="/images/products/color-variants.webp"
+                alt="AIHAA EAN tersedia dalam 4 pilihan warna — BEIGE, WHITE, SOFT PINK, BLACK. Padankan dengan dapur anda."
+                width={4300}
+                height={1447}
+                sizes="100vw"
+                className="w-full h-auto"
+              />
             </section>
 
-            <section className="py-12 md:py-16 lg:py-20 bg-surface">
-              <div className="container mx-auto px-4">
-                <div className="max-w-6xl mx-auto">
-                  <div className="relative rounded-2xl overflow-hidden shadow-sm bg-surface">
-                    <Image
-                      src="/images/products/smart-design.webp"
-                      alt="AIHAA EAN dilengkapi Jam LED dan kawalan temperatur — Panas, Sejuk, Normal."
-                      width={4269}
-                      height={1788}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
+            <section className="relative">
+              <Image
+                src="/images/products/smart-design.webp"
+                alt="AIHAA EAN dilengkapi Jam LED dan kawalan temperatur — Panas, Sejuk, Normal."
+                width={4269}
+                height={1788}
+                sizes="100vw"
+                className="w-full h-auto"
+              />
             </section>
           </>
         )}
@@ -114,21 +102,15 @@ export default function ProductDetailPage({
             <CapacityFunctionalities product={product} />
             <FeaturesOverviewGrid product={product} />
             {isEan ? (
-              <section className="py-12 md:py-16 lg:py-20 bg-surface">
-                <div className="container mx-auto px-4">
-                  <div className="max-w-6xl mx-auto">
-                    <div className="relative rounded-2xl overflow-hidden shadow-sm bg-surface">
-                      <Image
-                        src="/images/products/filter-flow.webp"
-                        alt="Sistem penapisan 4 peringkat AIHAA EAN — Sediment, Antibacterial, Pre-Carbon, Post-Carbon Filter."
-                        width={4269}
-                        height={2400}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                        className="w-full h-auto"
-                      />
-                    </div>
-                  </div>
-                </div>
+              <section className="relative">
+                <Image
+                  src="/images/products/filter-flow.webp"
+                  alt="Sistem penapisan 4 peringkat AIHAA EAN — Sediment, Antibacterial, Pre-Carbon, Post-Carbon Filter."
+                  width={4269}
+                  height={2400}
+                  sizes="100vw"
+                  className="w-full h-auto"
+                />
               </section>
             ) : (
               <FilterCartridgeRow product={product} />
@@ -143,23 +125,17 @@ export default function ProductDetailPage({
           </>
         )}
 
-        {/* Spec: EAN image, others ProductSpecs */}
+        {/* Spec: EAN image full-width, others ProductSpecs */}
         {isEan ? (
-          <section className="py-12 md:py-16 lg:py-20 bg-surface">
-            <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
-                <div className="relative rounded-2xl overflow-hidden shadow-sm bg-surface">
-                  <Image
-                    src="/images/products/spec-price.webp"
-                    alt="Spesifikasi AIHAA EAN — Berat 11.4kg, Ukuran 385×290×480mm, Kapasiti Tangki (Panas 1.5L, Biasa 3L, Sejuk 3L), 4 Filter Air. Harga RM780."
-                    width={4269}
-                    height={2400}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            </div>
+          <section className="relative">
+            <Image
+              src="/images/products/spec-price.webp"
+              alt="Spesifikasi AIHAA EAN — Berat 11.4kg, Ukuran 385×290×480mm, Kapasiti Tangki (Panas 1.5L, Biasa 3L, Sejuk 3L), 4 Filter Air. Harga RM780."
+              width={4269}
+              height={2400}
+              sizes="100vw"
+              className="w-full h-auto"
+            />
           </section>
         ) : (
           <ProductSpecs product={product} />
