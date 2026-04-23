@@ -11,7 +11,7 @@ export default function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-dark py-24 lg:py-32">
+    <section className="bg-surface py-24 lg:py-32">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -19,41 +19,41 @@ export default function CTASection() {
             <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-4">
               {t.cta_label}
             </p>
-            <h2 className="font-editorial text-4xl md:text-5xl text-white mb-6">
-              {t.cta_title} <span className="font-editorial-italic text-gold">AIHAA</span>
+            <h2 className="font-editorial text-4xl md:text-5xl text-dark mb-6">
+              {t.cta_title} <span className="font-editorial-italic text-gold-dark">AIHAA</span>
             </h2>
-            <p className="text-muted-dark mb-8 max-w-md">
+            <p className="text-muted mb-8 max-w-md">
               {t.cta_desc}
             </p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-gold" />
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
+                  <Phone className="w-5 h-5 text-gold-dark" />
                 </div>
                 <div>
-                  <p className="text-muted-dark text-sm">{t.cta_phone_label}</p>
-                  <p className="text-white font-medium">{PHONE_NUMBER_DISPLAY}</p>
+                  <p className="text-muted text-sm">{t.cta_phone_label}</p>
+                  <p className="text-dark font-medium">{PHONE_NUMBER_DISPLAY}</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-gold" />
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
+                  <Mail className="w-5 h-5 text-gold-dark" />
                 </div>
                 <div>
-                  <p className="text-muted-dark text-sm">{t.cta_email_label}</p>
-                  <p className="text-white font-medium">aihaa.marketing@gmail.com</p>
+                  <p className="text-muted text-sm">{t.cta_email_label}</p>
+                  <p className="text-dark font-medium">aihaa.marketing@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-gold" />
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
+                  <MapPin className="w-5 h-5 text-gold-dark" />
                 </div>
                 <div>
-                  <p className="text-muted-dark text-sm">{t.contact_location_title}</p>
-                  <p className="text-white font-medium">{t.cta_location}</p>
+                  <p className="text-muted text-sm">{t.contact_location_title}</p>
+                  <p className="text-dark font-medium">{t.cta_location}</p>
                 </div>
               </div>
             </div>

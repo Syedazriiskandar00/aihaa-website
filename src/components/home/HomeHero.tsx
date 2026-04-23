@@ -12,7 +12,7 @@ export default function HomeHero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full bg-dark">
+    <section className="relative w-full bg-surface">
       <Image
         src="/images/hero-main.jpg.webp"
         alt="AIHAA Water Purifier"
