@@ -1,46 +1,32 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { getProductBySlug, type Product } from "@/lib/data/products";
-import ProductPedestalLineup, {
-  type PedestalBadge,
-} from "@/components/shared/ProductPedestalLineup";
+import { getProductBySlug } from "@/lib/data/products";
 
-// Spotlight-champions hero layout:
-// - EAN (PILIHAN RAMAI, white badge) + WINTER (PREMIUM, gold badge)
-//   render as 2 pedestals side-by-side — the rest of the indoor
-//   catalog (BELLA, BIG, FANCY) lives in IndoorGrid below.
-// - Equal pedestal heights (44/44) keep the two champions on the
-//   same footing visually, reinforcing they are both flagships.
-
-// Hero now showcases only the 2 spotlight champions — EAN (PILIHAN
-// RAMAI) and WINTER (PREMIUM). The full 5-model catalog remains
-// browsable in IndoorGrid below (via indoorProducts from products.ts).
-const LINEUP_SLUGS = [
-  "aihaa-ean",
-  "aihaa-winter",
-] as const;
-
-const PEDESTAL_HEIGHTS = [44, 44];
+// Spotlight-champions hero — EAN (PILIHAN RAMAI) + WINTER (PREMIUM) render
+// as 2 big featured cards, mirroring SageHeroLineup's pattern on
+// /produk-luar so indoor and outdoor listings feel consistent. The rest
+// of the indoor catalog (BELLA, BIG, FANCY) lives in IndoorGrid below.
 
 export default function IndoorHeroLineup() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const ean = getProductBySlug("aihaa-ean");
+  const winter = getProductBySlug("aihaa-winter");
 
-  const products: Product[] = LINEUP_SLUGS.map((slug) =>
-    getProductBySlug(slug)
-  ).filter((p): p is Product => p !== undefined);
+  if (!ean || !winter) return null;
 
-  const badges: PedestalBadge[] = [
+  const featured = [
     {
-      slug: "aihaa-ean",
-      label: t.produk_dalam_hero_featured_bestseller_badge,
-      tone: "white",
+      product: ean,
+      badge: t.produk_dalam_hero_featured_bestseller_badge,
+      badgeTone: "light" as const,
     },
     {
-      slug: "aihaa-winter",
-      label: t.produk_dalam_hero_featured_premium_badge,
-      tone: "gold",
+      product: winter,
+      badge: t.produk_dalam_hero_featured_premium_badge,
+      badgeTone: "dark" as const,
     },
   ];
 
@@ -107,15 +93,61 @@ export default function IndoorHeroLineup() {
           </div>
         </div>
 
-        {/* Shared 5-pedestal lineup */}
-        <ProductPedestalLineup
-          products={products}
-          pedestalHeights={PEDESTAL_HEIGHTS}
-          badges={badges}
-        />
+        {/* Featured pair — mirrors SageHeroLineup pattern for size parity
+            across outdoor and indoor listings. Each card: floating badge
+            top-left, product image on cream canvas, name + tagline + price. */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+          {featured.map(({ product, badge, badgeTone }) => (
+            <Link
+              key={product.slug}
+              href={`/product/${product.slug}`}
+              className="group relative bg-cream rounded-2xl overflow-hidden transition-transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
+            >
+              <span
+                className={`absolute top-5 left-5 z-10 inline-flex items-center px-3 py-1 rounded-full text-[11px] uppercase tracking-[0.16em] font-semibold ${
+                  badgeTone === "dark"
+                    ? "bg-dark text-gold"
+                    : "bg-white text-dark"
+                }`}
+              >
+                {badge}
+              </span>
+
+              <div className="relative aspect-[4/5] flex items-center justify-center p-8">
+                <Image
+                  src={product.mainImage}
+                  alt={product.name}
+                  fill
+                  className="object-contain p-10 transition-transform duration-500 group-hover:scale-[1.04]"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+
+              <div className="bg-white px-6 py-5 border-t border-black/5">
+                <h2 className="font-editorial text-2xl md:text-3xl text-dark leading-tight mb-1">
+                  {product.name}
+                </h2>
+                <p className="text-[13px] text-muted mb-3">
+                  {product.tagline[locale]}
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-semibold text-dark text-lg">
+                    {product.price}
+                  </span>
+                  {product.oldPrice ? (
+                    <span className="text-muted text-[12px] line-through">
+                      {product.oldPrice}
+                    </span>
+                  ) : null}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
 
         {/* Scroll CTA → #indoor-grid */}
-        <div className="text-center mt-12 lg:mt-14">
+        <div className="text-center">
           <a
             href="#indoor-grid"
             className="inline-flex items-center gap-2 text-dark/80 text-[13px] font-semibold tracking-wide hover:text-gold-dark transition-colors"
