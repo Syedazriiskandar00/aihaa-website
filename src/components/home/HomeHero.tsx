@@ -13,15 +13,19 @@ export default function HomeHero() {
 
   return (
     <section className="relative w-full bg-surface">
-      <Image
-        src="/images/hero-main.jpg.webp"
-        alt="AIHAA Water Purifier"
-        width={1600}
-        height={899}
-        priority
-        sizes="100vw"
-        className="block w-full h-auto"
-      />
+      {/* Aspect wrapper: taller 4:5 on mobile for prominent hero
+          presence + CSS crop via object-position focal shift; natural
+          16:9 at sm+ keeps desktop composition identical to before. */}
+      <div className="relative w-full aspect-[4/5] sm:aspect-[16/9]">
+        <Image
+          src="/images/hero-main.jpg.webp"
+          alt="AIHAA Water Purifier"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[50%_25%] sm:object-center"
+        />
+      </div>
 
       {/* Dual CTA — on mobile flows below the image so it never obscures
           the baked-in hero tagline ("Berhenti Sewa, Mula Miliki") and

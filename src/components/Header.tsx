@@ -63,7 +63,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <Logo size="md" />
 
@@ -103,7 +103,7 @@ export default function Header() {
           </nav>
 
           {/* Right Side */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
             {/* Contact CTA Button — desktop only */}
             <Link
               href={contactItem.href}
@@ -120,7 +120,7 @@ export default function Header() {
               href={whatsappUrl(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-dark/80 hover:text-gold-dark transition-colors"
+              className="p-1.5 sm:p-2 text-dark/80 hover:text-gold-dark transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
@@ -128,7 +128,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-dark/80 hover:text-gold-dark transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 text-dark/80 hover:text-gold-dark transition-colors"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
