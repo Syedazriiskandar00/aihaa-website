@@ -23,11 +23,12 @@ export default function HomeHero() {
         className="block w-full h-auto"
       />
 
-      {/* Dual CTA overlay — mobile CTAs lifted to bottom-24 to clear the
-          FloatingButtons FAB stack (WhatsApp at bottom-4 + Chatbot toggle
-          at bottom-[88px], both fixed right-4). Desktop restores the
-          original sm:bottom-8 / lg:bottom-12 rhythm. */}
-      <div className="absolute inset-x-0 bottom-24 sm:bottom-8 lg:bottom-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
+      {/* Dual CTA — on mobile flows below the image so it never obscures
+          the baked-in hero tagline ("Berhenti Sewa, Mula Miliki") and
+          clears the FloatingButtons FAB stack (fixed right-4 at bottom-4
+          + bottom-[88px]) by virtue of normal document flow. At sm+ the
+          pair becomes absolute-positioned overlay again. */}
+      <div className="static py-6 sm:py-0 sm:absolute sm:inset-x-0 sm:bottom-8 lg:bottom-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
         <Link
           href={whatsappUrl(whatsappMessages.general)}
           target="_blank"

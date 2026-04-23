@@ -12,8 +12,8 @@ export default function SignatureCollection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-white">
-      <div className="relative w-full group">
+    <section className="bg-white py-8 sm:py-0">
+      <div className="relative w-full max-w-[360px] mx-auto sm:max-w-none group">
         <Image
           src="/images/product-collection.jpg.webp"
           alt={t.home_collection_heading}
