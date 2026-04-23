@@ -86,7 +86,7 @@ export default function IndoorHeroLineup() {
               src="/images/listings/indoor-hero.webp"
               alt="Semua 6 model penapis air dalam AIHAA — EAN (4 color variants), Fancy, Ultra 1, Bella, Big, Winter"
               width={4269}
-              height={3100}
+              height={2391}
               sizes="(max-width: 1024px) 100vw, 1100px"
               className="w-full h-auto"
             />

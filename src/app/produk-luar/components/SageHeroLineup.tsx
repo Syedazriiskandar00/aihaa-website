@@ -66,7 +66,7 @@ export default function SageHeroLineup() {
               src="/images/listings/outdoor-hero.webp"
               alt="Semua 9 model penapis air luar AIHAA — Fiber 0942, Fiber 1044, Fiber 1054, Fiber 1354, Stainless Steel, Super Pleated, UF Membrane, PVDF Membrane, PVDF Plus Membrane"
               width={4269}
-              height={2391}
+              height={3100}
               sizes="(max-width: 1024px) 100vw, 1100px"
               className="w-full h-auto"
             />
