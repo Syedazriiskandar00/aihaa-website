@@ -5,7 +5,9 @@ import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { getProductBySlug } from "@/lib/data/products";
 
-const SAGE = "#B5C5A5";
+// Note: component name + file are kept as "SageHeroLineup" for git history
+// continuity; the sage background has been migrated to cream (bg-surface)
+// to match Stage B's unified home/outdoor/indoor palette.
 
 export default function SageHeroLineup() {
   const { t, locale } = useLanguage();
@@ -28,10 +30,7 @@ export default function SageHeroLineup() {
   ];
 
   return (
-    <section
-      className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-24"
-      style={{ background: SAGE }}
-    >
+    <section className="relative overflow-hidden bg-surface pt-28 pb-20 lg:pt-36 lg:pb-24">
       {/* Subtle dotted texture — not a card, just depth */}
       <div
         aria-hidden
@@ -49,7 +48,7 @@ export default function SageHeroLineup() {
           <p className="text-[11px] uppercase tracking-[0.22em] text-dark/70 font-semibold mb-5">
             {t.produk_luar_hero_eyebrow}
           </p>
-          <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl text-white leading-[1.02] mb-3">
+          <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl text-dark leading-[1.02] mb-3">
             {t.produk_luar_hero_heading}
           </h1>
           <p className="font-editorial-italic text-2xl md:text-3xl text-dark/80 mb-6">
@@ -60,12 +59,12 @@ export default function SageHeroLineup() {
           </p>
         </div>
 
-        {/* Produk Luar Lineup — Full Grid Visual */}
+        {/* Produk Luar Lineup — Full Grid Visual (cream frame for seamless blend) */}
         <div className="mb-14 lg:mb-16">
-          <div className="relative rounded-2xl overflow-hidden shadow-sm bg-white">
+          <div className="relative rounded-2xl overflow-hidden shadow-sm bg-surface">
             <Image
-              src="/images/listings/outdoor-hero.webp.webp"
-              alt="Semua 9 model penapis air luar AIHAA — Fiber, Stainless Steel, Super Pleated, UF Membrane, PVDF Membrane, PVDF Plus"
+              src="/images/listings/outdoor-hero.webp"
+              alt="Semua 9 model penapis air luar AIHAA — Fiber 0942, Fiber 1044, Fiber 1054, Fiber 1354, Stainless Steel, Super Pleated, UF Membrane, PVDF Membrane, PVDF Plus Membrane"
               width={4269}
               height={2391}
               sizes="(max-width: 1024px) 100vw, 1100px"
@@ -132,7 +131,7 @@ export default function SageHeroLineup() {
         <div className="text-center">
           <a
             href="#outdoor-grid"
-            className="inline-flex items-center gap-2 text-dark text-[13px] font-semibold tracking-wide hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-dark text-[13px] font-semibold tracking-wide hover:text-gold-dark transition-colors"
           >
             {t.produk_luar_hero_cta}
             <span aria-hidden className="text-gold">

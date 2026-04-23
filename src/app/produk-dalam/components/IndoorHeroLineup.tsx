@@ -47,7 +47,7 @@ export default function IndoorHeroLineup() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-dark pt-28 pb-16 lg:pt-36 lg:pb-20">
+    <section className="relative overflow-hidden bg-surface pt-28 pb-16 lg:pt-36 lg:pb-20">
       {/* Subtle radial glow top-center — warmth without gradient drift */}
       <div
         aria-hidden
@@ -84,23 +84,23 @@ export default function IndoorHeroLineup() {
           <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-5">
             {t.produk_dalam_hero_eyebrow}
           </p>
-          <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-white leading-[1.04] mb-3">
+          <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-dark leading-[1.04] mb-3">
             {t.produk_dalam_hero_heading}
           </h1>
-          <p className="font-editorial-italic text-2xl md:text-3xl text-gold mb-6">
+          <p className="font-editorial-italic text-2xl md:text-3xl text-gold-dark mb-6">
             {t.produk_dalam_hero_italic}
           </p>
-          <p className="text-[14px] md:text-[15px] leading-relaxed text-white/70 max-w-xl mx-auto">
+          <p className="text-[14px] md:text-[15px] leading-relaxed text-muted max-w-xl mx-auto">
             {t.produk_dalam_hero_tagline}
           </p>
         </div>
 
-        {/* Produk Dalam Lineup — Full Grid Visual */}
+        {/* Produk Dalam Lineup — Full Grid Visual (cream frame for seamless blend) */}
         <div className="mb-14 lg:mb-16">
-          <div className="relative rounded-2xl overflow-hidden shadow-sm bg-white max-w-6xl mx-auto">
+          <div className="relative rounded-2xl overflow-hidden shadow-sm bg-surface max-w-6xl mx-auto">
             <Image
-              src="/images/listings/indoor-hero.webp.webp"
-              alt="Semua 6 model penapis air dalam AIHAA — EAN, Fancy, Ultra 1, Bella, Big, Winter"
+              src="/images/listings/indoor-hero.webp"
+              alt="Semua 6 model penapis air dalam AIHAA — EAN (4 color variants), Fancy, Ultra 1, Bella, Big, Winter"
               width={4269}
               height={3100}
               sizes="(max-width: 1024px) 100vw, 1100px"
@@ -120,7 +120,7 @@ export default function IndoorHeroLineup() {
         <div className="text-center mt-12 lg:mt-14">
           <a
             href="#indoor-grid"
-            className="inline-flex items-center gap-2 text-white/80 text-[13px] font-semibold tracking-wide hover:text-gold transition-colors"
+            className="inline-flex items-center gap-2 text-dark/80 text-[13px] font-semibold tracking-wide hover:text-gold-dark transition-colors"
           >
             {t.produk_dalam_hero_cta}
             <span aria-hidden className="text-gold">
