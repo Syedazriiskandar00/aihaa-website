@@ -19,7 +19,7 @@ export default function Chatbot() {
   const [hasOpened, setHasOpened] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
 
   // Scroll to bottom on new message
   useEffect(() => {
@@ -134,10 +134,8 @@ export default function Chatbot() {
                 A
               </div>
               <div>
-                <p className="text-white text-sm font-semibold">Azri — Aihaa</p>
-                <p className="text-[#999] text-[11px]">
-                  {locale === "bm" ? "Biasanya reply dalam 5 minit" : "Usually replies within 5 minutes"}
-                </p>
+                <p className="text-white text-sm font-semibold">{t.chatbot_agent_header}</p>
+                <p className="text-[#999] text-[11px]">{t.chatbot_reply_time}</p>
               </div>
             </div>
             <button

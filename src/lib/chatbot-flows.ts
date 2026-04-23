@@ -66,7 +66,7 @@ export const flows: Record<string, FlowStep> = {
       en: "AIHAA water purifiers start from RM399 — one-time payment! 💰\n\nIndoor: RM780 - RM1,580\nOutdoor: RM399 - RM1,299\n\nAll include free installation + warranty.",
     },
     quickReplies: [
-      { label: { bm: "Tengok semua produk", en: "View all products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok semua produk", en: "View all products" }, action: "link:/produk-dalam" },
       { label: { bm: "Model mana sesuai?", en: "Which model suits me?" }, action: "recommend_budget" },
       { label: { bm: "WhatsApp untuk harga detail", en: "WhatsApp for pricing" }, action: "whatsapp_price" },
     ],
@@ -91,7 +91,7 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_ean" },
-      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
   },
@@ -103,7 +103,7 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_bella" },
-      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
   },
@@ -115,7 +115,7 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_winter" },
-      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
   },

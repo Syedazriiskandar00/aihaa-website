@@ -559,6 +559,10 @@ export type TranslationKeys = {
   product_specprice_cash_label: string;
   product_specprice_tech_badge: string;
   product_specprice_cta: string;
+
+  // Chatbot (header UI — flow copy lives in chatbot-flows.ts)
+  chatbot_agent_header: string;
+  chatbot_reply_time: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -1171,6 +1175,10 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_specprice_cash_label: "HARGA TUNAI:",
     product_specprice_tech_badge: "GREEN TECHNOLOGY · Auto Cut-Off Energy",
     product_specprice_cta: "Tempah via WhatsApp",
+
+    // Chatbot
+    chatbot_agent_header: "Hubungi Kami AIHAA",
+    chatbot_reply_time: "Biasanya reply dalam 5 minit",
   },
   en: {
     nav_home: "Home",
@@ -1782,5 +1790,9 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_specprice_cash_label: "CASH PRICE:",
     product_specprice_tech_badge: "GREEN TECHNOLOGY · Auto Cut-Off Energy",
     product_specprice_cta: "Order via WhatsApp",
+
+    // Chatbot
+    chatbot_agent_header: "Contact AIHAA",
+    chatbot_reply_time: "Usually replies within 5 minutes",
   },
 };
