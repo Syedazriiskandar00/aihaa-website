@@ -5,6 +5,14 @@ import Link from "next/link";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+
+// Feature flag — hide the BM/EN toggle while the EN content pass is
+// pending. Re-enable by flipping this to `true` once:
+//   1. src/lib/data/products.ts specs[] + features[] arrays are translated
+//   2. Team reviews EN copy quality across 8 pages
+//   3. Flip ENABLE_LOCALE_PERSISTENCE in src/lib/i18n/LanguageContext.tsx
+// Ref: AIHAA_HANDOFF_2026-04-23-EOD.md — Cara A strategy.
+const SHOW_LANGUAGE_TOGGLE = false;
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
@@ -104,8 +112,8 @@ export default function Header() {
               {contactItem.name}
             </Link>
 
-            {/* Language Switcher */}
-            <LanguageSwitcher />
+            {/* Language Switcher — gated; see SHOW_LANGUAGE_TOGGLE above */}
+            {SHOW_LANGUAGE_TOGGLE && <LanguageSwitcher />}
 
             {/* WhatsApp */}
             <a
