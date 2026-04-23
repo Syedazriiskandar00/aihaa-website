@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { getProductBySlug, type Product } from "@/lib/data/products";
 import ProductPedestalLineup, {
@@ -92,6 +93,20 @@ export default function IndoorHeroLineup() {
           <p className="text-[14px] md:text-[15px] leading-relaxed text-white/70 max-w-xl mx-auto">
             {t.produk_dalam_hero_tagline}
           </p>
+        </div>
+
+        {/* Produk Dalam Lineup — Full Grid Visual */}
+        <div className="mb-14 lg:mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-sm bg-white max-w-6xl mx-auto">
+            <Image
+              src="/images/listings/indoor-hero.webp.webp"
+              alt="Semua 6 model penapis air dalam AIHAA — EAN, Fancy, Ultra 1, Bella, Big, Winter"
+              width={4269}
+              height={3100}
+              sizes="(max-width: 1024px) 100vw, 1100px"
+              className="w-full h-auto"
+            />
+          </div>
         </div>
 
         {/* Shared 5-pedestal lineup */}

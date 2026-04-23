@@ -60,6 +60,20 @@ export default function SageHeroLineup() {
           </p>
         </div>
 
+        {/* Produk Luar Lineup — Full Grid Visual */}
+        <div className="mb-14 lg:mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-sm bg-white">
+            <Image
+              src="/images/listings/outdoor-hero.webp.webp"
+              alt="Semua 9 model penapis air luar AIHAA — Fiber, Stainless Steel, Super Pleated, UF Membrane, PVDF Membrane, PVDF Plus"
+              width={4269}
+              height={2391}
+              sizes="(max-width: 1024px) 100vw, 1100px"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+
         {/* Featured pair — not a symmetric 2-card grid; tier badge gives hierarchy */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {featured.map(({ product, badge, badgeTone }) => (
