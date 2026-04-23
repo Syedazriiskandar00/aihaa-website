@@ -25,7 +25,7 @@ export default function CertificationsSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-10">
           {certifications.map((cert, index) => (
             <div
               key={index}

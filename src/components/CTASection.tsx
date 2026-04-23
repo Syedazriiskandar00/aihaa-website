@@ -11,7 +11,7 @@ export default function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-surface py-24 lg:py-32">
+    <section className="bg-surface py-16 md:py-24 lg:py-32">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -43,7 +43,7 @@ export default function CTASection() {
                 </div>
                 <div>
                   <p className="text-muted text-sm">{t.cta_email_label}</p>
-                  <p className="text-dark font-medium">aihaa.marketing@gmail.com</p>
+                  <p className="text-dark font-medium break-all">aihaa.marketing@gmail.com</p>
                 </div>
               </div>
 
@@ -84,8 +84,10 @@ export default function CTASection() {
               />
             </div>
 
-            {/* Floating Badge */}
-            <div className="absolute -top-3 -right-3 bg-gold text-white px-4 py-2 rounded-full font-bold text-sm shadow-gold z-10">
+            {/* Floating Badge — inside-pinned on mobile to avoid 390px
+                viewport edge clipping; desktop restores the floating -top/-right
+                overhang for the lifted look. */}
+            <div className="absolute top-3 right-3 lg:-top-3 lg:-right-3 bg-gold text-white px-4 py-2 rounded-full font-bold text-sm shadow-gold z-10">
               {t.cta_response}
             </div>
           </div>

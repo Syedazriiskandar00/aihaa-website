@@ -40,15 +40,15 @@ export default function HomeTestimonials() {
             return (
               <figure
                 key={q.author}
-                className={`max-w-[60%] ${
-                  isLeft ? "mr-auto" : "ml-auto text-right"
+                className={`max-w-full sm:max-w-[85%] lg:max-w-[60%] ${
+                  isLeft ? "sm:mr-auto" : "sm:ml-auto sm:text-right"
                 }`}
               >
                 <blockquote
                   className={`relative font-editorial-italic text-dark text-xl md:text-2xl lg:text-[28px] leading-[1.35] ${
                     isLeft
                       ? "border-l-[3px] border-gold pl-6 md:pl-8"
-                      : "border-r-[3px] border-gold pr-6 md:pr-8"
+                      : "border-l-[3px] border-gold pl-6 sm:border-l-0 sm:border-r-[3px] sm:pl-0 sm:pr-6 md:pr-8"
                   }`}
                 >
                   <span aria-hidden className="select-none">
@@ -61,7 +61,7 @@ export default function HomeTestimonials() {
                 </blockquote>
                 <figcaption
                   className={`mt-5 flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-muted font-semibold ${
-                    isLeft ? "pl-6 md:pl-8" : "pr-6 md:pr-8 justify-end"
+                    isLeft ? "pl-6 md:pl-8" : "pl-6 sm:pl-0 sm:pr-6 md:pr-8 sm:justify-end"
                   }`}
                 >
                   <span className="text-dark">{q.author}</span>
