@@ -47,8 +47,8 @@ export function matchKeyword(text: string): string | null {
 export const flows: Record<string, FlowStep> = {
   greeting: {
     message: {
-      bm: "Hi! Saya Azri dari Aihaa 👋 Ada apa boleh saya bantu?",
-      en: "Hi! I'm Azri from Aihaa 👋 How can I help?",
+      bm: "Hi! Selamat datang ke AIHAA 👋 Saya boleh bantu awak cari penapis air yang sesuai. Ada soalan?",
+      en: "Hi! Welcome to AIHAA 👋 I can help you find the right water purifier. Any questions?",
     },
     quickReplies: [
       { label: { bm: "Berapa harga?", en: "What's the price?" }, action: "price" },
