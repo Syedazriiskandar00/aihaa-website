@@ -1,6 +1,6 @@
 "use client";
 
-import { use } from "react";
+import { use, type ReactNode } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -55,9 +55,11 @@ export default function ProductDetailPage({
   const isEan = product.slug === "aihaa-ean";
   const isBellaPilot = product.slug === "aihaa-bella";
   const isBigPilot = product.slug === "aihaa-big";
+  const isFancyPilot = product.slug === "aihaa-fancy";
   const isPvdfPlusPilot = product.slug === "pvdf-plus";
   const isIndoorMidHtmlPilot = isBellaPilot || isBigPilot;
-  const isPilotShowcase = isIndoorMidHtmlPilot || isPvdfPlusPilot;
+  const isPilotShowcase =
+    isIndoorMidHtmlPilot || isFancyPilot || isPvdfPlusPilot;
 
   if (isPilotShowcase) {
     // Indoor mid-HTML pilots (bella, big — 8 slots each): bannerImages
@@ -67,8 +69,24 @@ export default function ProductDetailPage({
     //   1 hero · 2 (per-product) · 3 use-cases · [HTML 4-5] ·
     //   6 features-detail · 7 filter-flow · 8 spec-price.
     //
+    // Fancy (7 slots): only 5 banners post-Squoosh, so HTML interleaves
+    // earlier at slots 3-4 between use-cases and features-overview.
+    //
     // PVDF Plus (6 slots): pure-banner with 16px gap so the stack
     // breathes; no HTML interleave.
+    let htmlSlots: Record<number, ReactNode> | undefined;
+    if (isFancyPilot) {
+      htmlSlots = {
+        3: <CapacityFunctionalities product={product} />,
+        4: <FeaturesOverviewGrid product={product} />,
+      };
+    } else if (isIndoorMidHtmlPilot) {
+      htmlSlots = {
+        4: <CapacityFunctionalities product={product} />,
+        5: <FeaturesOverviewGrid product={product} />,
+      };
+    }
+
     return (
       <>
         <Header />
@@ -78,14 +96,7 @@ export default function ProductDetailPage({
             productSlug={product.slug}
             category={product.category}
             bannerImages={product.gallery ?? []}
-            htmlSlots={
-              isIndoorMidHtmlPilot
-                ? {
-                    4: <CapacityFunctionalities product={product} />,
-                    5: <FeaturesOverviewGrid product={product} />,
-                  }
-                : undefined
-            }
+            htmlSlots={htmlSlots}
             gapBetweenBanners={isPvdfPlusPilot ? 16 : 0}
           />
           <ProductServiceInfo product={product} />
