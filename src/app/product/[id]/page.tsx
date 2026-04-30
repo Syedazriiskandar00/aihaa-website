@@ -56,18 +56,19 @@ export default function ProductDetailPage({
   const isBellaPilot = product.slug === "aihaa-bella";
   const isBigPilot = product.slug === "aihaa-big";
   const isFancyPilot = product.slug === "aihaa-fancy";
+  const isWinterPilot = product.slug === "aihaa-winter";
   const isPvdfPlusPilot = product.slug === "pvdf-plus";
-  const isIndoorMidHtmlPilot = isBellaPilot || isBigPilot;
+  const isIndoorMidHtmlPilot = isBellaPilot || isBigPilot || isWinterPilot;
   const isPilotShowcase =
     isIndoorMidHtmlPilot || isFancyPilot || isPvdfPlusPilot;
 
   if (isPilotShowcase) {
-    // Indoor mid-HTML pilots (bella, big — 8 slots each): bannerImages
-    // = full 6-item gallery; htmlSlots {4: Capacity, 5: FeaturesOverview}
-    // interleave between use-cases and features-detail. Gallery order in
-    // products.ts already matches:
-    //   1 hero · 2 (per-product) · 3 use-cases · [HTML 4-5] ·
-    //   6 features-detail · 7 filter-flow · 8 spec-price.
+    // Indoor mid-HTML pilots (bella, big, winter — 8 slots each):
+    // bannerImages = full 6-item gallery; htmlSlots {4: Capacity,
+    // 5: FeaturesOverview} interleave at the same positions. Gallery
+    // order in products.ts already matches:
+    //   1 hero · 2 (per-product accent) · 3 (per-product accent) ·
+    //   [HTML 4-5] · 6 features-detail · 7 filter-flow · 8 spec-price.
     //
     // Fancy (7 slots): only 5 banners post-Squoosh, so HTML interleaves
     // earlier at slots 3-4 between use-cases and features-overview.
