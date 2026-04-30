@@ -106,9 +106,9 @@ export const products: Product[] = [
     gallery: [
       "/images/products/bella/hero-banner.webp",
       "/images/products/bella/smart-design.webp",
-      "/images/products/bella/filter-flow.webp",
       "/images/products/bella/use-cases.webp",
       "/images/products/bella/features-detail.webp",
+      "/images/products/bella/filter-flow.webp",
       "/images/products/bella/spec-price.webp",
     ],
     specs: [
