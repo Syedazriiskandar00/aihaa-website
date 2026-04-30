@@ -377,8 +377,16 @@ export const products: Product[] = [
       en: "FIBER 9X42 — rust-proof fiber tank built to last. Easy to maintain.",
     },
     price: "RM399",
-    mainImage: "/images/products/fiber/main.jpg",
-    gallery: ["/images/products/fiber/main.jpg"],
+    mainImage: "/images/products/fiber-9x42/hero-banner.webp",
+    gallery: [
+      "/images/products/fiber-9x42/hero-banner.webp",
+      "/images/products/fiber-9x42/whole-house-diagram.webp",
+      "/images/products/fiber-9x42/filter-layers.webp",
+      "/images/products/fiber-9x42/maintenance-guide.webp",
+      "/images/products/fiber-9x42/features-overview.webp",
+      "/images/products/fiber-9x42/features-detail.webp",
+      "/images/products/fiber-9x42/spec-price.webp",
+    ],
     specs: [
       { label: "Jenis Tangki", value: "Fiber" },
       { label: "Bahan", value: "Anti-Karat" },
