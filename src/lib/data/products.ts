@@ -445,6 +445,52 @@ export const products: Product[] = [
     },
   },
   {
+    slug: "steel",
+    name: "AIHAA STEEL",
+    category: "outdoor",
+    tagline: {
+      bm: "Penapis Air Luaran Generasi Stainless Steel",
+      en: "Outdoor Stainless Steel Generation Filter",
+    },
+    description: {
+      bm: "Generasi terbaru Fiber series dengan badan stainless steel 304 — tahan lasak, tahan karat, dan menyaring air paip rumah anda dengan 5 lapisan pasir filter. Direka untuk keluarga Malaysia yang mahukan air bersih untuk seluruh rumah.",
+      en: "The latest generation of the Fiber series with a 304 stainless steel body — durable, rust-resistant, and filters your home water with 5 layers of sand filtration. Designed for Malaysian families who want clean water for the entire home.",
+    },
+    price: "RM650",
+    badge: "premium",
+    mainImage: "/images/products/steel/hero-banner.webp",
+    gallery: [
+      "/images/products/steel/hero-banner.webp",
+      "/images/products/steel/whole-house-diagram.webp",
+      "/images/products/steel/filter-layers.webp",
+      "/images/products/steel/generation-comparison.webp",
+      "/images/products/steel/maintenance-guide.webp",
+      "/images/products/steel/features-overview.webp",
+      "/images/products/steel/features-detail.webp",
+      "/images/products/steel/spec-price.webp",
+    ],
+    specs: [
+      { label: "Badan", value: "Stainless Steel 304" },
+      { label: "Lapisan Filter", value: "5 Lapisan" },
+      { label: "Sesuai Untuk", value: "Air Kerajaan & Air Paip" },
+      { label: "Waranti", value: "10 Tahun" },
+      { label: "Pemasangan", value: "Percuma" },
+    ],
+    features: [
+      "Badan Stainless Steel 304 tahan lasak",
+      "5 lapisan pasir filter (Active Carbon, Zeolite, Fine/Medium/Coarse Silica Sand)",
+      "Sistem backwash mudah",
+      "Sesuai untuk seluruh rumah",
+      "Pemasangan luar rumah",
+      "Waranti 10 tahun",
+    ],
+    seo: {
+      titleBm: "AIHAA Steel — Penapis Air Luaran Stainless Steel | Bayar Sekali",
+      descriptionBm:
+        "Generasi terbaru Fiber series dengan badan stainless steel 304. 5 lapisan filter, waranti 10 tahun. Sesuai untuk seluruh rumah keluarga Malaysia.",
+    },
+  },
+  {
     slug: "penapis-boring-13x54",
     name: "PENAPIS BORING 13X54",
     category: "outdoor",
