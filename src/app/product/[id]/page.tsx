@@ -19,6 +19,14 @@ import RelatedProducts from "./components/RelatedProducts";
 import ProductBannerShowcase from "@/components/product/ProductBannerShowcase";
 import { getProductBySlug } from "@/lib/data/products";
 
+// Outdoor pure-banner pilots — render through ProductBannerShowcase with
+// a 16px gap and no HTML interleave. Slugs are added one at a time as
+// each rolls out (Phase 7.1: pvdf-plus; Phase 7.2B: the rest).
+const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
+  "pvdf-plus",
+  "ultra-one",
+]);
+
 // Phase 7 premium detail template. ONE template renders all 13 products.
 //
 // Section order adapts to product.category:
@@ -57,10 +65,12 @@ export default function ProductDetailPage({
   const isBigPilot = product.slug === "aihaa-big";
   const isFancyPilot = product.slug === "aihaa-fancy";
   const isWinterPilot = product.slug === "aihaa-winter";
-  const isPvdfPlusPilot = product.slug === "pvdf-plus";
+  const isOutdoorPureBannerPilot = OUTDOOR_PURE_BANNER_PILOTS.has(
+    product.slug
+  );
   const isIndoorMidHtmlPilot = isBellaPilot || isBigPilot || isWinterPilot;
   const isPilotShowcase =
-    isIndoorMidHtmlPilot || isFancyPilot || isPvdfPlusPilot;
+    isIndoorMidHtmlPilot || isFancyPilot || isOutdoorPureBannerPilot;
 
   if (isPilotShowcase) {
     // Indoor mid-HTML pilots (bella, big, winter — 8 slots each):
@@ -73,8 +83,9 @@ export default function ProductDetailPage({
     // Fancy (7 slots): only 5 banners post-Squoosh, so HTML interleaves
     // earlier at slots 3-4 between use-cases and features-overview.
     //
-    // PVDF Plus (6 slots): pure-banner with 16px gap so the stack
-    // breathes; no HTML interleave.
+    // Outdoor pure-banner pilots (pvdf-plus, ultra-one — Phase 7.2B
+    // adds the rest): full gallery, 16px gap so the stack breathes,
+    // no HTML interleave.
     let htmlSlots: Record<number, ReactNode> | undefined;
     if (isFancyPilot) {
       htmlSlots = {
@@ -98,7 +109,7 @@ export default function ProductDetailPage({
             category={product.category}
             bannerImages={product.gallery ?? []}
             htmlSlots={htmlSlots}
-            gapBetweenBanners={isPvdfPlusPilot ? 16 : 0}
+            gapBetweenBanners={isOutdoorPureBannerPilot ? 16 : 0}
           />
           <ProductServiceInfo product={product} />
           <RelatedProducts product={product} />
