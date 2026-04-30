@@ -16,6 +16,7 @@ import FilterCartridgeRow from "./components/FilterCartridgeRow";
 import ProductSpecs from "./components/ProductSpecs";
 import ProductServiceInfo from "./components/ProductServiceInfo";
 import RelatedProducts from "./components/RelatedProducts";
+import ProductBannerShowcase from "@/components/product/ProductBannerShowcase";
 import { getProductBySlug } from "@/lib/data/products";
 
 // Phase 7 premium detail template. ONE template renders all 13 products.
@@ -31,7 +32,13 @@ import { getProductBySlug } from "@/lib/data/products";
 //   Hero banner image → ColorVariants image → SmartDesign image →
 //   Capacity (HTML) → FeaturesOverview (HTML) → FilterFlow image →
 //   SpecPrice image → ServiceInfo (HTML) → Related (HTML) → Footer
-// Other 12 products render the default template unchanged.
+//
+// Phase 7.1 pilot — aihaa-bella + pvdf-plus render through
+// <ProductBannerShowcase>: an edge-to-edge stack of the gallery banners,
+// with bella interleaving CapacityFunctionalities + FeaturesOverviewGrid
+// at slots 4–5 (indoor hybrid) and pvdf-plus running pure-banner.
+//
+// All other slugs continue on the default template unchanged.
 //
 // No per-product page files. All data flows from src/lib/data/products.ts
 // and src/lib/data/services.ts.
@@ -45,6 +52,50 @@ export default function ProductDetailPage({
   const product = getProductBySlug(id) ?? getProductBySlug("aihaa-bella")!;
   const isIndoor = product.category === "indoor";
   const isEan = product.slug === "aihaa-ean";
+  const isBellaPilot = product.slug === "aihaa-bella";
+  const isPvdfPlusPilot = product.slug === "pvdf-plus";
+  const isPilotShowcase = isBellaPilot || isPvdfPlusPilot;
+
+  if (isPilotShowcase) {
+    // Bella: drop slots 4 + 5 (HTML) from gallery before passing as banners.
+    // Gallery order: hero, smart-design, use-cases, features-detail,
+    // filter-flow, spec-price → image slots 1, 2, 3, 6, 7.
+    const bellaBanners = isBellaPilot
+      ? [
+          product.gallery![0], // hero-banner
+          product.gallery![1], // smart-design
+          product.gallery![2], // use-cases
+          product.gallery![4], // filter-flow
+          product.gallery![5], // spec-price
+        ]
+      : [];
+
+    return (
+      <>
+        <Header />
+        <main>
+          <ProductBannerShowcase
+            productName={product.name}
+            productSlug={product.slug}
+            category={product.category}
+            bannerImages={isBellaPilot ? bellaBanners : product.gallery ?? []}
+            htmlSlots={
+              isBellaPilot
+                ? {
+                    4: <CapacityFunctionalities product={product} />,
+                    5: <FeaturesOverviewGrid product={product} />,
+                  }
+                : undefined
+            }
+          />
+          <ProductServiceInfo product={product} />
+          <RelatedProducts product={product} />
+        </main>
+        <Footer />
+        <FloatingButtons />
+      </>
+    );
+  }
 
   return (
     <>
