@@ -26,6 +26,7 @@ const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
   "pvdf-plus",
   "ultra-one",
   "fiber-9x42",
+  "fiber-10x44",
 ]);
 
 // Phase 7 premium detail template. ONE template renders all 13 products.
