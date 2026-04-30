@@ -30,6 +30,7 @@ const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
   "steel",
   "pvdf",
   "super-pleated",
+  "uf-double-backwash",
 ]);
 
 // Phase 7 premium detail template. ONE template renders all 13 products.
