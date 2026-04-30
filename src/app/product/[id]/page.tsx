@@ -54,14 +54,17 @@ export default function ProductDetailPage({
   const isIndoor = product.category === "indoor";
   const isEan = product.slug === "aihaa-ean";
   const isBellaPilot = product.slug === "aihaa-bella";
+  const isBigPilot = product.slug === "aihaa-big";
   const isPvdfPlusPilot = product.slug === "pvdf-plus";
-  const isPilotShowcase = isBellaPilot || isPvdfPlusPilot;
+  const isIndoorMidHtmlPilot = isBellaPilot || isBigPilot;
+  const isPilotShowcase = isIndoorMidHtmlPilot || isPvdfPlusPilot;
 
   if (isPilotShowcase) {
-    // Bella (8 slots): bannerImages = full 6-item gallery; htmlSlots
-    // {4: Capacity, 5: FeaturesOverview} interleave between use-cases
-    // and features-detail. Gallery order in products.ts already matches:
-    //   1 hero · 2 smart-design · 3 use-cases · [HTML 4-5] ·
+    // Indoor mid-HTML pilots (bella, big — 8 slots each): bannerImages
+    // = full 6-item gallery; htmlSlots {4: Capacity, 5: FeaturesOverview}
+    // interleave between use-cases and features-detail. Gallery order in
+    // products.ts already matches:
+    //   1 hero · 2 (per-product) · 3 use-cases · [HTML 4-5] ·
     //   6 features-detail · 7 filter-flow · 8 spec-price.
     //
     // PVDF Plus (6 slots): pure-banner with 16px gap so the stack
@@ -76,7 +79,7 @@ export default function ProductDetailPage({
             category={product.category}
             bannerImages={product.gallery ?? []}
             htmlSlots={
-              isBellaPilot
+              isIndoorMidHtmlPilot
                 ? {
                     4: <CapacityFunctionalities product={product} />,
                     5: <FeaturesOverviewGrid product={product} />,
