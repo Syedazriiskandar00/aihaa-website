@@ -151,9 +151,9 @@ export const products: Product[] = [
     gallery: [
       "/images/products/big/hero-banner.webp",
       "/images/products/big/capacity-highlight.webp",
-      "/images/products/big/filter-flow.webp",
       "/images/products/big/use-cases.webp",
       "/images/products/big/features-detail.webp",
+      "/images/products/big/filter-flow.webp",
       "/images/products/big/spec-price.webp",
     ],
     specs: [
@@ -243,9 +243,9 @@ export const products: Product[] = [
     mainImage: "/images/products/fancy/hero-banner.webp",
     gallery: [
       "/images/products/fancy/hero-banner.webp",
-      "/images/products/fancy/filter-flow.webp",
       "/images/products/fancy/use-cases.webp",
       "/images/products/fancy/features-overview.webp",
+      "/images/products/fancy/filter-flow.webp",
       "/images/products/fancy/spec-price.webp",
     ],
     specs: [
@@ -291,8 +291,8 @@ export const products: Product[] = [
       "/images/products/winter/hero-banner.webp",
       "/images/products/winter/temperature-control.webp",
       "/images/products/winter/two-in-one.webp",
-      "/images/products/winter/use-cases.webp",
       "/images/products/winter/features-detail.webp",
+      "/images/products/winter/filter-flow.webp",
       "/images/products/winter/spec-price.webp",
     ],
     specs: [
