@@ -17,6 +17,11 @@ import type { ReactNode } from "react";
 //
 // First banner (slot containing image index 0) gets `priority` + eager
 // loading so it lands in the LCP candidate set; the rest lazy-load.
+//
+// `gapBetweenBanners` applies a uniform marginBottom (in px) to every
+// slot except the last, giving stacked banners breathing room when the
+// imagery doesn't already self-contain edge transitions. Default 0
+// preserves the EAN-style flush stack used by bella.
 
 type ProductCategory = "indoor" | "outdoor";
 
@@ -26,6 +31,7 @@ export interface ProductBannerShowcaseProps {
   category: ProductCategory;
   bannerImages: string[];
   htmlSlots?: Record<number, ReactNode>;
+  gapBetweenBanners?: number;
 }
 
 function deriveAltSegment(banner: string): string {
@@ -44,6 +50,7 @@ export default function ProductBannerShowcase({
   category,
   bannerImages,
   htmlSlots,
+  gapBetweenBanners = 0,
 }: ProductBannerShowcaseProps) {
   const htmlEntries = htmlSlots ?? {};
   const totalSlots = bannerImages.length + Object.keys(htmlEntries).length;
@@ -52,10 +59,20 @@ export default function ProductBannerShowcase({
   let imageIndex = 0;
 
   for (let pos = 1; pos <= totalSlots; pos += 1) {
+    const isLast = pos === totalSlots;
+    const slotStyle =
+      gapBetweenBanners > 0 && !isLast
+        ? { marginBottom: `${gapBetweenBanners}px` }
+        : undefined;
+
     const htmlNode = htmlEntries[pos];
     if (htmlNode !== undefined) {
       slots.push(
-        <div key={`html-${productSlug}-${pos}`} data-slot={pos}>
+        <div
+          key={`html-${productSlug}-${pos}`}
+          data-slot={pos}
+          style={slotStyle}
+        >
           {htmlNode}
         </div>
       );
@@ -73,6 +90,7 @@ export default function ProductBannerShowcase({
         data-slot={pos}
         data-category={category}
         className="relative"
+        style={slotStyle}
       >
         <Image
           src={banner}
