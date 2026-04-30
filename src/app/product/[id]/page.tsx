@@ -27,11 +27,12 @@ import { getProductBySlug } from "@/lib/data/products";
 //   outdoor → Hero · House · SevenLayers · PvdfFunnel · FeaturesOverview
 //             · SpecsDark · ServiceInfo · Related
 //
-// Phase 5 hybrid layout for aihaa-ean (client presentation 24 Apr 2026):
-// EAN renders a 10-section mix of client-supplied images + preserved HTML:
-//   Hero banner image → ColorVariants image → SmartDesign image →
-//   Capacity (HTML) → FeaturesOverview (HTML) → FilterFlow image →
-//   SpecPrice image → ServiceInfo (HTML) → Related (HTML) → Footer
+// Phase 5 hybrid layout for aihaa-ean (client presentation 24 Apr 2026,
+// extended Phase 7.1 fix with FeaturesDetail banner): EAN renders a
+// 10-section mix of client-supplied images + preserved HTML:
+//   Hero · ColorVariants · SmartDesign · Capacity (HTML) ·
+//   FeaturesOverview (HTML) · FeaturesDetail · FilterFlow · SpecPrice ·
+//   ServiceInfo (HTML) · Related (HTML) · Footer
 //
 // Phase 7.1 pilot — aihaa-bella + pvdf-plus render through
 // <ProductBannerShowcase>: an edge-to-edge stack of the gallery banners,
@@ -57,19 +58,14 @@ export default function ProductDetailPage({
   const isPilotShowcase = isBellaPilot || isPvdfPlusPilot;
 
   if (isPilotShowcase) {
-    // Bella: drop slots 4 + 5 (HTML) from gallery before passing as banners.
-    // Gallery order: hero, smart-design, use-cases, features-detail,
-    // filter-flow, spec-price → image slots 1, 2, 3, 6, 7.
-    const bellaBanners = isBellaPilot
-      ? [
-          product.gallery![0], // hero-banner
-          product.gallery![1], // smart-design
-          product.gallery![2], // use-cases
-          product.gallery![4], // filter-flow
-          product.gallery![5], // spec-price
-        ]
-      : [];
-
+    // Bella (8 slots): bannerImages = full 6-item gallery; htmlSlots
+    // {4: Capacity, 5: FeaturesOverview} interleave between use-cases
+    // and features-detail. Gallery order in products.ts already matches:
+    //   1 hero · 2 smart-design · 3 use-cases · [HTML 4-5] ·
+    //   6 features-detail · 7 filter-flow · 8 spec-price.
+    //
+    // PVDF Plus (6 slots): pure-banner with 16px gap so the stack
+    // breathes; no HTML interleave.
     return (
       <>
         <Header />
@@ -78,7 +74,7 @@ export default function ProductDetailPage({
             productName={product.name}
             productSlug={product.slug}
             category={product.category}
-            bannerImages={isBellaPilot ? bellaBanners : product.gallery ?? []}
+            bannerImages={product.gallery ?? []}
             htmlSlots={
               isBellaPilot
                 ? {
@@ -87,6 +83,7 @@ export default function ProductDetailPage({
                   }
                 : undefined
             }
+            gapBetweenBanners={isPvdfPlusPilot ? 16 : 0}
           />
           <ProductServiceInfo product={product} />
           <RelatedProducts product={product} />
@@ -152,6 +149,19 @@ export default function ProductDetailPage({
             {!isEan && <KitchenContextSplit product={product} />}
             <CapacityFunctionalities product={product} />
             <FeaturesOverviewGrid product={product} />
+            {isEan && (
+              <section className="relative">
+                <Image
+                  src="/images/products/features-detail.webp"
+                  alt="AIHAA EAN — Features Detail"
+                  width={1600}
+                  height={900}
+                  sizes="100vw"
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </section>
+            )}
             {isEan ? (
               <section className="relative">
                 <Image
