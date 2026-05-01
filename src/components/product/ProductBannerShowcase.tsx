@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
 
 // Phase 7.1 pilot template. Renders a product detail page as a flush
@@ -15,8 +14,13 @@ import type { ReactNode } from "react";
 //
 // Outdoor pilot (pvdf-plus) — 6 slots, 6 banners, no HTML interleave.
 //
-// First banner (slot containing image index 0) gets `priority` + eager
-// loading so it lands in the LCP candidate set; the rest lazy-load.
+// First banner (slot containing image index 0) gets fetchPriority="high"
+// + eager loading so it lands in the LCP candidate set; the rest
+// lazy-load. Plain <img> is used (not next/image) so each banner renders
+// at its natural intrinsic aspect ratio — every Squoosh export's
+// dimensions vary (1600×640 cinematic strips, 1600×1600 squares,
+// 4269×2400 hero shots), and forcing a hardcoded width/height stretches
+// the source pixels.
 //
 // `gapBetweenBanners` applies a uniform marginBottom (in px) to every
 // slot except the last, giving stacked banners breathing room when the
@@ -92,15 +96,13 @@ export default function ProductBannerShowcase({
         className="relative"
         style={slotStyle}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={banner}
           alt={`${productName} — ${altSegment}`}
-          width={1600}
-          height={900}
-          sizes="100vw"
-          className="w-full h-auto"
-          priority={isFirstImage}
+          className="block w-full h-auto"
           loading={isFirstImage ? "eager" : "lazy"}
+          {...(isFirstImage ? { fetchPriority: "high" as const } : {})}
         />
       </section>
     );
