@@ -1,7 +1,6 @@
 "use client";
 
 import { use, type ReactNode } from "react";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
@@ -133,14 +132,13 @@ export default function ProductDetailPage({
         {/* Hero */}
         {isEan ? (
           <section className="relative">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/products/hero-banner.webp"
               alt="AIHAA EAN — Miliki gaya anda sendiri dengan harga yang berbaloi. Halal JAKIM certified. 4 pilihan warna pastel."
-              width={4269}
-              height={2400}
-              priority
-              sizes="100vw"
-              className="w-full h-auto"
+              className="block w-full h-auto"
+              loading="eager"
+              {...{ fetchPriority: "high" as const }}
             />
           </section>
         ) : (
@@ -151,24 +149,22 @@ export default function ProductDetailPage({
         {isEan && (
           <>
             <section className="relative">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/images/products/color-variants.webp"
                 alt="AIHAA EAN tersedia dalam 4 pilihan warna — BEIGE, WHITE, SOFT PINK, BLACK. Padankan dengan dapur anda."
-                width={4300}
-                height={1447}
-                sizes="100vw"
-                className="w-full h-auto"
+                className="block w-full h-auto"
+                loading="lazy"
               />
             </section>
 
             <section className="relative">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/images/products/smart-design.webp"
                 alt="AIHAA EAN dilengkapi Jam LED dan kawalan temperatur — Panas, Sejuk, Normal."
-                width={4269}
-                height={1788}
-                sizes="100vw"
-                className="w-full h-auto"
+                className="block w-full h-auto"
+                loading="lazy"
               />
             </section>
           </>
@@ -183,26 +179,23 @@ export default function ProductDetailPage({
             <FeaturesOverviewGrid product={product} />
             {isEan && (
               <section className="relative">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/products/features-detail.webp"
                   alt="AIHAA EAN — Features Detail"
-                  width={1600}
-                  height={900}
-                  sizes="100vw"
-                  className="w-full h-auto"
+                  className="block w-full h-auto"
                   loading="lazy"
                 />
               </section>
             )}
             {isEan ? (
               <section className="relative">
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/products/filter-flow.webp"
                   alt="Sistem penapisan 4 peringkat AIHAA EAN — Sediment, Antibacterial, Pre-Carbon, Post-Carbon Filter."
-                  width={4269}
-                  height={2400}
-                  sizes="100vw"
-                  className="w-full h-auto"
+                  className="block w-full h-auto"
+                  loading="lazy"
                 />
               </section>
             ) : (
@@ -221,13 +214,12 @@ export default function ProductDetailPage({
         {/* Spec: EAN image full-width, others ProductSpecs */}
         {isEan ? (
           <section className="relative">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/products/spec-price.webp"
               alt="Spesifikasi AIHAA EAN — Berat 11.4kg, Ukuran 385×290×480mm, Kapasiti Tangki (Panas 1.5L, Biasa 3L, Sejuk 3L), 4 Filter Air. Harga RM780."
-              width={4269}
-              height={2400}
-              sizes="100vw"
-              className="w-full h-auto"
+              className="block w-full h-auto"
+              loading="lazy"
             />
           </section>
         ) : (
