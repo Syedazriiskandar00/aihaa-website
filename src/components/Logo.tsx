@@ -7,9 +7,9 @@ interface LogoProps {
 }
 
 const SIZE_CLASSES: Record<NonNullable<LogoProps["size"]>, string> = {
-  sm: "h-6 md:h-8",
-  md: "h-8 md:h-10 lg:h-12",
-  lg: "h-10 md:h-12 lg:h-14",
+  sm: "h-9 md:h-12",
+  md: "h-12 md:h-14 lg:h-16",
+  lg: "h-14 md:h-16 lg:h-20",
 };
 
 export default function Logo({ size = "md" }: LogoProps) {
