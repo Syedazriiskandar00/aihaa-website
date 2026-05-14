@@ -81,6 +81,25 @@ export default function ServicePage() {
           />
         </section>
 
+        {/* Section divider — entering outdoor service */}
+        <section className="bg-white py-12 md:py-16">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center gap-4">
+              <span
+                aria-hidden
+                className="h-px w-12 md:w-20 bg-gold/40"
+              />
+              <h2 className="text-[12px] md:text-[13px] uppercase tracking-[0.32em] text-gold font-semibold">
+                Servis Penapis Luar
+              </h2>
+              <span
+                aria-hidden
+                className="h-px w-12 md:w-20 bg-gold/40"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Outdoor service banners */}
         <section className="relative">
           {/* eslint-disable-next-line @next/next/no-img-element */}
