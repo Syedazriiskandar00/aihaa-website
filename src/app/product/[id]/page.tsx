@@ -35,22 +35,22 @@ const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
 // Phase 7 premium detail template. ONE template renders all 13 products.
 //
 // Section order adapts to product.category:
-//   indoor  → Hero · Kitchen · Capacity · FeaturesOverview · Cartridges
-//             · SpecsDark · ServiceInfo · Related
+//   indoor  → Hero · Kitchen · Capacity · Cartridges · SpecsDark
+//             · ServiceInfo · Related
 //   outdoor → Hero · House · SevenLayers · PvdfFunnel · FeaturesOverview
 //             · SpecsDark · ServiceInfo · Related
 //
 // Phase 5 hybrid layout for aihaa-ean (client presentation 24 Apr 2026,
 // extended Phase 7.1 fix with FeaturesDetail banner): EAN renders a
-// 10-section mix of client-supplied images + preserved HTML:
+// 9-section mix of client-supplied images + preserved HTML:
 //   Hero · ColorVariants · SmartDesign · Capacity (HTML) ·
-//   FeaturesOverview (HTML) · FeaturesDetail · FilterFlow · SpecPrice ·
-//   ServiceInfo (HTML) · Related (HTML) · Footer
+//   FeaturesDetail · FilterFlow · SpecPrice · ServiceInfo (HTML) ·
+//   Related (HTML) · Footer
 //
 // Phase 7.1 pilot — aihaa-bella + pvdf-plus render through
 // <ProductBannerShowcase>: an edge-to-edge stack of the gallery banners,
-// with bella interleaving CapacityFunctionalities + FeaturesOverviewGrid
-// at slots 4–5 (indoor hybrid) and pvdf-plus running pure-banner.
+// with bella interleaving CapacityFunctionalities at slot 4 (indoor
+// hybrid) and pvdf-plus running pure-banner.
 //
 // All other slugs continue on the default template unchanged.
 //
@@ -78,15 +78,16 @@ export default function ProductDetailPage({
     isIndoorMidHtmlPilot || isFancyPilot || isOutdoorPureBannerPilot;
 
   if (isPilotShowcase) {
-    // Indoor mid-HTML pilots (bella, big, winter — 8 slots each):
-    // bannerImages = full 6-item gallery; htmlSlots {4: Capacity,
-    // 5: FeaturesOverview} interleave at the same positions. Gallery
-    // order in products.ts already matches:
+    // Indoor mid-HTML pilots (bella, big, winter — 7 slots each):
+    // bannerImages = full 6-item gallery; htmlSlots {4: Capacity}
+    // interleaves at the same position. Gallery order in products.ts
+    // already matches:
     //   1 hero · 2 (per-product accent) · 3 (per-product accent) ·
-    //   [HTML 4-5] · 6 features-detail · 7 filter-flow · 8 spec-price.
+    //   [HTML 4 Capacity] · 5 features-detail · 6 filter-flow ·
+    //   7 spec-price.
     //
-    // Fancy (7 slots): only 5 banners post-Squoosh, so HTML interleaves
-    // earlier at slots 3-4 between use-cases and features-overview.
+    // Fancy (6 slots): only 5 banners post-Squoosh, so Capacity HTML
+    // interleaves earlier at slot 3 between use-cases and features-overview.
     //
     // Outdoor pure-banner pilots (pvdf-plus, ultra-one — Phase 7.2B
     // adds the rest): full gallery, 16px gap so the stack breathes,
@@ -95,12 +96,10 @@ export default function ProductDetailPage({
     if (isFancyPilot) {
       htmlSlots = {
         3: <CapacityFunctionalities product={product} />,
-        4: <FeaturesOverviewGrid product={product} />,
       };
     } else if (isIndoorMidHtmlPilot) {
       htmlSlots = {
         4: <CapacityFunctionalities product={product} />,
-        5: <FeaturesOverviewGrid product={product} />,
       };
     }
 
@@ -173,10 +172,9 @@ export default function ProductDetailPage({
         {/* Middle sections */}
         {isIndoor ? (
           <>
-            {/* EAN skips KitchenContextSplit per the 10-section spec */}
+            {/* EAN skips KitchenContextSplit per the 9-section spec */}
             {!isEan && <KitchenContextSplit product={product} />}
             <CapacityFunctionalities product={product} />
-            <FeaturesOverviewGrid product={product} />
             {isEan && (
               <section className="relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
