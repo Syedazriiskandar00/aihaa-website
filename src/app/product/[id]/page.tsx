@@ -19,8 +19,8 @@ import ProductBannerShowcase from "@/components/product/ProductBannerShowcase";
 import { getProductBySlug } from "@/lib/data/products";
 
 // Outdoor pure-banner pilots — render through ProductBannerShowcase with
-// a 16px gap and no HTML interleave. Slugs are added one at a time as
-// each rolls out (Phase 7.1: pvdf-plus; Phase 7.2B: the rest).
+// a 16px gap and no HTML interleave. Phase 7.1 shipped pvdf-plus solo;
+// Phase 7.2B added the remaining 7 outdoor produk listed below.
 const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
   "pvdf-plus",
   "ultra-one",
@@ -47,12 +47,15 @@ const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
 //   FeaturesDetail · FilterFlow · SpecPrice · ServiceInfo (HTML) ·
 //   Related (HTML) · Footer
 //
-// Phase 7.1 pilot — aihaa-bella + pvdf-plus render through
-// <ProductBannerShowcase>: an edge-to-edge stack of the gallery banners,
-// with bella interleaving CapacityFunctionalities at slot 4 (indoor
-// hybrid) and pvdf-plus running pure-banner.
+// ProductBannerShowcase rollout — Phase 7.1 (bella, fancy, big, winter,
+// pvdf-plus) + Phase 7.2B (ultra-one, fiber-9x42, fiber-10x44, steel,
+// pvdf, super-pleated, uf-double-backwash). Indoor mid-HTML pilots
+// interleave CapacityFunctionalities; outdoor pure-banner pilots run a
+// 16px-gap stack with no HTML interleave.
 //
-// All other slugs continue on the default template unchanged.
+// Default template fallback now applies only to penapis-boring-13x54
+// (legacy single-image gallery) and aihaa-ean (custom 9-section inline
+// flow with hardcoded banner <img> tags).
 //
 // No per-product page files. All data flows from src/lib/data/products.ts
 // and src/lib/data/services.ts.
@@ -89,9 +92,8 @@ export default function ProductDetailPage({
     // Fancy (6 slots): only 5 banners post-Squoosh, so Capacity HTML
     // interleaves earlier at slot 3 between use-cases and features-overview.
     //
-    // Outdoor pure-banner pilots (pvdf-plus, ultra-one — Phase 7.2B
-    // adds the rest): full gallery, 16px gap so the stack breathes,
-    // no HTML interleave.
+    // Outdoor pure-banner pilots (all 8 outdoor slugs in the set above):
+    // full gallery, 16px gap so the stack breathes, no HTML interleave.
     let htmlSlots: Record<number, ReactNode> | undefined;
     if (isFancyPilot) {
       htmlSlots = {
