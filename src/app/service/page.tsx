@@ -3,13 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import HeartServiceHero from "./components/HeartServiceHero";
-import IndoorServiceHeader from "./components/IndoorServiceHeader";
-import ThirteenCheckPoint from "./components/ThirteenCheckPoint";
-import EightStepGallery from "./components/EightStepGallery";
-import FilterPricingCards from "./components/FilterPricingCards";
-import SandTypesShowcase from "./components/SandTypesShowcase";
-import FiveCheckPointOutdoor from "./components/FiveCheckPointOutdoor";
-import SandReplacementPricing from "./components/SandReplacementPricing";
 
 export const metadata: Metadata = {
   title: "Servis Penapis Air AIHAA — Jadual, Harga & Titik Pemeriksaan",
@@ -24,21 +17,100 @@ export const metadata: Metadata = {
   },
 };
 
+// Phase 8 — service detail body switched from 7 HTML cards/grids to 7
+// designer-supplied banner images. HeartServiceHero stays as the only
+// HTML section (story-first hero + 4 value pillars). All 7 service
+// banners live at /public/images/service/ and render via plain <img>
+// with natural aspect ratio (same pattern as Phase 7 product banners).
+//
+// Banner order (top → bottom):
+//   1 indoor service header (filter penapis dalam)
+//   2 13 check points
+//   3 service price card (filter)
+//   4 7-step procedure
+//   5 outdoor sand types
+//   6 5 check points
+//   7 sand replacement price card
+
 export default function ServicePage() {
   return (
     <>
       <Header />
       <main>
-        {/* Indoor service — story first */}
         <HeartServiceHero />
-        <IndoorServiceHeader />
-        <ThirteenCheckPoint />
-        <FilterPricingCards />
-        <EightStepGallery />
-        {/* Outdoor service */}
-        <SandTypesShowcase />
-        <FiveCheckPointOutdoor />
-        <SandReplacementPricing />
+
+        {/* Indoor service banners */}
+        <section className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/service/filter-penapis-dalam.webp"
+            alt="Filter Penapis Air Dalam AIHAA — penyelenggaraan 6 bulan sekali untuk 4 filter."
+            className="block w-full h-auto"
+            loading="eager"
+            {...{ fetchPriority: "high" as const }}
+          />
+        </section>
+
+        <section className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/service/13-check-point.webp"
+            alt="13 Titik Pemeriksaan Servis penapis air dalam AIHAA."
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </section>
+
+        <section className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/service/harga-servis-filter.webp"
+            alt="Harga Servis Filter AIHAA — RM160 standard, RM260 premium."
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </section>
+
+        <section className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/service/7-langkah-servis.webp"
+            alt="7 Langkah Servis penapis air AIHAA — prosedur lengkap juruteknik."
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </section>
+
+        {/* Outdoor service banners */}
+        <section className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/service/pasir-penapis-luar.webp"
+            alt="Pasir Penapis Air Luar AIHAA — jenis media penapis yang digunakan."
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </section>
+
+        <section className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/service/5-check-point.webp"
+            alt="5 Titik Pemeriksaan Servis penapis air luar AIHAA."
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </section>
+
+        <section className="relative">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/service/harga-tukar-pasir.webp"
+            alt="Harga Servis Tukar Pasir AIHAA — RM250 basic, RM650 full."
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </section>
       </main>
       <Footer />
       <FloatingButtons />
