@@ -7,9 +7,9 @@ interface LogoProps {
 }
 
 const SIZE_CLASSES: Record<NonNullable<LogoProps["size"]>, string> = {
-  sm: "h-9 md:h-12",
-  md: "h-12 md:h-14 lg:h-16",
-  lg: "h-14 md:h-16 lg:h-20",
+  sm: "h-16 md:h-20",
+  md: "h-20 md:h-24 lg:h-28",
+  lg: "h-24 md:h-28 lg:h-32",
 };
 
 export default function Logo({ size = "md" }: LogoProps) {
@@ -17,7 +17,7 @@ export default function Logo({ size = "md" }: LogoProps) {
     <Link href="/" className="flex items-center group">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/logo.png"
+        src="/images/logo.webp"
         alt="AIHAA — Premium Water Purifier"
         className={`${SIZE_CLASSES[size]} w-auto`}
       />
