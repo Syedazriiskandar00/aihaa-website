@@ -197,7 +197,7 @@ export const products: Product[] = [
     gallery: [
       "/images/products/ean/main.png",
       "/images/products/ean/colors.jpg",
-      "/images/products/ean/features.jpg",
+      "/images/products/ean/features.webp",
       "/images/products/ean/specs.jpg",
     ],
     variants: [
