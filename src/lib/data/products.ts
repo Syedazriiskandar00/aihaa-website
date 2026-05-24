@@ -499,43 +499,6 @@ export const products: Product[] = [
     },
   },
   {
-    slug: "penapis-boring-13x54",
-    name: "PENAPIS BORING 13X54",
-    category: "outdoor",
-    tagline: {
-      bm: "Khas Untuk Air Bawah Tanah",
-      en: "Built for Borehole Water",
-    },
-    description: {
-      bm: "PENAPIS BORING 13X54 — khas untuk air bawah tanah (boring). Penapisan pelbagai tahap dengan penapis khas.",
-      en: "PENAPIS BORING 13X54 — purpose-built for borehole (underground) water. Multi-stage filtration with specialty media.",
-    },
-    price: "RM1,180",
-    mainImage: "/images/products/penapis-boring/main.jpg",
-    gallery: ["/images/products/penapis-boring/main.jpg"],
-    specs: [
-      { label: "Saiz Tangki", value: "13 x 54 Inci" },
-      { label: "Kegunaan", value: "Air Boring" },
-      { label: "Penapisan", value: "Pelbagai Tahap" },
-      { label: "Penapis", value: "Penapis Khas" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Penapis Air Boring",
-      "Kapasiti Besar",
-      "Penapisan Pelbagai Tahap dengan Penapis Khas",
-      "Tahan Lama",
-      "Anti-Karat",
-      "Percuma pemasangan & penghantaran",
-    ],
-    seo: {
-      titleBm: "PENAPIS BORING 13X54 | Air Bawah Tanah",
-      descriptionBm:
-        "PENAPIS BORING 13X54 — khas untuk air bawah tanah. RM1,180. Sekali bayar, pemasangan percuma.",
-    },
-  },
-  {
     slug: "pvdf",
     name: "PVDF",
     category: "outdoor",
@@ -625,51 +588,6 @@ export const products: Product[] = [
       titleBm: "PVDF PLUS | 6000L/Hour",
       descriptionBm:
         "PVDF PLUS — dipertingkat 6000L/jam. RM1,299. Sekali bayar, pemasangan percuma.",
-    },
-  },
-  {
-    slug: "super-pleated",
-    name: "SUPER PLEATED",
-    category: "outdoor",
-    tagline: {
-      bm: "Kadar Aliran Tinggi & Kompak",
-      en: "High Flow Rate & Compact",
-    },
-    description: {
-      bm: "SUPER PLEATED — penapis pleated dengan kadar aliran tinggi. Saiz kompak dan kos efektif.",
-      en: "SUPER PLEATED — pleated filter with a high flow rate. Compact and cost-effective.",
-    },
-    price: "RM580",
-    mainImage: "/images/products/super-pleated/hero-banner.webp",
-    gallery: [
-      "/images/products/super-pleated/hero-banner.webp",
-      "/images/products/super-pleated/whole-house-diagram.webp",
-      "/images/products/super-pleated/water-flow-steps.webp",
-      "/images/products/super-pleated/filtration-performance.webp",
-      "/images/products/super-pleated/easy-cleaning.webp",
-      "/images/products/super-pleated/features-overview.webp",
-      "/images/products/super-pleated/features-detail.webp",
-      "/images/products/super-pleated/spec-price.webp",
-    ],
-    specs: [
-      { label: "Jenis Penapis", value: "Pleated" },
-      { label: "Kadar Aliran", value: "Tinggi" },
-      { label: "Saiz", value: "Kompak" },
-      { label: "Kos", value: "Efektif" },
-      { label: "Waranti", value: "2 Tahun" },
-      { label: "Pemasangan", value: "Percuma" },
-    ],
-    features: [
-      "Penapis Pleated",
-      "Kadar Aliran Tinggi",
-      "Saiz Kompak",
-      "Kos Efektif",
-      "Percuma pemasangan & penghantaran",
-    ],
-    seo: {
-      titleBm: "SUPER PLEATED | Kadar Aliran Tinggi",
-      descriptionBm:
-        "SUPER PLEATED — kadar aliran tinggi dan kompak. RM580. Sekali bayar, pemasangan percuma.",
     },
   },
   {

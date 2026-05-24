@@ -11,18 +11,13 @@
 //   smaller payload). Decoupling lets us iterate on card visuals
 //   without touching catalogue data.
 //
-// Convention for portrait card images (used by 12 of 14 products):
+// Convention for portrait card images (used by all 12 products):
 //   /images/products/[slug]/card.webp         (800px wide, Q80, 3:4)
 //   /images/products/[slug]/card-mobile.webp  (600px wide, Q75, 3:4)
 //
-// Holdouts still on legacy assets:
-// - super-pleated: kept on hero-banner.webp (portrait card not yet
-//   generated for this product).
-// - penapis-boring-13x54: kept on main.jpg (deferred).
-//
-// To migrate a holdout: drop card.webp + card-mobile.webp into the
-// product folder and swap the two paths in its entry below.
-// ProductCard picks up the change automatically.
+// To add a new product card: drop card.webp + card-mobile.webp into the
+// product folder and add an entry below. ProductCard picks up the change
+// automatically.
 
 export type ProductCardImage = {
   slug: string;
@@ -64,7 +59,7 @@ export const productCardImages: Record<string, ProductCardImage> = {
     alt: "AIHAA WINTER — Penapis Air Premium dengan Ice Maker",
   },
 
-  // ─────────── OUTDOOR (9) ───────────
+  // ─────────── OUTDOOR (7) ───────────
   "ultra-one": {
     slug: "ultra-one",
     desktop: "/images/products/ultra-one/card.webp",
@@ -89,13 +84,6 @@ export const productCardImages: Record<string, ProductCardImage> = {
     mobile: "/images/products/steel/card-mobile.webp",
     alt: "AIHAA STEEL — Penapis Air Stainless Steel 304",
   },
-  "penapis-boring-13x54": {
-    // HOLDOUT: legacy main.jpg (4.1 MB, no mobile pair). Deferred.
-    slug: "penapis-boring-13x54",
-    desktop: "/images/products/penapis-boring/main.jpg",
-    mobile: "/images/products/penapis-boring/main.jpg",
-    alt: "PENAPIS BORING 13x54 — Penapis Air Bawah Tanah",
-  },
   pvdf: {
     slug: "pvdf",
     desktop: "/images/products/pvdf/card.webp",
@@ -107,13 +95,6 @@ export const productCardImages: Record<string, ProductCardImage> = {
     desktop: "/images/products/pvdf-plus/card.webp",
     mobile: "/images/products/pvdf-plus/card-mobile.webp",
     alt: "PVDF PLUS — Penapis Air 6000L/Jam",
-  },
-  "super-pleated": {
-    // HOLDOUT: portrait card not yet generated. Falls back to hero-banner.
-    slug: "super-pleated",
-    desktop: "/images/products/super-pleated/hero-banner.webp",
-    mobile: "/images/products/super-pleated/hero-banner-mobile.webp",
-    alt: "SUPER PLEATED — Penapis Air Pleated Kompak",
   },
   "uf-double-backwash": {
     slug: "uf-double-backwash",

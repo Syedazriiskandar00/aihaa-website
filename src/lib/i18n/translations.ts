@@ -903,9 +903,9 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_note: "Harga termasuk buang pasir lama, cuci tabung, dan isi pasir baru.",
     service_pricing_sand_cta: "Tempah Servis via WhatsApp",
     // /produk-luar — Phase 2 premium outdoor landing
-    produk_luar_meta_title: "Penapis Air Luar AIHAA — Koleksi Penuh 8 Model",
+    produk_luar_meta_title: "Penapis Air Luar AIHAA — Koleksi Penuh 7 Model",
     produk_luar_meta_description:
-      "Penapis air luar rumah AIHAA — 8 model dari RM399. PVDF, Fiber, Super Pleated, UF Double Backwash, dan lebih. Sesuai untuk air boring, kolam, pejabat, kilang. Sekali bayar, pemasangan percuma.",
+      "Penapis air luar rumah AIHAA — 7 model dari RM399. PVDF, Fiber, UF Double Backwash, dan lebih. Sesuai untuk air kerajaan, kolam, pejabat, kilang. Sekali bayar, pemasangan percuma.",
     // §3.1 Sage Hero Lineup
     produk_luar_hero_eyebrow: "PENAPIS AIR LUAR RUMAH",
     produk_luar_hero_heading: "Outdoor Filter",
@@ -1517,9 +1517,9 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_note: "Price includes disposal of old sand, tank cleaning, and new sand fill.",
     service_pricing_sand_cta: "Book Service via WhatsApp",
     // /produk-luar — Phase 2 premium outdoor landing
-    produk_luar_meta_title: "AIHAA Outdoor Water Filters — Full 8-Model Collection",
+    produk_luar_meta_title: "AIHAA Outdoor Water Filters — Full 7-Model Collection",
     produk_luar_meta_description:
-      "AIHAA outdoor water filters — 8 models from RM399. PVDF, Fiber, Super Pleated, UF Double Backwash, and more. Suited for borehole water, ponds, offices, and factories. One-time payment, free installation.",
+      "AIHAA outdoor water filters — 7 models from RM399. PVDF, Fiber, UF Double Backwash, and more. Suited for municipal water, ponds, offices, and factories. One-time payment, free installation.",
     // §3.1 Sage Hero Lineup
     produk_luar_hero_eyebrow: "OUTDOOR WATER FILTRATION",
     produk_luar_hero_heading: "Outdoor Filter",

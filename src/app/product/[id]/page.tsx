@@ -1,6 +1,7 @@
 "use client";
 
 import { use, type ReactNode } from "react";
+import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
@@ -28,11 +29,10 @@ const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
   "fiber-10x44",
   "steel",
   "pvdf",
-  "super-pleated",
   "uf-double-backwash",
 ]);
 
-// Phase 7 premium detail template. ONE template renders all 13 products.
+// Phase 7 premium detail template. ONE template renders all 12 products.
 //
 // Section order adapts to product.category:
 //   indoor  → Hero · Kitchen · Capacity · Cartridges · SpecsDark
@@ -40,22 +40,20 @@ const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
 //   outdoor → Hero · House · SevenLayers · PvdfFunnel · FeaturesOverview
 //             · SpecsDark · ServiceInfo · Related
 //
-// Phase 5 hybrid layout for aihaa-ean (client presentation 24 Apr 2026,
-// extended Phase 7.1 fix with FeaturesDetail banner): EAN renders a
-// 9-section mix of client-supplied images + preserved HTML:
+// Phase 5 hybrid layout for aihaa-ean: EAN renders a 9-section mix of
+// client-supplied images + preserved HTML:
 //   Hero · ColorVariants · SmartDesign · Capacity (HTML) ·
 //   FeaturesDetail · FilterFlow · SpecPrice · ServiceInfo (HTML) ·
 //   Related (HTML) · Footer
 //
 // ProductBannerShowcase rollout — Phase 7.1 (bella, fancy, big, winter,
 // pvdf-plus) + Phase 7.2B (ultra-one, fiber-9x42, fiber-10x44, steel,
-// pvdf, super-pleated, uf-double-backwash). Indoor mid-HTML pilots
-// interleave CapacityFunctionalities; outdoor pure-banner pilots run a
-// 16px-gap stack with no HTML interleave.
+// pvdf, uf-double-backwash). Indoor mid-HTML pilots interleave
+// CapacityFunctionalities; outdoor pure-banner pilots run a 16px-gap
+// stack with no HTML interleave.
 //
-// Default template fallback now applies only to penapis-boring-13x54
-// (legacy single-image gallery) and aihaa-ean (custom 9-section inline
-// flow with hardcoded banner <img> tags).
+// Default template fallback now applies only to aihaa-ean (custom
+// 9-section inline flow with hardcoded banner <img> tags).
 //
 // No per-product page files. All data flows from src/lib/data/products.ts
 // and src/lib/data/services.ts.
@@ -66,7 +64,8 @@ export default function ProductDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = use(params);
-  const product = getProductBySlug(id) ?? getProductBySlug("aihaa-bella")!;
+  const product = getProductBySlug(id);
+  if (!product) notFound();
   const isIndoor = product.category === "indoor";
   const isEan = product.slug === "aihaa-ean";
   const isBellaPilot = product.slug === "aihaa-bella";
