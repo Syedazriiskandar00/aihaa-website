@@ -135,15 +135,25 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — scrollable drawer. Caps height at viewport
+          minus the fixed-header band (h-28 = 7rem) so the last items
+          stay reachable on short phones / when the browser chrome is
+          visible. Bottom padding clears the FloatingButtons FAB stack
+          and respects the iOS home-indicator safe-area. */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-surface border-t border-black/10">
-          <div className="px-4 py-4 space-y-2">
+        <div className="lg:hidden bg-surface border-t border-black/10 max-h-[calc(100vh-7rem)] overflow-y-auto overscroll-contain">
+          <div
+            className="px-4 py-4 space-y-1"
+            style={{
+              paddingBottom:
+                "max(6rem, calc(env(safe-area-inset-bottom) + 5rem))",
+            }}
+          >
             {navItems.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="block py-3 text-dark/80 hover:text-gold-dark transition-colors border-b border-black/5"
+                  className="block py-2.5 text-dark/80 hover:text-gold-dark transition-colors border-b border-black/5"
                   onClick={() => !item.dropdown && setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -168,7 +178,7 @@ export default function Header() {
             <div>
               <Link
                 href={contactItem.href}
-                className="block py-3 text-dark/80 hover:text-gold-dark transition-colors border-b border-black/5"
+                className="block py-2.5 text-dark/80 hover:text-gold-dark transition-colors border-b border-black/5"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {contactItem.name}
