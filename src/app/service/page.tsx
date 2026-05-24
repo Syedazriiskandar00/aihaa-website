@@ -41,44 +41,68 @@ export default function ServicePage() {
 
         {/* Indoor service banners */}
         <section className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/service/filter-penapis-dalam.webp"
-            alt="Filter Penapis Air Dalam AIHAA — penyelenggaraan 6 bulan sekali untuk 4 filter."
-            className="block w-full h-auto"
-            loading="eager"
-            {...{ fetchPriority: "high" as const }}
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/service/filter-penapis-dalam-mobile.webp"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/service/filter-penapis-dalam.webp"
+              alt="Filter Penapis Air Dalam AIHAA — penyelenggaraan 6 bulan sekali untuk 4 filter."
+              className="block w-full h-auto"
+              loading="eager"
+              {...{ fetchPriority: "high" as const }}
+            />
+          </picture>
         </section>
 
         <section className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/service/13-check-point.webp"
-            alt="13 Titik Pemeriksaan Servis penapis air dalam AIHAA."
-            className="block w-full h-auto"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/service/13-check-point-mobile.webp"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/service/13-check-point.webp"
+              alt="13 Titik Pemeriksaan Servis penapis air dalam AIHAA."
+              className="block w-full h-auto"
+              loading="lazy"
+            />
+          </picture>
         </section>
 
         <section className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/service/harga-servis-filter.webp"
-            alt="Harga Servis Filter AIHAA — RM160 standard, RM260 premium."
-            className="block w-full h-auto"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/service/harga-servis-filter-mobile.webp"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/service/harga-servis-filter.webp"
+              alt="Harga Servis Filter AIHAA — RM160 standard, RM260 premium."
+              className="block w-full h-auto"
+              loading="lazy"
+            />
+          </picture>
         </section>
 
         <section className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/service/7-langkah-servis.webp"
-            alt="7 Langkah Servis penapis air AIHAA — prosedur lengkap juruteknik."
-            className="block w-full h-auto"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/service/7-langkah-servis-mobile.webp"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/service/7-langkah-servis.webp"
+              alt="7 Langkah Servis penapis air AIHAA — prosedur lengkap juruteknik."
+              className="block w-full h-auto"
+              loading="lazy"
+            />
+          </picture>
         </section>
 
         {/* Section divider — entering outdoor service */}
@@ -102,33 +126,51 @@ export default function ServicePage() {
 
         {/* Outdoor service banners */}
         <section className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/service/pasir-penapis-luar.webp"
-            alt="Pasir Penapis Air Luar AIHAA — jenis media penapis yang digunakan."
-            className="block w-full h-auto"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/service/pasir-penapis-luar-mobile.webp"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/service/pasir-penapis-luar.webp"
+              alt="Pasir Penapis Air Luar AIHAA — jenis media penapis yang digunakan."
+              className="block w-full h-auto"
+              loading="lazy"
+            />
+          </picture>
         </section>
 
         <section className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/service/5-check-point.webp"
-            alt="5 Titik Pemeriksaan Servis penapis air luar AIHAA."
-            className="block w-full h-auto"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/service/5-check-point-mobile.webp"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/service/5-check-point.webp"
+              alt="5 Titik Pemeriksaan Servis penapis air luar AIHAA."
+              className="block w-full h-auto"
+              loading="lazy"
+            />
+          </picture>
         </section>
 
         <section className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/service/harga-tukar-pasir.webp"
-            alt="Harga Servis Tukar Pasir AIHAA — RM250 basic, RM650 full."
-            className="block w-full h-auto"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/service/harga-tukar-pasir-mobile.webp"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/service/harga-tukar-pasir.webp"
+              alt="Harga Servis Tukar Pasir AIHAA — RM250 basic, RM650 full."
+              className="block w-full h-auto"
+              loading="lazy"
+            />
+          </picture>
         </section>
       </main>
       <Footer />
