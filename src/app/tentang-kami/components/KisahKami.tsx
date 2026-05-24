@@ -27,11 +27,14 @@ export default function KisahKami() {
               media="(max-width: 768px)"
               srcSet="/images/products/sales-expert-mobile.webp"
             />
+            {/* object-top on mobile so the face stays in frame when
+                the wider source crops to the narrower portrait column;
+                center crop is fine from md+ where the column widens. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/products/sales-expert.webp"
               alt="AIHAA sales expert"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-top md:object-center"
               loading="lazy"
               decoding="async"
             />
