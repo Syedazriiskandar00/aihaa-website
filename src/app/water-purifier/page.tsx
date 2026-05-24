@@ -36,7 +36,10 @@ export default function WaterPurifierPage() {
       <Header />
 
       {/* ── Hero Banner ── */}
-      <section className="relative pt-20 pb-16 bg-dark overflow-hidden">
+      <section className="relative pt-20 pb-16 bg-surface overflow-hidden">
+        {/* Same dotted gold texture pattern as the indoor/outdoor
+            premium hero — opacity-10 reads as a subtle warm grain on
+            cream, matching IndoorHeroLineup / SageHeroLineup. */}
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
@@ -48,13 +51,13 @@ export default function WaterPurifierPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="text-center">
-            <span className="inline-block bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
+            <span className="inline-block bg-gold/15 text-gold-dark px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.4)] mb-4">
               {t.product_hero_badge}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6">
               {t.product_hero_title} <span className="gold-gradient-text">AIHAA</span>
             </h1>
-            <p className="text-muted-dark text-lg max-w-2xl mx-auto">
+            <p className="text-muted text-lg max-w-2xl mx-auto">
               {t.product_hero_subtitle}
             </p>
           </div>
