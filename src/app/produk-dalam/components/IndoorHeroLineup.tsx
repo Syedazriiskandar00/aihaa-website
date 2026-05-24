@@ -80,20 +80,6 @@ export default function IndoorHeroLineup() {
           </p>
         </div>
 
-        {/* Produk Dalam Lineup — Full Grid Visual (cream frame for seamless blend) */}
-        <div className="mb-14 lg:mb-16">
-          <div className="relative rounded-2xl overflow-hidden shadow-sm bg-surface max-w-6xl mx-auto">
-            <Image
-              src="/images/listings/indoor-hero.webp"
-              alt="Semua 6 model penapis air dalam AIHAA — EAN (4 color variants), Fancy, Ultra 1, Bella, Big, Winter"
-              width={4269}
-              height={2391}
-              sizes="(max-width: 1024px) 100vw, 1100px"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-
         {/* Featured pair — mirrors SageHeroLineup pattern for size parity
             across outdoor and indoor listings. Each card: floating badge
             top-left, product image on cream canvas, name + tagline + price. */}
