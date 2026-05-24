@@ -25,13 +25,12 @@ export default function Header() {
   const navItems = [
     { name: t.nav_home, href: "/" },
     {
+      // Parent click → /water-purifier (full catalog). Sub-items
+      // narrow to indoor/outdoor only — the redundant "All Products"
+      // sub-item was retired since the parent already covers it.
       name: t.nav_products,
       href: "/water-purifier",
       dropdown: [
-        // TODO(phase-4): revisit "All Products" destination once /water-purifier
-        // is redesigned. Current stopgap points at /produk-luar so users land
-        // on premium rebuild surface rather than the older unified listing.
-        { name: t.nav_products_all, href: "/produk-luar" },
         { name: t.nav_products_indoor, href: "/produk-dalam" },
         { name: t.nav_products_outdoor, href: "/produk-luar" },
       ],

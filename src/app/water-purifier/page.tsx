@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,7 +25,6 @@ const toCard = (p: Product, locale: "bm" | "en") => ({
 });
 
 export default function WaterPurifierPage() {
-  const featuredRef = useScrollReveal();
   const indoorRef = useScrollReveal();
   const outdoorRef = useScrollReveal();
   const { t, locale } = useLanguage();
@@ -59,44 +57,6 @@ export default function WaterPurifierPage() {
             <p className="text-muted-dark text-lg max-w-2xl mx-auto">
               {t.product_hero_subtitle}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Featured Product Showcase ── */}
-      <section className="bg-white py-16 lg:py-20">
-        <div ref={featuredRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-            {/* Image */}
-            <div className="relative w-full md:w-auto md:flex-1 aspect-[4/3] max-h-[240px] md:max-h-none rounded-2xl overflow-hidden bg-[#FFFDE7] scroll-reveal-child stagger-1">
-              <Image
-                src="/images/products/bella/poster.jpg"
-                alt="AIHAA BELLA — Penapis Air Paling Popular"
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-            </div>
-            {/* Info */}
-            <div className="w-full md:flex-1 scroll-reveal-child stagger-2">
-              <span className="text-gold text-xs font-medium uppercase tracking-[0.2em]">
-                {t.product_featured_label}
-              </span>
-              <h2 className="font-editorial text-4xl md:text-5xl text-dark mt-3 mb-3">
-                AIHAA BELLA
-              </h2>
-              <p className="text-muted mb-4">
-                Rekaan kompak stand floor dengan 4 tahap penapisan dan teknologi mineral alkali. Kapasiti tangki 9.5 liter — sesuai untuk keluarga.
-              </p>
-              <p className="text-gold-dark text-2xl font-semibold mb-6">RM1,080</p>
-              <Link
-                href="/product/aihaa-bella"
-                className="text-gold font-medium inline-flex items-center gap-2 hover:gap-3 transition-all"
-              >
-                {t.product_featured_cta}
-              </Link>
-            </div>
           </div>
         </div>
       </section>

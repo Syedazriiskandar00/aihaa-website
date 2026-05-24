@@ -5,7 +5,6 @@ export type TranslationKeys = {
   nav_products: string;
   nav_products_indoor: string;
   nav_products_outdoor: string;
-  nav_products_all: string;
   nav_promotions: string;
   nav_faq: string;
   nav_gallery: string;
@@ -113,8 +112,6 @@ export type TranslationKeys = {
   product_cta_title: string;
   product_cta_sub: string;
   product_view_details: string;
-  product_featured_label: string;
-  product_featured_cta: string;
   detail_specs: string;
   detail_features: string;
   detail_related: string;
@@ -571,7 +568,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     nav_products: "Produk",
     nav_products_indoor: "Dalam Rumah",
     nav_products_outdoor: "Luar Rumah",
-    nav_products_all: "Semua Penapis",
     nav_promotions: "Promosi",
     nav_faq: "FAQ",
     nav_gallery: "Galeri",
@@ -679,8 +675,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_cta_title: "Tak pasti mana satu?",
     product_cta_sub: "Kami bantu pilihkan",
     product_view_details: "Lihat Details",
-    product_featured_label: "Pilihan Terbaik",
-    product_featured_cta: "Lihat Details →",
     detail_specs: "Spesifikasi",
     detail_features: "Ciri-ciri Utama",
     detail_related: "Produk Berkaitan",
@@ -1185,7 +1179,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     nav_products: "Products",
     nav_products_indoor: "Indoor Purifiers",
     nav_products_outdoor: "Outdoor Filters",
-    nav_products_all: "All Products",
     nav_promotions: "Promotions",
     nav_faq: "FAQ",
     nav_gallery: "Gallery",
@@ -1293,8 +1286,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_cta_title: "Not sure which model?",
     product_cta_sub: "We'll help you choose",
     product_view_details: "View Details",
-    product_featured_label: "Popular Choice",
-    product_featured_cta: "View Details →",
     detail_specs: "Specifications",
     detail_features: "Key Features",
     detail_related: "Related Products",
