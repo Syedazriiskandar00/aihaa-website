@@ -32,7 +32,7 @@ export default function IndoorHeroLineup() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-surface pt-28 pb-16 lg:pt-36 lg:pb-20">
+    <section className="relative overflow-hidden bg-surface pt-16 pb-16 lg:pt-20 lg:pb-20">
       {/* Subtle radial glow top-center — warmth without gradient drift */}
       <div
         aria-hidden

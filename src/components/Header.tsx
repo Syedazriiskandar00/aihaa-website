@@ -62,7 +62,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-28 md:h-32 lg:h-36">
+        <div className="flex justify-between items-center h-16 md:h-[4.5rem] lg:h-20">
           {/* Logo */}
           <Logo size="md" />
 
@@ -136,12 +136,13 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu — scrollable drawer. Caps height at viewport
-          minus the fixed-header band (h-28 = 7rem) so the last items
-          stay reachable on short phones / when the browser chrome is
-          visible. Bottom padding clears the FloatingButtons FAB stack
-          and respects the iOS home-indicator safe-area. */}
+          minus the fixed-header band (h-16 = 4rem on the breakpoints
+          where this drawer is visible, i.e. below lg) so the last
+          items stay reachable on short phones / when the browser
+          chrome is visible. Bottom padding clears the FloatingButtons
+          FAB stack and respects the iOS home-indicator safe-area. */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-surface border-t border-black/10 max-h-[calc(100vh-7rem)] overflow-y-auto overscroll-contain">
+        <div className="lg:hidden bg-surface border-t border-black/10 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
           <div
             className="px-4 py-4 space-y-1"
             style={{

@@ -13,7 +13,7 @@ export default function HeartServiceHero() {
   ];
 
   return (
-    <section className="bg-white pt-28 pb-20 lg:pt-36 lg:pb-24">
+    <section className="bg-white pt-16 pb-20 lg:pt-20 lg:pb-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Script logo + tagline */}
         <div className="text-center mb-14">

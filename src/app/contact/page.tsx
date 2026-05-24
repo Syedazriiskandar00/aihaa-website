@@ -19,7 +19,7 @@ export default function ContactPage() {
       <Header />
 
       {/* ── 1. HERO — compact, left-aligned ── */}
-      <section className="bg-[#0D0D0D] pt-28 pb-14">
+      <section className="bg-[#0D0D0D] pt-16 pb-14">
         <div ref={heroRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-4">
             {t.contact_label}

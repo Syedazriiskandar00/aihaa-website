@@ -33,7 +33,7 @@ export default function FAQPage() {
       <Header />
 
       {/* ── 1. HERO ── */}
-      <section className="bg-surface pt-28 pb-14">
+      <section className="bg-surface pt-16 pb-14">
         <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-gold-dark mb-4">
             {t.faq_label}

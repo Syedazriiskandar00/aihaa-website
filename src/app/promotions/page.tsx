@@ -29,7 +29,7 @@ export default function PromotionsPage() {
       <Header />
 
       {/* ── SECTION 1: Page Header ── */}
-      <section className="bg-surface pt-28 pb-16">
+      <section className="bg-surface pt-16 pb-16">
         <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 text-center">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-gold-dark mb-4">
             {t.promo_label}
