@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { getCardImage } from "@/lib/data/product-card-images";
 
 interface ProductCardProps {
   id: string;
@@ -24,6 +25,11 @@ export default function ProductCard({
   image,
 }: ProductCardProps) {
   const { locale } = useLanguage();
+
+  // Card image config takes priority. Falls back to `image` prop
+  // (product.mainImage), then to gradient placeholder. Single edit
+  // in product-card-images.ts swaps a product to a portrait card.
+  const cardImage = getCardImage(id);
 
   const badgeStyles = {
     popular: "bg-[#DAA520] text-[#0D0D0D]",
@@ -59,7 +65,24 @@ export default function ProductCard({
           </div>
         )}
 
-        {image ? (
+        {cardImage ? (
+          // <picture> + <source> mobile swap. Plain <img> (not next/image)
+          // because next/image doesn't support art-direction via <source>.
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet={cardImage.mobile}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={cardImage.desktop}
+              alt={cardImage.alt}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+            />
+          </picture>
+        ) : image ? (
           <Image
             src={image}
             alt={`AIHAA ${name}`}
