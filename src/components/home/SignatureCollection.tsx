@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -12,16 +11,23 @@ export default function SignatureCollection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-white py-8 sm:py-0">
-      <div className="relative w-full max-w-[360px] mx-auto sm:max-w-none group">
-        <Image
-          src="/images/product-collection.jpg.webp"
-          alt={t.home_collection_heading}
-          width={1600}
-          height={899}
-          sizes="100vw"
-          className="block w-full h-auto"
-        />
+    <section className="bg-white">
+      <div className="relative w-full group">
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/images/product-collection-mobile.jpg.webp"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/product-collection.jpg.webp"
+            alt={t.home_collection_heading}
+            width={1600}
+            height={899}
+            className="block w-full h-auto"
+            loading="lazy"
+          />
+        </picture>
 
         {/* Top half → outdoor */}
         <Link

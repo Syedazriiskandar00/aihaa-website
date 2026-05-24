@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -74,14 +73,21 @@ export default function CTASection() {
           {/* Right Content — Sales Expert Image */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.2)]">
-              <Image
-                src="/images/products/sales-expert.webp"
-                alt="AIHAA Sales Expert"
-                width={500}
-                height={600}
-                className="w-full h-auto object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet="/images/products/sales-expert-mobile.webp"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/products/sales-expert.webp"
+                  alt="AIHAA Sales Expert"
+                  width={500}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
             {/* Floating Badge — inside-pinned on mobile to avoid 390px
