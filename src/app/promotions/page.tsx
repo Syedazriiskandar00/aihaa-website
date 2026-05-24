@@ -29,15 +29,15 @@ export default function PromotionsPage() {
       <Header />
 
       {/* ── SECTION 1: Page Header ── */}
-      <section className="bg-[#0D0D0D] pt-28 pb-16">
+      <section className="bg-surface pt-28 pb-16">
         <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 text-center">
-          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-[#DAA520] mb-4">
+          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-gold-dark mb-4">
             {t.promo_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 font-editorial text-4xl md:text-6xl text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-4xl md:text-6xl text-dark mb-3">
             {t.promo_title}
           </h1>
-          <p className="scroll-reveal-child stagger-3 text-sm italic text-[#999]">
+          <p className="scroll-reveal-child stagger-3 text-sm italic text-muted">
             {t.promo_urgency}
           </p>
         </div>

@@ -45,15 +45,15 @@ export default function GaleriPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-[#0D0D0D] pt-32 pb-16 lg:pt-36 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs tracking-[0.2em] uppercase text-[#DAA520] mb-4">
+      <section className="bg-surface pt-32 pb-16 lg:pt-36 lg:pb-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs tracking-[0.2em] uppercase text-gold-dark mb-4">
             {t.gallery_label}
           </p>
-          <h1 className="font-editorial text-4xl lg:text-6xl text-white mb-4">
+          <h1 className="font-editorial text-4xl lg:text-6xl text-dark mb-4">
             {t.gallery_title}
           </h1>
-          <p className="text-[#999] text-base lg:text-lg max-w-xl">
+          <p className="text-muted text-base lg:text-lg max-w-xl mx-auto">
             {t.gallery_subtitle}
           </p>
         </div>

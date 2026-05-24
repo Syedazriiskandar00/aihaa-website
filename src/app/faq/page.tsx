@@ -33,15 +33,15 @@ export default function FAQPage() {
       <Header />
 
       {/* ── 1. HERO ── */}
-      <section className="bg-[#0D0D0D] pt-28 pb-14">
-        <div ref={heroRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-4">
+      <section className="bg-surface pt-28 pb-14">
+        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-gold-dark mb-4">
             {t.faq_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-dark mb-3">
             {t.faq_title}
           </h1>
-          <p className="scroll-reveal-child stagger-3 text-sm text-[#999]">
+          <p className="scroll-reveal-child stagger-3 text-sm text-muted">
             {t.faq_subtitle}
           </p>
         </div>
