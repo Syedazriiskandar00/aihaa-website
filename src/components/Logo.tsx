@@ -13,9 +13,9 @@ interface LogoProps {
 // the header. New values are ~50% smaller so the logo reads as a
 // brand mark rather than a banner.
 const SIZE_CLASSES: Record<NonNullable<LogoProps["size"]>, string> = {
-  sm: "h-8 md:h-9",
-  md: "h-10 md:h-12 lg:h-14",
-  lg: "h-12 md:h-14 lg:h-16",
+  sm: "h-6 md:h-7",
+  md: "h-7 md:h-8 lg:h-9",
+  lg: "h-8 md:h-9 lg:h-10",
 };
 
 export default function Logo({ size = "md" }: LogoProps) {
