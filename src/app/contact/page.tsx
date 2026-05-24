@@ -173,18 +173,23 @@ export default function ContactPage() {
             <p className="text-sm text-[#717171]">Batu Pahat, Johor, Malaysia</p>
             <p className="text-xs text-[#999] mt-1">SSM: 1263314-X</p>
           </div>
-          {/* Map Placeholder */}
-          <div className="rounded-xl overflow-hidden bg-[#1a1a1a] min-h-[320px] flex flex-col items-center justify-center border border-[rgba(218,165,32,0.15)]">
-            <svg className="w-12 h-12 text-[#DAA520] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <p className="text-[#DAA520] text-xl font-bold mb-1">Batu Pahat, Johor</p>
-            <p className="text-[#777] text-sm">Malaysia</p>
+          {/* Real Google Maps embed — AIHAA Marketing Sdn Bhd location
+              at 1°52'00.1"N 103°00'46.1"E (Batu Pahat, Johor). Lazy-loaded
+              so the iframe payload doesn't block the rest of the page. */}
+          <div className="rounded-xl overflow-hidden border border-[rgba(218,165,32,0.15)] shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3987.7009815286365!2d103.01022707496685!3d1.866703998116257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwNTInMDAuMSJOIDEwM8KwMDAnNDYuMSJF!5e0!3m2!1sen!2smy!4v1779649359638!5m2!1sen!2smy"
+              title="AIHAA Marketing Sdn Bhd location, Batu Pahat, Johor"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              style={{ border: 0 }}
+              className="w-full aspect-video block"
+            />
           </div>
           <p className="text-center mt-4">
             <a
-              href="https://maps.google.com/?q=Batu+Pahat,Johor"
+              href="https://maps.google.com/?q=1.866704,103.010227"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-[#DAA520] hover:underline"
