@@ -18,16 +18,16 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* ── 1. HERO — compact, left-aligned ── */}
-      <section className="bg-[#0D0D0D] pt-16 pb-14">
-        <div ref={heroRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-4">
+      {/* ── 1. HERO — cream, centered (matches the other hub pages) ── */}
+      <section className="bg-surface pt-16 pb-14">
+        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-gold-dark mb-4">
             {t.contact_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-dark mb-3">
             {t.contact_hero_title}
           </h1>
-          <p className="scroll-reveal-child stagger-3 text-sm text-[#999]">
+          <p className="scroll-reveal-child stagger-3 text-sm text-muted">
             {t.contact_hero_sub}
           </p>
         </div>
