@@ -57,8 +57,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? "bg-surface/95 backdrop-blur-md shadow-sm shadow-black/5 border-black/10"
-          : "bg-surface border-black/5"
+          ? "bg-dark/95 backdrop-blur-md shadow-sm shadow-black/40 border-gold/20"
+          : "bg-dark border-gold/20"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +77,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-dark/80 hover:text-gold-dark text-sm font-medium transition-colors py-2 nav-link-underline"
+                  className="flex items-center gap-1 text-white/85 hover:text-gold text-sm font-medium transition-colors py-2 nav-link-underline"
                 >
                   {item.name}
                   {item.dropdown && <ChevronDown className="w-4 h-4" />}
@@ -85,12 +85,12 @@ export default function Header() {
 
                 {/* Dropdown */}
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 bg-white border border-[rgba(218,165,32,0.3)] rounded-lg shadow-lg py-2 min-w-[160px]">
+                  <div className="absolute top-full left-0 mt-1 bg-dark border border-gold/30 rounded-lg shadow-lg shadow-black/40 py-2 min-w-[160px]">
                     {item.dropdown.map((subItem) => (
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-4 py-2 text-dark/80 hover:text-gold-dark hover:bg-surface text-sm transition-colors"
+                        className="block px-4 py-2 text-white/85 hover:text-gold hover:bg-white/5 text-sm transition-colors"
                       >
                         {subItem.name}
                       </Link>
@@ -119,7 +119,7 @@ export default function Header() {
               href={whatsappUrl(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 sm:p-2 text-dark/80 hover:text-gold-dark transition-colors"
+              className="p-1.5 sm:p-2 text-white/80 hover:text-gold transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
@@ -127,7 +127,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 text-dark/80 hover:text-gold-dark transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 text-white/80 hover:text-gold transition-colors"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -142,7 +142,7 @@ export default function Header() {
           chrome is visible. Bottom padding clears the FloatingButtons
           FAB stack and respects the iOS home-indicator safe-area. */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-surface border-t border-black/10 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
+        <div className="lg:hidden bg-dark border-t border-gold/20 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
           <div
             className="px-4 py-4 space-y-1"
             style={{
@@ -154,7 +154,7 @@ export default function Header() {
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="block py-2.5 text-dark/80 hover:text-gold-dark transition-colors border-b border-black/5"
+                  className="block py-2.5 text-white/85 hover:text-gold transition-colors border-b border-white/10"
                   onClick={() => !item.dropdown && setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -165,7 +165,7 @@ export default function Header() {
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block py-2 text-dark/60 hover:text-gold-dark text-sm transition-colors"
+                        className="block py-2 text-white/65 hover:text-gold text-sm transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {subItem.name}
@@ -179,7 +179,7 @@ export default function Header() {
             <div>
               <Link
                 href={contactItem.href}
-                className="block py-2.5 text-dark/80 hover:text-gold-dark transition-colors border-b border-black/5"
+                className="block py-2.5 text-white/85 hover:text-gold transition-colors border-b border-white/10"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {contactItem.name}
