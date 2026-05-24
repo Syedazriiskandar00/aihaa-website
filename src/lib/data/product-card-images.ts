@@ -11,19 +11,18 @@
 //   smaller payload). Decoupling lets us iterate on card visuals
 //   without touching catalogue data.
 //
-// MIGRATION PLAN:
-// Today every product's `desktop`/`mobile` points at the existing
-// hero-banner.webp (or main.png / main.jpg for ean + penapis-boring).
-// These are landscape sources, so the 3:4 portrait card frame crops
-// them aggressively on mobile — known visual issue.
-//
-// Target convention for purpose-built portrait card images:
+// Convention for portrait card images (used by 12 of 14 products):
 //   /images/products/[slug]/card.webp         (800px wide, Q80, 3:4)
 //   /images/products/[slug]/card-mobile.webp  (600px wide, Q75, 3:4)
 //
-// To swap a product in: replace its `desktop` + `mobile` paths with
-// the new card.webp / card-mobile.webp paths below. ProductCard
-// picks up the change automatically — no component edit needed.
+// Holdouts still on legacy assets:
+// - super-pleated: kept on hero-banner.webp (portrait card not yet
+//   generated for this product).
+// - penapis-boring-13x54: kept on main.jpg (deferred).
+//
+// To migrate a holdout: drop card.webp + card-mobile.webp into the
+// product folder and swap the two paths in its entry below.
+// ProductCard picks up the change automatically.
 
 export type ProductCardImage = {
   slug: string;
@@ -36,65 +35,62 @@ export const productCardImages: Record<string, ProductCardImage> = {
   // ─────────── INDOOR (5) ───────────
   "aihaa-bella": {
     slug: "aihaa-bella",
-    desktop: "/images/products/bella/hero-banner.webp",
-    mobile: "/images/products/bella/hero-banner-mobile.webp",
+    desktop: "/images/products/bella/card.webp",
+    mobile: "/images/products/bella/card-mobile.webp",
     alt: "AIHAA BELLA — Penapis Air Stand Floor",
   },
   "aihaa-big": {
     slug: "aihaa-big",
-    desktop: "/images/products/big/hero-banner.webp",
-    mobile: "/images/products/big/hero-banner-mobile.webp",
+    desktop: "/images/products/big/card.webp",
+    mobile: "/images/products/big/card-mobile.webp",
     alt: "AIHAA BIG — Penapis Air Kapasiti 17 Liter",
   },
   "aihaa-ean": {
-    // ean still on legacy main.png — no hero-banner card variant yet.
-    // Same path for desktop + mobile until card.webp pair is generated.
     slug: "aihaa-ean",
-    desktop: "/images/products/ean/main.png",
-    mobile: "/images/products/ean/main.png",
+    desktop: "/images/products/ean/card.webp",
+    mobile: "/images/products/ean/card-mobile.webp",
     alt: "AIHAA EAN — Penapis Air Bajet Digital",
   },
   "aihaa-fancy": {
     slug: "aihaa-fancy",
-    desktop: "/images/products/fancy/hero-banner.webp",
-    mobile: "/images/products/fancy/hero-banner-mobile.webp",
+    desktop: "/images/products/fancy/card.webp",
+    mobile: "/images/products/fancy/card-mobile.webp",
     alt: "AIHAA FANCY — Penapis Air Slim Moden 3 Tangki",
   },
   "aihaa-winter": {
     slug: "aihaa-winter",
-    desktop: "/images/products/winter/hero-banner.webp",
-    mobile: "/images/products/winter/hero-banner-mobile.webp",
+    desktop: "/images/products/winter/card.webp",
+    mobile: "/images/products/winter/card-mobile.webp",
     alt: "AIHAA WINTER — Penapis Air Premium dengan Ice Maker",
   },
 
   // ─────────── OUTDOOR (9) ───────────
   "ultra-one": {
     slug: "ultra-one",
-    desktop: "/images/products/ultra-one/hero-banner.webp",
-    mobile: "/images/products/ultra-one/hero-banner-mobile.webp",
+    desktop: "/images/products/ultra-one/card.webp",
+    mobile: "/images/products/ultra-one/card-mobile.webp",
     alt: "ULTRA ONE — Penapis Air Luar All-in-One",
   },
   "fiber-9x42": {
     slug: "fiber-9x42",
-    desktop: "/images/products/fiber-9x42/hero-banner.webp",
-    mobile: "/images/products/fiber-9x42/hero-banner-mobile.webp",
+    desktop: "/images/products/fiber-9x42/card.webp",
+    mobile: "/images/products/fiber-9x42/card-mobile.webp",
     alt: "FIBER 9x42 — Penapis Air Tangki Fiber",
   },
   "fiber-10x44": {
     slug: "fiber-10x44",
-    desktop: "/images/products/fiber-10x44/hero-banner.webp",
-    mobile: "/images/products/fiber-10x44/hero-banner-mobile.webp",
+    desktop: "/images/products/fiber-10x44/card.webp",
+    mobile: "/images/products/fiber-10x44/card-mobile.webp",
     alt: "FIBER 10x44 — Penapis Air Tangki Fiber Besar",
   },
   steel: {
     slug: "steel",
-    desktop: "/images/products/steel/hero-banner.webp",
-    mobile: "/images/products/steel/hero-banner-mobile.webp",
+    desktop: "/images/products/steel/card.webp",
+    mobile: "/images/products/steel/card-mobile.webp",
     alt: "AIHAA STEEL — Penapis Air Stainless Steel 304",
   },
   "penapis-boring-13x54": {
-    // penapis-boring on legacy main.jpg (4.1 MB!) — no mobile pair.
-    // Top-priority migration target: too large + no mobile pair.
+    // HOLDOUT: legacy main.jpg (4.1 MB, no mobile pair). Deferred.
     slug: "penapis-boring-13x54",
     desktop: "/images/products/penapis-boring/main.jpg",
     mobile: "/images/products/penapis-boring/main.jpg",
@@ -102,17 +98,18 @@ export const productCardImages: Record<string, ProductCardImage> = {
   },
   pvdf: {
     slug: "pvdf",
-    desktop: "/images/products/pvdf/hero-banner.webp",
-    mobile: "/images/products/pvdf/hero-banner-mobile.webp",
+    desktop: "/images/products/pvdf/card.webp",
+    mobile: "/images/products/pvdf/card-mobile.webp",
     alt: "PVDF — Penapis Air Gred Profesional",
   },
   "pvdf-plus": {
     slug: "pvdf-plus",
-    desktop: "/images/products/pvdf-plus/hero-banner.webp",
-    mobile: "/images/products/pvdf-plus/hero-banner-mobile.webp",
+    desktop: "/images/products/pvdf-plus/card.webp",
+    mobile: "/images/products/pvdf-plus/card-mobile.webp",
     alt: "PVDF PLUS — Penapis Air 6000L/Jam",
   },
   "super-pleated": {
+    // HOLDOUT: portrait card not yet generated. Falls back to hero-banner.
     slug: "super-pleated",
     desktop: "/images/products/super-pleated/hero-banner.webp",
     mobile: "/images/products/super-pleated/hero-banner-mobile.webp",
@@ -120,8 +117,8 @@ export const productCardImages: Record<string, ProductCardImage> = {
   },
   "uf-double-backwash": {
     slug: "uf-double-backwash",
-    desktop: "/images/products/uf-double-backwash/hero-banner.webp",
-    mobile: "/images/products/uf-double-backwash/hero-banner-mobile.webp",
+    desktop: "/images/products/uf-double-backwash/card.webp",
+    mobile: "/images/products/uf-double-backwash/card-mobile.webp",
     alt: "UF DOUBLE BACKWASH — Penapis Air Membran UF",
   },
 };
