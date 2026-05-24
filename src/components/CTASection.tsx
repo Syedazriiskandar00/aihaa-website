@@ -75,7 +75,7 @@ export default function CTASection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.2)]">
               <Image
-                src="/images/products/sales-expert.png"
+                src="/images/products/sales-expert.webp"
                 alt="AIHAA Sales Expert"
                 width={500}
                 height={600}
