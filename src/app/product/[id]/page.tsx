@@ -115,7 +115,7 @@ export default function ProductDetailPage({
             category={product.category}
             bannerImages={product.gallery ?? []}
             htmlSlots={htmlSlots}
-            gapBetweenBanners={isOutdoorPureBannerPilot ? 16 : 0}
+            gapBetweenBanners={0}
           />
           <ProductServiceInfo product={product} />
           <RelatedProducts product={product} />
