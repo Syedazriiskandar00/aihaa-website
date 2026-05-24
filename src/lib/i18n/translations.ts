@@ -414,14 +414,11 @@ export type TranslationKeys = {
   about_kisah_timeline_2020: string;
   about_kisah_timeline_2023: string;
   about_kisah_timeline_2025: string;
-  about_kisah_photo_caption: string;
   // §5.2 Halal Commitment
   about_halal_eyebrow: string;
   about_halal_heading: string;
   about_halal_italic: string;
   about_halal_body: string;
-  about_halal_cert_label: string;
-  about_halal_cert_ref: string;
   about_halal_checkpoints_heading: string;
   about_halal_checkpoint_1: string;
   about_halal_checkpoint_2: string;
@@ -1000,15 +997,12 @@ export const translations: Record<Locale, TranslationKeys> = {
     about_kisah_timeline_2020: "Sijil Halal JAKIM",
     about_kisah_timeline_2023: "Pelancaran 5 model indoor",
     about_kisah_timeline_2025: "Cawangan Kelantan dibuka",
-    about_kisah_photo_caption: "Gambar pengasas — akan dimuat naik",
     // §5.2 Halal Commitment
     about_halal_eyebrow: "OUR HALAL COMMITMENT",
     about_halal_heading: "Kepatuhan Halal, Janji Kami",
     about_halal_italic: "Kepercayaan Anda, Janji Kami",
     about_halal_body:
       "Di AIHAA, kami sangat komited untuk memastikan bukan sahaja produk kami memenuhi standard Halal, tetapi perjalanan perniagaan kami juga patuh-Syariah. Setiap produk diperakui Halal oleh Jabatan Kemajuan Islam Malaysia (JAKIM) dan dinilai semula pada setiap lot pengeluaran.",
-    about_halal_cert_label: "MS 1500",
-    about_halal_cert_ref: "Ref: 6 126-03 / 2014",
     about_halal_checkpoints_heading: "HALAL INTEGRITY CHECKPOINTS",
     about_halal_checkpoint_1: "Bahan binaan & komponen diperiksa pada setiap lot",
     about_halal_checkpoint_2: "Proses pembungkusan bebas silang-cemar",
@@ -1611,15 +1605,12 @@ export const translations: Record<Locale, TranslationKeys> = {
     about_kisah_timeline_2020: "Halal JAKIM certification",
     about_kisah_timeline_2023: "Launched 5 indoor models",
     about_kisah_timeline_2025: "Opened Kelantan branch",
-    about_kisah_photo_caption: "Founder photo — to be uploaded",
     // §5.2 Halal Commitment
     about_halal_eyebrow: "OUR HALAL COMMITMENT",
     about_halal_heading: "Halal Compliance, Our Promise",
     about_halal_italic: "Your Trust, Our Promise",
     about_halal_body:
       "At AIHAA we are deeply committed to ensuring that not only our products meet Halal standards, but that our business operations are Shariah-compliant end to end. Every product is certified Halal by the Department of Islamic Development Malaysia (JAKIM) and re-audited at every production lot.",
-    about_halal_cert_label: "MS 1500",
-    about_halal_cert_ref: "Ref: 6 126-03 / 2014",
     about_halal_checkpoints_heading: "HALAL INTEGRITY CHECKPOINTS",
     about_halal_checkpoint_1: "Components inspected at every production lot",
     about_halal_checkpoint_2: "Packaging process free from cross-contamination",

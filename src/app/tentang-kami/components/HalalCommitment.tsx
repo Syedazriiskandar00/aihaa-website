@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-// SPEC §5.2 Halal Commitment — Hijrah-style: centered layout, large
-// MS 1500 cert label, Halal integrity checkpoints. Cert reference
-// (6 126-03 / 2014) is a placeholder from the brainstorm — flagged in
-// PLACEHOLDERS.md for Azri to verify against the actual JAKIM cert.
+// SPEC §5.2 Halal Commitment — Hijrah-style centered layout with the
+// official Halal JAKIM badge + integrity checkpoints. The MS 1500 cert
+// label + reference number lived here previously as a brainstorm
+// placeholder; both removed pending verified JAKIM cert detail.
 
 export default function HalalCommitment() {
   const { t } = useLanguage();
@@ -29,31 +30,21 @@ export default function HalalCommitment() {
           {t.about_halal_italic}
         </p>
 
-        {/* Halal mark — placeholder circle with JAKIM label */}
-        <div className="flex justify-center mb-8">
-          <div className="relative w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-[#0D0D0D] flex items-center justify-center border-4 border-[#2D5F4A]">
-            <div className="text-center leading-tight">
-              <div className="font-editorial-italic text-gold text-xl lg:text-2xl">
-                HALAL
-              </div>
-              <div className="text-[9px] lg:text-[10px] uppercase tracking-[0.22em] text-white/70 font-semibold mt-0.5">
-                JAKIM
-              </div>
-            </div>
-            {/* Decorative inner ring */}
-            <span
-              aria-hidden
-              className="absolute inset-2 rounded-full border border-gold/30 pointer-events-none"
+        {/* Halal JAKIM badge — official logo, square frame so the
+            block size stays consistent with surrounding rhythm.
+            object-contain preserves the logo's native 3:2 ratio
+            (it letterboxes top/bottom against the white section bg
+            so the negative space is visually invisible). */}
+        <div className="flex justify-center mb-10">
+          <div className="relative aspect-square w-full max-w-32 lg:max-w-40">
+            <Image
+              src="/images/logo-halal.webp"
+              alt="Halal JAKIM Certification"
+              fill
+              sizes="(max-width: 1024px) 128px, 160px"
+              className="object-contain"
             />
           </div>
-        </div>
-
-        {/* MS 1500 cert label */}
-        <div className="font-editorial text-dark text-4xl md:text-5xl mb-1 tracking-tight">
-          {t.about_halal_cert_label}
-        </div>
-        <div className="text-[11px] uppercase tracking-[0.22em] text-muted mb-10 font-semibold">
-          {t.about_halal_cert_ref}
         </div>
 
         <p className="text-[14px] md:text-[15px] leading-relaxed text-dark/80 mb-14 max-w-2xl mx-auto">

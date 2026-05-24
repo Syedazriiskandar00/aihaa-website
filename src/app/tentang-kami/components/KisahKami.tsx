@@ -3,10 +3,9 @@
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // SPEC §5.1 Kisah Kami — split layout: founder photo left, editorial
-// quote + timeline right, whole section on dark bg so text reads as an
-// editorial feature. Founder photo is a placeholder column (dark block
-// with caption) until the real photo is supplied — logged in
-// PLACEHOLDERS.md. Content migrated from WhyAihaaSection.FounderStory.
+// quote + timeline right. Whole section is dark bg so the text column
+// reads as an editorial feature. Photo column renders sales-expert via
+// <picture> with a mobile pair swap.
 
 const TIMELINE_POINTS = [
   { year: "2018", key: "about_kisah_timeline_2018" as const },
@@ -21,30 +20,22 @@ export default function KisahKami() {
   return (
     <section className="bg-dark text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-stretch">
-        {/* Left — founder photo placeholder */}
-        <div className="relative min-h-[360px] lg:min-h-[600px] bg-[#1F1F1F] border-b lg:border-b-0 lg:border-r border-white/5 flex items-end p-6 md:p-8">
-          {/* Decorative frame strokes */}
-          <svg
-            aria-hidden
-            className="absolute inset-0 w-full h-full opacity-[0.08]"
-            viewBox="0 0 400 600"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <rect
-              x="30"
-              y="30"
-              width="340"
-              height="540"
-              stroke="#DAA520"
-              strokeWidth="1"
-              strokeDasharray="2 4"
+        {/* Left — founder / sales-expert photo */}
+        <div className="relative min-h-[360px] lg:min-h-[600px] border-b lg:border-b-0 lg:border-r border-white/5 overflow-hidden">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/images/products/sales-expert-mobile.webp"
             />
-          </svg>
-          <div className="relative z-10 flex items-center gap-3 text-white/50 text-[11px] uppercase tracking-[0.22em]">
-            <span aria-hidden className="block w-6 h-px bg-gold" />
-            {t.about_kisah_photo_caption}
-          </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/products/sales-expert.webp"
+              alt="AIHAA sales expert"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         </div>
 
         {/* Right — editorial content */}
