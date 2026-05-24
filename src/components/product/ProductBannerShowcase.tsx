@@ -48,6 +48,13 @@ function deriveAltSegment(banner: string): string {
     .join(" ");
 }
 
+function deriveMobilePath(desktopPath: string): string {
+  // Insert "-mobile" before final extension.
+  // Example: "/images/products/pvdf/hero-banner.webp"
+  //       -> "/images/products/pvdf/hero-banner-mobile.webp"
+  return desktopPath.replace(/(\.[a-z0-9]+)$/i, "-mobile$1");
+}
+
 export default function ProductBannerShowcase({
   productName,
   productSlug,
@@ -96,14 +103,20 @@ export default function ProductBannerShowcase({
         className="relative"
         style={slotStyle}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={banner}
-          alt={`${productName} — ${altSegment}`}
-          className="block w-full h-auto"
-          loading={isFirstImage ? "eager" : "lazy"}
-          {...(isFirstImage ? { fetchPriority: "high" as const } : {})}
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet={deriveMobilePath(banner)}
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={banner}
+            alt={`${productName} — ${altSegment}`}
+            className="block w-full h-auto"
+            loading={isFirstImage ? "eager" : "lazy"}
+            {...(isFirstImage ? { fetchPriority: "high" as const } : {})}
+          />
+        </picture>
       </section>
     );
     imageIndex += 1;
