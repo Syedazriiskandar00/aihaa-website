@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
@@ -18,7 +18,6 @@ import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { t } = useLanguage();
 
@@ -45,22 +44,12 @@ export default function Header() {
   // Contact shown as gold button on desktop, normal link in mobile menu
   const contactItem = { name: t.nav_contact, href: "/contact" };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-        isScrolled
-          ? "bg-dark/95 backdrop-blur-md shadow-sm shadow-black/40 border-gold/20"
-          : "bg-dark border-gold/20"
-      }`}
-    >
+    // Static header — scrolls away with the page (not fixed/sticky), so
+    // no overlap/bleed-through is possible. The floating chatbot button
+    // (bottom-right) provides persistent quick access. Scroll up to
+    // reach nav again.
+    <header className="w-full bg-dark border-b border-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-[4.5rem] lg:h-20">
           {/* Logo */}

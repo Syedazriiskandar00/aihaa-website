@@ -37,7 +37,7 @@ export default function GaleriPage() {
       <Header />
 
       {/* Hero — cream, centered (commit 375528c + b63265b) */}
-      <section className="bg-surface pt-20 pb-16 lg:pt-24 lg:pb-20">
+      <section className="bg-surface pt-12 pb-16 lg:pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs tracking-[0.2em] uppercase text-gold-dark mb-4">
             {t.gallery_label}

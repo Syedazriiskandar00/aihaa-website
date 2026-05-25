@@ -19,7 +19,7 @@ export default function ContactPage() {
       <Header />
 
       {/* ── 1. HERO — cream, centered (matches the other hub pages) ── */}
-      <section className="bg-surface pt-16 pb-14">
+      <section className="bg-surface pt-12 pb-14">
         <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-gold-dark mb-4">
             {t.contact_label}
