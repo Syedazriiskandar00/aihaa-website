@@ -74,7 +74,7 @@ export default function ProductHeroPremium({ product }: Props) {
 
   return (
     <section
-      className={`relative overflow-hidden pt-16 pb-16 lg:pt-20 lg:pb-24 ${heroClass}`}
+      className={`relative overflow-hidden pb-16 lg:pb-24 ${heroClass}`}
     >
       {/* Tone-appropriate texture — dotted gold on dark, subtle dark dots on sage */}
       <div

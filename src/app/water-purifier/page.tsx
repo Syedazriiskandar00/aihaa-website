@@ -36,7 +36,7 @@ export default function WaterPurifierPage() {
       <Header />
 
       {/* ── Hero Banner ── */}
-      <section className="relative pt-20 pb-16 bg-surface overflow-hidden">
+      <section className="relative pb-16 bg-surface overflow-hidden">
         {/* Same dotted gold texture pattern as the indoor/outdoor
             premium hero — opacity-10 reads as a subtle warm grain on
             cream, matching IndoorHeroLineup / SageHeroLineup. */}
