@@ -1,22 +1,22 @@
 import { openai } from "@ai-sdk/openai";
-import { streamText, type ModelMessage } from "ai";
+import { streamText, stepCountIs, type ModelMessage } from "ai";
+import { buildSystemPrompt } from "@/lib/chatbot/system-prompt";
+import { chatbotTools } from "@/lib/chatbot/tools";
 
-// AI SDK v6. Note: the v4-era result.toDataStreamResponse() was removed —
-// the v6 equivalent the useChat UI hook consumes is
-// result.toUIMessageStreamResponse() (used below).
+// AI SDK v6 chat route. Persona + product/service knowledge come from
+// buildSystemPrompt(); handoff tools come from chatbotTools.
 //
-// Phase A: stub system prompt + cheapest viable model. The real AIHAA
-// persona + sales context lands in Phase B; the UI wiring in Phase C.
+// v6 notes:
+// - result.toUIMessageStreamResponse() is the v6 replacement for the
+//   v4 toDataStreamResponse() (which no longer exists).
+// - stopWhen: stepCountIs(5) is the v6 replacement for v4 maxSteps — it
+//   lets the model call a tool, receive the result, then continue the
+//   reply naturally (up to 5 steps) instead of stopping after the call.
 
 export const maxDuration = 30;
 
-// gpt-4o-mini — cheapest viable (~$0.15 / 1M input tokens). Swap the
-// model id here later without touching the rest of the pipeline.
+// gpt-4o-mini — cheapest viable (~$0.15 / 1M input). Swap here only.
 const MODEL = "gpt-4o-mini";
-
-const SYSTEM_PROMPT =
-  "Kamu adalah chatbot AIHAA. Jawab dalam Bahasa Malaysia. " +
-  "(Phase A stub — real persona lands in Phase B.)";
 
 export async function POST(req: Request) {
   // Plain { role, content } pairs map directly onto ModelMessage[].
@@ -25,11 +25,13 @@ export async function POST(req: Request) {
   const { messages }: { messages: ModelMessage[] } = await req.json();
 
   // openai() reads OPENAI_API_KEY lazily at request time, so the build
-  // succeeds without the key set — it's only required to actually run.
+  // succeeds without the key set — it's only needed to actually run.
   const result = streamText({
     model: openai(MODEL),
-    system: SYSTEM_PROMPT,
+    system: buildSystemPrompt(),
     messages,
+    tools: chatbotTools,
+    stopWhen: stepCountIs(5),
   });
 
   return result.toUIMessageStreamResponse();
