@@ -3,7 +3,6 @@ import HomeHero from "@/components/home/HomeHero";
 import SignatureCollection from "@/components/home/SignatureCollection";
 import BenefitsSection from "@/components/BenefitsSection";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
-import CertificationsSection from "@/components/CertificationsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
@@ -20,8 +19,6 @@ export default function Home() {
       <BenefitsSection />
       {/* SPEC §1.4 — zigzag testimonials */}
       <HomeTestimonials />
-      {/* Brand-critical retention — Halal JAKIM + Bumiputera + ISO badges */}
-      <CertificationsSection />
       {/* Pre-footer call-to-action */}
       <CTASection />
       <Footer />
