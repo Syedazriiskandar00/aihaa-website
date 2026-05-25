@@ -1,11 +1,9 @@
-// Contact channels — single source of truth for the AIHAA phone number
-// (WhatsApp + voice) and all pre-filled CTA messages.
-//
-// TODO(azri): replace the placeholders below with the real AIHAA numbers.
-// Search for "60000000000" across the repo to find every touch point.
-export const WHATSAPP_NUMBER = "60000000000" as const;
-export const PHONE_NUMBER = "60000000000" as const;
-export const PHONE_NUMBER_DISPLAY = "+60 00-0000 0000" as const;
+// Contact channels — single source of truth for the AIHAA main line
+// (WhatsApp + voice) and all pre-filled CTA messages. Every CTA that
+// calls whatsappUrl() / telHref() inherits this number automatically.
+export const WHATSAPP_NUMBER = "601137208466" as const;
+export const PHONE_NUMBER = "601137208466" as const;
+export const PHONE_NUMBER_DISPLAY = "+60 11-3720 8466" as const;
 
 export const whatsappUrl = (message: string): string => {
   const encoded = encodeURIComponent(message);
