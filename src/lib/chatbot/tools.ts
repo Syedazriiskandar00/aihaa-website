@@ -24,6 +24,7 @@ export const chatbotTools = {
       const message = `Hai, saya customer AIHAA. Saya ada masalah: ${customerSummary}. Lokasi: ${state}.`;
       const waUrl = `https://wa.me/${admin.waNumber}?text=${encodeURIComponent(message)}`;
       return {
+        buttonType: "whatsapp" as const,
         buttonLabel: "Sambung ke Admin via WhatsApp",
         waUrl,
         adminName: admin.name,
@@ -47,9 +48,24 @@ export const chatbotTools = {
       const message = `Hai, saya ${who}. Saya berminat: ${productInterest}.`;
       const waUrl = `https://wa.me/${sales.waNumber}?text=${encodeURIComponent(message)}`;
       return {
+        buttonType: "whatsapp" as const,
         buttonLabel: "Sambung ke Team Sales via WhatsApp",
         waUrl,
         salesName: sales.name,
+      };
+    },
+  }),
+
+  showLocation: tool({
+    description:
+      "Tunjuk lokasi AIHAA (Batu Pahat, Johor) dalam Google Maps. Panggil bila customer tanya alamat, kedai, showroom, atau cara nak ke lokasi AIHAA.",
+    inputSchema: z.object({}),
+    execute: async () => {
+      return {
+        buttonType: "location" as const,
+        buttonLabel: "Buka Lokasi di Google Maps",
+        mapsUrl: "https://www.google.com/maps?q=1.866704,103.010227",
+        locationName: "AIHAA Marketing Sdn Bhd, Batu Pahat, Johor",
       };
     },
   }),

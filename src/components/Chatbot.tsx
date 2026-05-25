@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageSquare, X, Send, MessageCircle } from "lucide-react";
+import { MessageSquare, X, Send, MessageCircle, MapPin } from "lucide-react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -29,16 +29,43 @@ function stripMarkdown(text: string): string {
     .replace(/__([^_]+)__/g, "$1"); // __bold__ -> bold
 }
 
-// Shape returned by the connectToAdmin / connectToSales tools (Phase B).
-type HandoffOutput = {
-  buttonLabel: string;
-  waUrl: string;
-  adminName?: string;
-  salesName?: string;
-  isOutOfCoverage?: boolean;
-};
+// Shape returned by the chatbot tools (Phase B). Two variants keyed by
+// buttonType: WhatsApp handoff (connectToAdmin / connectToSales) and a
+// Google Maps location (showLocation).
+type HandoffOutput =
+  | {
+      buttonType: "whatsapp";
+      buttonLabel: string;
+      waUrl: string;
+      adminName?: string;
+      salesName?: string;
+      isOutOfCoverage?: boolean;
+    }
+  | {
+      buttonType: "location";
+      buttonLabel: string;
+      mapsUrl: string;
+      locationName: string;
+    };
 
-function WhatsAppHandoffButton({ output }: { output: HandoffOutput }) {
+function HandoffButton({ output }: { output: HandoffOutput }) {
+  // Location → blue + map pin → Google Maps; WhatsApp → green + chat icon.
+  if (output.buttonType === "location") {
+    return (
+      <div className="mt-1">
+        <a
+          href={output.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors"
+        >
+          <MapPin className="w-5 h-5" />
+          {output.buttonLabel}
+        </a>
+      </div>
+    );
+  }
+
   return (
     <div className="mt-1">
       {output.isOutOfCoverage && (
@@ -180,8 +207,8 @@ export default function Chatbot() {
                       return <span key={i}>{stripMarkdown(part.text)}</span>;
                     }
                     // v6 tool parts: type is `tool-connectToAdmin` /
-                    // `tool-connectToSales`; result lands in part.output
-                    // when state === "output-available".
+                    // `tool-connectToSales` / `tool-showLocation`; result
+                    // lands in part.output when state "output-available".
                     if (part.type.startsWith("tool-")) {
                       const toolPart = part as unknown as {
                         state: string;
@@ -192,7 +219,7 @@ export default function Chatbot() {
                         toolPart.output
                       ) {
                         return (
-                          <WhatsAppHandoffButton key={i} output={toolPart.output} />
+                          <HandoffButton key={i} output={toolPart.output} />
                         );
                       }
                       return (
