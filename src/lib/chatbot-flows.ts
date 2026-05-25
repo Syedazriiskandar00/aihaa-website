@@ -1,4 +1,5 @@
 import type { Locale } from "./i18n/translations";
+import { whatsappUrl, whatsappMessages } from "./config/contact";
 
 export type ChatMessage = {
   id: string;
@@ -13,15 +14,15 @@ export type FlowStep = {
 };
 
 export const whatsappUrls: Record<string, string> = {
-  whatsapp: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20penapis%20air%20AIHAA.",
-  whatsapp_price: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20harga%20penapis%20air%20AIHAA.",
-  whatsapp_ean: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20EAN%20(RM780).",
-  whatsapp_bella: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20BELLA%20(RM1,080).",
-  whatsapp_winter: "https://wa.me/60115657084?text=Hai,%20saya%20berminat%20dengan%20AIHAA%20WINTER%20(RM1,580).",
-  whatsapp_warranty: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20claim%20warranty%20AIHAA.",
-  whatsapp_support: "https://wa.me/60115657084?text=Hai,%20saya%20pelanggan%20AIHAA%20dan%20ada%20masalah%20dengan%20unit%20saya.",
-  whatsapp_filter: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20order%20filter%20untuk%20penapis%20air%20AIHAA%20saya.",
-  whatsapp_tradein: "https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20tentang%20program%20trade-in%20AIHAA.",
+  whatsapp: whatsappUrl("Hai, saya berminat dengan penapis air AIHAA."),
+  whatsapp_price: whatsappUrl(whatsappMessages.priceQuestion),
+  whatsapp_ean: whatsappUrl(whatsappMessages.productInquiry("AIHAA EAN (RM780)")),
+  whatsapp_bella: whatsappUrl(whatsappMessages.productInquiry("AIHAA BELLA (RM1,080)")),
+  whatsapp_winter: whatsappUrl(whatsappMessages.productInquiry("AIHAA WINTER (RM1,580)")),
+  whatsapp_warranty: whatsappUrl(whatsappMessages.warrantyClaim),
+  whatsapp_support: whatsappUrl(whatsappMessages.support),
+  whatsapp_filter: whatsappUrl(whatsappMessages.filterOrder),
+  whatsapp_tradein: whatsappUrl(whatsappMessages.tradeIn),
 };
 
 // Keyword matching for free text input
@@ -46,8 +47,8 @@ export function matchKeyword(text: string): string | null {
 export const flows: Record<string, FlowStep> = {
   greeting: {
     message: {
-      bm: "Hi! Saya Azri dari Aihaa 👋 Ada apa boleh saya bantu?",
-      en: "Hi! I'm Azri from Aihaa 👋 How can I help?",
+      bm: "Hi! Selamat datang ke AIHAA 👋 Saya boleh bantu awak cari penapis air yang sesuai. Ada soalan?",
+      en: "Hi! Welcome to AIHAA 👋 I can help you find the right water purifier. Any questions?",
     },
     quickReplies: [
       { label: { bm: "Berapa harga?", en: "What's the price?" }, action: "price" },
@@ -65,7 +66,7 @@ export const flows: Record<string, FlowStep> = {
       en: "AIHAA water purifiers start from RM399 — one-time payment! 💰\n\nIndoor: RM780 - RM1,580\nOutdoor: RM399 - RM1,299\n\nAll include free installation + warranty.",
     },
     quickReplies: [
-      { label: { bm: "Tengok semua produk", en: "View all products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok semua produk", en: "View all products" }, action: "link:/produk-dalam" },
       { label: { bm: "Model mana sesuai?", en: "Which model suits me?" }, action: "recommend_budget" },
       { label: { bm: "WhatsApp untuk harga detail", en: "WhatsApp for pricing" }, action: "whatsapp_price" },
     ],
@@ -90,7 +91,7 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_ean" },
-      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
   },
@@ -102,7 +103,7 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_bella" },
-      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
   },
@@ -114,15 +115,15 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_winter" },
-      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/water-purifier" },
+      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
   },
 
   warranty: {
     message: {
-      bm: "Waranti AIHAA:\n\n🔹 Indoor — 2 tahun\n🔹 Outdoor — 1 tahun\n\nMeliputi motor, sistem penapisan, dan tangki. Claim mudah via WhatsApp!",
-      en: "AIHAA Warranty:\n\n🔹 Indoor — 2 years\n🔹 Outdoor — 1 year\n\nCovers motor, filtration system, and tank. Easy claim via WhatsApp!",
+      bm: "Waranti AIHAA:\n\n🔹 Indoor — 2 tahun\n🔹 Outdoor — 2 tahun\n🔹 UF Double Backwash — 10 tahun (UF Membrane)\n\nMeliputi motor, sistem penapisan, dan tangki. Claim mudah via WhatsApp!",
+      en: "AIHAA Warranty:\n\n🔹 Indoor — 2 years\n🔹 Outdoor — 2 years\n🔹 UF Double Backwash — 10 years (UF Membrane)\n\nCovers motor, filtration system, and tank. Easy claim via WhatsApp!",
     },
     quickReplies: [
       { label: { bm: "WhatsApp untuk claim", en: "WhatsApp to claim" }, action: "whatsapp_warranty" },

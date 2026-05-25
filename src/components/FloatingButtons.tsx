@@ -1,13 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MessageCircle, ChevronUp } from "lucide-react";
-import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { ChevronUp } from "lucide-react";
 import Chatbot from "./Chatbot";
 
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,16 +23,6 @@ export default function FloatingButtons() {
     <>
       {/* Chatbot — positioned at bottom-[88px] right-4 internally */}
       <Chatbot />
-
-      {/* WhatsApp Button — below chatbot toggle */}
-      <a
-        href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 z-50 gold-gradient-bg text-white p-4 rounded-full shadow-gold transition-all duration-300 hover:scale-110 hover:opacity-90"
-      >
-        <MessageCircle className="w-6 h-6" fill="white" />
-      </a>
 
       {/* Scroll to Top */}
       {showScrollTop && (

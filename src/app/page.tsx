@@ -1,10 +1,9 @@
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
+import HomeHero from "@/components/home/HomeHero";
+import SignatureCollection from "@/components/home/SignatureCollection";
 import BenefitsSection from "@/components/BenefitsSection";
-import WhyAihaaSection from "@/components/sections/WhyAihaaSection";
-import CategoryShowcase from "@/components/CategoryShowcase";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
 import CTASection from "@/components/CTASection";
-import CertificationsSection from "@/components/CertificationsSection";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
@@ -12,12 +11,16 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <HeroSection />
+      {/* SPEC §1.1 — dark hero with 5-pedestal lineup + dual CTA */}
+      <HomeHero />
+      {/* SPEC §1.2 — Indoor/Outdoor tab toggle, 4 featured per tab */}
+      <SignatureCollection />
+      {/* SPEC §1.3 — Kenapa Pilih AIHAA (unchanged from pre-Phase-4) */}
       <BenefitsSection />
-      <WhyAihaaSection />
-      <CategoryShowcase />
+      {/* SPEC §1.4 — zigzag testimonials */}
+      <HomeTestimonials />
+      {/* Pre-footer call-to-action */}
       <CTASection />
-      <CertificationsSection />
       <Footer />
       <FloatingButtons />
     </main>

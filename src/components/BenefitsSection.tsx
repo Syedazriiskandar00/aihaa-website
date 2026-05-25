@@ -36,7 +36,7 @@ export default function BenefitsSection() {
   ];
 
   return (
-    <section className="bg-cream py-24 lg:py-32">
+    <section className="bg-cream py-16 md:py-24 lg:py-32">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 scroll-reveal-child stagger-1 text-center max-w-2xl mx-auto">
           <p className="text-[11px] uppercase tracking-[0.22em] text-gold-dark font-semibold mb-4">

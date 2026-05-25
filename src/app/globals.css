@@ -91,6 +91,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide scrollbars for horizontal carousels (e.g. hero pedestal lineup on mobile) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Editorial typography — Playfair for display headings, tight tracking */
 .font-editorial {
   font-family: 'Playfair Display', serif;

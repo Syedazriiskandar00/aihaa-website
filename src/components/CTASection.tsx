@@ -1,16 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/config/contact";
 
 export default function CTASection() {
   const revealRef = useScrollReveal();
   const { t } = useLanguage();
 
   return (
-    <section className="bg-dark py-24 lg:py-32">
+    <section className="bg-surface py-16 md:py-24 lg:py-32">
       <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -18,47 +18,72 @@ export default function CTASection() {
             <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-4">
               {t.cta_label}
             </p>
-            <h2 className="font-editorial text-4xl md:text-5xl text-white mb-6">
-              {t.cta_title} <span className="font-editorial-italic text-gold">AIHAA</span>
+            <h2 className="font-editorial text-4xl md:text-5xl text-dark mb-6">
+              {t.cta_title} <span className="font-editorial-italic text-gold-dark">AIHAA</span>
             </h2>
-            <p className="text-muted-dark mb-8 max-w-md">
+            <p className="text-muted mb-8 max-w-md">
               {t.cta_desc}
             </p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-gold" />
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
+                  <Phone className="w-5 h-5 text-gold-dark" />
                 </div>
                 <div>
-                  <p className="text-muted-dark text-sm">{t.cta_phone_label}</p>
-                  <p className="text-white font-medium">+6011-5657 7084</p>
+                  <p className="text-muted text-sm">{t.cta_phone_label}</p>
+                  {/* Two admin WhatsApp numbers inline, slash-separated.
+                      Hardcoded here (not via contact.ts placeholder) —
+                      same footer-first phone migration phase. flex-wrap
+                      lets the second number drop to its own line on very
+                      narrow screens instead of overflowing. */}
+                  <p className="text-dark font-medium flex flex-wrap items-center gap-x-2">
+                    <a
+                      href="https://wa.me/601129987890"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gold-dark transition-colors"
+                    >
+                      +60 11-2998 7890
+                    </a>
+                    <span className="text-muted" aria-hidden>
+                      /
+                    </span>
+                    <a
+                      href="https://wa.me/60162773211"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gold-dark transition-colors"
+                    >
+                      +60 16-277 3211
+                    </a>
+                  </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-gold" />
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
+                  <Mail className="w-5 h-5 text-gold-dark" />
                 </div>
                 <div>
-                  <p className="text-muted-dark text-sm">{t.cta_email_label}</p>
-                  <p className="text-white font-medium">aihaa.marketing@gmail.com</p>
+                  <p className="text-muted text-sm">{t.cta_email_label}</p>
+                  <p className="text-dark font-medium break-all">aihaa.marketing@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-gold" />
+                <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
+                  <MapPin className="w-5 h-5 text-gold-dark" />
                 </div>
                 <div>
-                  <p className="text-muted-dark text-sm">{t.contact_location_title}</p>
-                  <p className="text-white font-medium">{t.cta_location}</p>
+                  <p className="text-muted text-sm">{t.contact_location_title}</p>
+                  <p className="text-dark font-medium">{t.cta_location}</p>
                 </div>
               </div>
             </div>
 
             <a
-              href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+              href={whatsappUrl(t.common_whatsapp_message)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold"
@@ -73,18 +98,27 @@ export default function CTASection() {
           {/* Right Content — Sales Expert Image */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.2)]">
-              <Image
-                src="/images/products/sales-expert.png"
-                alt="AIHAA Sales Expert"
-                width={500}
-                height={600}
-                className="w-full h-auto object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet="/images/products/sales-expert-mobile.webp"
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/products/sales-expert.webp"
+                  alt="AIHAA Sales Expert"
+                  width={500}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
-            {/* Floating Badge */}
-            <div className="absolute -top-3 -right-3 bg-gold text-white px-4 py-2 rounded-full font-bold text-sm shadow-gold z-10">
+            {/* Floating Badge — inside-pinned on mobile to avoid 390px
+                viewport edge clipping; desktop restores the floating -top/-right
+                overhang for the lifted look. */}
+            <div className="absolute top-3 right-3 lg:-top-3 lg:-right-3 bg-gold text-white px-4 py-2 rounded-full font-bold text-sm shadow-gold z-10">
               {t.cta_response}
             </div>
           </div>

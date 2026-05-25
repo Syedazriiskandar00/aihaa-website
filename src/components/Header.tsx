@@ -5,7 +5,16 @@ import Link from "next/link";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+
+// Feature flag — hide the BM/EN toggle while the EN content pass is
+// pending. Re-enable by flipping this to `true` once:
+//   1. src/lib/data/products.ts specs[] + features[] arrays are translated
+//   2. Team reviews EN copy quality across 8 pages
+//   3. Flip ENABLE_LOCALE_PERSISTENCE in src/lib/i18n/LanguageContext.tsx
+// Ref: AIHAA_HANDOFF_2026-04-23-EOD.md — Cara A strategy.
+const SHOW_LANGUAGE_TOGGLE = false;
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,17 +25,21 @@ export default function Header() {
   const navItems = [
     { name: t.nav_home, href: "/" },
     {
+      // Parent click → /water-purifier (full catalog). Sub-items
+      // narrow to indoor/outdoor only — the redundant "All Products"
+      // sub-item was retired since the parent already covers it.
       name: t.nav_products,
       href: "/water-purifier",
       dropdown: [
-        { name: t.nav_products_all, href: "/water-purifier" },
-        { name: t.nav_products_indoor, href: "/water-purifier#indoor" },
-        { name: t.nav_products_outdoor, href: "/water-purifier#outdoor" },
+        { name: t.nav_products_indoor, href: "/produk-dalam" },
+        { name: t.nav_products_outdoor, href: "/produk-luar" },
       ],
     },
     { name: t.nav_promotions, href: "/promotions" },
     { name: t.nav_faq, href: "/faq" },
     { name: t.nav_gallery, href: "/galeri" },
+    { name: t.nav_service, href: "/service" },
+    { name: t.nav_about, href: "/tentang-kami" },
   ];
 
   // Contact shown as gold button on desktop, normal link in mobile menu
@@ -42,14 +55,14 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? "bg-dark/95 backdrop-blur-md shadow-lg shadow-black/20"
-          : "bg-dark"
+          ? "bg-dark/95 backdrop-blur-md shadow-sm shadow-black/40 border-gold/20"
+          : "bg-dark border-gold/20"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 md:h-[4.5rem] lg:h-20">
           {/* Logo */}
           <Logo size="md" />
 
@@ -64,7 +77,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-white/80 hover:text-gold text-sm font-medium transition-colors py-2 nav-link-underline"
+                  className="flex items-center gap-1 text-white/85 hover:text-gold text-sm font-medium transition-colors py-2 nav-link-underline"
                 >
                   {item.name}
                   {item.dropdown && <ChevronDown className="w-4 h-4" />}
@@ -72,12 +85,12 @@ export default function Header() {
 
                 {/* Dropdown */}
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 bg-dark-alt border border-[rgba(218,165,32,0.3)] rounded-lg shadow-xl py-2 min-w-[160px]">
+                  <div className="absolute top-full left-0 mt-1 bg-dark border border-gold/30 rounded-lg shadow-lg shadow-black/40 py-2 min-w-[160px]">
                     {item.dropdown.map((subItem) => (
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-4 py-2 text-white/80 hover:text-gold hover:bg-white/5 text-sm transition-colors"
+                        className="block px-4 py-2 text-white/85 hover:text-gold hover:bg-white/5 text-sm transition-colors"
                       >
                         {subItem.name}
                       </Link>
@@ -89,7 +102,7 @@ export default function Header() {
           </nav>
 
           {/* Right Side */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
             {/* Contact CTA Button — desktop only */}
             <Link
               href={contactItem.href}
@@ -98,15 +111,15 @@ export default function Header() {
               {contactItem.name}
             </Link>
 
-            {/* Language Switcher */}
-            <LanguageSwitcher />
+            {/* Language Switcher — gated; see SHOW_LANGUAGE_TOGGLE above */}
+            {SHOW_LANGUAGE_TOGGLE && <LanguageSwitcher />}
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/60115657084"
+              href={whatsappUrl(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-white/80 hover:text-gold transition-colors"
+              className="p-1.5 sm:p-2 text-white/80 hover:text-gold transition-colors"
             >
               <MessageCircle className="w-5 h-5" />
             </a>
@@ -114,7 +127,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-white/80 hover:text-gold transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 text-white/80 hover:text-gold transition-colors"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -122,15 +135,26 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — scrollable drawer. Caps height at viewport
+          minus the fixed-header band (h-16 = 4rem on the breakpoints
+          where this drawer is visible, i.e. below lg) so the last
+          items stay reachable on short phones / when the browser
+          chrome is visible. Bottom padding clears the FloatingButtons
+          FAB stack and respects the iOS home-indicator safe-area. */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-dark-alt border-t border-[rgba(218,165,32,0.3)]">
-          <div className="px-4 py-4 space-y-2">
+        <div className="lg:hidden bg-dark border-t border-gold/20 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
+          <div
+            className="px-4 py-4 space-y-1"
+            style={{
+              paddingBottom:
+                "max(6rem, calc(env(safe-area-inset-bottom) + 5rem))",
+            }}
+          >
             {navItems.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="block py-3 text-white/80 hover:text-gold transition-colors border-b border-[rgba(218,165,32,0.15)]"
+                  className="block py-2.5 text-white/85 hover:text-gold transition-colors border-b border-white/10"
                   onClick={() => !item.dropdown && setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -141,7 +165,7 @@ export default function Header() {
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block py-2 text-white/60 hover:text-gold text-sm transition-colors"
+                        className="block py-2 text-white/65 hover:text-gold text-sm transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {subItem.name}
@@ -155,7 +179,7 @@ export default function Header() {
             <div>
               <Link
                 href={contactItem.href}
-                className="block py-3 text-white/80 hover:text-gold transition-colors border-b border-[rgba(218,165,32,0.15)]"
+                className="block py-2.5 text-white/85 hover:text-gold transition-colors border-b border-white/10"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {contactItem.name}

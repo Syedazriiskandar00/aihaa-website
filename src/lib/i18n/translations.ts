@@ -5,7 +5,6 @@ export type TranslationKeys = {
   nav_products: string;
   nav_products_indoor: string;
   nav_products_outdoor: string;
-  nav_products_all: string;
   nav_promotions: string;
   nav_faq: string;
   nav_gallery: string;
@@ -113,8 +112,6 @@ export type TranslationKeys = {
   product_cta_title: string;
   product_cta_sub: string;
   product_view_details: string;
-  product_featured_label: string;
-  product_featured_cta: string;
   detail_specs: string;
   detail_features: string;
   detail_related: string;
@@ -225,6 +222,341 @@ export type TranslationKeys = {
   common_sekali_bayar: string;
   common_from: string;
   common_month: string;
+  // Service page — Q2 2026 corporate rebuild
+  nav_service: string;
+  service_meta_title: string;
+  service_meta_description: string;
+  // §4.1 Heart Service Hero
+  service_hero_eyebrow: string;
+  service_hero_script: string;
+  service_hero_tagline: string;
+  service_hero_heading: string;
+  service_hero_subheading: string;
+  service_heart_speedy_title: string;
+  service_heart_speedy_desc: string;
+  service_heart_expert_title: string;
+  service_heart_expert_desc: string;
+  service_heart_caring_title: string;
+  service_heart_caring_desc: string;
+  service_heart_alert_title: string;
+  service_heart_alert_desc: string;
+  // §4.2 Indoor Service Header + Filter Row
+  service_indoor_eyebrow: string;
+  service_indoor_heading: string;
+  service_indoor_body: string;
+  service_filter_row_heading: string;
+  service_filter_1_name: string;
+  service_filter_1_desc: string;
+  service_filter_2_name: string;
+  service_filter_2_desc: string;
+  service_filter_3_name: string;
+  service_filter_3_desc: string;
+  service_filter_4_name: string;
+  service_filter_4_desc: string;
+  // §4.3 13 Check Point
+  service_check13_eyebrow: string;
+  service_check13_heading: string;
+  service_check13_subheading: string;
+  service_check13_item_1: string;
+  service_check13_item_2: string;
+  service_check13_item_3: string;
+  service_check13_item_4: string;
+  service_check13_item_5: string;
+  service_check13_item_6: string;
+  service_check13_item_7: string;
+  service_check13_item_8: string;
+  service_check13_item_9: string;
+  service_check13_item_10: string;
+  service_check13_item_11: string;
+  service_check13_item_12: string;
+  service_check13_item_13: string;
+  service_check13_placeholder: string;
+  // §4.4 8 Step Gallery
+  service_8step_eyebrow: string;
+  service_8step_heading: string;
+  service_8step_subheading: string;
+  service_8step_step_1: string;
+  service_8step_step_2: string;
+  service_8step_step_3: string;
+  service_8step_step_4: string;
+  service_8step_step_5: string;
+  service_8step_step_6: string;
+  service_8step_step_7: string;
+  service_8step_step_8: string;
+  // §4.5 Filter Pricing
+  service_pricing_filter_eyebrow: string;
+  service_pricing_filter_heading: string;
+  service_pricing_filter_subheading: string;
+  service_pricing_filter_aihaa_badge: string;
+  service_pricing_filter_aihaa_caption: string;
+  service_pricing_filter_other_badge: string;
+  service_pricing_filter_other_caption: string;
+  service_pricing_filter_note: string;
+  service_pricing_filter_cta: string;
+  // §4.6 Sand Types Showcase
+  service_sand_eyebrow: string;
+  service_sand_heading: string;
+  service_sand_subheading: string;
+  service_sand_type_metal_earse: string;
+  service_sand_type_active_carbon: string;
+  service_sand_type_zeolite: string;
+  service_sand_type_fine_silica: string;
+  service_sand_type_medium_silica: string;
+  service_sand_type_coarse_silica: string;
+  // §4.7 5 Check Point Outdoor
+  service_check5_eyebrow: string;
+  service_check5_heading: string;
+  service_check5_subheading: string;
+  service_check5_item_1: string;
+  service_check5_item_2: string;
+  service_check5_item_3: string;
+  service_check5_item_4: string;
+  service_check5_item_5: string;
+  service_check5_placeholder: string;
+  // §4.8 Sand Replacement Pricing
+  service_pricing_sand_eyebrow: string;
+  service_pricing_sand_heading: string;
+  service_pricing_sand_subheading: string;
+  service_pricing_sand_5layer_badge: string;
+  service_pricing_sand_5layer_note: string;
+  service_pricing_sand_6layer_badge: string;
+  service_pricing_sand_6layer_note: string;
+  service_pricing_sand_note: string;
+  service_pricing_sand_cta: string;
+  // /produk-luar — Phase 2 premium outdoor landing
+  produk_luar_meta_title: string;
+  produk_luar_meta_description: string;
+  // §3.1 Sage Hero Lineup
+  produk_luar_hero_eyebrow: string;
+  produk_luar_hero_heading: string;
+  produk_luar_hero_italic: string;
+  produk_luar_hero_tagline: string;
+  produk_luar_hero_featured_label: string;
+  produk_luar_hero_featured_premium_badge: string;
+  produk_luar_hero_featured_value_badge: string;
+  produk_luar_hero_cta: string;
+  // Outdoor use-cases band
+  produk_luar_usecase_eyebrow: string;
+  produk_luar_usecase_boring: string;
+  produk_luar_usecase_kolam: string;
+  produk_luar_usecase_pejabat: string;
+  produk_luar_usecase_kilang: string;
+  // Outdoor grid
+  produk_luar_grid_eyebrow: string;
+  produk_luar_grid_heading: string;
+  produk_luar_grid_subheading: string;
+  // Cross-link on /water-purifier
+  produk_luar_cross_link: string;
+  // Footer CTA
+  produk_luar_footer_cta_heading: string;
+  produk_luar_footer_cta_body: string;
+  produk_luar_footer_cta_button: string;
+  // /produk-dalam — Phase 3 premium indoor landing
+  produk_dalam_meta_title: string;
+  produk_dalam_meta_description: string;
+  // Indoor Hero Lineup (dark, 5-pedestal, BELLA + WINTER featured)
+  produk_dalam_hero_eyebrow: string;
+  produk_dalam_hero_heading: string;
+  produk_dalam_hero_italic: string;
+  produk_dalam_hero_tagline: string;
+  produk_dalam_hero_featured_bestseller_badge: string;
+  produk_dalam_hero_featured_premium_badge: string;
+  produk_dalam_hero_cta: string;
+  // Indoor use-cases band (Set A: Keluarga Muda/Besar/Bayi Baru/Apartment Compact)
+  produk_dalam_usecase_eyebrow: string;
+  produk_dalam_usecase_muda: string;
+  produk_dalam_usecase_besar: string;
+  produk_dalam_usecase_bayi: string;
+  produk_dalam_usecase_compact: string;
+  // Indoor grid
+  produk_dalam_grid_eyebrow: string;
+  produk_dalam_grid_heading: string;
+  produk_dalam_grid_subheading: string;
+  // Cross-link on /water-purifier
+  produk_dalam_cross_link: string;
+  // Footer CTA
+  produk_dalam_footer_cta_heading: string;
+  produk_dalam_footer_cta_body: string;
+  produk_dalam_footer_cta_button: string;
+  // Homepage — Phase 4
+  home_hero_eyebrow: string;
+  home_hero_title_1: string;
+  home_hero_title_2: string;
+  home_hero_title_3: string;
+  home_hero_subtitle: string;
+  home_hero_cta_primary: string;
+  home_hero_cta_secondary: string;
+  home_collection_eyebrow: string;
+  home_collection_heading: string;
+  home_collection_tab_indoor: string;
+  home_collection_tab_outdoor: string;
+  home_collection_view_all_indoor: string;
+  home_collection_view_all_outdoor: string;
+  home_testi_eyebrow: string;
+  home_testi_quote_1_text: string;
+  home_testi_quote_1_author: string;
+  home_testi_quote_1_location: string;
+  home_testi_quote_2_text: string;
+  home_testi_quote_2_author: string;
+  home_testi_quote_2_location: string;
+  // About page (/tentang-kami) — Phase 5
+  nav_about: string;
+  about_meta_title: string;
+  about_meta_description: string;
+  // §5.1 Kisah Kami
+  about_kisah_eyebrow: string;
+  about_kisah_heading: string;
+  about_kisah_quote: string;
+  about_kisah_credit: string;
+  about_kisah_credit_sub: string;
+  about_kisah_timeline_heading: string;
+  about_kisah_timeline_2018: string;
+  about_kisah_timeline_2020: string;
+  about_kisah_timeline_2023: string;
+  about_kisah_timeline_2025: string;
+  // §5.2 Halal Commitment
+  about_halal_eyebrow: string;
+  about_halal_heading: string;
+  about_halal_italic: string;
+  about_halal_body: string;
+  about_halal_checkpoints_heading: string;
+  about_halal_checkpoint_1: string;
+  about_halal_checkpoint_2: string;
+  about_halal_checkpoint_3: string;
+  // §5.3 Azlee Collab
+  about_azlee_eyebrow: string;
+  about_azlee_heading: string;
+  about_azlee_subheading: string;
+  about_azlee_placeholder: string;
+  // §5.4 Team
+  about_team_eyebrow: string;
+  about_team_heading: string;
+  about_team_subheading: string;
+  about_team_placeholder: string;
+  // §5.5 CSR
+  about_csr_eyebrow: string;
+  about_csr_heading: string;
+  about_csr_card_1_title: string;
+  about_csr_card_1_year: string;
+  about_csr_card_1_desc: string;
+  about_csr_card_2_title: string;
+  about_csr_card_2_year: string;
+  about_csr_card_2_desc: string;
+  about_csr_card_3_title: string;
+  about_csr_card_3_year: string;
+  about_csr_card_3_desc: string;
+  about_csr_note: string;
+  // Product detail — Phase 6
+  product_detail_hero_cta_secondary: string;
+  product_detail_features_heading: string;
+  product_detail_service_heading: string;
+  product_detail_service_subheading: string;
+  product_detail_service_label_price: string;
+  product_detail_service_label_warranty: string;
+  product_detail_service_label_frequency: string;
+  product_detail_service_label_yearly: string;
+  product_detail_service_warranty_default: string;
+  product_detail_service_warranty_uf: string;
+  product_detail_service_frequency_default: string;
+  product_detail_service_disclaimer: string;
+  product_detail_related_subheading: string;
+  // Phase 7 — detail-page premium sections
+  // Kitchen Context Split (indoor)
+  product_kitchen_eyebrow: string;
+  product_kitchen_heading: string;
+  product_kitchen_tagline: string;
+  product_kitchen_modern_label: string;
+  product_kitchen_modern_caption: string;
+  product_kitchen_industrial_label: string;
+  product_kitchen_industrial_caption: string;
+  // Capacity Functionalities (indoor)
+  product_capacity_eyebrow: string;
+  product_capacity_heading: string;
+  product_capacity_subheading: string;
+  product_capacity_coffee_label: string;
+  product_capacity_coffee_desc: string;
+  product_capacity_tea_label: string;
+  product_capacity_tea_desc: string;
+  product_capacity_baby_label: string;
+  product_capacity_baby_desc: string;
+  product_capacity_cold_label: string;
+  product_capacity_cold_desc: string;
+  product_capacity_ambient_label: string;
+  product_capacity_ambient_desc: string;
+  product_capacity_ice_label: string;
+  product_capacity_ice_desc: string;
+  // Features Overview Grid (shared)
+  product_features_overview_eyebrow: string;
+  product_features_overview_heading: string;
+  product_features_overview_subheading: string;
+  product_features_overview_caption_placeholder: string;
+  // Filter Cartridge Row (indoor)
+  product_cartridge_eyebrow: string;
+  product_cartridge_heading: string;
+  product_cartridge_subheading: string;
+  product_cartridge_sediment_name: string;
+  product_cartridge_sediment_desc: string;
+  product_cartridge_antibacterial_name: string;
+  product_cartridge_antibacterial_desc: string;
+  product_cartridge_pre_carbon_name: string;
+  product_cartridge_pre_carbon_desc: string;
+  product_cartridge_post_carbon_name: string;
+  product_cartridge_post_carbon_desc: string;
+  product_cartridge_uf_name: string;
+  product_cartridge_uf_desc: string;
+  // House Cross-Section (outdoor)
+  product_house_eyebrow: string;
+  product_house_heading: string;
+  product_house_subheading: string;
+  product_house_use_cooking: string;
+  product_house_use_washing: string;
+  product_house_use_showering: string;
+  product_house_use_laundry: string;
+  product_house_use_hygiene: string;
+  product_house_use_outdoor: string;
+  product_house_caption: string;
+  // Seven Layer Filtration (outdoor)
+  product_layers_eyebrow: string;
+  product_layers_heading: string;
+  product_layers_subheading: string;
+  product_layers_anthracite_name: string;
+  product_layers_anthracite_desc: string;
+  product_layers_zeolite_plus_name: string;
+  product_layers_zeolite_plus_desc: string;
+  product_layers_kdf_name: string;
+  product_layers_kdf_desc: string;
+  product_layers_nano_silver_name: string;
+  product_layers_nano_silver_desc: string;
+  product_layers_super_quick_sand_name: string;
+  product_layers_super_quick_sand_desc: string;
+  product_layers_fine_sand_name: string;
+  product_layers_fine_sand_desc: string;
+  product_layers_silica_sand_name: string;
+  product_layers_silica_sand_desc: string;
+  // PVDF Micron Funnel (outdoor)
+  product_funnel_eyebrow: string;
+  product_funnel_heading: string;
+  product_funnel_subheading: string;
+  product_funnel_tier_100_label: string;
+  product_funnel_tier_100_desc: string;
+  product_funnel_tier_10_label: string;
+  product_funnel_tier_10_desc: string;
+  product_funnel_tier_1_label: string;
+  product_funnel_tier_1_desc: string;
+  product_funnel_tier_001_label: string;
+  product_funnel_tier_001_desc: string;
+  product_funnel_caption: string;
+  // Spec & Price Dark (shared)
+  product_specprice_eyebrow: string;
+  product_specprice_heading: string;
+  product_specprice_blueprint_caption: string;
+  product_specprice_cash_label: string;
+  product_specprice_tech_badge: string;
+  product_specprice_cta: string;
+
+  // Chatbot (header UI — flow copy lives in chatbot-flows.ts)
+  chatbot_agent_header: string;
+  chatbot_reply_time: string;
 };
 
 export const translations: Record<Locale, TranslationKeys> = {
@@ -233,7 +565,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     nav_products: "Produk",
     nav_products_indoor: "Dalam Rumah",
     nav_products_outdoor: "Luar Rumah",
-    nav_products_all: "Semua Penapis",
     nav_promotions: "Promosi",
     nav_faq: "FAQ",
     nav_gallery: "Galeri",
@@ -341,8 +672,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_cta_title: "Tak pasti mana satu?",
     product_cta_sub: "Kami bantu pilihkan",
     product_view_details: "Lihat Details",
-    product_featured_label: "Pilihan Terbaik",
-    product_featured_cta: "Lihat Details →",
     detail_specs: "Spesifikasi",
     detail_features: "Ciri-ciri Utama",
     detail_related: "Produk Berkaitan",
@@ -363,13 +692,13 @@ export const translations: Record<Locale, TranslationKeys> = {
     faq_q2: "Adakah Aihaa guna parts dan filter original berkualiti?",
     faq_a2: "Ya. Semua filter dan komponen yang digunakan adalah original dan berkualiti tinggi. Kami tidak menggunakan parts tiruan atau gred rendah.",
     faq_q3: "Berapa lama warranty yang diberikan?",
-    faq_a3: "Warranty sehingga 2 tahun untuk semua model indoor. Outdoor models mendapat warranty 1 tahun.",
+    faq_a3: "Waranti 2 tahun untuk semua model indoor dan outdoor. Pengecualian: UF Double Backwash dapat waranti 10 tahun khas untuk membran UF.",
     faq_q4: "Adakah pemasangan benar-benar percuma?",
     faq_a4: "Ya, pemasangan percuma ke seluruh Semenanjung Malaysia. Teknisyen bertauliah kami akan datang ke rumah anda.",
     faq_q5: "Kenapa tiada kontrak jangka panjang?",
     faq_a5: "Kami percaya pelanggan tidak sepatutnya terikat dengan kontrak 3-5 tahun. Model sekali bayar bermaksud anda miliki penapis air anda sepenuhnya.",
     faq_q6: "Macam mana saya tahu model mana yang sesuai untuk rumah saya?",
-    faq_a6: "WhatsApp kami di +6011-5657 7084. Team kami akan cadangkan model yang paling sesuai.",
+    faq_a6: "WhatsApp kami di +60 00-0000 0000. Team kami akan cadangkan model yang paling sesuai.",
     faq_q7: "Boleh ke tukar filter sendiri atau mesti guna technician?",
     faq_a7: "Boleh tukar sendiri. Kami sediakan panduan lengkap untuk setiap model.",
     faq_q8: "Apa jaminan kualiti air yang dihasilkan?",
@@ -410,7 +739,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     promo_tnc_label_trade: "Trade-In",
     promo_tnc_trade: "Trade-in tertakluk kepada penilaian kondisi unit lama.",
     promo_tnc_label_questions: "Pertanyaan",
-    promo_tnc_questions: "Untuk sebarang pertanyaan, hubungi WhatsApp +6011-5657 7084.",
+    promo_tnc_questions: "Untuk sebarang pertanyaan, hubungi WhatsApp +60 00-0000 0000.",
     contact_label: "HUBUNGI KAMI",
     contact_title: "Hubungi Kami",
     contact_subtitle: "Ada soalan? Pakar penapis air kami sedia membantu anda.",
@@ -436,7 +765,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_wa_title: "Mulakan Perbualan",
     contact_wa_desc: "Team kami biasanya reply dalam 5 minit. Tanya apa sahaja — harga, model sesuai, coverage kawasan anda.",
     contact_wa_cta: "WhatsApp Sekarang →",
-    contact_wa_alt: "atau hubungi +6011-5657 7084",
+    contact_wa_alt: "atau hubungi +60 00-0000 0000",
     contact_wa_badge1: "Reply 5 minit",
     contact_wa_badge2: "Semenanjung MY",
     contact_wa_badge3: "Tiada spam",
@@ -463,13 +792,387 @@ export const translations: Record<Locale, TranslationKeys> = {
     common_sekali_bayar: "Sekali Bayar",
     common_from: "Dari",
     common_month: "/bulan",
+    // Service page — Q2 2026 corporate rebuild
+    nav_service: "Servis",
+    service_meta_title: "Servis Penapis Air AIHAA — Jadual, Harga & Titik Pemeriksaan",
+    service_meta_description: "Servis penyelenggaraan setiap 6 bulan untuk penapis air dalam (13 titik) dan luar (5 titik). Juruteknik terlatih. Harga telus RM160 ke atas.",
+    // §4.1 Heart Service Hero
+    service_hero_eyebrow: "SERVIS CEMERLANG, PENGALAMAN PREMIUM",
+    service_hero_script: "AIHAA Care",
+    service_hero_tagline: "Salah satu sebab keluarga Malaysia memilih AIHAA.",
+    service_hero_heading: "Khidmat Sepenuh Hati",
+    service_hero_subheading: "Empat janji kami pada setiap lawatan juruteknik — supaya air bersih di rumah anda sentiasa terjaga.",
+    service_heart_speedy_title: "PANTAS",
+    service_heart_speedy_desc: "Pantas dan menyeluruh — itulah reputasi juruteknik AIHAA. Setiap lawatan dijalankan cekap tanpa kompromi pada kualiti kerja.",
+    service_heart_expert_title: "BERTAULIAH",
+    service_heart_expert_desc: "Juruteknik bertauliah dengan latihan rasmi dalam pemasangan dan penyelenggaraan sistem penapisan air indoor dan outdoor.",
+    service_heart_caring_title: "MESRA",
+    service_heart_caring_desc: "Mesra, sabar, dan hormat ruang anda. Juruteknik AIHAA dilatih untuk berurusan dengan tetamu rumah seperti keluarga sendiri.",
+    service_heart_alert_title: "RESPONSIF",
+    service_heart_alert_desc: "Bila timbul isu, tindak balas dalam 24 jam. Tiada panggilan tidak berjawab, tiada janji yang dilupakan — kami pantau setiap tiket sehingga selesai.",
+    // §4.2 Indoor Service Header + Filter Row
+    service_indoor_eyebrow: "SERVIS PENJAGAAN PENAPIS AIR AIHAA",
+    service_indoor_heading: "Penyelenggaraan 6 Bulan Sekali",
+    service_indoor_body: "Penapis air AIHAA diselenggara setiap 6 bulan bagi memastikan prestasi sentiasa optimum. Juruteknik terlatih akan menukar semua empat filter, membersihkan bahagian dalaman dan luaran mesin, serta menjalankan pemeriksaan lengkap pada setiap titik servis.",
+    service_filter_row_heading: "Filter Penapis Air Dalam",
+    service_filter_1_name: "Sediment Filter",
+    service_filter_1_desc: "Menapis pasir, karat, dan zarah kasar daripada air masuk.",
+    service_filter_2_name: "Pre-Carbon Filter",
+    service_filter_2_desc: "Menyingkirkan klorin, bau, dan rasa yang tidak diingini.",
+    service_filter_3_name: "UF Membrane",
+    service_filter_3_desc: "Membran 0.01 mikron — menghalang bakteria dan zarah halus.",
+    service_filter_4_name: "Post-Carbon Filter",
+    service_filter_4_desc: "Penapis akhir untuk rasa air yang bersih dan segar.",
+    // §4.3 13 Check Point
+    service_check13_eyebrow: "SERVIS PENAPIS AIR DALAM",
+    service_check13_heading: "13 Titik Pemeriksaan Servis",
+    service_check13_subheading: "Setiap sesi servis menyeluruh meliputi 13 komponen utama pada mesin anda.",
+    service_check13_item_1: "Adapter",
+    service_check13_item_2: "Powerpoint",
+    service_check13_item_3: "Top Cover",
+    service_check13_item_4: "Water Tank",
+    service_check13_item_5: "Connector",
+    service_check13_item_6: "Tubing",
+    service_check13_item_7: "Faucet",
+    service_check13_item_8: "Bottom Cover",
+    service_check13_item_9: "Tray",
+    service_check13_item_10: "Child Lock Safety Button",
+    service_check13_item_11: "Filter",
+    service_check13_item_12: "Servis Sticker",
+    service_check13_item_13: "Cold/Hot Switch",
+    service_check13_placeholder: "Diagram teknikal 13 titik pemeriksaan — gambar rasmi akan dimuat naik.",
+    // §4.4 8 Step Gallery
+    service_8step_eyebrow: "PROSES SERVIS",
+    service_8step_heading: "8 Langkah Servis",
+    service_8step_subheading: "Urutan kerja standard juruteknik pada setiap lawatan penyelenggaraan.",
+    service_8step_step_1: "Suis Off",
+    service_8step_step_2: "Check Panas Sejuk",
+    service_8step_step_3: "Drain Water",
+    service_8step_step_4: "Cuci Tangki",
+    service_8step_step_5: "Tukar Filter",
+    service_8step_step_6: "Flushing Filter Baru",
+    service_8step_step_7: "Lap Body Mesin",
+    service_8step_step_8: "Update Sticker Servis",
+    // §4.5 Filter Pricing
+    service_pricing_filter_eyebrow: "HARGA TELUS",
+    service_pricing_filter_heading: "Harga Servis Filter",
+    service_pricing_filter_subheading: "Harga sekali bayar — merangkumi gantian keempat-empat filter dan upah pemasangan.",
+    service_pricing_filter_aihaa_badge: "Servis Filter (Jenama AIHAA)",
+    service_pricing_filter_aihaa_caption: "Untuk pelanggan model penapis dalam AIHAA.",
+    service_pricing_filter_other_badge: "Servis Filter (Jenama Lain)",
+    service_pricing_filter_other_caption: "Kami juga menyelenggara jenama lain — Coway, Cuckoo, dan yang seumpama.",
+    service_pricing_filter_note: "Harga termasuk gantian filter dan upah pemasangan. Tiada caj tersembunyi.",
+    service_pricing_filter_cta: "Tempah Servis via WhatsApp",
+    // §4.6 Sand Types Showcase
+    service_sand_eyebrow: "SERVIS PENAPIS AIR LUAR",
+    service_sand_heading: "Pasir Penapis Air Luar",
+    service_sand_subheading: "Enam jenis bahan penapis yang digunakan dalam tabung outdoor — setiap lapisan memainkan peranan berbeza dalam membersihkan air masuk ke rumah anda.",
+    service_sand_type_metal_earse: "Metal Earse",
+    service_sand_type_active_carbon: "Active Carbon",
+    service_sand_type_zeolite: "Zeolite",
+    service_sand_type_fine_silica: "Fine Silica",
+    service_sand_type_medium_silica: "Medium Silica",
+    service_sand_type_coarse_silica: "Coarse Silica",
+    // §4.7 5 Check Point Outdoor
+    service_check5_eyebrow: "SERVIS PENAPIS AIR LUAR",
+    service_check5_heading: "5 Titik Pemeriksaan",
+    service_check5_subheading: "Pemeriksaan standard pada setiap lawatan servis outdoor.",
+    service_check5_item_1: "Sumber Air",
+    service_check5_item_2: "Kualiti Body",
+    service_check5_item_3: "Kebersihan Produk",
+    service_check5_item_4: "Performance Filter",
+    service_check5_item_5: "Leakage Test",
+    service_check5_placeholder: "Foto juruteknik di lapangan — akan dimuat naik.",
+    // §4.8 Sand Replacement Pricing
+    service_pricing_sand_eyebrow: "HARGA TELUS",
+    service_pricing_sand_heading: "Harga Servis Tukar Pasir",
+    service_pricing_sand_subheading: "Harga bergantung pada jenis bekalan air di kawasan anda.",
+    service_pricing_sand_5layer_badge: "5 Lapisan Pasir",
+    service_pricing_sand_5layer_note: "Untuk penggunaan air kerajaan (SYABAS / SAJ / JBA).",
+    service_pricing_sand_6layer_badge: "6 Lapisan Pasir",
+    service_pricing_sand_6layer_note: "Untuk penggunaan air boring (sumber bawah tanah).",
+    service_pricing_sand_note: "Harga termasuk buang pasir lama, cuci tabung, dan isi pasir baru.",
+    service_pricing_sand_cta: "Tempah Servis via WhatsApp",
+    // /produk-luar — Phase 2 premium outdoor landing
+    produk_luar_meta_title: "Penapis Air Luar AIHAA — Koleksi Penuh 7 Model",
+    produk_luar_meta_description:
+      "Penapis air luar rumah AIHAA — 7 model dari RM399. PVDF, Fiber, UF Double Backwash, dan lebih. Sesuai untuk air kerajaan, kolam, pejabat, kilang. Sekali bayar, pemasangan percuma.",
+    // §3.1 Sage Hero Lineup
+    produk_luar_hero_eyebrow: "PENAPIS AIR LUAR RUMAH",
+    produk_luar_hero_heading: "Outdoor Filter",
+    produk_luar_hero_italic: "Perlindungan Pertama Anda.",
+    produk_luar_hero_tagline:
+      "Direka khas untuk menangani masalah air kotor pada kos mampu milik — dari air kerajaan sehingga sumber boring.",
+    produk_luar_hero_featured_label: "PILIHAN UTAMA",
+    produk_luar_hero_featured_premium_badge: "PREMIUM",
+    produk_luar_hero_featured_value_badge: "PILIHAN JIMAT",
+    produk_luar_hero_cta: "Lihat Semua Model",
+    // Outdoor use-cases band
+    produk_luar_usecase_eyebrow: "SESUAI UNTUK",
+    produk_luar_usecase_boring: "Air Boring",
+    produk_luar_usecase_kolam: "Kolam Ikan",
+    produk_luar_usecase_pejabat: "Pejabat",
+    produk_luar_usecase_kilang: "Kilang",
+    // Outdoor grid
+    produk_luar_grid_eyebrow: "KATALOG LENGKAP",
+    produk_luar_grid_heading: "Semua Penapis Luar AIHAA",
+    produk_luar_grid_subheading:
+      "Lapan model penapis luar — setiap satu direka untuk sumber air dan keperluan berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
+    // Cross-link on /water-purifier
+    produk_luar_cross_link: "Lihat Koleksi Penapis Luar Premium",
+    // Footer CTA
+    produk_luar_footer_cta_heading: "Tak pasti model yang sesuai?",
+    produk_luar_footer_cta_body:
+      "WhatsApp kami — pakar akan cadangkan mengikut sumber air dan keperluan rumah anda.",
+    produk_luar_footer_cta_button: "WhatsApp Pakar AIHAA",
+    // /produk-dalam — Phase 3 premium indoor landing
+    produk_dalam_meta_title: "Penapis Air Dalam AIHAA — 5 Model Premium",
+    produk_dalam_meta_description:
+      "Penapis air dalam rumah AIHAA — 5 model premium dari RM780. BELLA, BIG, EAN, FANCY, WINTER. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
+    // Indoor Hero Lineup
+    produk_dalam_hero_eyebrow: "PENAPIS AIR DALAM RUMAH",
+    produk_dalam_hero_heading: "Penapis Untuk Rumah",
+    produk_dalam_hero_italic: "Rasa Bersih, Setiap Titik.",
+    produk_dalam_hero_tagline:
+      "Lima model dalam rumah — dari pilihan bajet hingga premium dengan ice maker. Dipilih ribuan keluarga Malaysia.",
+    produk_dalam_hero_featured_bestseller_badge: "PILIHAN RAMAI",
+    produk_dalam_hero_featured_premium_badge: "PREMIUM",
+    produk_dalam_hero_cta: "Lihat Semua Model",
+    // Indoor use-cases band
+    produk_dalam_usecase_eyebrow: "SESUAI UNTUK",
+    produk_dalam_usecase_muda: "Keluarga Muda",
+    produk_dalam_usecase_besar: "Keluarga Besar",
+    produk_dalam_usecase_bayi: "Bayi Baru",
+    produk_dalam_usecase_compact: "Apartment Compact",
+    // Indoor grid
+    produk_dalam_grid_eyebrow: "KATALOG LENGKAP",
+    produk_dalam_grid_heading: "Semua Penapis Dalam AIHAA",
+    produk_dalam_grid_subheading:
+      "Lima model penapis dalam — setiap satu direka untuk saiz keluarga dan gaya dapur berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
+    // Cross-link on /water-purifier
+    produk_dalam_cross_link: "Lihat Koleksi Penapis Dalam Premium",
+    // Footer CTA
+    produk_dalam_footer_cta_heading: "Tak pasti model mana sesuai untuk keluarga anda?",
+    produk_dalam_footer_cta_body:
+      "WhatsApp kami — pakar akan bantu pilih ikut saiz keluarga, ruang dapur, dan bajet anda.",
+    produk_dalam_footer_cta_button: "WhatsApp Pakar AIHAA",
+    // Homepage — Phase 4
+    home_hero_eyebrow: "PENAPIS AIR PREMIUM",
+    home_hero_title_1: "PENAPIS AIR",
+    home_hero_title_2: "JIMAT",
+    home_hero_title_3: "SEKALI BAYAR",
+    home_hero_subtitle:
+      "Tiada sewa bulanan. Pemilikan penuh. Liputan penyelenggaraan sehingga 10 tahun.",
+    home_hero_cta_primary: "WhatsApp Kami",
+    home_hero_cta_secondary: "Lihat Produk",
+    home_collection_eyebrow: "KOLEKSI PILIHAN",
+    home_collection_heading: "Koleksi Pilihan Kami",
+    home_collection_tab_indoor: "Dalam Rumah",
+    home_collection_tab_outdoor: "Luar Rumah",
+    home_collection_view_all_indoor: "Lihat semua penapis dalam",
+    home_collection_view_all_outdoor: "Lihat semua penapis luar",
+    home_testi_eyebrow: "SUARA PELANGGAN",
+    home_testi_quote_1_text:
+      "Sebelum guna AIHAA, kami spend RM200 sebulan untuk air botol. Sekarang jimat lebih RM2,000 setahun! Yang paling penting, anak-anak tak sakit perut macam dulu.",
+    home_testi_quote_1_author: "Encik Rizal Abdullah",
+    home_testi_quote_1_location: "Shah Alam, Selangor",
+    home_testi_quote_2_text:
+      "Saya compare 5 jenama sebelum pilih AIHAA. Harga paling transparent, servis paling responsive. Bila ada issue, team datang dalam masa 24 jam.",
+    home_testi_quote_2_author: "Puan Farah",
+    home_testi_quote_2_location: "Johor Bahru",
+    // About page (/tentang-kami) — Phase 5
+    nav_about: "Tentang Kami",
+    about_meta_title: "Tentang AIHAA — Kisah, Halal Commitment & Pasukan",
+    about_meta_description:
+      "Kisah AIHAA dari 2018. Sijil Halal JAKIM, kolaborasi jenama, pasukan, dan aktiviti tanggungjawab sosial di seluruh Semenanjung Malaysia.",
+    // §5.1 Kisah Kami
+    about_kisah_eyebrow: "KISAH KAMI",
+    about_kisah_heading: "Dari Rumah Kami, Untuk Rumah Anda.",
+    about_kisah_quote:
+      "Pada 2018, saya perasan ramai keluarga Malaysia menghadapi masalah yang sama — harga penapis air terlalu mahal dengan kontrak yang membebankan. Anak-anak saya sendiri pernah mengalami masalah kesihatan akibat kualiti air yang kurang baik. Dari situlah idea AIHAA lahir.",
+    about_kisah_credit: "Pengasas AIHAA",
+    about_kisah_credit_sub: "12+ tahun dalam industri penapis air",
+    about_kisah_timeline_heading: "PERJALANAN KAMI",
+    about_kisah_timeline_2018: "Syarikat ditubuhkan",
+    about_kisah_timeline_2020: "Sijil Halal JAKIM",
+    about_kisah_timeline_2023: "Pelancaran 5 model indoor",
+    about_kisah_timeline_2025: "Cawangan Kelantan dibuka",
+    // §5.2 Halal Commitment
+    about_halal_eyebrow: "OUR HALAL COMMITMENT",
+    about_halal_heading: "Kepatuhan Halal, Janji Kami",
+    about_halal_italic: "Kepercayaan Anda, Janji Kami",
+    about_halal_body:
+      "Di AIHAA, kami sangat komited untuk memastikan bukan sahaja produk kami memenuhi standard Halal, tetapi perjalanan perniagaan kami juga patuh-Syariah. Setiap produk diperakui Halal oleh Jabatan Kemajuan Islam Malaysia (JAKIM) dan dinilai semula pada setiap lot pengeluaran.",
+    about_halal_checkpoints_heading: "HALAL INTEGRITY CHECKPOINTS",
+    about_halal_checkpoint_1: "Bahan binaan & komponen diperiksa pada setiap lot",
+    about_halal_checkpoint_2: "Proses pembungkusan bebas silang-cemar",
+    about_halal_checkpoint_3: "Pengauditan dalaman setiap 6 bulan",
+    // §5.3 Azlee Collab
+    about_azlee_eyebrow: "BRAND COLLABORATION",
+    about_azlee_heading: "AIHAA × Azlee",
+    about_azlee_subheading:
+      "Bersama Azlee dalam misi membawa air bersih ke setiap rumah Malaysia.",
+    about_azlee_placeholder: "Video kolaborasi — akan dimuat naik",
+    // §5.4 Team
+    about_team_eyebrow: "PASUKAN KAMI",
+    about_team_heading: "Berkenalan Dengan Pasukan AIHAA",
+    about_team_subheading:
+      "Pasukan juruteknik, operasi, dan khidmat pelanggan yang menyokong setiap pemasangan di seluruh Semenanjung Malaysia.",
+    about_team_placeholder: "Gambar pasukan — akan dimuat naik",
+    // §5.5 CSR
+    about_csr_eyebrow: "TANGGUNGJAWAB SOSIAL",
+    about_csr_heading: "Aktiviti & Sumbangan AIHAA",
+    about_csr_card_1_title: "Sumbangan Peralatan",
+    about_csr_card_1_year: "TBD",
+    about_csr_card_1_desc:
+      "Penyerahan penapis air ke institusi dan komuniti terpilih.",
+    about_csr_card_2_title: "Bantuan Bencana",
+    about_csr_card_2_year: "TBD",
+    about_csr_card_2_desc:
+      "Sokongan ketika musibah banjir dan bencana alam.",
+    about_csr_card_3_title: "Program Komuniti",
+    about_csr_card_3_year: "TBD",
+    about_csr_card_3_desc:
+      "Inisiatif bulanan bersama komuniti tempatan.",
+    about_csr_note:
+      "Butiran aktiviti akan dikemaskini apabila data rasmi disediakan.",
+    // Product detail — Phase 6
+    product_detail_hero_cta_secondary: "Lihat Spesifikasi",
+    product_detail_features_heading: "Ciri-Ciri Utama",
+    product_detail_service_heading: "Info Servis",
+    product_detail_service_subheading:
+      "Maklumat servis utama untuk produk ini. Butiran penuh semasa konsultasi.",
+    product_detail_service_label_price: "Harga Servis",
+    product_detail_service_label_warranty: "Tempoh Waranti",
+    product_detail_service_label_frequency: "Frekuensi Servis Disyorkan",
+    product_detail_service_label_yearly: "Anggaran Kos Tahunan",
+    product_detail_service_warranty_default: "2 Tahun",
+    product_detail_service_warranty_uf: "10 Tahun (UF Membrane)",
+    product_detail_service_frequency_default: "Setiap 6 Bulan",
+    product_detail_service_disclaimer:
+      "Maklumat servis tertakluk kepada notis. Sila WhatsApp kami untuk butiran terkini.",
+    product_detail_related_subheading:
+      "Produk lain dalam kategori yang sama — mungkin sesuai untuk keperluan anda.",
+    // Phase 7 — detail-page premium sections (BM)
+    product_kitchen_eyebrow: "KESESUAIAN DAPUR",
+    product_kitchen_heading: "Compact To All Type Kitchen",
+    product_kitchen_tagline:
+      "Rekaan yang serasi untuk mana-mana gaya dapur — dari moden ke industri.",
+    product_kitchen_modern_label: "Dapur Moden",
+    product_kitchen_modern_caption:
+      "Warna lembut dan permukaan kemas. Penapis duduk harmoni dengan kabinet minimalis.",
+    product_kitchen_industrial_label: "Dapur Industri",
+    product_kitchen_industrial_caption:
+      "Tekstur konkrit dan besi hitam. Penapis seimbang dengan peralatan profesional.",
+    // Capacity Functionalities
+    product_capacity_eyebrow: "FUNGSI AIR",
+    product_capacity_heading:
+      "Functionalities, Perfectly Suited to Your Lifestyle",
+    product_capacity_subheading:
+      "Suhu yang sesuai untuk setiap keperluan keluarga anda.",
+    product_capacity_coffee_label: "Coffee",
+    product_capacity_coffee_desc: "85°C untuk seduhan kopi dan teh herba.",
+    product_capacity_tea_label: "Tea",
+    product_capacity_tea_desc: "70°C — panas ideal untuk teh harian.",
+    product_capacity_baby_label: "Baby Milk",
+    product_capacity_baby_desc: "50°C — suhu selamat untuk susu bayi.",
+    product_capacity_cold_label: "Cold Water",
+    product_capacity_cold_desc: "8°C — sejuk segar tanpa ais.",
+    product_capacity_ambient_label: "Ambient Water",
+    product_capacity_ambient_desc: "25°C — suhu bilik, segera minum.",
+    product_capacity_ice_label: "Ice Maker",
+    product_capacity_ice_desc: "Ais siap tanpa perlu beg ais tambahan.",
+    // Features Overview Grid
+    product_features_overview_eyebrow: "FEATURES OVERVIEW",
+    product_features_overview_heading: "Setiap Ciri Yang Penting",
+    product_features_overview_subheading:
+      "Close-up pada reka bentuk dan kejuruteraan — enam butiran yang membezakan model ini.",
+    product_features_overview_caption_placeholder:
+      "Close-up produk — akan dimuat naik",
+    // Filter Cartridge Row
+    product_cartridge_eyebrow: "FILTER TECHNOLOGY",
+    product_cartridge_heading: "Filter Penapis Air Dalam",
+    product_cartridge_subheading:
+      "Empat peringkat penapisan yang menjamin air bersih dan selamat.",
+    product_cartridge_sediment_name: "Sediment",
+    product_cartridge_sediment_desc: "Buang zarah kasar & karat",
+    product_cartridge_antibacterial_name: "Antibacterial",
+    product_cartridge_antibacterial_desc: "Halang pertumbuhan bakteria",
+    product_cartridge_pre_carbon_name: "Pre-Carbon",
+    product_cartridge_pre_carbon_desc: "Buang klorin & bau",
+    product_cartridge_post_carbon_name: "Post-Carbon",
+    product_cartridge_post_carbon_desc: "Polish rasa air & kejernihan",
+    product_cartridge_uf_name: "UF Membrane",
+    product_cartridge_uf_desc:
+      "Ultra-filtrasi — menapis zarah sehingga 0.01 mikron.",
+    // House Cross-Section
+    product_house_eyebrow: "KEGUNAAN SELURUH RUMAH",
+    product_house_heading: "Satu Penapis, Enam Kegunaan",
+    product_house_subheading:
+      "Dipasang di pintu masuk air utama — setiap pili di rumah anda terus mendapat air bersih.",
+    product_house_use_cooking: "Memasak",
+    product_house_use_washing: "Mencuci",
+    product_house_use_showering: "Mandian",
+    product_house_use_laundry: "Laundri",
+    product_house_use_hygiene: "Kebersihan Diri",
+    product_house_use_outdoor: "Kegunaan Luar",
+    product_house_caption:
+      "Illustration keratan rumah — akan diganti dengan render rasmi.",
+    // Seven Layer Filtration
+    product_layers_eyebrow: "7 LAPISAN PENAPISAN",
+    product_layers_heading: "Tujuh Lapisan. Perlindungan Penuh.",
+    product_layers_subheading:
+      "Setiap lapisan menjalankan tugas spesifik — bersama-sama mengeluarkan kekotoran, bahan kimia dan bau dari sumber air anda.",
+    product_layers_anthracite_name: "Anthracite",
+    product_layers_anthracite_desc: "Menapis zarah besar dan karat.",
+    product_layers_zeolite_plus_name: "Zeolite Plus",
+    product_layers_zeolite_plus_desc: "Menyerap logam berat dan ammonia.",
+    product_layers_kdf_name: "KDF",
+    product_layers_kdf_desc: "Menyingkir klorin dan menghalang pembiakan bakteria.",
+    product_layers_nano_silver_name: "Nano Silver Activated Carbon",
+    product_layers_nano_silver_desc:
+      "Karbon teraktif dengan nano silver — antibacterial dan menapis bau.",
+    product_layers_super_quick_sand_name: "Super Quick Sand",
+    product_layers_super_quick_sand_desc:
+      "Pasir halus berkadar aliran tinggi untuk penapisan pantas.",
+    product_layers_fine_sand_name: "Fine Sand",
+    product_layers_fine_sand_desc: "Menapis zarah halus sebelum peringkat akhir.",
+    product_layers_silica_sand_name: "Silica Sand",
+    product_layers_silica_sand_desc:
+      "Lapisan dasar — stabilkan aliran dan saring sisa terakhir.",
+    // PVDF Micron Funnel
+    product_funnel_eyebrow: "PVDF ULTRAFILTRATION",
+    product_funnel_heading: "Dari 100 Mikron ke 0.01 Mikron",
+    product_funnel_subheading:
+      "Membran PVDF menapis empat peringkat bersaiz mikroskopik — cukup halus untuk menyekat bakteria dan virus.",
+    product_funnel_tier_100_label: "100 μm",
+    product_funnel_tier_100_desc: "Pasir, karat, zarah besar.",
+    product_funnel_tier_10_label: "10 μm",
+    product_funnel_tier_10_desc: "Debu dan sedimen halus.",
+    product_funnel_tier_1_label: "1 μm",
+    product_funnel_tier_1_desc: "Bakteria dan cyst.",
+    product_funnel_tier_001_label: "0.01 μm",
+    product_funnel_tier_001_desc: "Virus dan koloid.",
+    product_funnel_caption:
+      "Ukuran mikron rujukan industri — bukan pengukuran langsung dari unit anda.",
+    // Spec & Price Dark
+    product_specprice_eyebrow: "SPEC & PRICE",
+    product_specprice_heading: "Technical Specifications",
+    product_specprice_blueprint_caption:
+      "Lukisan teknikal — Dimensi W × D × H",
+    product_specprice_cash_label: "HARGA TUNAI:",
+    product_specprice_tech_badge: "GREEN TECHNOLOGY · Auto Cut-Off Energy",
+    product_specprice_cta: "Tempah via WhatsApp",
+
+    // Chatbot
+    chatbot_agent_header: "Hubungi Kami AIHAA",
+    chatbot_reply_time: "Biasanya reply dalam 5 minit",
   },
   en: {
     nav_home: "Home",
     nav_products: "Products",
     nav_products_indoor: "Indoor Purifiers",
     nav_products_outdoor: "Outdoor Filters",
-    nav_products_all: "All Products",
     nav_promotions: "Promotions",
     nav_faq: "FAQ",
     nav_gallery: "Gallery",
@@ -577,8 +1280,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_cta_title: "Not sure which model?",
     product_cta_sub: "We'll help you choose",
     product_view_details: "View Details",
-    product_featured_label: "Popular Choice",
-    product_featured_cta: "View Details →",
     detail_specs: "Specifications",
     detail_features: "Key Features",
     detail_related: "Related Products",
@@ -599,13 +1300,13 @@ export const translations: Record<Locale, TranslationKeys> = {
     faq_q2: "Does Aihaa use original quality parts and filters?",
     faq_a2: "Yes. All filters and components are original and high quality. We do not use counterfeit or low-grade parts.",
     faq_q3: "How long is the warranty?",
-    faq_a3: "Up to 2 years for all indoor models. Outdoor models get 1 year warranty.",
+    faq_a3: "2 years for all indoor and outdoor models. Exception: UF Double Backwash gets 10 years for the UF membrane.",
     faq_q4: "Is installation really free?",
     faq_a4: "Yes, free installation throughout Peninsular Malaysia. Our certified technicians will come to your home.",
     faq_q5: "Why no long-term contract?",
     faq_a5: "We believe customers shouldn't be tied to 3-5 year contracts. One-time payment means you fully own your water purifier.",
     faq_q6: "How do I know which model suits my home?",
-    faq_a6: "WhatsApp us at +6011-5657 7084. Our team will recommend the most suitable model.",
+    faq_a6: "WhatsApp us at +60 00-0000 0000. Our team will recommend the most suitable model.",
     faq_q7: "Can I change the filter myself?",
     faq_a7: "Yes. We provide complete guides for every model.",
     faq_q8: "What guarantees the water quality?",
@@ -646,7 +1347,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     promo_tnc_label_trade: "Trade-In",
     promo_tnc_trade: "Trade-in is subject to condition assessment of the old unit.",
     promo_tnc_label_questions: "Questions",
-    promo_tnc_questions: "For any inquiries, contact WhatsApp +6011-5657 7084.",
+    promo_tnc_questions: "For any inquiries, contact WhatsApp +60 00-0000 0000.",
     contact_label: "CONTACT US",
     contact_title: "Contact Us",
     contact_subtitle: "Have questions? Our water purification experts are ready to help.",
@@ -672,7 +1373,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_wa_title: "Start a Conversation",
     contact_wa_desc: "Our team usually replies within 5 minutes. Ask anything — price, suitable model, coverage in your area.",
     contact_wa_cta: "WhatsApp Now →",
-    contact_wa_alt: "or call +6011-5657 7084",
+    contact_wa_alt: "or call +60 00-0000 0000",
     contact_wa_badge1: "5 min reply",
     contact_wa_badge2: "Peninsular MY",
     contact_wa_badge3: "No spam",
@@ -699,5 +1400,381 @@ export const translations: Record<Locale, TranslationKeys> = {
     common_sekali_bayar: "One-Time Payment",
     common_from: "From",
     common_month: "/month",
+    // Service page — Q2 2026 corporate rebuild
+    nav_service: "Service",
+    service_meta_title: "AIHAA Water Purifier Service — Schedule, Pricing & Check Points",
+    service_meta_description: "Six-month maintenance service for indoor (13-point) and outdoor (5-point) purifiers. Certified technicians. Transparent pricing from RM 160.",
+    // §4.1 Heart Service Hero
+    service_hero_eyebrow: "EXCEPTIONAL SERVICE, PREMIUM EXPERIENCE",
+    service_hero_script: "AIHAA Care",
+    service_hero_tagline: "One of the reasons Malaysian families choose AIHAA.",
+    service_hero_heading: "Heart-Winning Excellence",
+    service_hero_subheading: "Four promises we keep on every technician visit — so the clean water in your home is always cared for.",
+    service_heart_speedy_title: "SPEEDY",
+    service_heart_speedy_desc: "Quick and thorough — the reputation AIHAA technicians are known for. Every visit runs efficiently, with no compromise on workmanship.",
+    service_heart_expert_title: "EXPERT",
+    service_heart_expert_desc: "Certified technicians with formal training in the installation and maintenance of indoor and outdoor water filtration systems.",
+    service_heart_caring_title: "CARING",
+    service_heart_caring_desc: "Friendly, patient, and respectful of your space. AIHAA technicians are trained to treat every household like family.",
+    service_heart_alert_title: "ALERT",
+    service_heart_alert_desc: "When an issue arises, response within 24 hours. No missed calls, no forgotten promises — we track every ticket through to resolution.",
+    // §4.2 Indoor Service Header + Filter Row
+    service_indoor_eyebrow: "AIHAA WATER PURIFIER CARE SERVICE",
+    service_indoor_heading: "Every 6 Months Maintenance",
+    service_indoor_body: "AIHAA water purifiers are serviced every 6 months to keep performance at its peak. Trained technicians replace all four filters, clean the unit inside and out, and run a full check across every service point.",
+    service_filter_row_heading: "Indoor Water Purifier Filters",
+    service_filter_1_name: "Sediment Filter",
+    service_filter_1_desc: "Captures sand, rust, and coarse particles from incoming water.",
+    service_filter_2_name: "Pre-Carbon Filter",
+    service_filter_2_desc: "Removes chlorine, odours, and unwanted taste.",
+    service_filter_3_name: "UF Membrane",
+    service_filter_3_desc: "0.01-micron membrane — blocks bacteria and fine particulates.",
+    service_filter_4_name: "Post-Carbon Filter",
+    service_filter_4_desc: "Final polish for clean, fresh-tasting water.",
+    // §4.3 13 Check Point
+    service_check13_eyebrow: "INDOOR PURIFIER SERVICE",
+    service_check13_heading: "13 Service Check Points",
+    service_check13_subheading: "Every thorough service session covers 13 key components on your machine.",
+    service_check13_item_1: "Adapter",
+    service_check13_item_2: "Power point",
+    service_check13_item_3: "Top Cover",
+    service_check13_item_4: "Water Tank",
+    service_check13_item_5: "Connector",
+    service_check13_item_6: "Tubing",
+    service_check13_item_7: "Faucet",
+    service_check13_item_8: "Bottom Cover",
+    service_check13_item_9: "Tray",
+    service_check13_item_10: "Child Lock Safety Button",
+    service_check13_item_11: "Filter",
+    service_check13_item_12: "Service Sticker",
+    service_check13_item_13: "Cold/Hot Switch",
+    service_check13_placeholder: "13-point technical diagram — official photo to be uploaded.",
+    // §4.4 8 Step Gallery
+    service_8step_eyebrow: "SERVICE PROCESS",
+    service_8step_heading: "8 Service Steps",
+    service_8step_subheading: "Standard technician workflow on every maintenance visit.",
+    service_8step_step_1: "Power Off",
+    service_8step_step_2: "Hot/Cold Check",
+    service_8step_step_3: "Drain Water",
+    service_8step_step_4: "Clean Tank",
+    service_8step_step_5: "Replace Filters",
+    service_8step_step_6: "Flush New Filters",
+    service_8step_step_7: "Wipe Down Body",
+    service_8step_step_8: "Update Service Sticker",
+    // §4.5 Filter Pricing
+    service_pricing_filter_eyebrow: "TRANSPARENT PRICING",
+    service_pricing_filter_heading: "Filter Service Pricing",
+    service_pricing_filter_subheading: "One-time pricing — covers replacement of all four filters plus installation labour.",
+    service_pricing_filter_aihaa_badge: "Filter Service (AIHAA Brand)",
+    service_pricing_filter_aihaa_caption: "For AIHAA indoor purifier models.",
+    service_pricing_filter_other_badge: "Filter Service (Other Brands)",
+    service_pricing_filter_other_caption: "We also service other brands — Coway, Cuckoo, and similar.",
+    service_pricing_filter_note: "Price includes filter replacement and installation. No hidden charges.",
+    service_pricing_filter_cta: "Book Service via WhatsApp",
+    // §4.6 Sand Types Showcase
+    service_sand_eyebrow: "OUTDOOR FILTER SERVICE",
+    service_sand_heading: "Outdoor Filter Sand",
+    service_sand_subheading: "Six filter media used in the outdoor tank — each layer plays a distinct role in cleaning water before it enters your home.",
+    service_sand_type_metal_earse: "Metal Earse",
+    service_sand_type_active_carbon: "Active Carbon",
+    service_sand_type_zeolite: "Zeolite",
+    service_sand_type_fine_silica: "Fine Silica",
+    service_sand_type_medium_silica: "Medium Silica",
+    service_sand_type_coarse_silica: "Coarse Silica",
+    // §4.7 5 Check Point Outdoor
+    service_check5_eyebrow: "OUTDOOR FILTER SERVICE",
+    service_check5_heading: "5 Check Points",
+    service_check5_subheading: "Standard inspection on every outdoor service visit.",
+    service_check5_item_1: "Water Source",
+    service_check5_item_2: "Body Condition",
+    service_check5_item_3: "Product Cleanliness",
+    service_check5_item_4: "Filter Performance",
+    service_check5_item_5: "Leakage Test",
+    service_check5_placeholder: "Field technician photo — to be uploaded.",
+    // §4.8 Sand Replacement Pricing
+    service_pricing_sand_eyebrow: "TRANSPARENT PRICING",
+    service_pricing_sand_heading: "Sand Replacement Pricing",
+    service_pricing_sand_subheading: "Pricing depends on the type of water supply in your area.",
+    service_pricing_sand_5layer_badge: "5-Layer Sand",
+    service_pricing_sand_5layer_note: "For municipal water supply (SYABAS / SAJ / JBA).",
+    service_pricing_sand_6layer_badge: "6-Layer Sand",
+    service_pricing_sand_6layer_note: "For borehole water (underground source).",
+    service_pricing_sand_note: "Price includes disposal of old sand, tank cleaning, and new sand fill.",
+    service_pricing_sand_cta: "Book Service via WhatsApp",
+    // /produk-luar — Phase 2 premium outdoor landing
+    produk_luar_meta_title: "AIHAA Outdoor Water Filters — Full 7-Model Collection",
+    produk_luar_meta_description:
+      "AIHAA outdoor water filters — 7 models from RM399. PVDF, Fiber, UF Double Backwash, and more. Suited for municipal water, ponds, offices, and factories. One-time payment, free installation.",
+    // §3.1 Sage Hero Lineup
+    produk_luar_hero_eyebrow: "OUTDOOR WATER FILTRATION",
+    produk_luar_hero_heading: "Outdoor Filter",
+    produk_luar_hero_italic: "Your First Protector.",
+    produk_luar_hero_tagline:
+      "Crafted to address dirty water problems at an affordable cost — from municipal supply to borehole sources.",
+    produk_luar_hero_featured_label: "FEATURED",
+    produk_luar_hero_featured_premium_badge: "PREMIUM",
+    produk_luar_hero_featured_value_badge: "BEST VALUE",
+    produk_luar_hero_cta: "View All Models",
+    // Outdoor use-cases band
+    produk_luar_usecase_eyebrow: "SUITED FOR",
+    produk_luar_usecase_boring: "Borehole Water",
+    produk_luar_usecase_kolam: "Fish Ponds",
+    produk_luar_usecase_pejabat: "Offices",
+    produk_luar_usecase_kilang: "Factories",
+    // Outdoor grid
+    produk_luar_grid_eyebrow: "FULL CATALOGUE",
+    produk_luar_grid_heading: "Every AIHAA Outdoor Filter",
+    produk_luar_grid_subheading:
+      "Eight outdoor models — each built for a distinct water source and use case. Click any product for full specifications.",
+    // Cross-link on /water-purifier
+    produk_luar_cross_link: "View Premium Outdoor Collection",
+    // Footer CTA
+    produk_luar_footer_cta_heading: "Not sure which model fits?",
+    produk_luar_footer_cta_body:
+      "WhatsApp us — a specialist will recommend based on your water source and household needs.",
+    produk_luar_footer_cta_button: "WhatsApp an AIHAA Specialist",
+    // /produk-dalam — Phase 3 premium indoor landing
+    produk_dalam_meta_title: "AIHAA Indoor Water Purifiers — 5 Premium Models",
+    produk_dalam_meta_description:
+      "AIHAA indoor water purifiers — 5 premium models from RM780. BELLA, BIG, EAN, FANCY, WINTER. One-time payment, free installation across Peninsular Malaysia.",
+    // Indoor Hero Lineup
+    produk_dalam_hero_eyebrow: "INDOOR WATER PURIFICATION",
+    produk_dalam_hero_heading: "Purifiers for the Home",
+    produk_dalam_hero_italic: "Clean Taste, Every Drop.",
+    produk_dalam_hero_tagline:
+      "Five indoor models — from budget pick to premium with built-in ice maker. Chosen by thousands of Malaysian families.",
+    produk_dalam_hero_featured_bestseller_badge: "BESTSELLER",
+    produk_dalam_hero_featured_premium_badge: "PREMIUM",
+    produk_dalam_hero_cta: "View All Models",
+    // Indoor use-cases band
+    produk_dalam_usecase_eyebrow: "SUITED FOR",
+    produk_dalam_usecase_muda: "Young Families",
+    produk_dalam_usecase_besar: "Big Households",
+    produk_dalam_usecase_bayi: "Newborn Care",
+    produk_dalam_usecase_compact: "Apartment Living",
+    // Indoor grid
+    produk_dalam_grid_eyebrow: "FULL CATALOGUE",
+    produk_dalam_grid_heading: "Every AIHAA Indoor Purifier",
+    produk_dalam_grid_subheading:
+      "Five indoor models — each built for a distinct family size and kitchen style. Click any product for full specifications.",
+    // Cross-link on /water-purifier
+    produk_dalam_cross_link: "View Premium Indoor Collection",
+    // Footer CTA
+    produk_dalam_footer_cta_heading: "Not sure which model fits your family?",
+    produk_dalam_footer_cta_body:
+      "WhatsApp us — a specialist will help you pick based on family size, kitchen space, and budget.",
+    produk_dalam_footer_cta_button: "WhatsApp an AIHAA Specialist",
+    // Homepage — Phase 4
+    home_hero_eyebrow: "PREMIUM WATER PURIFIERS",
+    home_hero_title_1: "WATER PURIFIERS",
+    home_hero_title_2: "ONE-TIME",
+    home_hero_title_3: "PAYMENT",
+    home_hero_subtitle:
+      "No monthly rental. Full ownership. Up to 10 years of maintenance coverage.",
+    home_hero_cta_primary: "WhatsApp Us",
+    home_hero_cta_secondary: "View Products",
+    home_collection_eyebrow: "SIGNATURE COLLECTION",
+    home_collection_heading: "Our Signature Collection",
+    home_collection_tab_indoor: "Indoor",
+    home_collection_tab_outdoor: "Outdoor",
+    home_collection_view_all_indoor: "View all indoor purifiers",
+    home_collection_view_all_outdoor: "View all outdoor filters",
+    home_testi_eyebrow: "CUSTOMER VOICES",
+    home_testi_quote_1_text:
+      "Before AIHAA, we spent RM200 a month on bottled water. Now we save more than RM2,000 a year — and the kids stopped getting upset stomachs.",
+    home_testi_quote_1_author: "Encik Rizal Abdullah",
+    home_testi_quote_1_location: "Shah Alam, Selangor",
+    home_testi_quote_2_text:
+      "I compared five brands before picking AIHAA. Most transparent pricing, most responsive service — when we had an issue, a technician arrived within 24 hours.",
+    home_testi_quote_2_author: "Puan Farah",
+    home_testi_quote_2_location: "Johor Bahru",
+    // About page (/tentang-kami) — Phase 5
+    nav_about: "About Us",
+    about_meta_title: "About AIHAA — Our Story, Halal Commitment & Team",
+    about_meta_description:
+      "The AIHAA story from 2018. Halal JAKIM certification, brand collaborations, team, and community CSR work across Peninsular Malaysia.",
+    // §5.1 Kisah Kami
+    about_kisah_eyebrow: "OUR STORY",
+    about_kisah_heading: "From Our Home, For Yours.",
+    about_kisah_quote:
+      "In 2018 I noticed so many Malaysian families facing the same problem — water purifier prices that were too high, tied to contracts that kept on squeezing. My own kids had suffered stomach issues from poor water quality. That's where AIHAA was born.",
+    about_kisah_credit: "Founder, AIHAA",
+    about_kisah_credit_sub: "12+ years in the water purification industry",
+    about_kisah_timeline_heading: "OUR JOURNEY",
+    about_kisah_timeline_2018: "Company founded",
+    about_kisah_timeline_2020: "Halal JAKIM certification",
+    about_kisah_timeline_2023: "Launched 5 indoor models",
+    about_kisah_timeline_2025: "Opened Kelantan branch",
+    // §5.2 Halal Commitment
+    about_halal_eyebrow: "OUR HALAL COMMITMENT",
+    about_halal_heading: "Halal Compliance, Our Promise",
+    about_halal_italic: "Your Trust, Our Promise",
+    about_halal_body:
+      "At AIHAA we are deeply committed to ensuring that not only our products meet Halal standards, but that our business operations are Shariah-compliant end to end. Every product is certified Halal by the Department of Islamic Development Malaysia (JAKIM) and re-audited at every production lot.",
+    about_halal_checkpoints_heading: "HALAL INTEGRITY CHECKPOINTS",
+    about_halal_checkpoint_1: "Components inspected at every production lot",
+    about_halal_checkpoint_2: "Packaging process free from cross-contamination",
+    about_halal_checkpoint_3: "Internal audit every 6 months",
+    // §5.3 Azlee Collab
+    about_azlee_eyebrow: "BRAND COLLABORATION",
+    about_azlee_heading: "AIHAA × Azlee",
+    about_azlee_subheading:
+      "Working with Azlee on the mission to bring clean water into every Malaysian home.",
+    about_azlee_placeholder: "Collaboration video — to be uploaded",
+    // §5.4 Team
+    about_team_eyebrow: "OUR TEAM",
+    about_team_heading: "Meet the AIHAA Team",
+    about_team_subheading:
+      "The technicians, operations, and customer care teams that back every installation across Peninsular Malaysia.",
+    about_team_placeholder: "Team photo — to be uploaded",
+    // §5.5 CSR
+    about_csr_eyebrow: "SOCIAL RESPONSIBILITY",
+    about_csr_heading: "AIHAA Community Work",
+    about_csr_card_1_title: "Equipment Donations",
+    about_csr_card_1_year: "TBD",
+    about_csr_card_1_desc:
+      "Delivering water purifiers to selected institutions and communities.",
+    about_csr_card_2_title: "Disaster Relief",
+    about_csr_card_2_year: "TBD",
+    about_csr_card_2_desc:
+      "Support during floods and natural disaster response.",
+    about_csr_card_3_title: "Community Programmes",
+    about_csr_card_3_year: "TBD",
+    about_csr_card_3_desc:
+      "Monthly initiatives alongside local communities.",
+    about_csr_note:
+      "Activity details will be updated as official data becomes available.",
+    // Product detail — Phase 6
+    product_detail_hero_cta_secondary: "View Specifications",
+    product_detail_features_heading: "Key Features",
+    product_detail_service_heading: "Service Information",
+    product_detail_service_subheading:
+      "Core service details for this product. Full specifics during consultation.",
+    product_detail_service_label_price: "Service Price",
+    product_detail_service_label_warranty: "Warranty Period",
+    product_detail_service_label_frequency: "Recommended Service Frequency",
+    product_detail_service_label_yearly: "Estimated Annual Cost",
+    product_detail_service_warranty_default: "2 Years",
+    product_detail_service_warranty_uf: "10 Years (UF Membrane)",
+    product_detail_service_frequency_default: "Every 6 Months",
+    product_detail_service_disclaimer:
+      "Service details are subject to change. WhatsApp us for current information.",
+    product_detail_related_subheading:
+      "Other products in the same category — may suit your needs.",
+    // Phase 7 — detail-page premium sections (EN)
+    product_kitchen_eyebrow: "KITCHEN FIT",
+    product_kitchen_heading: "Compact To All Type Kitchen",
+    product_kitchen_tagline:
+      "A form factor that sits comfortably in any kitchen — modern to industrial.",
+    product_kitchen_modern_label: "Modern Kitchen",
+    product_kitchen_modern_caption:
+      "Soft tones, clean surfaces. Sits in harmony with minimalist cabinetry.",
+    product_kitchen_industrial_label: "Industrial Kitchen",
+    product_kitchen_industrial_caption:
+      "Concrete textures, black steel. Balanced against professional equipment.",
+    // Capacity Functionalities
+    product_capacity_eyebrow: "WATER FUNCTIONS",
+    product_capacity_heading:
+      "Functionalities, Perfectly Suited to Your Lifestyle",
+    product_capacity_subheading:
+      "Every temperature your family needs, on demand.",
+    product_capacity_coffee_label: "Coffee",
+    product_capacity_coffee_desc: "85°C for brewing coffee and herbal tea.",
+    product_capacity_tea_label: "Tea",
+    product_capacity_tea_desc: "70°C — the ideal daily tea temperature.",
+    product_capacity_baby_label: "Baby Milk",
+    product_capacity_baby_desc: "50°C — safe for infant formula.",
+    product_capacity_cold_label: "Cold Water",
+    product_capacity_cold_desc: "8°C — crisp and chilled without ice.",
+    product_capacity_ambient_label: "Ambient Water",
+    product_capacity_ambient_desc: "25°C — room temperature, ready to drink.",
+    product_capacity_ice_label: "Ice Maker",
+    product_capacity_ice_desc: "Built-in ice — no extra tray needed.",
+    // Features Overview Grid
+    product_features_overview_eyebrow: "FEATURES OVERVIEW",
+    product_features_overview_heading: "Every Detail That Matters",
+    product_features_overview_subheading:
+      "Close-ups of the design and engineering — six details that set this model apart.",
+    product_features_overview_caption_placeholder:
+      "Product close-up — to be uploaded",
+    // Filter Cartridge Row
+    product_cartridge_eyebrow: "FILTER TECHNOLOGY",
+    product_cartridge_heading: "Inside The Filter",
+    product_cartridge_subheading:
+      "Four filtration stages for clean, safe water.",
+    product_cartridge_sediment_name: "Sediment",
+    product_cartridge_sediment_desc: "Remove coarse particles & rust",
+    product_cartridge_antibacterial_name: "Antibacterial",
+    product_cartridge_antibacterial_desc: "Prevent bacteria growth",
+    product_cartridge_pre_carbon_name: "Pre-Carbon",
+    product_cartridge_pre_carbon_desc: "Remove chlorine & odor",
+    product_cartridge_post_carbon_name: "Post-Carbon",
+    product_cartridge_post_carbon_desc: "Polish taste & clarity",
+    product_cartridge_uf_name: "UF Membrane",
+    product_cartridge_uf_desc:
+      "Ultra-filtration — filters particles down to 0.01 micron.",
+    // House Cross-Section
+    product_house_eyebrow: "WHOLE-HOUSE PROTECTION",
+    product_house_heading: "One Filter, Six Uses",
+    product_house_subheading:
+      "Installed at your main water inlet — every tap in the house receives filtered water.",
+    product_house_use_cooking: "Cooking",
+    product_house_use_washing: "Washing",
+    product_house_use_showering: "Showering",
+    product_house_use_laundry: "Laundry",
+    product_house_use_hygiene: "Personal Hygiene",
+    product_house_use_outdoor: "Outdoor Usage",
+    product_house_caption:
+      "House cutaway illustration — to be replaced with an official render.",
+    // Seven Layer Filtration
+    product_layers_eyebrow: "7 FILTRATION LAYERS",
+    product_layers_heading: "Seven Layers. Full Protection.",
+    product_layers_subheading:
+      "Each layer does a specific job — together they strip contaminants, chemicals, and odours from your water source.",
+    product_layers_anthracite_name: "Anthracite",
+    product_layers_anthracite_desc: "Filters large particles and rust.",
+    product_layers_zeolite_plus_name: "Zeolite Plus",
+    product_layers_zeolite_plus_desc: "Absorbs heavy metals and ammonia.",
+    product_layers_kdf_name: "KDF",
+    product_layers_kdf_desc: "Removes chlorine and inhibits bacterial growth.",
+    product_layers_nano_silver_name: "Nano Silver Activated Carbon",
+    product_layers_nano_silver_desc:
+      "Activated carbon with nano silver — antibacterial, removes odour.",
+    product_layers_super_quick_sand_name: "Super Quick Sand",
+    product_layers_super_quick_sand_desc:
+      "High-flow fine sand for fast filtration.",
+    product_layers_fine_sand_name: "Fine Sand",
+    product_layers_fine_sand_desc:
+      "Catches fine particles before the final stage.",
+    product_layers_silica_sand_name: "Silica Sand",
+    product_layers_silica_sand_desc:
+      "Base layer — stabilises flow and strains out final residue.",
+    // PVDF Micron Funnel
+    product_funnel_eyebrow: "PVDF ULTRAFILTRATION",
+    product_funnel_heading: "From 100 Micron to 0.01 Micron",
+    product_funnel_subheading:
+      "The PVDF membrane filters four microscopic tiers — fine enough to block bacteria and viruses.",
+    product_funnel_tier_100_label: "100 μm",
+    product_funnel_tier_100_desc: "Sand, rust, large particles.",
+    product_funnel_tier_10_label: "10 μm",
+    product_funnel_tier_10_desc: "Dust and fine sediment.",
+    product_funnel_tier_1_label: "1 μm",
+    product_funnel_tier_1_desc: "Bacteria and cysts.",
+    product_funnel_tier_001_label: "0.01 μm",
+    product_funnel_tier_001_desc: "Viruses and colloids.",
+    product_funnel_caption:
+      "Industry-reference micron sizes — not a direct measurement from your unit.",
+    // Spec & Price Dark
+    product_specprice_eyebrow: "SPEC & PRICE",
+    product_specprice_heading: "Technical Specifications",
+    product_specprice_blueprint_caption:
+      "Technical drawing — dimensions W × D × H",
+    product_specprice_cash_label: "CASH PRICE:",
+    product_specprice_tech_badge: "GREEN TECHNOLOGY · Auto Cut-Off Energy",
+    product_specprice_cta: "Order via WhatsApp",
+
+    // Chatbot
+    chatbot_agent_header: "Contact AIHAA",
+    chatbot_reply_time: "Usually replies within 5 minutes",
   },
 };

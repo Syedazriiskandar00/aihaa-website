@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,38 +7,39 @@ import FloatingButtons from "@/components/FloatingButtons";
 import ProductCard from "@/components/ProductCard";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
+import {
+  indoorProducts as indoorCatalog,
+  outdoorProducts as outdoorCatalog,
+  type Product,
+} from "@/lib/data/products";
 
-const indoorProducts = [
-  { id: "aihaa-bella", name: "AIHAA BELLA", tagline: "Rekaan Kompak Stand Floor", price: "RM1,080", image: "/images/products/bella/main.jpg" },
-  { id: "aihaa-big", name: "AIHAA BIG", tagline: "Kapasiti Besar 17 Liter", price: "RM1,280", image: "/images/products/big/main.jpg", badge: "popular" as const },
-  { id: "aihaa-ean", name: "AIHAA EAN", tagline: "Pilihan Bajet dengan Digital Feature", price: "RM780", oldPrice: "RM867", image: "/images/products/ean/main.png", badge: "sale" as const },
-  { id: "aihaa-fancy", name: "AIHAA FANCY", tagline: "Rekaan Slim Moden dengan 3 Tangki", price: "RM999", image: "/images/products/fancy/main.jpg" },
-  { id: "aihaa-winter", name: "AIHAA WINTER", tagline: "Premium dengan Ice Maker & Teknologi Baru", price: "RM1,580", image: "/images/products/winter/main.png", badge: "premium" as const },
-];
-
-const outdoorProducts = [
-  { id: "ultra-one", name: "ULTRA ONE", tagline: "All-in-One Direct Minum", price: "RM399", image: "/images/products/ultra-one/main.jpg", badge: "best-value" as const },
-  { id: "fiber-9x42", name: "FIBER 9X42", tagline: "Tangki Fiber Tahan Lasak", price: "RM399", image: "/images/products/fiber/main.jpg" },
-  { id: "fiber-10x44", name: "FIBER 10X44", tagline: "Tangki Fiber Besar 10x44", price: "RM469", image: "/images/products/fiber-10x44/main.png" },
-  { id: "penapis-boring-13x54", name: "PENAPIS BORING 13X54", tagline: "Khas Untuk Air Bawah Tanah", price: "RM1,180", image: "/images/products/penapis-boring/main.jpg" },
-  { id: "pvdf", name: "PVDF", tagline: "Material PVDF Gred Profesional", price: "RM899", image: "/images/products/pvdf/main.jpg", badge: "pro-grade" as const },
-  { id: "pvdf-plus", name: "PVDF PLUS", tagline: "PVDF Dipertingkat 6000L/Hour", price: "RM1,299", image: "/images/products/pvdf-plus/main.jpg", badge: "premium" as const },
-  { id: "super-pleated", name: "SUPER PLEATED", tagline: "Kadar Aliran Tinggi & Kompak", price: "RM580", image: "/images/products/super-pleated/main.jpg" },
-  { id: "uf-double-backwash", name: "UF DOUBLE BACKWASH", tagline: "Membran UF dengan Dual Backwash", price: "RM799", oldPrice: "RM888", image: "/images/products/uf-double-backwash/main.jpg", badge: "sale" as const },
-];
+const toCard = (p: Product, locale: "bm" | "en") => ({
+  id: p.slug,
+  name: p.name,
+  tagline: p.tagline[locale],
+  price: p.price,
+  oldPrice: p.oldPrice,
+  image: p.mainImage,
+  badge: p.badge,
+});
 
 export default function WaterPurifierPage() {
-  const featuredRef = useScrollReveal();
   const indoorRef = useScrollReveal();
   const outdoorRef = useScrollReveal();
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const indoorProducts = indoorCatalog.map((p) => toCard(p, locale));
+  const outdoorProducts = outdoorCatalog.map((p) => toCard(p, locale));
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
 
       {/* ── Hero Banner ── */}
-      <section className="relative pt-20 pb-16 bg-dark overflow-hidden">
+      <section className="relative pt-20 pb-16 bg-surface overflow-hidden">
+        {/* Same dotted gold texture pattern as the indoor/outdoor
+            premium hero — opacity-10 reads as a subtle warm grain on
+            cream, matching IndoorHeroLineup / SageHeroLineup. */}
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
@@ -51,53 +51,15 @@ export default function WaterPurifierPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <div className="text-center">
-            <span className="inline-block bg-gold/10 text-gold px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.3)] mb-4">
+            <span className="inline-block bg-gold/15 text-gold-dark px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.4)] mb-4">
               {t.product_hero_badge}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6">
               {t.product_hero_title} <span className="gold-gradient-text">AIHAA</span>
             </h1>
-            <p className="text-muted-dark text-lg max-w-2xl mx-auto">
+            <p className="text-muted text-lg max-w-2xl mx-auto">
               {t.product_hero_subtitle}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Featured Product Showcase ── */}
-      <section className="bg-white py-16 lg:py-20">
-        <div ref={featuredRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-            {/* Image */}
-            <div className="relative w-full md:w-auto md:flex-1 aspect-[4/3] max-h-[240px] md:max-h-none rounded-2xl overflow-hidden bg-[#FFFDE7] scroll-reveal-child stagger-1">
-              <Image
-                src="/images/products/bella/poster.jpg"
-                alt="AIHAA BELLA — Penapis Air Paling Popular"
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-            </div>
-            {/* Info */}
-            <div className="w-full md:flex-1 scroll-reveal-child stagger-2">
-              <span className="text-gold text-xs font-medium uppercase tracking-[0.2em]">
-                {t.product_featured_label}
-              </span>
-              <h2 className="font-editorial text-4xl md:text-5xl text-dark mt-3 mb-3">
-                AIHAA BELLA
-              </h2>
-              <p className="text-muted mb-4">
-                Rekaan kompak stand floor dengan 4 tahap penapisan dan teknologi mineral alkali. Kapasiti tangki 9.5 liter — sesuai untuk keluarga.
-              </p>
-              <p className="text-gold-dark text-2xl font-semibold mb-6">RM1,080</p>
-              <Link
-                href="/product/aihaa-bella"
-                className="text-gold font-medium inline-flex items-center gap-2 hover:gap-3 transition-all"
-              >
-                {t.product_featured_cta}
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -115,16 +77,25 @@ export default function WaterPurifierPage() {
       {/* ── Indoor Section ── */}
       <section id="indoor" className="scroll-mt-24 bg-white py-16 lg:py-20">
         <div ref={indoorRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 scroll-reveal-child stagger-1">
-            <span className="text-gold text-[10px] font-medium uppercase tracking-[0.2em]">
-              {t.product_indoor_label}
-            </span>
-            <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
-              {t.product_indoor_title}
-            </h2>
-            <p className="text-muted text-sm max-w-lg">
-              {t.product_indoor_subtitle}
-            </p>
+          <div className="mb-10 scroll-reveal-child stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <span className="text-gold text-[10px] font-medium uppercase tracking-[0.2em]">
+                {t.product_indoor_label}
+              </span>
+              <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
+                {t.product_indoor_title}
+              </h2>
+              <p className="text-muted text-sm max-w-lg">
+                {t.product_indoor_subtitle}
+              </p>
+            </div>
+            <Link
+              href="/produk-dalam"
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-dark hover:text-gold transition-colors whitespace-nowrap"
+            >
+              {t.produk_dalam_cross_link}
+              <span aria-hidden className="text-gold">→</span>
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -142,7 +113,7 @@ export default function WaterPurifierPage() {
               <p className="font-semibold text-white mb-1">{t.product_cta_title}</p>
               <p className="text-[#999] text-sm mb-4">{t.product_cta_sub}</p>
               <a
-                href="https://wa.me/60115657084?text=Hai,%20saya%20nak%20tanya%20penapis%20air%20mana%20yang%20sesuai%20untuk%20saya."
+                href={whatsappUrl(whatsappMessages.modelAdvice)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#DAA520] text-[#0D0D0D] px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-all"
@@ -168,13 +139,22 @@ export default function WaterPurifierPage() {
       {/* ── Outdoor Section ── */}
       <section id="outdoor" className="scroll-mt-24 bg-surface py-16 lg:py-20">
         <div ref={outdoorRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 scroll-reveal-child stagger-1">
-            <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
-              {t.product_outdoor_title}
-            </h2>
-            <p className="text-muted text-sm max-w-lg">
-              {t.product_outdoor_subtitle}
-            </p>
+          <div className="mb-10 scroll-reveal-child stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">
+                {t.product_outdoor_title}
+              </h2>
+              <p className="text-muted text-sm max-w-lg">
+                {t.product_outdoor_subtitle}
+              </p>
+            </div>
+            <Link
+              href="/produk-luar"
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-dark hover:text-gold transition-colors whitespace-nowrap"
+            >
+              {t.produk_luar_cross_link}
+              <span aria-hidden className="text-gold">→</span>
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">

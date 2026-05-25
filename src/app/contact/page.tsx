@@ -6,6 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Mail, Clock, MapPin, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { whatsappUrl, telHref, PHONE_NUMBER_DISPLAY } from "@/lib/config/contact";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -17,16 +18,16 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      {/* ── 1. HERO — compact, left-aligned ── */}
-      <section className="bg-[#0D0D0D] pt-28 pb-14">
-        <div ref={heroRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-4">
+      {/* ── 1. HERO — cream, centered (matches the other hub pages) ── */}
+      <section className="bg-surface pt-16 pb-14">
+        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-gold-dark mb-4">
             {t.contact_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-[36px] lg:text-[48px] text-dark mb-3">
             {t.contact_hero_title}
           </h1>
-          <p className="scroll-reveal-child stagger-3 text-sm text-[#999]">
+          <p className="scroll-reveal-child stagger-3 text-sm text-muted">
             {t.contact_hero_sub}
           </p>
         </div>
@@ -106,7 +107,7 @@ export default function ContactPage() {
               </div>
               {/* CTA button */}
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full sm:w-auto sm:inline-block gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold text-center hover:opacity-90 transition-all hover:shadow-gold btn-shimmer text-lg"
@@ -114,7 +115,7 @@ export default function ContactPage() {
                 {t.contact_wa_cta}
               </a>
               <p className="mt-4 text-[13px] text-[#999]">
-                <a href="tel:+60115657084" className="hover:text-[#717171] transition-colors">
+                <a href={telHref()} className="hover:text-[#717171] transition-colors">
                   {t.contact_wa_alt}
                 </a>
               </p>
@@ -133,8 +134,8 @@ export default function ContactPage() {
                 <MessageCircle className="w-6 h-6 text-gold" />
               </div>
               <h3 className="text-base font-bold text-[#0D0D0D] mb-2">{t.contact_info_wa_title}</h3>
-              <a href="tel:+60115657084" className="text-lg font-bold text-[#DAA520] hover:opacity-80 transition-opacity block mb-1">
-                +6011-5657 7084
+              <a href={telHref()} className="text-lg font-bold text-[#DAA520] hover:opacity-80 transition-opacity block mb-1">
+                {PHONE_NUMBER_DISPLAY}
               </a>
               <p className="text-xs text-[#717171]">{t.contact_info_wa_sub}</p>
             </div>
@@ -172,18 +173,23 @@ export default function ContactPage() {
             <p className="text-sm text-[#717171]">Batu Pahat, Johor, Malaysia</p>
             <p className="text-xs text-[#999] mt-1">SSM: 1263314-X</p>
           </div>
-          {/* Map Placeholder */}
-          <div className="rounded-xl overflow-hidden bg-[#1a1a1a] min-h-[320px] flex flex-col items-center justify-center border border-[rgba(218,165,32,0.15)]">
-            <svg className="w-12 h-12 text-[#DAA520] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <p className="text-[#DAA520] text-xl font-bold mb-1">Batu Pahat, Johor</p>
-            <p className="text-[#777] text-sm">Malaysia</p>
+          {/* Real Google Maps embed — AIHAA Marketing Sdn Bhd location
+              at 1°52'00.1"N 103°00'46.1"E (Batu Pahat, Johor). Lazy-loaded
+              so the iframe payload doesn't block the rest of the page. */}
+          <div className="rounded-xl overflow-hidden border border-[rgba(218,165,32,0.15)] shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3987.7009815286365!2d103.01022707496685!3d1.866703998116257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwNTInMDAuMSJOIDEwM8KwMDAnNDYuMSJF!5e0!3m2!1sen!2smy!4v1779649359638!5m2!1sen!2smy"
+              title="AIHAA Marketing Sdn Bhd location, Batu Pahat, Johor"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              style={{ border: 0 }}
+              className="w-full aspect-video block"
+            />
           </div>
           <p className="text-center mt-4">
             <a
-              href="https://maps.google.com/?q=Batu+Pahat,Johor"
+              href="https://maps.google.com/?q=1.866704,103.010227"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-[#DAA520] hover:underline"

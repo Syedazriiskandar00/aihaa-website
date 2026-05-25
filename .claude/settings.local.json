@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull *)",
+      "Bash(git checkout *)",
+      "Bash(grep -vE \"^\\(home|sections|shared|ui\\)$\")",
+      "Bash(git branch *)",
+      "Bash(git fetch *)",
+      "Bash(awk NR>=1560 && NR<=1786 *)",
+      "Bash(awk NR>=1299 && NR<=1560 *)",
+      "Bash(python3 *)",
+      "Bash(/c/Python314/python *)",
+      "Bash(grep -n \"^  bm: {\\\\|^  en: {\\\\|^  },\\\\|^};\" src/lib/i18n/translations.ts)"
+    ]
+  }
+}

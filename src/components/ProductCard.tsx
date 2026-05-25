@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { getCardImage } from "@/lib/data/product-card-images";
 
 interface ProductCardProps {
   id: string;
@@ -25,6 +26,11 @@ export default function ProductCard({
 }: ProductCardProps) {
   const { locale } = useLanguage();
 
+  // Card image config takes priority. Falls back to `image` prop
+  // (product.mainImage), then to gradient placeholder. Single edit
+  // in product-card-images.ts swaps a product to a portrait card.
+  const cardImage = getCardImage(id);
+
   const badgeStyles = {
     popular: "bg-[#DAA520] text-[#0D0D0D]",
     sale: "bg-red-600 text-white",
@@ -46,8 +52,10 @@ export default function ProductCard({
       href={`/product/${id}`}
       className="bg-white border border-[rgba(218,165,32,0.15)] rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-[6px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:border-[rgba(218,165,32,0.3)] block"
     >
-      {/* Image Container */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-[#f8f8f8]">
+      {/* Image Container — warm off-white (#F0EEE9) so product photos with
+          pure-white backgrounds (e.g. uf-double-backwash) don't blend
+          into the card fill. */}
+      <div className="relative aspect-[3/4] overflow-hidden bg-[#F0EEE9]">
         {/* Badge */}
         {badge && (
           <div
@@ -57,7 +65,24 @@ export default function ProductCard({
           </div>
         )}
 
-        {image ? (
+        {cardImage ? (
+          // <picture> + <source> mobile swap. Plain <img> (not next/image)
+          // because next/image doesn't support art-direction via <source>.
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet={cardImage.mobile}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={cardImage.desktop}
+              alt={cardImage.alt}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+            />
+          </picture>
+        ) : image ? (
           <Image
             src={image}
             alt={`AIHAA ${name}`}

@@ -7,6 +7,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { ChevronDown } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { whatsappUrl } from "@/lib/config/contact";
 
 export default function PromotionsPage() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
@@ -28,15 +29,15 @@ export default function PromotionsPage() {
       <Header />
 
       {/* ── SECTION 1: Page Header ── */}
-      <section className="bg-[#0D0D0D] pt-28 pb-16">
+      <section className="bg-surface pt-16 pb-16">
         <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 text-center">
-          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-[#DAA520] mb-4">
+          <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-gold-dark mb-4">
             {t.promo_label}
           </p>
-          <h1 className="scroll-reveal-child stagger-2 font-editorial text-4xl md:text-6xl text-white mb-3">
+          <h1 className="scroll-reveal-child stagger-2 font-editorial text-4xl md:text-6xl text-dark mb-3">
             {t.promo_title}
           </h1>
-          <p className="scroll-reveal-child stagger-3 text-sm italic text-[#999]">
+          <p className="scroll-reveal-child stagger-3 text-sm italic text-muted">
             {t.promo_urgency}
           </p>
         </div>
@@ -60,7 +61,7 @@ export default function PromotionsPage() {
           </p>
           <div className="scroll-reveal-child stagger-5">
             <a
-              href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+              href={whatsappUrl(t.common_whatsapp_message)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block gold-gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all hover:shadow-gold btn-shimmer"
@@ -98,7 +99,7 @@ export default function PromotionsPage() {
                 </p>
               </div>
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#DAA520] text-sm font-medium mt-6 hover:underline inline-block"
@@ -122,7 +123,7 @@ export default function PromotionsPage() {
                 <p className="text-lg font-bold text-[#DAA520]">{t.promo_bundle_price}</p>
               </div>
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#DAA520] text-sm font-medium mt-6 hover:underline inline-block"
@@ -145,7 +146,7 @@ export default function PromotionsPage() {
                 </p>
               </div>
               <a
-                href={`https://wa.me/60115657084?text=${encodeURIComponent(t.common_whatsapp_message)}`}
+                href={whatsappUrl(t.common_whatsapp_message)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#717171] text-sm font-medium mt-6 hover:underline inline-block"
