@@ -113,11 +113,13 @@ export default function Chatbot() {
 
   return (
     <>
-      {/* Chat trigger button — above WhatsApp button */}
+      {/* Chat trigger button — flush bottom-right (the WhatsApp FAB
+          that used to sit at bottom-4 was removed, so the toggle now
+          occupies that corner slot). */}
       {!isOpen && (
         <button
           onClick={handleOpen}
-          className="fixed bottom-[88px] right-4 z-50 w-14 h-14 bg-[#0D0D0D] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300 border border-[rgba(218,165,32,0.3)]"
+          className="fixed bottom-4 right-4 z-50 w-14 h-14 bg-[#0D0D0D] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300 border border-[rgba(218,165,32,0.3)]"
           aria-label="Open chat"
         >
           <MessageSquare className="w-6 h-6" />
