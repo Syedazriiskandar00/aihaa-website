@@ -20,21 +20,22 @@ export default function KisahKami() {
   return (
     <section className="bg-dark text-white">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-stretch">
-        {/* Left — founder / sales-expert photo */}
-        <div className="relative min-h-[360px] lg:min-h-[600px] border-b lg:border-b-0 lg:border-r border-white/5 overflow-hidden">
+        {/* Left — founder / sales-expert photo. Mobile uses a 3:4
+            aspect box that matches the portrait source (720x960) so
+            object-cover fits the full frame with no top/bottom crop —
+            face stays visible. From lg+ the column widens to a fixed
+            600px band and center-crops like the original layout. */}
+        <div className="relative aspect-[3/4] lg:aspect-auto lg:min-h-[600px] border-b lg:border-b-0 lg:border-r border-white/5 overflow-hidden">
           <picture>
             <source
               media="(max-width: 768px)"
               srcSet="/images/products/sales-expert-mobile.webp"
             />
-            {/* object-top on mobile so the face stays in frame when
-                the wider source crops to the narrower portrait column;
-                center crop is fine from md+ where the column widens. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/products/sales-expert.webp"
               alt="AIHAA sales expert"
-              className="absolute inset-0 w-full h-full object-cover object-top md:object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center"
               loading="lazy"
               decoding="async"
             />
