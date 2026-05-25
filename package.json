@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.65",
+    "@ai-sdk/react": "^3.0.193",
     "@vercel/kv": "^3.0.0",
     "ai": "^6.0.191",
     "class-variance-authority": "^0.7.1",
