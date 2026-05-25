@@ -17,6 +17,18 @@ const MAX_LEN = 500;
 // re-instantiated on every render.
 const transport = new DefaultChatTransport({ api: "/api/chat" });
 
+// Safety net: the system prompt tells the model not to emit markdown,
+// but if it slips (e.g. a [label](url) link after a tool call), strip
+// the syntax so raw markup never shows in the bubble. Links collapse to
+// their label (the green button already owns the real handoff URL).
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1") // [label](url) -> label
+    .replace(/\*\*([^*]+)\*\*/g, "$1") // **bold** -> bold
+    .replace(/\*([^*\n]+)\*/g, "$1") // *italic* -> italic
+    .replace(/__([^_]+)__/g, "$1"); // __bold__ -> bold
+}
+
 // Shape returned by the connectToAdmin / connectToSales tools (Phase B).
 type HandoffOutput = {
   buttonLabel: string;
@@ -154,7 +166,7 @@ export default function Chatbot() {
                 >
                   {msg.parts.map((part, i) => {
                     if (part.type === "text") {
-                      return <span key={i}>{part.text}</span>;
+                      return <span key={i}>{stripMarkdown(part.text)}</span>;
                     }
                     // v6 tool parts: type is `tool-connectToAdmin` /
                     // `tool-connectToSales`; result lands in part.output
