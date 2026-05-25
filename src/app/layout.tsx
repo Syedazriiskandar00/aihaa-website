@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 import { PHONE_NUMBER } from "@/lib/config/contact";
+import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "AIHAA | Penapis Air Premium Sekali Bayar Malaysia",
   description: "Penapis air berkualiti tinggi sekali bayar dari RM399. Pemasangan percuma, waranti 2 tahun. Halal JAKIM certified. 10,800+ keluarga percaya.",
   keywords: "penapis air, water purifier, AIHAA, Malaysia, sekali bayar, penapis air murah",
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
     title: "AIHAA | Penapis Air Premium Sekali Bayar Malaysia",
     description: "Penapis air berkualiti tinggi sekali bayar dari RM399. Pemasangan percuma, waranti 2 tahun. Halal JAKIM certified.",
     type: "website",
-    url: "https://aihaa-website-five.vercel.app",
+    url: SITE_URL,
     siteName: "AIHAA Water Purifier",
   },
 };
@@ -34,7 +36,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               name: "AIHAA Marketing SDN BHD",
               description: "Penapis air premium sekali bayar untuk keluarga Malaysia. Bumiputera & Halal JAKIM certified.",
-              url: "https://aihaa-website-five.vercel.app",
+              url: SITE_URL,
               telephone: `+${PHONE_NUMBER}`,
               email: "aihaa.marketing@gmail.com",
               address: {
