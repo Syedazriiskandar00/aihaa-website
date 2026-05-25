@@ -31,7 +31,7 @@ export default function SageHeroLineup() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-surface pb-20 lg:pb-24">
+    <section className="relative overflow-hidden bg-surface pt-12 pb-20 lg:pb-24">
       {/* Subtle dotted texture — not a card, just depth */}
       <div
         aria-hidden
