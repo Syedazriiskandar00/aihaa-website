@@ -10,6 +10,9 @@
     "format": "bunx biome format --write"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.65",
+    "@vercel/kv": "^3.0.0",
+    "ai": "^6.0.191",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
@@ -20,7 +23,8 @@
     "same-runtime": "^0.0.1",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "yet-another-react-lightbox": "^3.32.0"
+    "yet-another-react-lightbox": "^3.32.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
