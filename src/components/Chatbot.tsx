@@ -67,9 +67,20 @@ export default function Chatbot() {
   const inputRef = useRef<HTMLInputElement>(null);
   const { t } = useLanguage();
 
-  const { messages, sendMessage, status, regenerate } = useChat({ transport });
+  const { messages, sendMessage, status, regenerate, setMessages, stop } =
+    useChat({ transport });
 
   const isBusy = status === "submitted" || status === "streaming";
+
+  // Close = fresh start. Halt any in-flight stream first (so a late
+  // token can't write to a closed panel), wipe history, then hide.
+  // No persistence by design — privacy on shared devices + each inquiry
+  // is self-contained.
+  function handleClose() {
+    stop();
+    setMessages([]);
+    setIsOpen(false);
+  }
 
   // Auto-scroll to bottom on new message / status change.
   useEffect(() => {
@@ -128,7 +139,7 @@ export default function Chatbot() {
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={handleClose}
               className="text-[#999] hover:text-white transition-colors p-1"
               aria-label="Tutup chatbot"
             >
