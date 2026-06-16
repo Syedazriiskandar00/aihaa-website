@@ -458,6 +458,9 @@ export type TranslationKeys = {
   product_detail_service_warranty_default: string;
   product_detail_service_warranty_uf: string;
   product_detail_service_frequency_default: string;
+  product_detail_service_frequency_2year: string;
+  product_detail_service_frequency_3year: string;
+  product_detail_service_frequency_5year: string;
   product_detail_service_disclaimer: string;
   product_detail_related_subheading: string;
   // Phase 7 — detail-page premium sections
@@ -1049,6 +1052,9 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_detail_service_warranty_default: "2 Tahun",
     product_detail_service_warranty_uf: "10 Tahun (UF Membrane)",
     product_detail_service_frequency_default: "Setiap 6 Bulan",
+    product_detail_service_frequency_2year: "Setiap 2 Tahun",
+    product_detail_service_frequency_3year: "Setiap 3 Tahun",
+    product_detail_service_frequency_5year: "Setiap 5 Tahun",
     product_detail_service_disclaimer:
       "Maklumat servis tertakluk kepada notis. Sila WhatsApp kami untuk butiran terkini.",
     product_detail_related_subheading:
@@ -1657,6 +1663,9 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_detail_service_warranty_default: "2 Years",
     product_detail_service_warranty_uf: "10 Years (UF Membrane)",
     product_detail_service_frequency_default: "Every 6 Months",
+    product_detail_service_frequency_2year: "Every 2 Years",
+    product_detail_service_frequency_3year: "Every 3 Years",
+    product_detail_service_frequency_5year: "Every 5 Years",
     product_detail_service_disclaimer:
       "Service details are subject to change. WhatsApp us for current information.",
     product_detail_related_subheading:

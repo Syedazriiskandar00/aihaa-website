@@ -16,15 +16,17 @@
 //   - outdoor PVDF                                 → RM 490 (membrane)
 //   - outdoor PVDF Plus                            → RM 590 (membrane)
 //
-// Yearly estimate = service price × 2 (bi-annual cadence). Warranty
-// and frequency values are i18n keys, resolved at render time.
+// Yearly estimate applies to indoor only (service price × 2, bi-annual
+// cadence); it is omitted for outdoor, which is serviced once every few
+// years (see each profile's frequencyKey). Warranty and frequency values
+// are i18n keys, resolved at render time.
 
 import type { Product } from "./products";
 import type { TranslationKeys } from "@/lib/i18n/translations";
 
 export type ServiceInfo = {
   servicePrice: string; // hardcoded, never translated
-  yearlyEstimate: string; // hardcoded
+  yearlyEstimate?: string; // hardcoded — indoor only; omitted for outdoor
   warrantyKey: keyof TranslationKeys;
   frequencyKey: keyof TranslationKeys;
 };
@@ -38,33 +40,30 @@ const INDOOR_DEFAULT: ServiceInfo = {
 
 const OUTDOOR_SAND_STANDARD: ServiceInfo = {
   servicePrice: "RM 250",
-  yearlyEstimate: "RM 500",
   warrantyKey: "product_detail_service_warranty_default",
-  frequencyKey: "product_detail_service_frequency_default",
+  frequencyKey: "product_detail_service_frequency_2year",
 };
 
 const OUTDOOR_UF_DOUBLE_BACKWASH: ServiceInfo = {
   servicePrice: "RM 390",
-  yearlyEstimate: "RM 780",
   warrantyKey: "product_detail_service_warranty_uf",
-  frequencyKey: "product_detail_service_frequency_default",
+  frequencyKey: "product_detail_service_frequency_3year",
 };
 
 const OUTDOOR_PVDF: ServiceInfo = {
-  // PVDF membrane — same default service cadence as the other membrane
-  // products, priced for the larger professional-grade cartridge.
+  // PVDF membrane — serviced once every 5 years; priced for the larger
+  // professional-grade cartridge.
   servicePrice: "RM 490",
-  yearlyEstimate: "RM 980",
   warrantyKey: "product_detail_service_warranty_default",
-  frequencyKey: "product_detail_service_frequency_default",
+  frequencyKey: "product_detail_service_frequency_5year",
 };
 
 const OUTDOOR_PVDF_PLUS: ServiceInfo = {
-  // PVDF Plus — same membrane service profile as PVDF, higher price tier.
+  // PVDF Plus — same 5-year membrane service profile as PVDF, higher
+  // price tier.
   servicePrice: "RM 590",
-  yearlyEstimate: "RM 1,180",
   warrantyKey: "product_detail_service_warranty_default",
-  frequencyKey: "product_detail_service_frequency_default",
+  frequencyKey: "product_detail_service_frequency_5year",
 };
 
 // Slug-based routing map for outdoor products (more explicit than

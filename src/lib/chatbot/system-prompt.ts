@@ -17,7 +17,9 @@ function serviceSummary(): string {
   const byTier = new Map<string, string[]>();
   for (const p of products) {
     const { servicePrice, yearlyEstimate } = getServiceInfo(p);
-    const key = `${servicePrice} / servis (anggaran ${yearlyEstimate}/tahun)`;
+    const key = yearlyEstimate
+      ? `${servicePrice} / servis (anggaran ${yearlyEstimate}/tahun)`
+      : `${servicePrice} / servis`;
     byTier.set(key, [...(byTier.get(key) ?? []), p.name]);
   }
   return [...byTier.entries()]
