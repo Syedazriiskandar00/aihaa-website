@@ -902,7 +902,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_hero_heading: "Outdoor Filter",
     produk_luar_hero_italic: "Perlindungan Pertama Anda.",
     produk_luar_hero_tagline:
-      "Direka khas untuk menangani masalah air kotor pada kos mampu milik — dari air kerajaan sehingga sumber boring.",
+      "Direka khas untuk menangani masalah air kotor untuk bekalan air kerajaan rumah anda.",
     produk_luar_hero_featured_label: "PILIHAN UTAMA",
     produk_luar_hero_featured_premium_badge: "PREMIUM",
     produk_luar_hero_featured_value_badge: "PERLINDUNGAN PENUH",
@@ -1510,7 +1510,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_hero_heading: "Outdoor Filter",
     produk_luar_hero_italic: "Your First Protector.",
     produk_luar_hero_tagline:
-      "Crafted to address dirty water problems at an affordable cost — from municipal supply to borehole sources.",
+      "Crafted to address dirty water problems for your home's municipal water supply.",
     produk_luar_hero_featured_label: "FEATURED",
     produk_luar_hero_featured_premium_badge: "PREMIUM",
     produk_luar_hero_featured_value_badge: "FULL PROTECTION",
