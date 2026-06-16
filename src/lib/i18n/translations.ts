@@ -319,8 +319,6 @@ export type TranslationKeys = {
   service_pricing_sand_subheading: string;
   service_pricing_sand_5layer_badge: string;
   service_pricing_sand_5layer_note: string;
-  service_pricing_sand_6layer_badge: string;
-  service_pricing_sand_6layer_note: string;
   service_pricing_sand_note: string;
   service_pricing_sand_cta: string;
   // /produk-luar — Phase 2 premium outdoor landing
@@ -337,7 +335,6 @@ export type TranslationKeys = {
   produk_luar_hero_cta: string;
   // Outdoor use-cases band
   produk_luar_usecase_eyebrow: string;
-  produk_luar_usecase_boring: string;
   produk_luar_usecase_kolam: string;
   produk_luar_usecase_pejabat: string;
   produk_luar_usecase_kilang: string;
@@ -892,8 +889,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_subheading: "Harga bergantung pada jenis bekalan air di kawasan anda.",
     service_pricing_sand_5layer_badge: "5 Lapisan Pasir",
     service_pricing_sand_5layer_note: "Untuk penggunaan air kerajaan (SYABAS / SAJ / JBA).",
-    service_pricing_sand_6layer_badge: "6 Lapisan Pasir",
-    service_pricing_sand_6layer_note: "Untuk penggunaan air boring (sumber bawah tanah).",
     service_pricing_sand_note: "Harga termasuk buang pasir lama, cuci tabung, dan isi pasir baru.",
     service_pricing_sand_cta: "Tempah Servis via WhatsApp",
     // /produk-luar — Phase 2 premium outdoor landing
@@ -912,7 +907,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_hero_cta: "Lihat Semua Model",
     // Outdoor use-cases band
     produk_luar_usecase_eyebrow: "SESUAI UNTUK",
-    produk_luar_usecase_boring: "Air Boring",
     produk_luar_usecase_kolam: "Kolam Ikan",
     produk_luar_usecase_pejabat: "Pejabat",
     produk_luar_usecase_kilang: "Kilang",
@@ -1503,8 +1497,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_subheading: "Pricing depends on the type of water supply in your area.",
     service_pricing_sand_5layer_badge: "5-Layer Sand",
     service_pricing_sand_5layer_note: "For municipal water supply (SYABAS / SAJ / JBA).",
-    service_pricing_sand_6layer_badge: "6-Layer Sand",
-    service_pricing_sand_6layer_note: "For borehole water (underground source).",
     service_pricing_sand_note: "Price includes disposal of old sand, tank cleaning, and new sand fill.",
     service_pricing_sand_cta: "Book Service via WhatsApp",
     // /produk-luar — Phase 2 premium outdoor landing
@@ -1523,7 +1515,6 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_hero_cta: "View All Models",
     // Outdoor use-cases band
     produk_luar_usecase_eyebrow: "SUITED FOR",
-    produk_luar_usecase_boring: "Borehole Water",
     produk_luar_usecase_kolam: "Fish Ponds",
     produk_luar_usecase_pejabat: "Offices",
     produk_luar_usecase_kilang: "Factories",
