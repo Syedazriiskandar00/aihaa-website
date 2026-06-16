@@ -7,13 +7,13 @@ import IndoorUseCases from "./components/IndoorUseCases";
 import IndoorGrid from "./components/IndoorGrid";
 
 export const metadata: Metadata = {
-  title: "Penapis Air Dalam AIHAA — 5 Model Premium",
+  title: "Penapis Air Dalam AIHAA — 6 Model Premium",
   description:
-    "Penapis air dalam rumah AIHAA — 5 model premium dari RM780. BELLA, BIG, EAN, FANCY, WINTER. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
+    "Penapis air dalam rumah AIHAA — 6 model premium dari RM399. BELLA, BIG, EAN, FANCY, WINTER, ULTRA ONE. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
   openGraph: {
-    title: "Penapis Air Dalam AIHAA — 5 Model Premium",
+    title: "Penapis Air Dalam AIHAA — 6 Model Premium",
     description:
-      "Lima model penapis dalam rumah untuk setiap saiz keluarga. Sekali bayar, pemasangan percuma.",
+      "Enam model penapis dalam rumah untuk setiap saiz keluarga. Sekali bayar, pemasangan percuma.",
     type: "website",
     locale: "ms_MY",
   },
