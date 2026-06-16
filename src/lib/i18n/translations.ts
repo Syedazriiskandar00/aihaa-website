@@ -905,7 +905,7 @@ export const translations: Record<Locale, TranslationKeys> = {
       "Direka khas untuk menangani masalah air kotor pada kos mampu milik — dari air kerajaan sehingga sumber boring.",
     produk_luar_hero_featured_label: "PILIHAN UTAMA",
     produk_luar_hero_featured_premium_badge: "PREMIUM",
-    produk_luar_hero_featured_value_badge: "PILIHAN JIMAT",
+    produk_luar_hero_featured_value_badge: "PERLINDUNGAN PENUH",
     produk_luar_hero_cta: "Lihat Semua Model",
     // Outdoor use-cases band
     produk_luar_usecase_eyebrow: "SESUAI UNTUK",
@@ -1513,7 +1513,7 @@ export const translations: Record<Locale, TranslationKeys> = {
       "Crafted to address dirty water problems at an affordable cost — from municipal supply to borehole sources.",
     produk_luar_hero_featured_label: "FEATURED",
     produk_luar_hero_featured_premium_badge: "PREMIUM",
-    produk_luar_hero_featured_value_badge: "BEST VALUE",
+    produk_luar_hero_featured_value_badge: "FULL PROTECTION",
     produk_luar_hero_cta: "View All Models",
     // Outdoor use-cases band
     produk_luar_usecase_eyebrow: "SUITED FOR",
