@@ -62,8 +62,8 @@ export const flows: Record<string, FlowStep> = {
 
   price: {
     message: {
-      bm: "Penapis air AIHAA bermula dari RM399 — sekali bayar! 💰\n\nDalam rumah: RM780 - RM1,580\nLuar rumah: RM399 - RM1,299\n\nSemua termasuk pemasangan percuma + waranti.",
-      en: "AIHAA water purifiers start from RM399 — one-time payment! 💰\n\nIndoor: RM780 - RM1,580\nOutdoor: RM399 - RM1,299\n\nAll include free installation + warranty.",
+      bm: "Penapis air AIHAA bermula dari RM399 — sekali bayar! 💰\n\nDalam rumah: RM399 - RM1,580\nLuar rumah: RM399 - RM1,299\n\nSemua termasuk pemasangan percuma + waranti.",
+      en: "AIHAA water purifiers start from RM399 — one-time payment! 💰\n\nIndoor: RM399 - RM1,580\nOutdoor: RM399 - RM1,299\n\nAll include free installation + warranty.",
     },
     quickReplies: [
       { label: { bm: "Tengok semua produk", en: "View all products" }, action: "link:/produk-dalam" },
