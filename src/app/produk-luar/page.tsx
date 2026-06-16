@@ -7,13 +7,13 @@ import OutdoorUseCases from "./components/OutdoorUseCases";
 import OutdoorGrid from "./components/OutdoorGrid";
 
 export const metadata: Metadata = {
-  title: "Penapis Air Luar AIHAA — Koleksi Penuh 7 Model",
+  title: "Penapis Air Luar AIHAA — Koleksi Penuh 6 Model",
   description:
-    "Penapis air luar rumah AIHAA — 7 model dari RM399. PVDF, Fiber, UF Double Backwash, dan lebih. Sesuai untuk air kerajaan, kolam, pejabat, kilang.",
+    "Penapis air luar rumah AIHAA — 6 model dari RM399. PVDF, Fiber, UF Double Backwash, dan lebih. Sesuai untuk air kerajaan, kolam, pejabat, kilang.",
   openGraph: {
     title: "Penapis Air Luar AIHAA — Koleksi Penuh",
     description:
-      "7 model penapis luar rumah untuk setiap sumber air. Sekali bayar, pemasangan percuma.",
+      "6 model penapis luar rumah untuk setiap sumber air. Sekali bayar, pemasangan percuma.",
     type: "website",
     locale: "ms_MY",
   },

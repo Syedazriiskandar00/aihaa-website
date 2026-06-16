@@ -321,7 +321,7 @@ export const products: Product[] = [
   {
     slug: "ultra-one",
     name: "ULTRA ONE",
-    category: "outdoor",
+    category: "indoor",
     tagline: {
       bm: "All-in-One Direct Minum",
       en: "All-in-One Direct Drink",

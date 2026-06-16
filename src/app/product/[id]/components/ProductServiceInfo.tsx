@@ -34,11 +34,18 @@ export default function ProductServiceInfo({ product }: Props) {
       label: t.product_detail_service_label_frequency,
       value: t[service.frequencyKey],
     },
-    {
-      icon: Calculator,
-      label: t.product_detail_service_label_yearly,
-      value: service.yearlyEstimate,
-    },
+    // Yearly-cost card renders only when a yearlyEstimate exists (indoor).
+    // Outdoor profiles omit it — servicing every few years makes a
+    // per-year figure misleading.
+    ...(service.yearlyEstimate
+      ? [
+          {
+            icon: Calculator,
+            label: t.product_detail_service_label_yearly,
+            value: service.yearlyEstimate,
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -51,7 +58,13 @@ export default function ProductServiceInfo({ product }: Props) {
           className="mb-14"
         />
 
-        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <dl
+          className={
+            service.yearlyEstimate
+              ? "grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
+              : "grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6"
+          }
+        >
           {cards.map(({ icon: Icon, label, value }) => (
             <div
               key={label}

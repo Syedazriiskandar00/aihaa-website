@@ -9,21 +9,24 @@
 // never inline in components.
 //
 // Categorization rule:
-//   - indoor (all 5 models)                        → RM 160 filter service
-//   - outdoor UF Double Backwash                   → RM 650 (10yr membrane)
-//   - outdoor Fiber 9x42 / 10x44 (air kerajaan)    → RM 250 (5-layer sand)
-//   - outdoor cartridge/membrane (PVDF, PVDF Plus,
-//       Ultra One)                                 → RM 160
+//   - indoor (all models, incl. Ultra One)         → RM 160 filter service
+//   - outdoor UF Double Backwash                   → RM 390 (UF membrane)
+//   - outdoor Fiber 9x42 / 10x44 / Steel
+//       (air kerajaan, 5-layer sand)               → RM 250
+//   - outdoor PVDF                                 → RM 490 (membrane)
+//   - outdoor PVDF Plus                            → RM 590 (membrane)
 //
-// Yearly estimate = service price × 2 (bi-annual cadence). Warranty
-// and frequency values are i18n keys, resolved at render time.
+// Yearly estimate applies to indoor only (service price × 2, bi-annual
+// cadence); it is omitted for outdoor, which is serviced once every few
+// years (see each profile's frequencyKey). Warranty and frequency values
+// are i18n keys, resolved at render time.
 
 import type { Product } from "./products";
 import type { TranslationKeys } from "@/lib/i18n/translations";
 
 export type ServiceInfo = {
   servicePrice: string; // hardcoded, never translated
-  yearlyEstimate: string; // hardcoded
+  yearlyEstimate?: string; // hardcoded — indoor only; omitted for outdoor
   warrantyKey: keyof TranslationKeys;
   frequencyKey: keyof TranslationKeys;
 };
@@ -35,38 +38,44 @@ const INDOOR_DEFAULT: ServiceInfo = {
   frequencyKey: "product_detail_service_frequency_default",
 };
 
-const OUTDOOR_MEMBRANE: ServiceInfo = {
-  // Same numeric profile as indoor — these outdoor cartridge/membrane
-  // products are serviced like indoor filters.
-  servicePrice: "RM 160",
-  yearlyEstimate: "RM 320",
-  warrantyKey: "product_detail_service_warranty_default",
-  frequencyKey: "product_detail_service_frequency_default",
-};
-
 const OUTDOOR_SAND_STANDARD: ServiceInfo = {
   servicePrice: "RM 250",
-  yearlyEstimate: "RM 500",
   warrantyKey: "product_detail_service_warranty_default",
-  frequencyKey: "product_detail_service_frequency_default",
+  frequencyKey: "product_detail_service_frequency_2year",
 };
 
 const OUTDOOR_UF_DOUBLE_BACKWASH: ServiceInfo = {
-  servicePrice: "RM 650",
-  yearlyEstimate: "RM 1,300",
+  servicePrice: "RM 390",
   warrantyKey: "product_detail_service_warranty_uf",
-  frequencyKey: "product_detail_service_frequency_default",
+  frequencyKey: "product_detail_service_frequency_3year",
+};
+
+const OUTDOOR_PVDF: ServiceInfo = {
+  // PVDF membrane — serviced once every 5 years; priced for the larger
+  // professional-grade cartridge.
+  servicePrice: "RM 490",
+  warrantyKey: "product_detail_service_warranty_default",
+  frequencyKey: "product_detail_service_frequency_5year",
+};
+
+const OUTDOOR_PVDF_PLUS: ServiceInfo = {
+  // PVDF Plus — same 5-year membrane service profile as PVDF, higher
+  // price tier.
+  servicePrice: "RM 590",
+  warrantyKey: "product_detail_service_warranty_default",
+  frequencyKey: "product_detail_service_frequency_5year",
 };
 
 // Slug-based routing map for outdoor products (more explicit than
-// keyword-sniffing in the function body).
+// keyword-sniffing in the function body). Ultra One is no longer here —
+// it was reclassified to indoor, so it resolves via INDOOR_DEFAULT.
 const OUTDOOR_SERVICE_MAP: Record<string, ServiceInfo> = {
   "uf-double-backwash": OUTDOOR_UF_DOUBLE_BACKWASH,
   "fiber-9x42": OUTDOOR_SAND_STANDARD,
   "fiber-10x44": OUTDOOR_SAND_STANDARD,
-  pvdf: OUTDOOR_MEMBRANE,
-  "pvdf-plus": OUTDOOR_MEMBRANE,
-  "ultra-one": OUTDOOR_MEMBRANE,
+  steel: OUTDOOR_SAND_STANDARD,
+  pvdf: OUTDOOR_PVDF,
+  "pvdf-plus": OUTDOOR_PVDF_PLUS,
 };
 
 export const getServiceInfo = (product: Product): ServiceInfo => {

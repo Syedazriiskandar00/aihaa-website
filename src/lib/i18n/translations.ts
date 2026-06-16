@@ -319,8 +319,6 @@ export type TranslationKeys = {
   service_pricing_sand_subheading: string;
   service_pricing_sand_5layer_badge: string;
   service_pricing_sand_5layer_note: string;
-  service_pricing_sand_6layer_badge: string;
-  service_pricing_sand_6layer_note: string;
   service_pricing_sand_note: string;
   service_pricing_sand_cta: string;
   // /produk-luar — Phase 2 premium outdoor landing
@@ -337,7 +335,6 @@ export type TranslationKeys = {
   produk_luar_hero_cta: string;
   // Outdoor use-cases band
   produk_luar_usecase_eyebrow: string;
-  produk_luar_usecase_boring: string;
   produk_luar_usecase_kolam: string;
   produk_luar_usecase_pejabat: string;
   produk_luar_usecase_kilang: string;
@@ -458,6 +455,9 @@ export type TranslationKeys = {
   product_detail_service_warranty_default: string;
   product_detail_service_warranty_uf: string;
   product_detail_service_frequency_default: string;
+  product_detail_service_frequency_2year: string;
+  product_detail_service_frequency_3year: string;
+  product_detail_service_frequency_5year: string;
   product_detail_service_disclaimer: string;
   product_detail_related_subheading: string;
   // Phase 7 — detail-page premium sections
@@ -638,11 +638,11 @@ export const translations: Record<Locale, TranslationKeys> = {
     category_subtitle: "Penapis air untuk setiap keperluan — dari dapur rumah anda hingga ke seluruh rumah",
     category_indoor_label: "Untuk keluarga anda",
     category_indoor_title: "Penapis Air Dalam Rumah",
-    category_indoor_desc: "5 model penapis air dalam rumah dengan teknologi 4 tahap penapisan, mineral alkali, dan rekaan kompak untuk dapur moden. Dari RM780.",
+    category_indoor_desc: "6 model penapis air dalam rumah dengan teknologi 4 tahap penapisan, mineral alkali, dan rekaan kompak untuk dapur moden. Dari RM399.",
     category_indoor_cta: "Lihat Koleksi",
     category_outdoor_label: "Perlindungan menyeluruh",
     category_outdoor_title: "Penapis Air Luar Rumah",
-    category_outdoor_desc: "8 model penapis air luar rumah termasuk sistem fiber, PVDF profesional, dan penapis air boring. Dari RM399.",
+    category_outdoor_desc: "6 model penapis air luar rumah termasuk sistem fiber dan PVDF profesional. Dari RM399.",
     category_outdoor_cta: "Lihat Koleksi",
     cta_label: "PERLUKAN NASIHAT PAKAR?",
     cta_title: "Hubungi Kami",
@@ -698,7 +698,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     faq_q5: "Kenapa tiada kontrak jangka panjang?",
     faq_a5: "Kami percaya pelanggan tidak sepatutnya terikat dengan kontrak 3-5 tahun. Model sekali bayar bermaksud anda miliki penapis air anda sepenuhnya.",
     faq_q6: "Macam mana saya tahu model mana yang sesuai untuk rumah saya?",
-    faq_a6: "WhatsApp kami di +60 00-0000 0000. Team kami akan cadangkan model yang paling sesuai.",
+    faq_a6: "WhatsApp kami di +60 11-3720 8466. Team kami akan cadangkan model yang paling sesuai.",
     faq_q7: "Boleh ke tukar filter sendiri atau mesti guna technician?",
     faq_a7: "Boleh tukar sendiri. Kami sediakan panduan lengkap untuk setiap model.",
     faq_q8: "Apa jaminan kualiti air yang dihasilkan?",
@@ -739,7 +739,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     promo_tnc_label_trade: "Trade-In",
     promo_tnc_trade: "Trade-in tertakluk kepada penilaian kondisi unit lama.",
     promo_tnc_label_questions: "Pertanyaan",
-    promo_tnc_questions: "Untuk sebarang pertanyaan, hubungi WhatsApp +60 00-0000 0000.",
+    promo_tnc_questions: "Untuk sebarang pertanyaan, hubungi WhatsApp +60 11-3720 8466.",
     contact_label: "HUBUNGI KAMI",
     contact_title: "Hubungi Kami",
     contact_subtitle: "Ada soalan? Pakar penapis air kami sedia membantu anda.",
@@ -765,7 +765,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_wa_title: "Mulakan Perbualan",
     contact_wa_desc: "Team kami biasanya reply dalam 5 minit. Tanya apa sahaja — harga, model sesuai, coverage kawasan anda.",
     contact_wa_cta: "WhatsApp Sekarang →",
-    contact_wa_alt: "atau hubungi +60 00-0000 0000",
+    contact_wa_alt: "atau hubungi +60 11-3720 8466",
     contact_wa_badge1: "Reply 5 minit",
     contact_wa_badge2: "Semenanjung MY",
     contact_wa_badge3: "Tiada spam",
@@ -889,27 +889,24 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_subheading: "Harga bergantung pada jenis bekalan air di kawasan anda.",
     service_pricing_sand_5layer_badge: "5 Lapisan Pasir",
     service_pricing_sand_5layer_note: "Untuk penggunaan air kerajaan (SYABAS / SAJ / JBA).",
-    service_pricing_sand_6layer_badge: "6 Lapisan Pasir",
-    service_pricing_sand_6layer_note: "Untuk penggunaan air boring (sumber bawah tanah).",
     service_pricing_sand_note: "Harga termasuk buang pasir lama, cuci tabung, dan isi pasir baru.",
     service_pricing_sand_cta: "Tempah Servis via WhatsApp",
     // /produk-luar — Phase 2 premium outdoor landing
-    produk_luar_meta_title: "Penapis Air Luar AIHAA — Koleksi Penuh 7 Model",
+    produk_luar_meta_title: "Penapis Air Luar AIHAA — Koleksi Penuh 6 Model",
     produk_luar_meta_description:
-      "Penapis air luar rumah AIHAA — 7 model dari RM399. PVDF, Fiber, UF Double Backwash, dan lebih. Sesuai untuk air kerajaan, kolam, pejabat, kilang. Sekali bayar, pemasangan percuma.",
+      "Penapis air luar rumah AIHAA — 6 model dari RM399. PVDF, Fiber, UF Double Backwash, dan lebih. Sesuai untuk air kerajaan, kolam, pejabat, kilang. Sekali bayar, pemasangan percuma.",
     // §3.1 Sage Hero Lineup
     produk_luar_hero_eyebrow: "PENAPIS AIR LUAR RUMAH",
     produk_luar_hero_heading: "Outdoor Filter",
     produk_luar_hero_italic: "Perlindungan Pertama Anda.",
     produk_luar_hero_tagline:
-      "Direka khas untuk menangani masalah air kotor pada kos mampu milik — dari air kerajaan sehingga sumber boring.",
+      "Direka khas untuk menangani masalah air kotor untuk bekalan air kerajaan rumah anda.",
     produk_luar_hero_featured_label: "PILIHAN UTAMA",
     produk_luar_hero_featured_premium_badge: "PREMIUM",
-    produk_luar_hero_featured_value_badge: "PILIHAN JIMAT",
+    produk_luar_hero_featured_value_badge: "PERLINDUNGAN PENUH",
     produk_luar_hero_cta: "Lihat Semua Model",
     // Outdoor use-cases band
     produk_luar_usecase_eyebrow: "SESUAI UNTUK",
-    produk_luar_usecase_boring: "Air Boring",
     produk_luar_usecase_kolam: "Kolam Ikan",
     produk_luar_usecase_pejabat: "Pejabat",
     produk_luar_usecase_kilang: "Kilang",
@@ -917,7 +914,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_grid_eyebrow: "KATALOG LENGKAP",
     produk_luar_grid_heading: "Semua Penapis Luar AIHAA",
     produk_luar_grid_subheading:
-      "Lapan model penapis luar — setiap satu direka untuk sumber air dan keperluan berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
+      "Enam model penapis luar — setiap satu direka untuk sumber air dan keperluan berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
     // Cross-link on /water-purifier
     produk_luar_cross_link: "Lihat Koleksi Penapis Luar Premium",
     // Footer CTA
@@ -926,15 +923,15 @@ export const translations: Record<Locale, TranslationKeys> = {
       "WhatsApp kami — pakar akan cadangkan mengikut sumber air dan keperluan rumah anda.",
     produk_luar_footer_cta_button: "WhatsApp Pakar AIHAA",
     // /produk-dalam — Phase 3 premium indoor landing
-    produk_dalam_meta_title: "Penapis Air Dalam AIHAA — 5 Model Premium",
+    produk_dalam_meta_title: "Penapis Air Dalam AIHAA — 6 Model Premium",
     produk_dalam_meta_description:
-      "Penapis air dalam rumah AIHAA — 5 model premium dari RM780. BELLA, BIG, EAN, FANCY, WINTER. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
+      "Penapis air dalam rumah AIHAA — 6 model premium dari RM399. BELLA, BIG, EAN, FANCY, WINTER, ULTRA ONE. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
     // Indoor Hero Lineup
     produk_dalam_hero_eyebrow: "PENAPIS AIR DALAM RUMAH",
     produk_dalam_hero_heading: "Penapis Untuk Rumah",
     produk_dalam_hero_italic: "Rasa Bersih, Setiap Titik.",
     produk_dalam_hero_tagline:
-      "Lima model dalam rumah — dari pilihan bajet hingga premium dengan ice maker. Dipilih ribuan keluarga Malaysia.",
+      "Enam model dalam rumah — dari pilihan bajet hingga premium dengan ice maker. Dipilih ribuan keluarga Malaysia.",
     produk_dalam_hero_featured_bestseller_badge: "PILIHAN RAMAI",
     produk_dalam_hero_featured_premium_badge: "PREMIUM",
     produk_dalam_hero_cta: "Lihat Semua Model",
@@ -948,7 +945,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_dalam_grid_eyebrow: "KATALOG LENGKAP",
     produk_dalam_grid_heading: "Semua Penapis Dalam AIHAA",
     produk_dalam_grid_subheading:
-      "Lima model penapis dalam — setiap satu direka untuk saiz keluarga dan gaya dapur berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
+      "Enam model penapis dalam — setiap satu direka untuk saiz keluarga dan gaya dapur berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
     // Cross-link on /water-purifier
     produk_dalam_cross_link: "Lihat Koleksi Penapis Dalam Premium",
     // Footer CTA
@@ -1049,6 +1046,9 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_detail_service_warranty_default: "2 Tahun",
     product_detail_service_warranty_uf: "10 Tahun (UF Membrane)",
     product_detail_service_frequency_default: "Setiap 6 Bulan",
+    product_detail_service_frequency_2year: "Setiap 2 Tahun",
+    product_detail_service_frequency_3year: "Setiap 3 Tahun",
+    product_detail_service_frequency_5year: "Setiap 5 Tahun",
     product_detail_service_disclaimer:
       "Maklumat servis tertakluk kepada notis. Sila WhatsApp kami untuk butiran terkini.",
     product_detail_related_subheading:
@@ -1246,11 +1246,11 @@ export const translations: Record<Locale, TranslationKeys> = {
     category_subtitle: "Water purifiers for every need — from your kitchen to your entire home",
     category_indoor_label: "For your family",
     category_indoor_title: "Indoor Water Purifiers",
-    category_indoor_desc: "5 indoor models with 4-stage filtration, alkaline minerals, and compact designs. From RM780.",
+    category_indoor_desc: "6 indoor models with 4-stage filtration, alkaline minerals, and compact designs. From RM399.",
     category_indoor_cta: "View Collection",
     category_outdoor_label: "Complete protection",
     category_outdoor_title: "Outdoor Water Filters",
-    category_outdoor_desc: "8 outdoor models including fiber systems, professional PVDF, and borehole filters. From RM399.",
+    category_outdoor_desc: "6 outdoor models including fiber systems and professional PVDF. From RM399.",
     category_outdoor_cta: "View Collection",
     cta_label: "NEED EXPERT ADVICE?",
     cta_title: "Contact Us",
@@ -1306,7 +1306,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     faq_q5: "Why no long-term contract?",
     faq_a5: "We believe customers shouldn't be tied to 3-5 year contracts. One-time payment means you fully own your water purifier.",
     faq_q6: "How do I know which model suits my home?",
-    faq_a6: "WhatsApp us at +60 00-0000 0000. Our team will recommend the most suitable model.",
+    faq_a6: "WhatsApp us at +60 11-3720 8466. Our team will recommend the most suitable model.",
     faq_q7: "Can I change the filter myself?",
     faq_a7: "Yes. We provide complete guides for every model.",
     faq_q8: "What guarantees the water quality?",
@@ -1347,7 +1347,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     promo_tnc_label_trade: "Trade-In",
     promo_tnc_trade: "Trade-in is subject to condition assessment of the old unit.",
     promo_tnc_label_questions: "Questions",
-    promo_tnc_questions: "For any inquiries, contact WhatsApp +60 00-0000 0000.",
+    promo_tnc_questions: "For any inquiries, contact WhatsApp +60 11-3720 8466.",
     contact_label: "CONTACT US",
     contact_title: "Contact Us",
     contact_subtitle: "Have questions? Our water purification experts are ready to help.",
@@ -1373,7 +1373,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_wa_title: "Start a Conversation",
     contact_wa_desc: "Our team usually replies within 5 minutes. Ask anything — price, suitable model, coverage in your area.",
     contact_wa_cta: "WhatsApp Now →",
-    contact_wa_alt: "or call +60 00-0000 0000",
+    contact_wa_alt: "or call +60 11-3720 8466",
     contact_wa_badge1: "5 min reply",
     contact_wa_badge2: "Peninsular MY",
     contact_wa_badge3: "No spam",
@@ -1497,27 +1497,24 @@ export const translations: Record<Locale, TranslationKeys> = {
     service_pricing_sand_subheading: "Pricing depends on the type of water supply in your area.",
     service_pricing_sand_5layer_badge: "5-Layer Sand",
     service_pricing_sand_5layer_note: "For municipal water supply (SYABAS / SAJ / JBA).",
-    service_pricing_sand_6layer_badge: "6-Layer Sand",
-    service_pricing_sand_6layer_note: "For borehole water (underground source).",
     service_pricing_sand_note: "Price includes disposal of old sand, tank cleaning, and new sand fill.",
     service_pricing_sand_cta: "Book Service via WhatsApp",
     // /produk-luar — Phase 2 premium outdoor landing
-    produk_luar_meta_title: "AIHAA Outdoor Water Filters — Full 7-Model Collection",
+    produk_luar_meta_title: "AIHAA Outdoor Water Filters — Full 6-Model Collection",
     produk_luar_meta_description:
-      "AIHAA outdoor water filters — 7 models from RM399. PVDF, Fiber, UF Double Backwash, and more. Suited for municipal water, ponds, offices, and factories. One-time payment, free installation.",
+      "AIHAA outdoor water filters — 6 models from RM399. PVDF, Fiber, UF Double Backwash, and more. Suited for municipal water, ponds, offices, and factories. One-time payment, free installation.",
     // §3.1 Sage Hero Lineup
     produk_luar_hero_eyebrow: "OUTDOOR WATER FILTRATION",
     produk_luar_hero_heading: "Outdoor Filter",
     produk_luar_hero_italic: "Your First Protector.",
     produk_luar_hero_tagline:
-      "Crafted to address dirty water problems at an affordable cost — from municipal supply to borehole sources.",
+      "Crafted to address dirty water problems for your home's municipal water supply.",
     produk_luar_hero_featured_label: "FEATURED",
     produk_luar_hero_featured_premium_badge: "PREMIUM",
-    produk_luar_hero_featured_value_badge: "BEST VALUE",
+    produk_luar_hero_featured_value_badge: "FULL PROTECTION",
     produk_luar_hero_cta: "View All Models",
     // Outdoor use-cases band
     produk_luar_usecase_eyebrow: "SUITED FOR",
-    produk_luar_usecase_boring: "Borehole Water",
     produk_luar_usecase_kolam: "Fish Ponds",
     produk_luar_usecase_pejabat: "Offices",
     produk_luar_usecase_kilang: "Factories",
@@ -1525,7 +1522,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_luar_grid_eyebrow: "FULL CATALOGUE",
     produk_luar_grid_heading: "Every AIHAA Outdoor Filter",
     produk_luar_grid_subheading:
-      "Eight outdoor models — each built for a distinct water source and use case. Click any product for full specifications.",
+      "Six outdoor models — each built for a distinct water source and use case. Click any product for full specifications.",
     // Cross-link on /water-purifier
     produk_luar_cross_link: "View Premium Outdoor Collection",
     // Footer CTA
@@ -1534,15 +1531,15 @@ export const translations: Record<Locale, TranslationKeys> = {
       "WhatsApp us — a specialist will recommend based on your water source and household needs.",
     produk_luar_footer_cta_button: "WhatsApp an AIHAA Specialist",
     // /produk-dalam — Phase 3 premium indoor landing
-    produk_dalam_meta_title: "AIHAA Indoor Water Purifiers — 5 Premium Models",
+    produk_dalam_meta_title: "AIHAA Indoor Water Purifiers — 6 Premium Models",
     produk_dalam_meta_description:
-      "AIHAA indoor water purifiers — 5 premium models from RM780. BELLA, BIG, EAN, FANCY, WINTER. One-time payment, free installation across Peninsular Malaysia.",
+      "AIHAA indoor water purifiers — 6 premium models from RM399. BELLA, BIG, EAN, FANCY, WINTER, ULTRA ONE. One-time payment, free installation across Peninsular Malaysia.",
     // Indoor Hero Lineup
     produk_dalam_hero_eyebrow: "INDOOR WATER PURIFICATION",
     produk_dalam_hero_heading: "Purifiers for the Home",
     produk_dalam_hero_italic: "Clean Taste, Every Drop.",
     produk_dalam_hero_tagline:
-      "Five indoor models — from budget pick to premium with built-in ice maker. Chosen by thousands of Malaysian families.",
+      "Six indoor models — from budget pick to premium with built-in ice maker. Chosen by thousands of Malaysian families.",
     produk_dalam_hero_featured_bestseller_badge: "BESTSELLER",
     produk_dalam_hero_featured_premium_badge: "PREMIUM",
     produk_dalam_hero_cta: "View All Models",
@@ -1556,7 +1553,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_dalam_grid_eyebrow: "FULL CATALOGUE",
     produk_dalam_grid_heading: "Every AIHAA Indoor Purifier",
     produk_dalam_grid_subheading:
-      "Five indoor models — each built for a distinct family size and kitchen style. Click any product for full specifications.",
+      "Six indoor models — each built for a distinct family size and kitchen style. Click any product for full specifications.",
     // Cross-link on /water-purifier
     produk_dalam_cross_link: "View Premium Indoor Collection",
     // Footer CTA
@@ -1657,6 +1654,9 @@ export const translations: Record<Locale, TranslationKeys> = {
     product_detail_service_warranty_default: "2 Years",
     product_detail_service_warranty_uf: "10 Years (UF Membrane)",
     product_detail_service_frequency_default: "Every 6 Months",
+    product_detail_service_frequency_2year: "Every 2 Years",
+    product_detail_service_frequency_3year: "Every 3 Years",
+    product_detail_service_frequency_5year: "Every 5 Years",
     product_detail_service_disclaimer:
       "Service details are subject to change. WhatsApp us for current information.",
     product_detail_related_subheading:

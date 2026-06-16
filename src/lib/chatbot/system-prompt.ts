@@ -17,7 +17,9 @@ function serviceSummary(): string {
   const byTier = new Map<string, string[]>();
   for (const p of products) {
     const { servicePrice, yearlyEstimate } = getServiceInfo(p);
-    const key = `${servicePrice} / servis (anggaran ${yearlyEstimate}/tahun)`;
+    const key = yearlyEstimate
+      ? `${servicePrice} / servis (anggaran ${yearlyEstimate}/tahun)`
+      : `${servicePrice} / servis`;
     byTier.set(key, [...(byTier.get(key) ?? []), p.name]);
   }
   return [...byTier.entries()]
@@ -77,7 +79,7 @@ Bila customer mention masalah (bocor, rosak, tak jalan, air kotor, bunyi pelik, 
 [TRIAGE — BERMINAT BELI]
 Bila customer tanya harga/beli/recommendation:
 1. Tanya context (rumah/kedai/kilang, jumlah orang)
-2. Tanya jenis air (kerajaan/boring/pump)
+2. Tanya jenis air (kerajaan/pump)
 3. Recommend produk sesuai
 4. Bagi harga dari knowledge produk
 5. Bila customer expressed clear interest → panggil tool connectToSales

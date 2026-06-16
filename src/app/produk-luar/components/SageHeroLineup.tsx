@@ -13,9 +13,9 @@ import { getCardImage } from "@/lib/data/product-card-images";
 export default function SageHeroLineup() {
   const { t, locale } = useLanguage();
   const pvdfPlus = getProductBySlug("pvdf-plus");
-  const ultraOne = getProductBySlug("ultra-one");
+  const ufDoubleBackwash = getProductBySlug("uf-double-backwash");
 
-  if (!pvdfPlus || !ultraOne) return null;
+  if (!pvdfPlus || !ufDoubleBackwash) return null;
 
   const featured = [
     {
@@ -24,7 +24,7 @@ export default function SageHeroLineup() {
       badgeTone: "dark" as const,
     },
     {
-      product: ultraOne,
+      product: ufDoubleBackwash,
       badge: t.produk_luar_hero_featured_value_badge,
       badgeTone: "light" as const,
     },

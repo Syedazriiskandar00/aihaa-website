@@ -6,7 +6,7 @@ import { MessageCircle, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const socialLinks = [
-  { name: "Facebook", label: "Penapis Air Aihaa", href: "https://www.facebook.com/Aihaapenapisair" },
+  { name: "Facebook", label: "Penapis Air Aihaa", href: "https://www.facebook.com/profile.php?id=100067106490428" },
   {
     name: "Instagram",
     label: "@aihaa_hq",

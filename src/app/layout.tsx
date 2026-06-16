@@ -48,7 +48,7 @@ export default function RootLayout({
               priceRange: "RM399 - RM1,580",
               openingHours: ["Mo-Fr 09:00-18:00", "Sa 10:00-16:00"],
               sameAs: [
-                "https://www.facebook.com/Aihaapenapisair/",
+                "https://www.facebook.com/profile.php?id=100067106490428",
                 "https://www.instagram.com/aihaa_hq/",
               ],
             }),

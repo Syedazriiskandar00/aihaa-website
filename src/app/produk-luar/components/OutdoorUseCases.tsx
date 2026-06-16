@@ -1,13 +1,12 @@
 "use client";
 
-import { Droplets, Fish, Building2, Factory } from "lucide-react";
+import { Fish, Building2, Factory } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function OutdoorUseCases() {
   const { t } = useLanguage();
 
   const useCases = [
-    { icon: Droplets, label: t.produk_luar_usecase_boring },
     { icon: Fish, label: t.produk_luar_usecase_kolam },
     { icon: Building2, label: t.produk_luar_usecase_pejabat },
     { icon: Factory, label: t.produk_luar_usecase_kilang },
@@ -20,7 +19,7 @@ export default function OutdoorUseCases() {
           {t.produk_luar_usecase_eyebrow}
         </p>
 
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+        <ul className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
           {useCases.map(({ icon: Icon, label }) => (
             <li
               key={label}
