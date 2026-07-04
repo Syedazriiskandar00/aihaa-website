@@ -14,6 +14,7 @@ import PvdfMicronFunnel from "./components/PvdfMicronFunnel";
 import FeaturesOverviewGrid from "./components/FeaturesOverviewGrid";
 import FilterCartridgeRow from "./components/FilterCartridgeRow";
 import ProductSpecs from "./components/ProductSpecs";
+import ProductOrderCta from "./components/ProductOrderCta";
 import ProductServiceInfo from "./components/ProductServiceInfo";
 import RelatedProducts from "./components/RelatedProducts";
 import ProductBannerShowcase from "@/components/product/ProductBannerShowcase";
@@ -116,6 +117,7 @@ export default function ProductDetailPage({
             htmlSlots={htmlSlots}
             gapBetweenBanners={0}
           />
+          <ProductOrderCta product={product} />
           <ProductServiceInfo product={product} />
           <RelatedProducts product={product} />
         </main>
@@ -261,6 +263,7 @@ export default function ProductDetailPage({
           <ProductSpecs product={product} />
         )}
 
+        <ProductOrderCta product={product} />
         <ProductServiceInfo product={product} />
         <RelatedProducts product={product} />
       </main>
