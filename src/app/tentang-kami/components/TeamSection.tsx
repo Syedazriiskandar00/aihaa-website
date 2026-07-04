@@ -1,12 +1,13 @@
 "use client";
 
-import { Users } from "lucide-react";
+import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { TEAM_DEPARTMENTS, TEAM_GROUP_PHOTOS } from "@/lib/data/team";
 
-// SPEC §5.4 Team — white bg, full-bleed team photo. Placeholder block
-// until Azri supplies the team group photo. Logged in PLACEHOLDERS.md.
-// Kept minimal: eyebrow + heading + subheading + 21:9 placeholder
-// block. No leadership grid yet — Azri can add later when bios land.
+// SPEC §5.4 Team — white bg. Group-photo strip on top, then a per-
+// department grid of member portraits. Roster lives in
+// src/lib/data/team.ts (BM-only site, so team copy is plain data, not
+// i18n). Portraits 800x800 square; group photos 1600x900 landscape.
 
 export default function TeamSection() {
   const { t } = useLanguage();
@@ -26,16 +27,58 @@ export default function TeamSection() {
           </p>
         </div>
 
-        {/* Team photo placeholder — 21:9 dark block */}
-        <div className="relative w-full aspect-[21/9] rounded-lg overflow-hidden bg-[#1F1F1F] flex items-center justify-center border border-black/5">
-          <div className="flex flex-col items-center gap-3 text-white/40">
-            <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/5">
-              <Users className="w-6 h-6 text-gold/60" strokeWidth={1.5} />
-            </span>
-            <p className="text-[12px] uppercase tracking-[0.24em] font-semibold">
-              {t.about_team_placeholder}
-            </p>
-          </div>
+        {/* Group photos — row on desktop, stacked on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 mb-16 lg:mb-20">
+          {TEAM_GROUP_PHOTOS.map((g) => (
+            <figure key={g.src} className="text-center">
+              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden ring-1 ring-black/5 bg-[#F5F5F3]">
+                <Image
+                  src={g.src}
+                  alt={`${g.caption} AIHAA`}
+                  width={1600}
+                  height={900}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-[12px] uppercase tracking-[0.22em] text-muted font-semibold">
+                {g.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        {/* Department grids */}
+        <div className="space-y-14 lg:space-y-16">
+          {TEAM_DEPARTMENTS.map((dept) => (
+            <div key={dept.title}>
+              <h3 className="font-editorial text-2xl md:text-3xl text-dark leading-tight text-center mb-8 lg:mb-10">
+                {dept.title}
+              </h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+                {dept.members.map((m) => (
+                  <li key={m.name} className="flex flex-col items-center text-center">
+                    <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-1 ring-black/[0.06] shadow-sm bg-[#F5F5F3]">
+                      <Image
+                        src={m.photo}
+                        alt={`${m.name} — ${m.role}, AIHAA`}
+                        width={800}
+                        height={800}
+                        sizes="(max-width: 640px) 112px, 128px"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    </div>
+                    <p className="mt-4 text-[15px] font-semibold text-dark">
+                      {m.name}
+                    </p>
+                    <p className="mt-1 text-[13px] leading-snug text-muted">
+                      {m.role}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
