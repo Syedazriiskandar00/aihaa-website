@@ -21,14 +21,16 @@ export default function FloatingButtons() {
 
   return (
     <>
-      {/* Chatbot — positioned at bottom-[88px] right-4 internally */}
+      {/* Chatbot — self-positioned bottom-right (FAB when closed, panel when open) */}
       <Chatbot />
 
-      {/* Scroll to Top */}
+      {/* Scroll to Top — desktop only. On mobile it overlapped page content
+          (/contact card) and the near-full-width chat panel; mobile relies on
+          native flick-scroll / status-bar tap instead. */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 left-4 z-50 bg-white border border-[rgba(218,165,32,0.15)] text-gold-dark p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-gold hover:text-white animate-fade-in-up"
+          className="fixed bottom-4 left-4 z-50 hidden md:block bg-white border border-[rgba(218,165,32,0.15)] text-gold-dark p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-gold hover:text-white animate-fade-in-up"
         >
           <ChevronUp className="w-5 h-5" />
         </button>
