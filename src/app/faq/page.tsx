@@ -34,7 +34,7 @@ export default function FAQPage() {
 
       {/* ── 1. HERO ── */}
       <section className="bg-surface pt-12 pb-14">
-        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-gold-dark mb-4">
             {t.faq_label}
           </p>
@@ -49,7 +49,7 @@ export default function FAQPage() {
 
       {/* ── 2. TOP QUESTION ── */}
       <section className="bg-[#FFFDE7] py-12">
-        <div ref={topRef} className="scroll-reveal max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={topRef} className="scroll-reveal max-w-[800px] mx-auto px-5 sm:px-6 lg:px-8">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-[#DAA520] mb-5">
             {t.faq_top_label}
           </p>
@@ -72,7 +72,7 @@ export default function FAQPage() {
 
       {/* ── 3. REMAINING 9 FAQ ── */}
       <section className="bg-white py-16">
-        <div ref={listRef} className="scroll-reveal max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={listRef} className="scroll-reveal max-w-[800px] mx-auto px-5 sm:px-6 lg:px-8">
           {faqs.map((faq, i) => (
             <div
               key={i}

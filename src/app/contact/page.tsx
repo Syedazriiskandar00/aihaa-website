@@ -20,7 +20,7 @@ export default function ContactPage() {
 
       {/* ── 1. HERO — cream, centered (matches the other hub pages) ── */}
       <section className="bg-surface pt-12 pb-14">
-        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.25em] uppercase text-gold-dark mb-4">
             {t.contact_label}
           </p>
@@ -35,7 +35,7 @@ export default function ContactPage() {
 
       {/* ── 2. WHATSAPP CTA — focal point ── */}
       <section className="bg-[#FFFDE7] py-16 lg:py-20">
-        <div ref={waRef} className="scroll-reveal max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={waRef} className="scroll-reveal max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left — WhatsApp conversation mockup */}
             <div className="scroll-reveal-child stagger-1 max-w-[340px] mx-auto lg:mx-0">
@@ -126,7 +126,7 @@ export default function ContactPage() {
 
       {/* ── 3. INFO — 3-column grid ── */}
       <section className="bg-white py-16">
-        <div ref={infoRef} className="scroll-reveal max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={infoRef} className="scroll-reveal max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* WhatsApp */}
             <div className="scroll-reveal-child stagger-1 bg-[#FFFDE7] rounded-2xl p-6 border border-[rgba(218,165,32,0.15)]">
@@ -166,7 +166,7 @@ export default function ContactPage() {
 
       {/* ── 4. LOCATION + Google Maps ── */}
       <section className="bg-[#F5F5F5] py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <MapPin className="w-8 h-8 text-gold mx-auto mb-2" />
             <h2 className="text-lg font-bold text-[#0D0D0D]">AIHAA Marketing SDN BHD</h2>

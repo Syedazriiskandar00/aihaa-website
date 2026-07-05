@@ -29,7 +29,7 @@ export default function HomeTestimonials() {
 
   return (
     <section className="bg-white py-20 lg:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-14 text-center">
           {t.home_testi_eyebrow}
         </p>

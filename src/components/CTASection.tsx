@@ -11,21 +11,21 @@ export default function CTASection() {
 
   return (
     <section className="bg-surface py-16 md:py-24 lg:py-32">
-      <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div>
+      <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="max-w-xl mx-auto text-center flex flex-col items-center">
+          {/* Contact card — single centered column (founder photo removed) */}
+          <div className="w-full">
             <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-4">
               {t.cta_label}
             </p>
             <h2 className="font-editorial text-4xl md:text-5xl text-dark mb-6">
               {t.cta_title} <span className="font-editorial-italic text-gold-dark">AIHAA</span>
             </h2>
-            <p className="text-muted mb-8 max-w-md">
+            <p className="text-muted mb-8 mx-auto max-w-md">
               {t.cta_desc}
             </p>
 
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-8 text-left max-w-md mx-auto">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center border border-gold/20">
                   <Phone className="w-5 h-5 text-gold-dark" />
@@ -93,34 +93,6 @@ export default function CTASection() {
               </svg>
               {t.cta_whatsapp}
             </a>
-          </div>
-
-          {/* Right Content — Sales Expert Image */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden border border-[rgba(218,165,32,0.2)]">
-              <picture>
-                <source
-                  media="(max-width: 768px)"
-                  srcSet="/images/products/sales-expert-mobile.webp"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/products/sales-expert.webp"
-                  alt="AIHAA Sales Expert"
-                  width={500}
-                  height={600}
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
-
-            {/* Floating Badge — inside-pinned on mobile to avoid 390px
-                viewport edge clipping; desktop restores the floating -top/-right
-                overhang for the lifted look. */}
-            <div className="absolute top-3 right-3 lg:-top-3 lg:-right-3 bg-gold text-white px-4 py-2 rounded-full font-bold text-sm shadow-gold z-10">
-              {t.cta_response}
-            </div>
           </div>
         </div>
       </div>

@@ -83,7 +83,7 @@ export default function CapacityFunctionalities({ product }: Props) {
 
   return (
     <section className="bg-[#F5F5F3] py-20 lg:py-24 border-b border-black/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t.product_capacity_eyebrow}
           heading={t.product_capacity_heading}

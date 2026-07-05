@@ -49,7 +49,7 @@ export default function WaterPurifierPage() {
             }}
           />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-12">
           <div className="text-center">
             <span className="inline-block bg-gold/15 text-gold-dark px-4 py-2 rounded-full text-sm font-medium border border-[rgba(218,165,32,0.4)] mb-4">
               {t.product_hero_badge}
@@ -66,7 +66,7 @@ export default function WaterPurifierPage() {
 
       {/* ── Sekali Bayar Statement ── */}
       <section className="py-10">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+        <div className="max-w-3xl mx-auto px-5 text-center">
           <p className="font-playfair italic text-lg md:text-xl text-dark/70">
             {t.product_statement}
           </p>
@@ -76,7 +76,7 @@ export default function WaterPurifierPage() {
 
       {/* ── Indoor Section ── */}
       <section id="indoor" className="scroll-mt-24 bg-white py-16 lg:py-20">
-        <div ref={indoorRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={indoorRef} className="scroll-reveal max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="mb-10 scroll-reveal-child stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
               <span className="text-gold text-[10px] font-medium uppercase tracking-[0.2em]">
@@ -138,7 +138,7 @@ export default function WaterPurifierPage() {
 
       {/* ── Outdoor Section ── */}
       <section id="outdoor" className="scroll-mt-24 bg-surface py-16 lg:py-20">
-        <div ref={outdoorRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={outdoorRef} className="scroll-reveal max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="mb-10 scroll-reveal-child stagger-1 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
               <h2 className="font-editorial text-3xl md:text-4xl text-dark mt-2 mb-2">

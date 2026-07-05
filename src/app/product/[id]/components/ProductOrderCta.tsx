@@ -14,7 +14,7 @@ type Props = { product: Product };
 export default function ProductOrderCta({ product }: Props) {
   return (
     <section className="bg-[#FAF7F0]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-14 lg:py-16">
         <div className="max-w-3xl mx-auto flex flex-col items-center gap-6 rounded-2xl border border-black/5 bg-white px-6 py-10 sm:px-10 lg:px-12 text-center shadow-sm">
           <p className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
             Harga {product.name}

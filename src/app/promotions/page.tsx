@@ -30,7 +30,7 @@ export default function PromotionsPage() {
 
       {/* ── SECTION 1: Page Header ── */}
       <section className="bg-surface pt-12 pb-16">
-        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-4 text-center">
+        <div ref={heroRef} className="scroll-reveal max-w-3xl mx-auto px-5 text-center">
           <p className="scroll-reveal-child stagger-1 text-[10px] tracking-[0.3em] uppercase text-gold-dark mb-4">
             {t.promo_label}
           </p>
@@ -82,7 +82,7 @@ export default function PromotionsPage() {
 
       {/* ── SECTION 3: Three promo cards ── */}
       <section className="bg-white py-16 lg:py-20 overflow-hidden">
-        <div ref={cardsRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div ref={cardsRef} className="scroll-reveal max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5 md:grid md:grid-cols-3">
 
             {/* Card 1 — Trade-In (DARK) */}

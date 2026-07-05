@@ -12,7 +12,7 @@ export default function OutdoorGrid() {
 
   return (
     <section id="outdoor-grid" className="bg-white py-20 lg:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t.produk_luar_grid_eyebrow}
           heading={t.produk_luar_grid_heading}

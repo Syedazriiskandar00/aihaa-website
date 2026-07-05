@@ -18,7 +18,7 @@ export default function CertificationsSection() {
 
   return (
     <section className="bg-[#FFFDE7] py-14 border-y border-[rgba(218,165,32,0.1)]">
-      <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={revealRef} className="scroll-reveal max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-[#717171] text-sm uppercase tracking-wider">
             {t.cert_title}

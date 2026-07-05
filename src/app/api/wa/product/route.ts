@@ -18,8 +18,19 @@ import { whatsappMessages } from "@/lib/config/contact";
 
 export const dynamic = "force-dynamic";
 
+// A cached 302 would reuse the first rep and make the rotator look stuck,
+// so every response is explicitly uncacheable at the browser + CDN layer.
+const NO_STORE = {
+  "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+} as const;
+
 export async function GET(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id") ?? "";
+  // ?debug=1 → return the rotation state as JSON (no redirect) so KV
+  // availability can be verified on a Preview deploy: hit it a few times
+  // and watch `counter` climb. kvOk:false / a static counter = KV isn't
+  // reachable in this environment (env vars not enabled for Preview).
+  const debug = request.nextUrl.searchParams.get("debug") === "1";
   const product = getProductBySlug(id);
 
   // Product name drives the pre-filled message; unknown id falls back to
@@ -32,17 +43,30 @@ export async function GET(request: NextRequest) {
   // roster change needs no code edit here. Fall back to rep 0 if KV is
   // unavailable so the redirect always resolves.
   let salesIndex = 0;
+  let counter = 0;
+  let kvOk = false;
   try {
-    const counter = await kv.incr("product_rotation");
+    counter = await kv.incr("product_rotation");
     salesIndex = (counter - 1) % SALES_TEAM.length;
+    kvOk = true;
   } catch {
     salesIndex = 0;
+    kvOk = false;
   }
 
   const sales = SALES_TEAM[salesIndex];
+
+  if (debug) {
+    // name only — never expose the phone number in the debug payload.
+    return NextResponse.json(
+      { kvOk, counter, index: salesIndex, name: sales.name },
+      { headers: NO_STORE }
+    );
+  }
+
   const waUrl = `https://wa.me/${sales.waNumber}?text=${encodeURIComponent(
     message
   )}`;
 
-  return NextResponse.redirect(waUrl, 302);
+  return NextResponse.redirect(waUrl, { status: 302, headers: NO_STORE });
 }

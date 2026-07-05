@@ -36,7 +36,7 @@ export default function CsrSumbangan() {
 
   return (
     <section className="bg-[#F5F5F3] py-20 lg:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center mb-14">
           <p className="text-[11px] uppercase tracking-[0.28em] text-gold font-semibold mb-4">
             {t.about_csr_eyebrow}

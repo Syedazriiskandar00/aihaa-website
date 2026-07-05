@@ -19,7 +19,7 @@ export default function IndoorUseCases() {
 
   return (
     <section className="bg-white py-16 lg:py-20 border-b border-black/5">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
         <p className="text-center text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-10">
           {t.produk_dalam_usecase_eyebrow}
         </p>
