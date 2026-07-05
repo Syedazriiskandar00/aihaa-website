@@ -59,9 +59,13 @@ export default function CsrSumbangan() {
                 <h3 className="font-editorial text-xl md:text-2xl text-dark leading-tight">
                   {title}
                 </h3>
-                <span className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
-                  {year}
-                </span>
+                {/* Hide the year until a real value exists — placeholder
+                    "TBD" must never be visible on the live page. */}
+                {year && year !== "TBD" && (
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
+                    {year}
+                  </span>
+                )}
               </div>
               <p className="text-[13.5px] leading-relaxed text-muted">{desc}</p>
             </article>

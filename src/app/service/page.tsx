@@ -141,6 +141,54 @@ export default function ServicePage() {
           </picture>
         </section>
 
+        {/* INTERIM CORRECTION — the pasir-penapis-luar banner above still
+            bakes in "diselenggara setiap 6 bulan", which is WRONG for
+            outdoor filters. This HTML note carries the correct per-type
+            intervals until the banner image is regenerated (separate design
+            task). Do not remove until the banner is fixed. */}
+        <section className="bg-surface">
+          <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 py-10 md:py-14">
+            <div className="rounded-2xl border border-gold/20 bg-white px-6 py-7 sm:px-8">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-gold font-semibold mb-3">
+                Selang Servis Penapis Luar
+              </p>
+              <p className="text-[13.5px] md:text-[14px] leading-relaxed text-muted mb-5">
+                Penapis luar tidak diselenggara setiap 6 bulan. Selang servis
+                bergantung pada jenis penapis:
+              </p>
+              <ul className="space-y-2.5 text-[14px] md:text-[15px] text-dark">
+                <li className="flex items-baseline gap-2.5">
+                  <span aria-hidden className="text-gold-dark">
+                    •
+                  </span>
+                  <span>
+                    <span className="font-semibold">Fiber / Steel</span> —
+                    setiap 2 tahun
+                  </span>
+                </li>
+                <li className="flex items-baseline gap-2.5">
+                  <span aria-hidden className="text-gold-dark">
+                    •
+                  </span>
+                  <span>
+                    <span className="font-semibold">UF Double Backwash</span> —
+                    setiap 3 tahun
+                  </span>
+                </li>
+                <li className="flex items-baseline gap-2.5">
+                  <span aria-hidden className="text-gold-dark">
+                    •
+                  </span>
+                  <span>
+                    <span className="font-semibold">PVDF / PVDF Plus</span> —
+                    setiap 5 tahun
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section className="relative">
           <picture>
             <source
