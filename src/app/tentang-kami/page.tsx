@@ -4,9 +4,11 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import KisahKami from "./components/KisahKami";
 import HalalCommitment from "./components/HalalCommitment";
-import AzleeCollabVideo from "./components/AzleeCollabVideo";
 import TeamSection from "./components/TeamSection";
 import CsrSumbangan from "./components/CsrSumbangan";
+// AzleeCollabVideo intentionally not rendered until the real collab
+// video exists — its placeholder ("Video kolaborasi — akan dimuat naik")
+// must not ship. Re-add <AzleeCollabVideo /> below when the video lands.
 
 export const metadata: Metadata = {
   title: "Tentang AIHAA — Kisah, Halal Commitment & Pasukan",
@@ -28,7 +30,6 @@ export default function TentangKamiPage() {
       <main>
         <KisahKami />
         <HalalCommitment />
-        <AzleeCollabVideo />
         <TeamSection />
         <CsrSumbangan />
       </main>

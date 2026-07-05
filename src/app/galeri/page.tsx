@@ -38,7 +38,7 @@ export default function GaleriPage() {
 
       {/* Hero — cream, centered (commit 375528c + b63265b) */}
       <section className="bg-surface pt-12 pb-16 lg:pb-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
           <p className="text-xs tracking-[0.2em] uppercase text-gold-dark mb-4">
             {t.gallery_label}
           </p>
@@ -53,7 +53,7 @@ export default function GaleriPage() {
 
       {/* Gallery */}
       <section className="bg-white py-12 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           {/* Filter tabs hidden — see comment block at top of file
               to re-enable. Tab state + filtering logic preserved as
               comments so the next pass is one-uncomment. */}
@@ -168,7 +168,7 @@ export default function GaleriPage() {
 
       {/* CTA */}
       <section className="bg-[#0D0D0D] py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
           <h2 className="font-editorial text-3xl lg:text-5xl text-white mb-3">
             {t.gallery_cta_title}
           </h2>

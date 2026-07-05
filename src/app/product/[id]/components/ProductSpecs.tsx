@@ -23,7 +23,7 @@ export default function ProductSpecs({ product }: Props) {
       id="specifications"
       className="bg-[#0A0A0A] text-white py-20 lg:py-24 border-b border-white/5 scroll-mt-20"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="mb-12 lg:mb-16">
           <p className="text-[11px] uppercase tracking-[0.24em] text-gold font-semibold mb-4">
             {t.product_specprice_eyebrow}

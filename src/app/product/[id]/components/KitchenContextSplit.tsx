@@ -17,7 +17,7 @@ export default function KitchenContextSplit({ product }: Props) {
 
   return (
     <section className="bg-white border-b border-black/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24 pb-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-20 lg:pt-24 pb-10">
         <p className="text-[11px] uppercase tracking-[0.24em] text-gold font-semibold text-center mb-3">
           {t.product_kitchen_eyebrow}
         </p>

@@ -43,7 +43,7 @@ export default function SageHeroLineup() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Headline block */}
         <div className="text-center mb-14 lg:mb-16">
           <p className="text-[11px] uppercase tracking-[0.22em] text-dark/70 font-semibold mb-5">

@@ -24,7 +24,7 @@ export default function RelatedProducts({ product }: Props) {
 
   return (
     <section className="bg-[#FAFAF8] py-20 lg:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={t.detail_related}
           heading={t.detail_related}

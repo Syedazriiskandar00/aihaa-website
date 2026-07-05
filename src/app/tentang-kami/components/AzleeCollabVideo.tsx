@@ -13,7 +13,7 @@ export default function AzleeCollabVideo() {
 
   return (
     <section className="bg-dark py-20 lg:py-28">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="text-center mb-10 lg:mb-14 max-w-2xl mx-auto">
           <p className="text-[11px] uppercase tracking-[0.28em] text-gold font-semibold mb-4">
             {t.about_azlee_eyebrow}

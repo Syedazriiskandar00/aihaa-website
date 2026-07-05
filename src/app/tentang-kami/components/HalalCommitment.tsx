@@ -19,7 +19,7 @@ export default function HalalCommitment() {
 
   return (
     <section className="bg-white py-20 lg:py-28">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
         <p className="text-[11px] uppercase tracking-[0.28em] text-gold font-semibold mb-4">
           {t.about_halal_eyebrow}
         </p>

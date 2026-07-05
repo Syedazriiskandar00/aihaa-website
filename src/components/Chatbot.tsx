@@ -151,7 +151,14 @@ export default function Chatbot() {
 
       {/* Chat window */}
       {isOpen && (
-        <div className="fixed bottom-4 right-4 z-[60] w-[380px] max-w-[calc(100vw-32px)] h-[480px] max-h-[85vh] bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] flex flex-col overflow-hidden border border-[rgba(0,0,0,0.08)]">
+        <>
+          {/* Mobile backdrop — subtle scrim, tap outside to dismiss. Hidden on desktop. */}
+          <div
+            className="fixed inset-0 z-[55] bg-black/25 md:hidden"
+            onClick={handleClose}
+            aria-hidden="true"
+          />
+          <div className="fixed z-[60] flex flex-col overflow-hidden bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] border border-[rgba(0,0,0,0.08)] bottom-3 left-3 right-3 h-[560px] max-h-[85dvh] md:left-auto md:bottom-4 md:right-4 md:w-[380px] md:h-[480px] md:max-h-[70vh]">
           {/* Header */}
           <div className="bg-[#0D0D0D] px-4 py-3 flex items-center justify-between flex-shrink-0">
             <div className="flex items-center gap-3">
@@ -167,7 +174,7 @@ export default function Chatbot() {
             </div>
             <button
               onClick={handleClose}
-              className="text-[#999] hover:text-white transition-colors p-1"
+              className="flex items-center justify-center min-w-[44px] min-h-[44px] -mr-2 text-[#999] hover:text-white transition-colors"
               aria-label="Tutup chatbot"
             >
               <X className="w-5 h-5" />
@@ -271,7 +278,10 @@ export default function Chatbot() {
           </div>
 
           {/* Input */}
-          <div className="border-t border-[rgba(0,0,0,0.06)] p-3 flex gap-2 bg-white flex-shrink-0">
+          <div
+            className="border-t border-[rgba(0,0,0,0.06)] px-3 pt-3 flex gap-2 bg-white flex-shrink-0"
+            style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
+          >
             <input
               ref={inputRef}
               type="text"
@@ -292,7 +302,8 @@ export default function Chatbot() {
               <Send className="w-4 h-4" />
             </button>
           </div>
-        </div>
+          </div>
+        </>
       )}
     </>
   );

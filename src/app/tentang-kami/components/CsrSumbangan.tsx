@@ -36,7 +36,7 @@ export default function CsrSumbangan() {
 
   return (
     <section className="bg-[#F5F5F3] py-20 lg:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center mb-14">
           <p className="text-[11px] uppercase tracking-[0.28em] text-gold font-semibold mb-4">
             {t.about_csr_eyebrow}
@@ -59,9 +59,13 @@ export default function CsrSumbangan() {
                 <h3 className="font-editorial text-xl md:text-2xl text-dark leading-tight">
                   {title}
                 </h3>
-                <span className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
-                  {year}
-                </span>
+                {/* Hide the year until a real value exists — placeholder
+                    "TBD" must never be visible on the live page. */}
+                {year && year !== "TBD" && (
+                  <span className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
+                    {year}
+                  </span>
+                )}
               </div>
               <p className="text-[13.5px] leading-relaxed text-muted">{desc}</p>
             </article>

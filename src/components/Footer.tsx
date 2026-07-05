@@ -43,7 +43,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#0D0D0D]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Column 1 — Brand */}
           <div>
@@ -130,7 +130,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-[rgba(218,165,32,0.1)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[#666] text-xs text-center sm:text-left">
             © {new Date().getFullYear()} {t.footer_copyright}
           </p>

@@ -53,7 +53,7 @@ export default function IndoorHeroLineup() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* AIHAA wordmark — gold, small, centered */}
         <div className="text-center mb-10 lg:mb-12">
           <span className="font-editorial text-gold text-xl md:text-2xl tracking-[0.22em] leading-none">
