@@ -3,7 +3,7 @@ import { kv } from "@vercel/kv";
 // Sales team for the chatbot's round-robin handoff. Single source of
 // truth for sales WhatsApp numbers — never hardcode these elsewhere.
 export const SALES_TEAM = [
-  { name: "Azri", display: "+60 11-3720 8466", waNumber: "601137208466" },
+  { name: "Azri", display: "+60 11-5657 7084", waNumber: "601156577084" },
   { name: "Aim", display: "+60 10-584 6001", waNumber: "60105846001" },
   { name: "Aidil", display: "+60 19-946 9437", waNumber: "60199469437" },
   { name: "Adibah", display: "+60 11-2692 2081", waNumber: "601126922081" },
