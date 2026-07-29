@@ -50,12 +50,12 @@ export default function CTASection() {
                       /
                     </span>
                     <a
-                      href="https://wa.me/60162773211"
+                      href="https://wa.me/60162774211"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-gold-dark transition-colors"
                     >
-                      +60 16-277 3211
+                      +60 16-277 4211
                     </a>
                   </p>
                 </div>

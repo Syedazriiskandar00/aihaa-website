@@ -26,7 +26,7 @@ const socialLinks = [
 // contact.ts placeholder until that migration lands.
 const adminContacts = [
   { name: "Hakiim", display: "+60 11-2998 7890", wa: "601129987890" },
-  { name: "Afiq", display: "+60 16-277 3211", wa: "60162773211" },
+  { name: "Afiq", display: "+60 16-277 4211", wa: "60162774211" },
 ];
 
 export default function Footer() {
