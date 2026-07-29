@@ -5,11 +5,10 @@ import { kv } from "@vercel/kv";
 export const SALES_TEAM = [
   { name: "Azri", display: "+60 11-5657 7084", waNumber: "601156577084" },
   { name: "Aim", display: "+60 10-584 6001", waNumber: "60105846001" },
-  { name: "Aidil", display: "+60 19-946 9437", waNumber: "60199469437" },
-  { name: "Adibah", display: "+60 11-2692 2081", waNumber: "601126922081" },
-  { name: "Firdaus", display: "+60 10-829 1794", waNumber: "60108291794" },
   { name: "Shaa", display: "+60 19-952 3897", waNumber: "60199523897" },
-  { name: "Haziq", display: "+60 10-664 3590", waNumber: "60106643590" },
+  { name: "Firdaus", display: "+60 10-829 1794", waNumber: "60108291794" },
+  { name: "Aidil", display: "+60 14-646 7345", waNumber: "60146467345" },
+  { name: "Adibah", display: "+60 11-2692 2081", waNumber: "601126922081" },
 ] as const;
 
 export type SalesPerson = (typeof SALES_TEAM)[number];
