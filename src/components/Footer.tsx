@@ -39,6 +39,7 @@ export default function Footer() {
     { name: t.nav_promotions, href: "/promotions" },
     { name: t.nav_about, href: "/tentang-kami" },
     { name: t.nav_contact, href: "/contact" },
+    { name: t.nav_policy, href: "/polisi" },
   ];
 
   return (
@@ -131,12 +132,14 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[rgba(218,165,32,0.1)]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#666] text-xs text-center sm:text-left">
+          {/* #8F8F8F on #0D0D0D = 6.01:1 — passes WCAG AA (4.5:1). The
+              previous #666 measured 3.38:1 and failed. */}
+          <p className="text-[#8F8F8F] text-xs text-center sm:text-left">
             © {new Date().getFullYear()} {t.footer_copyright}
           </p>
           <Link
             href="/polisi#privacy-policy"
-            className="text-[#666] text-xs hover:text-[#999] transition-colors"
+            className="text-[#8F8F8F] text-xs hover:text-[#DAA520] transition-colors"
           >
             {t.footer_privacy}
           </Link>

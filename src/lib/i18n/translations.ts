@@ -9,6 +9,7 @@ export type TranslationKeys = {
   nav_faq: string;
   nav_gallery: string;
   nav_contact: string;
+  nav_policy: string;
   hero_badge: string;
   hero_title_1: string;
   hero_title_2: string;
@@ -569,6 +570,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     nav_faq: "FAQ",
     nav_gallery: "Galeri",
     nav_contact: "Hubungi Kami",
+    nav_policy: "Polisi Syarikat",
     hero_badge: "Sekali Bayar Tanpa Bulanan",
     hero_title_1: "Penapis Air",
     hero_title_2: "Sekali Bayar",
@@ -1177,6 +1179,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     nav_faq: "FAQ",
     nav_gallery: "Gallery",
     nav_contact: "Contact Us",
+    nav_policy: "Company Policy",
     hero_badge: "One-Time Payment, No Monthly Fees",
     hero_title_1: "Water Purifier",
     hero_title_2: "One-Time Payment",
