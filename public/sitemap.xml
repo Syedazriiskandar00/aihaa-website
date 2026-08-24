@@ -21,4 +21,5 @@
   <url><loc>https://aihaaofficial.com/contact</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://aihaaofficial.com/service</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://aihaaofficial.com/tentang-kami</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://aihaaofficial.com/polisi</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>

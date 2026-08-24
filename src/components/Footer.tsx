@@ -134,9 +134,12 @@ export default function Footer() {
           <p className="text-[#666] text-xs text-center sm:text-left">
             © {new Date().getFullYear()} {t.footer_copyright}
           </p>
-          <a href="#" className="text-[#666] text-xs hover:text-[#999] transition-colors">
+          <Link
+            href="/polisi#privacy-policy"
+            className="text-[#666] text-xs hover:text-[#999] transition-colors"
+          >
             {t.footer_privacy}
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
