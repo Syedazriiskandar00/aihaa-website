@@ -15,7 +15,15 @@
 //   2. Nota pengarang template ("(not applicable for intangible product)" dan
 //      "**(Note: Kindly amend according to your business service)") dibuang —
 //      itu arahan kepada merchant, bukan teks untuk pelanggan.
-// Fail .docx HQ MASIH mengandungi kedua-dua ralat di atas. HQ perlu kemas kini
+//   3. Klausa perkongsian data menyebut "FVSB" — singkatan sebuah syarikat
+//      lain yang tiada kaitan dengan AIHAA dan tidak wujud di mana-mana lagi
+//      dalam repo. Ditukar kepada "AIHAA MARKETING SDN BHD". Frasa terpotong
+//      "apply our terms of;" dilengkapkan kepada "apply our terms of use;".
+//   4. Nombor telefon "013-736 6805" yang terhasil daripada token rosak
+//      "aihaateam@gmail.com/0137366805" TIDAK disahkan sebagai talian AIHAA
+//      dan tidak wujud di mana-mana lagi dalam repo. Diganti dengan talian
+//      rasmi tunggal dari src/lib/config/contact.ts: +60 11-5657 7084.
+// Fail .docx HQ MASIH mengandungi kesemua ralat di atas. HQ perlu kemas kini
 // dokumen asal supaya kedua-duanya sepadan semula.
 
 export type PolicyBlock =
@@ -82,7 +90,7 @@ export const POLICY_DOCUMENTS: PolicyDocument[] = [
         items: [
           "In the event that AIHAA MARKETING SDN BHD sells or buys any business or assets.",
           "If AIHAA MARKETING SDN BHD or substantially all of its assets are acquired by a third party, in which case personal data which we hold about our customers may be one of the transferred assets; or",
-          "If we are under a duty to disclose or share your personal data in order to comply with any legal obligation, or in order to enforce or apply our terms of; or to protect the rights, property, or safety of FVSB, our customers, or others. This includes exchanging information with other companies and organisations for the purposes of fraud protection and credit risk reduction.",
+          "If we are under a duty to disclose or share your personal data in order to comply with any legal obligation, or in order to enforce or apply our terms of use; or to protect the rights, property, or safety of AIHAA MARKETING SDN BHD, our customers, or others. This includes exchanging information with other companies and organisations for the purposes of fraud protection and credit risk reduction.",
         ],
       },
       { kind: "subheading", text: "Third Party Sites" },
@@ -156,7 +164,7 @@ export const POLICY_DOCUMENTS: PolicyDocument[] = [
       { kind: "paragraph", text: "We will not be liable in the event of an incorrect shipping address is provided and goods are returned to us." },
       { kind: "paragraph", text: "All re-delivery of goods to you will be charged for a associated shipping charges which will be disclosed upon request for a second delivery attempt." },
       { kind: "subheading", text: "Change In Shipping Address" },
-      { kind: "paragraph", text: "If you have any request for change of shipping address, please email us at aihaateam@gmail.com or WhatsApp 013-736 6805 within 12 hours upon your order submission." },
+      { kind: "paragraph", text: "If you have any request for change of shipping address, please email us at aihaateam@gmail.com or WhatsApp +60 11-5657 7084 within 12 hours upon your order submission." },
       { kind: "paragraph", text: "If request of change in shipping address is made after 24 hours upon order confirmation, customers will be responsible for any associated shipping charges." },
       { kind: "subheading", text: "Shipping Time" },
       { kind: "paragraph", text: "It typically takes between 2-5 working days (Monday to Friday) for goods to arrive at your destination. The shipment will be delivered during office hours between 9:00 am to 5:00 pm weekdays only." },
