@@ -6,6 +6,17 @@
 // dokumen .docx asal dikemas kini serentak supaya kedua-duanya sepadan.
 // Modul ini hanya memberi struktur (tajuk / perenggan / senarai) supaya
 // /polisi boleh render teks yang sama tanpa mengubahnya.
+//
+// PENGECUALIAN TERCATAT (2026-09-02) — dua pembetulan sengaja, bukan pindaan wording:
+//   1. Slot laman web dalam template HQ telah diisi dengan alamat e-mel
+//      ("aihaateam@gmail.com/") dan bukan domain. Slot itu kini berbunyi
+//      "aihaaofficial.com". Dua rujukan yang MEMANG saluran e-mel/telefon
+//      (permintaan pembatalan, tukar alamat penghantaran) dikekalkan.
+//   2. Nota pengarang template ("(not applicable for intangible product)" dan
+//      "**(Note: Kindly amend according to your business service)") dibuang —
+//      itu arahan kepada merchant, bukan teks untuk pelanggan.
+// Fail .docx HQ MASIH mengandungi kedua-dua ralat di atas. HQ perlu kemas kini
+// dokumen asal supaya kedua-duanya sepadan semula.
 
 export type PolicyBlock =
   | { kind: "subheading"; text: string }
@@ -24,26 +35,26 @@ export const POLICY_DOCUMENTS: PolicyDocument[] = [
     title: "TERMS & CONDITIONS",
     blocks: [
       { kind: "subheading", text: "Terms & Conditions" },
-      { kind: "paragraph", text: "Welcome to AIHAA MARKETING SDN BHD for online store. Terms and conditions stated below applies to all visitors and users of aihaateam@gmail.com/. You are bound by these terms and conditions as long as you're on aihaateam@gmail.com/." },
+      { kind: "paragraph", text: "Welcome to AIHAA MARKETING SDN BHD for online store. Terms and conditions stated below applies to all visitors and users of aihaaofficial.com. You are bound by these terms and conditions as long as you're on aihaaofficial.com." },
       { kind: "subheading", text: "General" },
-      { kind: "paragraph", text: "The content of terms and conditions may be change, move or delete at any time. Please note that aihaateam@gmail.com/. have the rights to change the contents of the terms and conditions without any notice. Any violation of rules and regulations of these terms and conditions, aihaateam@gmail.com/. will take immediate actions against the offender(s)." },
+      { kind: "paragraph", text: "The content of terms and conditions may be change, move or delete at any time. Please note that aihaaofficial.com. have the rights to change the contents of the terms and conditions without any notice. Any violation of rules and regulations of these terms and conditions, aihaaofficial.com. will take immediate actions against the offender(s)." },
       { kind: "subheading", text: "Site Contents & Copyrights" },
       { kind: "paragraph", text: "Unless otherwise noted, all materials, including images, illustrations, designs, icons, photographs, video clips, and written and other materials that appear as part of this Site, in other words “Contents of the Site” are copyrights, trademarks, trade dress and/or other intellectual properties owned, controlled or licensed by AIHAA MARKETING SDN BHD." },
       { kind: "subheading", text: "Comments and Feedbacks" },
-      { kind: "paragraph", text: "All comments and feedbacks to AIHAA MARKETING SDN BHD will be remain aihaateam@gmail.com/." },
-      { kind: "paragraph", text: "User shall agree that there will be no comment(s) submitted to the aihaateam@gmail.com/.  will violate any rights of any third party, including copyrights, trademarks, privacy of other personal or proprietary right(s). Furthermore, the user shall agree there will not be content of unlawful, abusive, or obscene material(s) submitted to the site. User will be the only one responsible for any comment's content made." },
+      { kind: "paragraph", text: "All comments and feedbacks to AIHAA MARKETING SDN BHD will be remain aihaaofficial.com." },
+      { kind: "paragraph", text: "User shall agree that there will be no comment(s) submitted to the aihaaofficial.com will violate any rights of any third party, including copyrights, trademarks, privacy of other personal or proprietary right(s). Furthermore, the user shall agree there will not be content of unlawful, abusive, or obscene material(s) submitted to the site. User will be the only one responsible for any comment's content made." },
       { kind: "subheading", text: "Product Information" },
       { kind: "paragraph", text: "We cannot guarantee all actual products will be exactly the same shown on the monitor as that is depending on the user monitor." },
       { kind: "subheading", text: "Newsletter" },
-      { kind: "paragraph", text: "User shall agree that aihaateam@gmail.com/. may send newsletter regarding the latest news/products/promotions etc through email to the user." },
+      { kind: "paragraph", text: "User shall agree that aihaaofficial.com. may send newsletter regarding the latest news/products/promotions etc through email to the user." },
       { kind: "subheading", text: "Indemnification" },
-      { kind: "paragraph", text: "The user shall agree to defend, indemnify and hold aihaateam@gmail.com/. harmless from and against any and all claims, damages, costs and expenses, including attorneys' fees, arising from or related to your use of the Site." },
+      { kind: "paragraph", text: "The user shall agree to defend, indemnify and hold aihaaofficial.com. harmless from and against any and all claims, damages, costs and expenses, including attorneys' fees, arising from or related to your use of the Site." },
       { kind: "subheading", text: "Link to other sites" },
-      { kind: "paragraph", text: "Any access link to third party sites is at your own aihaateam@gmail.com/.  will not be related or involve to any such website if the user's content/product(s) got damaged or loss have any connection with third party site." },
+      { kind: "paragraph", text: "Any access link to third party sites is at your own aihaaofficial.com will not be related or involve to any such website if the user's content/product(s) got damaged or loss have any connection with third party site." },
       { kind: "subheading", text: "Inaccuracy Information" },
-      { kind: "paragraph", text: "From time to time, there may be information on aihaateam@gmail.com/. that contains typographical error, inaccuracies, omissions, that may relate to product description, pricing, availability and article contents. We reserve the rights to correct any errors, inaccuracies, change or edit information without prior notice to the customers. If you are not satisfy with your purchased product(s), please return it back to us with the invoice." },
+      { kind: "paragraph", text: "From time to time, there may be information on aihaaofficial.com. that contains typographical error, inaccuracies, omissions, that may relate to product description, pricing, availability and article contents. We reserve the rights to correct any errors, inaccuracies, change or edit information without prior notice to the customers. If you are not satisfy with your purchased product(s), please return it back to us with the invoice." },
       { kind: "subheading", text: "Termination" },
-      { kind: "paragraph", text: "This agreement is effective unless and until either by the customer or aihaateam@gmail.com/. Customer may terminate this agreement at any time. However, aihaateam@gmail.com/   may also terminate the agreement with the customer without any prior notice and will be denying the access of the customer who is unable to comply the terms and conditions above." },
+      { kind: "paragraph", text: "This agreement is effective unless and until either by the customer or aihaaofficial.com. Customer may terminate this agreement at any time. However, aihaaofficial.com may also terminate the agreement with the customer without any prior notice and will be denying the access of the customer who is unable to comply the terms and conditions above." },
       { kind: "subheading", text: "Payments" },
       { kind: "paragraph", text: "All Goods purchased are subject to a one-time payment. Payment can be made through various payment methods we have available, such as Visa, MasterCard or online payment methods." },
       { kind: "paragraph", text: "Payments cards (credit cards or debit cards) are subject to validation checks and authorization by Your card issuer. If we do not receive the required authorization, we will not be liable for any delay or non-delivery of Your Order." },
@@ -86,16 +97,14 @@ export const POLICY_DOCUMENTS: PolicyDocument[] = [
     id: "cancellation-refund-policy",
     title: "CANCELLATION, AND REFUND POLICY",
     blocks: [
-      { kind: "paragraph", text: "(not applicable for intangible product)" },
-      { kind: "paragraph", text: "**(Note: Kindly amend according to your business service)" },
       { kind: "subheading", text: "Cancellation Prior to Shipment" },
-      { kind: "paragraph", text: "If you cancel your order(s) before it ships from our warehouse, you will not be charged any additional fees. We require a cancellation request to be submitted by emailing us at aihaateam@gmail.com/" },
+      { kind: "paragraph", text: "If you cancel your order(s) before it ships from our warehouse, you will not be charged any additional fees. We require a cancellation request to be submitted by emailing us at aihaateam@gmail.com" },
       { kind: "paragraph", text: "Once the cancellation request is received, a full refund will be initiated. We would advise a cancellation request within 12 hours upon your order submission in order for a cancellation prior to goods shipment" },
       { kind: "subheading", text: "Return Policy" },
       { kind: "paragraph", text: "The following are the policies to be eligible for return requests after shipment/receipt of goods:" },
       { kind: "paragraph", text: "1. All goods sold are non-refundable except (i) Failed Delivery (ii) Wrong Delivery and (iii) Damaged good during delivery." },
-      { kind: "paragraph", text: "2. Only items that have been purchased directly from aihaateam@gmail.com/  Online Store can be eligible for a return." },
-      { kind: "paragraph", text: "3. Any aihaateam@gmail.com/  Online Store product purchased through other retailers is not eligible for this policy and must follow the respective retailers’ returns and refunds policy." },
+      { kind: "paragraph", text: "2. Only items that have been purchased directly from aihaaofficial.com Online Store can be eligible for a return." },
+      { kind: "paragraph", text: "3. Any aihaaofficial.com Online Store product purchased through other retailers is not eligible for this policy and must follow the respective retailers’ returns and refunds policy." },
       { kind: "paragraph", text: "4. Goods are eligible for a return if the following apply:" },
       { kind: "subheading", text: "Incorrect:" },
       {
@@ -110,7 +119,7 @@ export const POLICY_DOCUMENTS: PolicyDocument[] = [
       {
         kind: "list",
         items: [
-          "The item is found to be damaged upon receipt. Items has been tampered/refurbished or modified. Customers will be responsible for all shipping charges to return goods. Returns are applicable only for a complete aihaateam@gmail.com/0137366805 Online Store product.",
+          "The item is found to be damaged upon receipt. Items has been tampered/refurbished or modified. Customers will be responsible for all shipping charges to return goods. Returns are applicable only for a complete aihaaofficial.com Online Store product.",
         ],
       },
       { kind: "paragraph", text: "Returned items must meet the following requirements:" },
@@ -141,15 +150,13 @@ export const POLICY_DOCUMENTS: PolicyDocument[] = [
     id: "shipping-policy",
     title: "SHIPPING POLICY",
     blocks: [
-      { kind: "paragraph", text: "(not applicable for intangible product)" },
-      { kind: "paragraph", text: "**(Note: Kindly amend according to your business service)" },
       { kind: "subheading", text: "Shipping Address" },
       { kind: "paragraph", text: "We will only ship to addresses provided in the billing address or shipment address provided during your purchase." },
       { kind: "paragraph", text: "Please ensure correct addresses and reachable phone number are provided when completing your order. We do not ship to P.O Boxes (Post-Office Box) and only to valid legitimate shipping addresses." },
       { kind: "paragraph", text: "We will not be liable in the event of an incorrect shipping address is provided and goods are returned to us." },
       { kind: "paragraph", text: "All re-delivery of goods to you will be charged for a associated shipping charges which will be disclosed upon request for a second delivery attempt." },
       { kind: "subheading", text: "Change In Shipping Address" },
-      { kind: "paragraph", text: "If you have any request for change of shipping address, please email us at aihaateam@gmail.com/0137366805 within 12 hours upon your order submission." },
+      { kind: "paragraph", text: "If you have any request for change of shipping address, please email us at aihaateam@gmail.com or WhatsApp 013-736 6805 within 12 hours upon your order submission." },
       { kind: "paragraph", text: "If request of change in shipping address is made after 24 hours upon order confirmation, customers will be responsible for any associated shipping charges." },
       { kind: "subheading", text: "Shipping Time" },
       { kind: "paragraph", text: "It typically takes between 2-5 working days (Monday to Friday) for goods to arrive at your destination. The shipment will be delivered during office hours between 9:00 am to 5:00 pm weekdays only." },
