@@ -12,6 +12,38 @@ export const whatsappUrl = (message: string): string => {
 
 export const telHref = (): string => `tel:+${PHONE_NUMBER}`;
 
+export const EMAIL_ADDRESS = "aihaamarketing.01@gmail.com" as const;
+
+// Official social accounts. Footer renders this list in order and the
+// LocalBusiness JSON-LD in app/layout.tsx reuses the hrefs as `sameAs`.
+export const SOCIAL_LINKS = [
+  {
+    name: "Facebook",
+    label: "@aihaawaterfiltermalaysia",
+    href: "https://www.facebook.com/aihaawaterfiltermalaysia",
+  },
+  {
+    name: "Instagram",
+    label: "@aihaa_water_filter_elite",
+    href: "https://www.instagram.com/aihaa_water_filter_elite",
+  },
+  {
+    name: "Threads",
+    label: "@aihaa_water_filter_elite",
+    href: "https://www.threads.com/@aihaa_water_filter_elite",
+  },
+  {
+    name: "TikTok",
+    label: "@aihaa.elite",
+    href: "https://www.tiktok.com/@aihaa.elite",
+  },
+  {
+    name: "YouTube",
+    label: "@aihaachannelhq",
+    href: "https://www.youtube.com/@aihaachannelhq",
+  },
+] as const;
+
 // Pre-filled message presets. Kept in BM since most CTAs originate from
 // Malay-speaking funnels; callers may pass their own localized string to
 // `whatsappUrl(...)` for EN surfaces.

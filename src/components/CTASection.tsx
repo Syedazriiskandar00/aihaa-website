@@ -3,7 +3,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { whatsappUrl } from "@/lib/config/contact";
+import { whatsappUrl, EMAIL_ADDRESS } from "@/lib/config/contact";
 
 export default function CTASection() {
   const revealRef = useScrollReveal();
@@ -67,7 +67,7 @@ export default function CTASection() {
                 </div>
                 <div>
                   <p className="text-muted text-sm">{t.cta_email_label}</p>
-                  <p className="text-dark font-medium break-all">aihaa.marketing@gmail.com</p>
+                  <p className="text-dark font-medium break-all">{EMAIL_ADDRESS}</p>
                 </div>
               </div>
 

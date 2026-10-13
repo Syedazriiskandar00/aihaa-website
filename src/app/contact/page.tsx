@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Mail, Clock, MapPin, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { whatsappUrl, telHref, PHONE_NUMBER_DISPLAY } from "@/lib/config/contact";
+import { whatsappUrl, telHref, PHONE_NUMBER_DISPLAY, EMAIL_ADDRESS } from "@/lib/config/contact";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6 text-gold" />
               </div>
               <h3 className="text-base font-bold text-[#0D0D0D] mb-2">{t.contact_email}</h3>
-              <p className="text-sm text-[#717171] mb-1">aihaa.marketing@gmail.com</p>
+              <p className="text-sm text-[#717171] mb-1">{EMAIL_ADDRESS}</p>
               <p className="text-xs text-[#999]">{t.contact_info_email_sub}</p>
             </div>
 
