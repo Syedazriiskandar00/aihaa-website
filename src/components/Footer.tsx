@@ -2,32 +2,14 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-
-const socialLinks = [
-  { name: "Facebook", label: "Penapis Air Aihaa", href: "https://www.facebook.com/profile.php?id=100067106490428" },
-  {
-    name: "Instagram",
-    label: "@aihaa_hq",
-    href: "https://www.instagram.com/aihaa_hq",
-  },
-  {
-    name: "TikTok",
-    label: "@aihaabatupahat2018",
-    href: "https://www.tiktok.com/@aihaabatupahat2018",
-  },
-];
-
-// Admin WhatsApp contacts shown in the footer. Hardcoded here (not via
-// the shared contact.ts placeholder) because phone-number migration is
-// phased — the footer goes live with the real admin numbers while the
-// other CTAs (header, FAB, /contact, product pages) stay on the
-// contact.ts placeholder until that migration lands.
-const adminContacts = [
-  { name: "Hakiim", display: "+60 11-2998 7890", wa: "601129987890" },
-  { name: "Afiq", display: "+60 16-277 4211", wa: "60162774211" },
-];
+import {
+  EMAIL_ADDRESS,
+  PHONE_NUMBER_DISPLAY,
+  SOCIAL_LINKS,
+  telHref,
+} from "@/lib/config/contact";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -76,26 +58,22 @@ export default function Footer() {
           <div>
             <h4 className="text-white text-sm font-semibold mb-4">{t.footer_contact}</h4>
             <ul className="space-y-3">
-              {adminContacts.map((admin) => (
-                <li key={admin.wa}>
-                  <a
-                    href={`https://wa.me/${admin.wa}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-[#999] text-sm hover:text-[#DAA520] transition-colors"
-                  >
-                    <MessageCircle className="w-4 h-4 text-[#DAA520] flex-shrink-0" />
-                    {admin.display}
-                  </a>
-                </li>
-              ))}
               <li>
                 <a
-                  href="mailto:aihaa.marketing@gmail.com"
+                  href={telHref()}
+                  className="flex items-center gap-2 text-[#999] text-sm hover:text-[#DAA520] transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-[#DAA520] flex-shrink-0" />
+                  {PHONE_NUMBER_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${EMAIL_ADDRESS}`}
                   className="flex items-center gap-2 text-[#999] text-sm hover:text-[#DAA520] transition-colors"
                 >
                   <Mail className="w-4 h-4 text-[#DAA520]" />
-                  aihaa.marketing@gmail.com
+                  {EMAIL_ADDRESS}
                 </a>
               </li>
               <li className="flex items-center gap-2 text-[#999] text-sm">
@@ -111,7 +89,7 @@ export default function Footer() {
               {t.footer_social}
             </h4>
             <ul className="space-y-2">
-              {socialLinks.map((link) => (
+              {SOCIAL_LINKS.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}

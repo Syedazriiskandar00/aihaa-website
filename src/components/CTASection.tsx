@@ -3,7 +3,12 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { whatsappUrl } from "@/lib/config/contact";
+import {
+  whatsappUrl,
+  telHref,
+  EMAIL_ADDRESS,
+  PHONE_NUMBER_DISPLAY,
+} from "@/lib/config/contact";
 
 export default function CTASection() {
   const revealRef = useScrollReveal();
@@ -32,30 +37,12 @@ export default function CTASection() {
                 </div>
                 <div>
                   <p className="text-muted text-sm">{t.cta_phone_label}</p>
-                  {/* Two admin WhatsApp numbers inline, slash-separated.
-                      Hardcoded here (not via contact.ts placeholder) —
-                      same footer-first phone migration phase. flex-wrap
-                      lets the second number drop to its own line on very
-                      narrow screens instead of overflowing. */}
-                  <p className="text-dark font-medium flex flex-wrap items-center gap-x-2">
+                  <p className="text-dark font-medium">
                     <a
-                      href="https://wa.me/601129987890"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={telHref()}
                       className="hover:text-gold-dark transition-colors"
                     >
-                      +60 11-2998 7890
-                    </a>
-                    <span className="text-muted" aria-hidden>
-                      /
-                    </span>
-                    <a
-                      href="https://wa.me/60162774211"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-gold-dark transition-colors"
-                    >
-                      +60 16-277 4211
+                      {PHONE_NUMBER_DISPLAY}
                     </a>
                   </p>
                 </div>
@@ -67,7 +54,7 @@ export default function CTASection() {
                 </div>
                 <div>
                   <p className="text-muted text-sm">{t.cta_email_label}</p>
-                  <p className="text-dark font-medium break-all">aihaa.marketing@gmail.com</p>
+                  <p className="text-dark font-medium break-all">{EMAIL_ADDRESS}</p>
                 </div>
               </div>
 

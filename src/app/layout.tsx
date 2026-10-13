@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
-import { PHONE_NUMBER } from "@/lib/config/contact";
+import { PHONE_NUMBER, EMAIL_ADDRESS, SOCIAL_LINKS } from "@/lib/config/contact";
 import { SITE_URL } from "@/lib/config/site";
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function RootLayout({
               description: "Penapis air premium sekali bayar untuk keluarga Malaysia. Bumiputera & Halal JAKIM certified.",
               url: SITE_URL,
               telephone: `+${PHONE_NUMBER}`,
-              email: "aihaa.marketing@gmail.com",
+              email: EMAIL_ADDRESS,
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Batu Pahat",
@@ -47,10 +47,7 @@ export default function RootLayout({
               },
               priceRange: "RM399 - RM1,580",
               openingHours: ["Mo-Fr 09:00-18:00", "Sa 10:00-16:00"],
-              sameAs: [
-                "https://www.facebook.com/profile.php?id=100067106490428",
-                "https://www.instagram.com/aihaa_hq/",
-              ],
+              sameAs: SOCIAL_LINKS.map((link) => link.href),
             }),
           }}
         />

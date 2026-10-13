@@ -1,9 +1,11 @@
-// Contact channels — single source of truth for the AIHAA main line
-// (WhatsApp + voice) and all pre-filled CTA messages. Every CTA that
-// calls whatsappUrl() / telHref() inherits this number automatically.
+// Contact channels — single source of truth for the AIHAA main lines
+// and all pre-filled CTA messages. WhatsApp and voice are separate
+// numbers: the office line (PHONE_NUMBER) takes calls only, so every
+// whatsappUrl() CTA uses WHATSAPP_NUMBER and telHref() uses PHONE_NUMBER.
 export const WHATSAPP_NUMBER = "601156577084" as const;
-export const PHONE_NUMBER = "601156577084" as const;
-export const PHONE_NUMBER_DISPLAY = "+60 11-5657 7084" as const;
+export const WHATSAPP_NUMBER_DISPLAY = "+60 11-5657 7084" as const;
+export const PHONE_NUMBER = "60123705004" as const;
+export const PHONE_NUMBER_DISPLAY = "+60 12-370 5004" as const;
 
 export const whatsappUrl = (message: string): string => {
   const encoded = encodeURIComponent(message);
@@ -11,6 +13,38 @@ export const whatsappUrl = (message: string): string => {
 };
 
 export const telHref = (): string => `tel:+${PHONE_NUMBER}`;
+
+export const EMAIL_ADDRESS = "aihaamarketing.01@gmail.com" as const;
+
+// Official social accounts. Footer renders this list in order and the
+// LocalBusiness JSON-LD in app/layout.tsx reuses the hrefs as `sameAs`.
+export const SOCIAL_LINKS = [
+  {
+    name: "Facebook",
+    label: "@aihaawaterfiltermalaysia",
+    href: "https://www.facebook.com/aihaawaterfiltermalaysia",
+  },
+  {
+    name: "Instagram",
+    label: "@aihaa_water_filter_elite",
+    href: "https://www.instagram.com/aihaa_water_filter_elite",
+  },
+  {
+    name: "Threads",
+    label: "@aihaa_water_filter_elite",
+    href: "https://www.threads.com/@aihaa_water_filter_elite",
+  },
+  {
+    name: "TikTok",
+    label: "@aihaa.elite",
+    href: "https://www.tiktok.com/@aihaa.elite",
+  },
+  {
+    name: "YouTube",
+    label: "@aihaachannelhq",
+    href: "https://www.youtube.com/@aihaachannelhq",
+  },
+] as const;
 
 // Pre-filled message presets. Kept in BM since most CTAs originate from
 // Malay-speaking funnels; callers may pass their own localized string to
