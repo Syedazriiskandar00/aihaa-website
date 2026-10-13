@@ -1,9 +1,11 @@
-// Contact channels — single source of truth for the AIHAA main line
-// (WhatsApp + voice) and all pre-filled CTA messages. Every CTA that
-// calls whatsappUrl() / telHref() inherits this number automatically.
+// Contact channels — single source of truth for the AIHAA main lines
+// and all pre-filled CTA messages. WhatsApp and voice are separate
+// numbers: the office line (PHONE_NUMBER) takes calls only, so every
+// whatsappUrl() CTA uses WHATSAPP_NUMBER and telHref() uses PHONE_NUMBER.
 export const WHATSAPP_NUMBER = "601156577084" as const;
-export const PHONE_NUMBER = "601156577084" as const;
-export const PHONE_NUMBER_DISPLAY = "+60 11-5657 7084" as const;
+export const WHATSAPP_NUMBER_DISPLAY = "+60 11-5657 7084" as const;
+export const PHONE_NUMBER = "60123705004" as const;
+export const PHONE_NUMBER_DISPLAY = "+60 12-370 5004" as const;
 
 export const whatsappUrl = (message: string): string => {
   const encoded = encodeURIComponent(message);

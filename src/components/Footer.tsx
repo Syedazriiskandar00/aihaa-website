@@ -2,19 +2,14 @@
 
 import Link from "next/link";
 import Logo from "./Logo";
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { EMAIL_ADDRESS, SOCIAL_LINKS } from "@/lib/config/contact";
-
-// Admin WhatsApp contacts shown in the footer. Hardcoded here (not via
-// the shared contact.ts placeholder) because phone-number migration is
-// phased — the footer goes live with the real admin numbers while the
-// other CTAs (header, FAB, /contact, product pages) stay on the
-// contact.ts placeholder until that migration lands.
-const adminContacts = [
-  { name: "Hakiim", display: "+60 11-2998 7890", wa: "601129987890" },
-  { name: "Afiq", display: "+60 16-277 4211", wa: "60162774211" },
-];
+import {
+  EMAIL_ADDRESS,
+  PHONE_NUMBER_DISPLAY,
+  SOCIAL_LINKS,
+  telHref,
+} from "@/lib/config/contact";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -63,19 +58,15 @@ export default function Footer() {
           <div>
             <h4 className="text-white text-sm font-semibold mb-4">{t.footer_contact}</h4>
             <ul className="space-y-3">
-              {adminContacts.map((admin) => (
-                <li key={admin.wa}>
-                  <a
-                    href={`https://wa.me/${admin.wa}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-[#999] text-sm hover:text-[#DAA520] transition-colors"
-                  >
-                    <MessageCircle className="w-4 h-4 text-[#DAA520] flex-shrink-0" />
-                    {admin.display}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href={telHref()}
+                  className="flex items-center gap-2 text-[#999] text-sm hover:text-[#DAA520] transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-[#DAA520] flex-shrink-0" />
+                  {PHONE_NUMBER_DISPLAY}
+                </a>
+              </li>
               <li>
                 <a
                   href={`mailto:${EMAIL_ADDRESS}`}
