@@ -6,3 +6,7 @@
 // there — keep all three in sync if the domain ever changes.
 export const SITE_URL = "https://aihaaofficial.com";
 export const SITE_NAME = "AIHAA Marketing Sdn Bhd";
+
+// Meta (Facebook) Pixel ID — public identifier, loaded site-wide from
+// app/layout.tsx.
+export const META_PIXEL_ID = "1384024506863493";
