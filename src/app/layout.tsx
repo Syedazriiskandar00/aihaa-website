@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
-import { PHONE_NUMBER, EMAIL_ADDRESS, SOCIAL_LINKS } from "@/lib/config/contact";
+import { PHONE_NUMBER_DISPLAY, EMAIL_ADDRESS, SOCIAL_LINKS } from "@/lib/config/contact";
 import { SITE_URL, META_PIXEL_ID } from "@/lib/config/site";
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function RootLayout({
               name: "AIHAA Marketing SDN BHD",
               description: "Penapis air premium sekali bayar untuk keluarga Malaysia. Bumiputera & Halal JAKIM certified.",
               url: SITE_URL,
-              telephone: `+${PHONE_NUMBER}`,
+              telephone: PHONE_NUMBER_DISPLAY,
               email: EMAIL_ADDRESS,
               address: {
                 "@type": "PostalAddress",
