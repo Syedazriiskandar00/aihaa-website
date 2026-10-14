@@ -22,7 +22,7 @@
 //   4. Nombor telefon "013-736 6805" yang terhasil daripada token rosak
 //      "aihaateam@gmail.com/0137366805" TIDAK disahkan sebagai talian AIHAA
 //      dan tidak wujud di mana-mana lagi dalam repo. Diganti dengan talian
-//      rasmi tunggal dari src/lib/config/contact.ts: +60 11-5657 7084.
+//      rasmi dari src/lib/config/contact.ts: +60 12-370 5004.
 // Fail .docx HQ MASIH mengandungi kesemua ralat di atas. HQ perlu kemas kini
 // dokumen asal supaya kedua-duanya sepadan semula.
 
@@ -164,7 +164,7 @@ export const POLICY_DOCUMENTS: PolicyDocument[] = [
       { kind: "paragraph", text: "We will not be liable in the event of an incorrect shipping address is provided and goods are returned to us." },
       { kind: "paragraph", text: "All re-delivery of goods to you will be charged for a associated shipping charges which will be disclosed upon request for a second delivery attempt." },
       { kind: "subheading", text: "Change In Shipping Address" },
-      { kind: "paragraph", text: "If you have any request for change of shipping address, please email us at aihaateam@gmail.com or WhatsApp +60 11-5657 7084 within 12 hours upon your order submission." },
+      { kind: "paragraph", text: "If you have any request for change of shipping address, please email us at aihaateam@gmail.com or call +60 12-370 5004 within 12 hours upon your order submission." },
       { kind: "paragraph", text: "If request of change in shipping address is made after 24 hours upon order confirmation, customers will be responsible for any associated shipping charges." },
       { kind: "subheading", text: "Shipping Time" },
       { kind: "paragraph", text: "It typically takes between 2-5 working days (Monday to Friday) for goods to arrive at your destination. The shipment will be delivered during office hours between 9:00 am to 5:00 pm weekdays only." },

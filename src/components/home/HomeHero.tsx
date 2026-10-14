@@ -38,7 +38,7 @@ export default function HomeHero() {
           becomes side-by-side row at sm+. Eliminates the previous
           cream-section background clash on mobile. */}
       <div className="absolute inset-x-0 bottom-8 lg:bottom-12 z-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
-        <Link
+        <a
           href={whatsappUrl(whatsappMessages.general)}
           target="_blank"
           rel="noopener noreferrer"
@@ -46,7 +46,7 @@ export default function HomeHero() {
         >
           {t.home_hero_cta_primary}
           <span aria-hidden>→</span>
-        </Link>
+        </a>
         <Link
           href="/produk-dalam"
           className="inline-flex items-center gap-2 border border-white/80 bg-black/30 backdrop-blur-sm text-white px-7 sm:px-8 py-3.5 rounded-full text-[13px] sm:text-[13.5px] font-semibold tracking-wide hover:bg-white hover:text-dark hover:border-white transition-colors"

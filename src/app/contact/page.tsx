@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Mail, Clock, MapPin, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { whatsappUrl, telHref, WHATSAPP_NUMBER_DISPLAY, EMAIL_ADDRESS } from "@/lib/config/contact";
+import { whatsappUrl, telHref, EMAIL_ADDRESS } from "@/lib/config/contact";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -140,7 +140,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="text-lg font-bold text-[#DAA520] hover:opacity-80 transition-opacity block mb-1"
               >
-                {WHATSAPP_NUMBER_DISPLAY}
+                {t.contact_wa_cta}
               </a>
               <p className="text-xs text-[#717171]">{t.contact_info_wa_sub}</p>
             </div>
