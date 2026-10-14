@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
@@ -43,7 +42,7 @@ export default function OutdoorGrid() {
           <p className="text-[14px] leading-relaxed text-muted mb-7">
             {t.produk_luar_footer_cta_body}
           </p>
-          <Link
+          <a
             href={whatsappUrl(whatsappMessages.modelAdvice)}
             target="_blank"
             rel="noopener noreferrer"
@@ -51,7 +50,7 @@ export default function OutdoorGrid() {
           >
             {t.produk_luar_footer_cta_button}
             <span aria-hidden>→</span>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

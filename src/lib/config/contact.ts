@@ -1,16 +1,15 @@
-// Contact channels — single source of truth for the AIHAA main lines
-// and all pre-filled CTA messages. WhatsApp and voice are separate
-// numbers: the office line (PHONE_NUMBER) takes calls only, so every
-// whatsappUrl() CTA uses WHATSAPP_NUMBER and telHref() uses PHONE_NUMBER.
-export const WHATSAPP_NUMBER = "601156577084" as const;
-export const WHATSAPP_NUMBER_DISPLAY = "+60 11-5657 7084" as const;
+// Contact channels — single source of truth for the AIHAA office line
+// and all pre-filled CTA messages. The office line (PHONE_NUMBER) takes
+// calls only. WhatsApp has no single number: whatsappUrl() points at
+// /api/wa, which rotates each click across the sales team in
+// src/lib/chatbot/sales-team.ts.
 export const PHONE_NUMBER = "60123705004" as const;
 export const PHONE_NUMBER_DISPLAY = "+60 12-370 5004" as const;
 
-export const whatsappUrl = (message: string): string => {
-  const encoded = encodeURIComponent(message);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
-};
+// Must be rendered with a plain <a>, never next/link: a prefetch would
+// hit /api/wa and use up a sales rep's turn.
+export const whatsappUrl = (message: string): string =>
+  `/api/wa?text=${encodeURIComponent(message)}`;
 
 export const telHref = (): string => `tel:+${PHONE_NUMBER}`;
 

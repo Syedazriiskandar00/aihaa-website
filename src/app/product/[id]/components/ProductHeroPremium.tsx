@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import type { Product } from "@/lib/data/products";
@@ -150,7 +149,7 @@ export default function ProductHeroPremium({ product }: Props) {
 
             {/* Dual CTA */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-              <Link
+              <a
                 href={whatsappUrl(whatsappMessages.productInquiry(product.name))}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -158,7 +157,7 @@ export default function ProductHeroPremium({ product }: Props) {
               >
                 {t.detail_cta_buy}
                 <span aria-hidden>→</span>
-              </Link>
+              </a>
               <a
                 href="#specifications"
                 className={`inline-flex items-center gap-2 px-7 py-3 rounded-full text-[13.5px] font-semibold tracking-wide transition-colors ${secondaryCTAClass}`}

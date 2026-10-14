@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import type { Product } from "@/lib/data/products";
 import { whatsappUrl, whatsappMessages } from "@/lib/config/contact";
@@ -91,7 +90,7 @@ export default function ProductSpecs({ product }: Props) {
 
               {/* CTA */}
               <div className="mt-7">
-                <Link
+                <a
                   href={whatsappUrl(whatsappMessages.productInquiry(product.name))}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -99,7 +98,7 @@ export default function ProductSpecs({ product }: Props) {
                 >
                   {t.product_specprice_cta}
                   <span aria-hidden>→</span>
-                </Link>
+                </a>
               </div>
             </div>
 
