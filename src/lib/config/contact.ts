@@ -1,17 +1,17 @@
 // Contact channels — single source of truth for the AIHAA office line
-// and all pre-filled CTA messages. The office line (PHONE_NUMBER) takes
-// calls only. WhatsApp has no single number: whatsappUrl() points at
-// /api/wa, which rotates each click across the sales team in
-// src/lib/chatbot/sales-team.ts.
-export const PHONE_NUMBER = "60123705004" as const;
-export const PHONE_NUMBER_DISPLAY = "+60 12-370 5004" as const;
+// and all pre-filled CTA messages. The office line (PHONE_NUMBER) is a
+// 1300 hotline for calls only, dialled without a country code. WhatsApp
+// has no single number: whatsappUrl() points at /api/wa, which rotates
+// each click across the sales team in src/lib/chatbot/sales-team.ts.
+export const PHONE_NUMBER = "1300824422" as const;
+export const PHONE_NUMBER_DISPLAY = "1300-82-4422" as const;
 
 // Must be rendered with a plain <a>, never next/link: a prefetch would
 // hit /api/wa and use up a sales rep's turn.
 export const whatsappUrl = (message: string): string =>
   `/api/wa?text=${encodeURIComponent(message)}`;
 
-export const telHref = (): string => `tel:+${PHONE_NUMBER}`;
+export const telHref = (): string => `tel:${PHONE_NUMBER}`;
 
 export const EMAIL_ADDRESS = "aihaamarketing.01@gmail.com" as const;
 
