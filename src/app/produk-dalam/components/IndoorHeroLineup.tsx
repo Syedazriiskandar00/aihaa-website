@@ -6,27 +6,27 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { getProductBySlug } from "@/lib/data/products";
 import { getCardImage } from "@/lib/data/product-card-images";
 
-// Spotlight-champions hero — EAN (PILIHAN RAMAI) + WINTER (PREMIUM) render
-// as 2 big featured cards, mirroring SageHeroLineup's pattern on
-// /produk-luar so indoor and outdoor listings feel consistent. The rest
-// of the indoor catalog (BELLA, BIG, FANCY) lives in IndoorGrid below.
+// Spotlight-champions hero — BIG (PILIHAN RAMAI) + ULTRA ONE (NILAI TERBAIK)
+// render as 2 big featured cards, mirroring SageHeroLineup's pattern on
+// /produk-luar so indoor and outdoor listings feel consistent. IndoorGrid
+// below lists the full indoor catalog.
 
 export default function IndoorHeroLineup() {
   const { t, locale } = useLanguage();
-  const ean = getProductBySlug("aihaa-ean");
-  const winter = getProductBySlug("aihaa-winter");
+  const big = getProductBySlug("aihaa-big");
+  const ultraOne = getProductBySlug("ultra-one");
 
-  if (!ean || !winter) return null;
+  if (!big || !ultraOne) return null;
 
   const featured = [
     {
-      product: ean,
+      product: big,
       badge: t.produk_dalam_hero_featured_bestseller_badge,
       badgeTone: "light" as const,
     },
     {
-      product: winter,
-      badge: t.produk_dalam_hero_featured_premium_badge,
+      product: ultraOne,
+      badge: t.produk_dalam_hero_featured_value_badge,
       badgeTone: "dark" as const,
     },
   ];

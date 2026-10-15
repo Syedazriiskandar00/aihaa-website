@@ -352,13 +352,13 @@ export type TranslationKeys = {
   // /produk-dalam — Phase 3 premium indoor landing
   produk_dalam_meta_title: string;
   produk_dalam_meta_description: string;
-  // Indoor Hero Lineup (dark, 5-pedestal, BELLA + WINTER featured)
+  // Indoor Hero Lineup (BIG + ULTRA ONE featured)
   produk_dalam_hero_eyebrow: string;
   produk_dalam_hero_heading: string;
   produk_dalam_hero_italic: string;
   produk_dalam_hero_tagline: string;
   produk_dalam_hero_featured_bestseller_badge: string;
-  produk_dalam_hero_featured_premium_badge: string;
+  produk_dalam_hero_featured_value_badge: string;
   produk_dalam_hero_cta: string;
   // Indoor use-cases band (Set A: Keluarga Muda/Besar/Bayi Baru/Apartment Compact)
   produk_dalam_usecase_eyebrow: string;
@@ -640,7 +640,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     category_subtitle: "Penapis air untuk setiap keperluan — dari dapur rumah anda hingga ke seluruh rumah",
     category_indoor_label: "Untuk keluarga anda",
     category_indoor_title: "Penapis Air Dalam Rumah",
-    category_indoor_desc: "6 model penapis air dalam rumah dengan teknologi 4 tahap penapisan, mineral alkali, dan rekaan kompak untuk dapur moden. Dari RM399.",
+    category_indoor_desc: "Penapis air dalam rumah — ULTRA ONE all-in-one direct minum dan AIHAA BIG kapasiti 17 liter untuk keluarga besar. Dari RM399.",
     category_indoor_cta: "Lihat Koleksi",
     category_outdoor_label: "Perlindungan menyeluruh",
     category_outdoor_title: "Penapis Air Luar Rumah",
@@ -779,7 +779,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_mock_user1: "Hai, saya berminat dengan penapis air AIHAA 😊",
     contact_mock_bot1: "Hi! Terima kasih. Boleh saya tahu nama dan kawasan anda?",
     contact_mock_user2: "Saya Ahmad dari Shah Alam",
-    contact_mock_bot2: "Terima kasih Ahmad! Untuk Shah Alam, kami cadangkan AIHAA Bella. Pemasangan percuma. Nak proceed? 😊",
+    contact_mock_bot2: "Terima kasih Ahmad! Untuk Shah Alam, kami cadangkan AIHAA BIG. Pemasangan percuma. Nak proceed? 😊",
     gallery_label: "GALERI",
     gallery_title: "Galeri Pemasangan",
     gallery_subtitle: "Lihat sendiri pemasangan AIHAA di rumah pelanggan seluruh Semenanjung Malaysia",
@@ -925,17 +925,17 @@ export const translations: Record<Locale, TranslationKeys> = {
       "WhatsApp kami — pakar akan cadangkan mengikut sumber air dan keperluan rumah anda.",
     produk_luar_footer_cta_button: "WhatsApp Pakar AIHAA",
     // /produk-dalam — Phase 3 premium indoor landing
-    produk_dalam_meta_title: "Penapis Air Dalam AIHAA — 6 Model Premium",
+    produk_dalam_meta_title: "Penapis Air Dalam AIHAA — ULTRA ONE & AIHAA BIG",
     produk_dalam_meta_description:
-      "Penapis air dalam rumah AIHAA — 6 model premium dari RM399. BELLA, BIG, EAN, FANCY, WINTER, ULTRA ONE. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
+      "Penapis air dalam rumah AIHAA dari RM399 — ULTRA ONE all-in-one direct minum dan AIHAA BIG kapasiti 17 liter. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
     // Indoor Hero Lineup
     produk_dalam_hero_eyebrow: "PENAPIS AIR DALAM RUMAH",
     produk_dalam_hero_heading: "Penapis Untuk Rumah",
     produk_dalam_hero_italic: "Rasa Bersih, Setiap Titik.",
     produk_dalam_hero_tagline:
-      "Enam model dalam rumah — dari pilihan bajet hingga premium dengan ice maker. Dipilih ribuan keluarga Malaysia.",
+      "Dari ULTRA ONE yang terus boleh diminum hingga AIHAA BIG berkapasiti 17 liter. Dipilih ribuan keluarga Malaysia.",
     produk_dalam_hero_featured_bestseller_badge: "PILIHAN RAMAI",
-    produk_dalam_hero_featured_premium_badge: "PREMIUM",
+    produk_dalam_hero_featured_value_badge: "NILAI TERBAIK",
     produk_dalam_hero_cta: "Lihat Semua Model",
     // Indoor use-cases band
     produk_dalam_usecase_eyebrow: "SESUAI UNTUK",
@@ -947,7 +947,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_dalam_grid_eyebrow: "KATALOG LENGKAP",
     produk_dalam_grid_heading: "Semua Penapis Dalam AIHAA",
     produk_dalam_grid_subheading:
-      "Enam model penapis dalam — setiap satu direka untuk saiz keluarga dan gaya dapur berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
+      "Setiap model direka untuk saiz keluarga dan gaya dapur berbeza. Klik mana-mana produk untuk spesifikasi penuh.",
     // Cross-link on /water-purifier
     produk_dalam_cross_link: "Lihat Koleksi Penapis Dalam Premium",
     // Footer CTA
@@ -1249,7 +1249,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     category_subtitle: "Water purifiers for every need — from your kitchen to your entire home",
     category_indoor_label: "For your family",
     category_indoor_title: "Indoor Water Purifiers",
-    category_indoor_desc: "6 indoor models with 4-stage filtration, alkaline minerals, and compact designs. From RM399.",
+    category_indoor_desc: "Indoor purifiers — ULTRA ONE all-in-one direct drink and AIHAA BIG with a 17-litre tank for big families. From RM399.",
     category_indoor_cta: "View Collection",
     category_outdoor_label: "Complete protection",
     category_outdoor_title: "Outdoor Water Filters",
@@ -1388,7 +1388,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     contact_mock_user1: "Hi, I'm interested in AIHAA water purifiers 😊",
     contact_mock_bot1: "Hi! Thank you. May I know your name and area?",
     contact_mock_user2: "I'm Ahmad from Shah Alam",
-    contact_mock_bot2: "Thank you Ahmad! For Shah Alam, we recommend AIHAA Bella. Free installation. Want to proceed? 😊",
+    contact_mock_bot2: "Thank you Ahmad! For Shah Alam, we recommend AIHAA BIG. Free installation. Want to proceed? 😊",
     gallery_label: "GALLERY",
     gallery_title: "Installation Gallery",
     gallery_subtitle: "See AIHAA installations at customer homes throughout Peninsular Malaysia",
@@ -1534,17 +1534,17 @@ export const translations: Record<Locale, TranslationKeys> = {
       "WhatsApp us — a specialist will recommend based on your water source and household needs.",
     produk_luar_footer_cta_button: "WhatsApp an AIHAA Specialist",
     // /produk-dalam — Phase 3 premium indoor landing
-    produk_dalam_meta_title: "AIHAA Indoor Water Purifiers — 6 Premium Models",
+    produk_dalam_meta_title: "AIHAA Indoor Water Purifiers — ULTRA ONE & AIHAA BIG",
     produk_dalam_meta_description:
-      "AIHAA indoor water purifiers — 6 premium models from RM399. BELLA, BIG, EAN, FANCY, WINTER, ULTRA ONE. One-time payment, free installation across Peninsular Malaysia.",
+      "AIHAA indoor water purifiers from RM399 — ULTRA ONE all-in-one direct drink and AIHAA BIG with a 17-litre tank. One-time payment, free installation across Peninsular Malaysia.",
     // Indoor Hero Lineup
     produk_dalam_hero_eyebrow: "INDOOR WATER PURIFICATION",
     produk_dalam_hero_heading: "Purifiers for the Home",
     produk_dalam_hero_italic: "Clean Taste, Every Drop.",
     produk_dalam_hero_tagline:
-      "Six indoor models — from budget pick to premium with built-in ice maker. Chosen by thousands of Malaysian families.",
+      "From the drink-straight-away ULTRA ONE to the 17-litre AIHAA BIG. Chosen by thousands of Malaysian families.",
     produk_dalam_hero_featured_bestseller_badge: "BESTSELLER",
-    produk_dalam_hero_featured_premium_badge: "PREMIUM",
+    produk_dalam_hero_featured_value_badge: "BEST VALUE",
     produk_dalam_hero_cta: "View All Models",
     // Indoor use-cases band
     produk_dalam_usecase_eyebrow: "SUITED FOR",
@@ -1556,7 +1556,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     produk_dalam_grid_eyebrow: "FULL CATALOGUE",
     produk_dalam_grid_heading: "Every AIHAA Indoor Purifier",
     produk_dalam_grid_subheading:
-      "Six indoor models — each built for a distinct family size and kitchen style. Click any product for full specifications.",
+      "Each model is built for a distinct family size and kitchen style. Click any product for full specifications.",
     // Cross-link on /water-purifier
     produk_dalam_cross_link: "View Premium Indoor Collection",
     // Footer CTA
