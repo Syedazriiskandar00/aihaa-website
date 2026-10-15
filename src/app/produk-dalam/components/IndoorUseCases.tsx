@@ -8,8 +8,7 @@ export default function IndoorUseCases() {
 
   // Set A (user-approved): Keluarga Muda · Keluarga Besar · Bayi Baru ·
   // Apartment Compact. Every icon maps to at least one product's
-  // strength (EAN/BELLA → muda, BIG → besar, WINTER/BELLA → bayi,
-  // FANCY/BELLA → compact).
+  // strength (ULTRA ONE → muda/bayi/compact, BIG → besar).
   const useCases = [
     { icon: HeartHandshake, label: t.produk_dalam_usecase_muda },
     { icon: Users, label: t.produk_dalam_usecase_besar },

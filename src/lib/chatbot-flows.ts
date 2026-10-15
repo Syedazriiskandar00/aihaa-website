@@ -16,9 +16,8 @@ export type FlowStep = {
 export const whatsappUrls: Record<string, string> = {
   whatsapp: whatsappUrl("Hai, saya berminat dengan penapis air AIHAA."),
   whatsapp_price: whatsappUrl(whatsappMessages.priceQuestion),
-  whatsapp_ean: whatsappUrl(whatsappMessages.productInquiry("AIHAA EAN (RM780)")),
-  whatsapp_bella: whatsappUrl(whatsappMessages.productInquiry("AIHAA BELLA (RM1,080)")),
-  whatsapp_winter: whatsappUrl(whatsappMessages.productInquiry("AIHAA WINTER (RM1,580)")),
+  whatsapp_ultra_one: whatsappUrl(whatsappMessages.productInquiry("ULTRA ONE (RM399)")),
+  whatsapp_big: whatsappUrl(whatsappMessages.productInquiry("AIHAA BIG (RM1,280)")),
   whatsapp_warranty: whatsappUrl(whatsappMessages.warrantyClaim),
   whatsapp_support: whatsappUrl(whatsappMessages.support),
   whatsapp_filter: whatsappUrl(whatsappMessages.filterOrder),
@@ -62,8 +61,8 @@ export const flows: Record<string, FlowStep> = {
 
   price: {
     message: {
-      bm: "Penapis air AIHAA bermula dari RM399 — sekali bayar! 💰\n\nDalam rumah: RM399 - RM1,580\nLuar rumah: RM399 - RM1,299\n\nSemua termasuk pemasangan percuma + waranti.",
-      en: "AIHAA water purifiers start from RM399 — one-time payment! 💰\n\nIndoor: RM399 - RM1,580\nOutdoor: RM399 - RM1,299\n\nAll include free installation + warranty.",
+      bm: "Penapis air AIHAA bermula dari RM399 — sekali bayar! 💰\n\nDalam rumah: RM399 - RM1,280\nLuar rumah: RM399 - RM1,299\n\nSemua termasuk pemasangan percuma + waranti.",
+      en: "AIHAA water purifiers start from RM399 — one-time payment! 💰\n\nIndoor: RM399 - RM1,280\nOutdoor: RM399 - RM1,299\n\nAll include free installation + warranty.",
     },
     quickReplies: [
       { label: { bm: "Tengok semua produk", en: "View all products" }, action: "link:/produk-dalam" },
@@ -79,30 +78,17 @@ export const flows: Record<string, FlowStep> = {
     },
     quickReplies: [
       { label: { bm: "Bawah RM800", en: "Under RM800" }, action: "rec_budget_low" },
-      { label: { bm: "RM800 - RM1,200", en: "RM800 - RM1,200" }, action: "rec_budget_mid" },
-      { label: { bm: "RM1,200 ke atas", en: "Above RM1,200" }, action: "rec_budget_high" },
+      { label: { bm: "RM800 ke atas", en: "Above RM800" }, action: "rec_budget_high" },
     ],
   },
 
   rec_budget_low: {
     message: {
-      bm: "Cadangan saya — AIHAA EAN (RM780) ✨\n\n✅ Digital display\n✅ 4 tahap penapisan\n✅ 7.5L tangki\n✅ Pemasangan percuma\n✅ Waranti 2 tahun\n\nPaling popular dalam range ni!",
-      en: "My recommendation — AIHAA EAN (RM780) ✨\n\n✅ Digital display\n✅ 4-stage filtration\n✅ 7.5L tank\n✅ Free installation\n✅ 2 years warranty\n\nMost popular in this range!",
+      bm: "Cadangan saya — ULTRA ONE (RM399) ✨\n\n✅ All-in-one, terus boleh minum\n✅ Kadar aliran tanpa had\n✅ Pemasangan percuma\n✅ Waranti 2 tahun\n\nNilai terbaik dalam range ni!",
+      en: "My recommendation — ULTRA ONE (RM399) ✨\n\n✅ All-in-one, drink straight away\n✅ Unlimited flow\n✅ Free installation\n✅ 2 years warranty\n\nBest value in this range!",
     },
     quickReplies: [
-      { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_ean" },
-      { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
-      { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
-    ],
-  },
-
-  rec_budget_mid: {
-    message: {
-      bm: "Cadangan saya — AIHAA BELLA (RM1,080) ✨\n\n✅ Mineral alkali\n✅ 4 tahap penapisan\n✅ 9.5L tangki\n✅ Rekaan kompak stand floor\n✅ Pemasangan percuma + waranti 2 tahun\n\nBest seller kami!",
-      en: "My recommendation — AIHAA BELLA (RM1,080) ✨\n\n✅ Alkaline mineral\n✅ 4-stage filtration\n✅ 9.5L tank\n✅ Compact stand floor design\n✅ Free installation + 2 years warranty\n\nOur best seller!",
-    },
-    quickReplies: [
-      { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_bella" },
+      { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_ultra_one" },
       { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],
@@ -110,11 +96,11 @@ export const flows: Record<string, FlowStep> = {
 
   rec_budget_high: {
     message: {
-      bm: "Cadangan saya — AIHAA WINTER (RM1,580) ✨\n\n✅ Premium quality\n✅ Ice maker built-in\n✅ 4 tahap penapisan\n✅ Teknologi terbaru\n✅ Pemasangan percuma + waranti 2 tahun\n\nModel premium kami dengan ice maker!",
-      en: "My recommendation — AIHAA WINTER (RM1,580) ✨\n\n✅ Premium quality\n✅ Built-in ice maker\n✅ 4-stage filtration\n✅ Latest technology\n✅ Free installation + 2 years warranty\n\nOur premium model with ice maker!",
+      bm: "Cadangan saya — AIHAA BIG (RM1,280) ✨\n\n✅ Kapasiti besar 17L\n✅ 4 tahap penapisan\n✅ Rekaan stand floor\n✅ Pemasangan percuma + waranti 2 tahun\n\nSesuai untuk keluarga besar!",
+      en: "My recommendation — AIHAA BIG (RM1,280) ✨\n\n✅ Large 17L capacity\n✅ 4-stage filtration\n✅ Stand floor design\n✅ Free installation + 2 years warranty\n\nGreat for big families!",
     },
     quickReplies: [
-      { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_winter" },
+      { label: { bm: "Nak beli, WhatsApp", en: "Buy now, WhatsApp" }, action: "whatsapp_big" },
       { label: { bm: "Tengok produk lain", en: "See other products" }, action: "link:/produk-dalam" },
       { label: { bm: "Menu utama", en: "Main menu" }, action: "greeting" },
     ],

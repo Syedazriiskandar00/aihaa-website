@@ -27,36 +27,12 @@ export type ProductCardImage = {
 };
 
 export const productCardImages: Record<string, ProductCardImage> = {
-  // ─────────── INDOOR (5) ───────────
-  "aihaa-bella": {
-    slug: "aihaa-bella",
-    desktop: "/images/products/bella/card.webp",
-    mobile: "/images/products/bella/card-mobile.webp",
-    alt: "AIHAA BELLA — Penapis Air Stand Floor",
-  },
+  // ─────────── INDOOR (1) ───────────
   "aihaa-big": {
     slug: "aihaa-big",
     desktop: "/images/products/big/card.webp",
     mobile: "/images/products/big/card-mobile.webp",
     alt: "AIHAA BIG — Penapis Air Kapasiti 17 Liter",
-  },
-  "aihaa-ean": {
-    slug: "aihaa-ean",
-    desktop: "/images/products/ean/card.webp",
-    mobile: "/images/products/ean/card-mobile.webp",
-    alt: "AIHAA EAN — Penapis Air Bajet Digital",
-  },
-  "aihaa-fancy": {
-    slug: "aihaa-fancy",
-    desktop: "/images/products/fancy/card.webp",
-    mobile: "/images/products/fancy/card-mobile.webp",
-    alt: "AIHAA FANCY — Penapis Air Slim Moden 3 Tangki",
-  },
-  "aihaa-winter": {
-    slug: "aihaa-winter",
-    desktop: "/images/products/winter/card.webp",
-    mobile: "/images/products/winter/card-mobile.webp",
-    alt: "AIHAA WINTER — Penapis Air Premium dengan Ice Maker",
   },
 
   // ─────────── OUTDOOR (7) ───────────

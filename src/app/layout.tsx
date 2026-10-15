@@ -46,7 +46,7 @@ export default function RootLayout({
                 addressRegion: "Johor",
                 addressCountry: "MY",
               },
-              priceRange: "RM399 - RM1,580",
+              priceRange: "RM399 - RM1,299",
               openingHours: ["Mo-Fr 09:00-18:00", "Sa 10:00-16:00"],
               sameAs: SOCIAL_LINKS.map((link) => link.href),
             }),

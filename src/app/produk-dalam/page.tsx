@@ -7,13 +7,13 @@ import IndoorUseCases from "./components/IndoorUseCases";
 import IndoorGrid from "./components/IndoorGrid";
 
 export const metadata: Metadata = {
-  title: "Penapis Air Dalam AIHAA — 6 Model Premium",
+  title: "Penapis Air Dalam AIHAA — ULTRA ONE & AIHAA BIG",
   description:
-    "Penapis air dalam rumah AIHAA — 6 model premium dari RM399. BELLA, BIG, EAN, FANCY, WINTER, ULTRA ONE. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
+    "Penapis air dalam rumah AIHAA dari RM399 — ULTRA ONE all-in-one direct minum dan AIHAA BIG kapasiti 17 liter. Sekali bayar, pemasangan percuma seluruh Semenanjung Malaysia.",
   openGraph: {
-    title: "Penapis Air Dalam AIHAA — 6 Model Premium",
+    title: "Penapis Air Dalam AIHAA — ULTRA ONE & AIHAA BIG",
     description:
-      "Enam model penapis dalam rumah untuk setiap saiz keluarga. Sekali bayar, pemasangan percuma.",
+      "Penapis dalam rumah untuk keluarga kecil dan besar. Sekali bayar, pemasangan percuma.",
     type: "website",
     locale: "ms_MY",
   },
