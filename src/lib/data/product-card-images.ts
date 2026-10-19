@@ -34,6 +34,12 @@ export const productCardImages: Record<string, ProductCardImage> = {
     mobile: "/images/products/big/card-mobile.webp",
     alt: "AIHAA BIG — Penapis Air Kapasiti 17 Liter",
   },
+  "aihaa-elite": {
+    slug: "aihaa-elite",
+    desktop: "/images/products/elite/card.webp",
+    mobile: "/images/products/elite/card-mobile.webp",
+    alt: "AIHAA ELITE — Penapis Air Atas Meja, White Matte dan Black Matte",
+  },
 
   // ─────────── OUTDOOR (7) ───────────
   "ultra-one": {

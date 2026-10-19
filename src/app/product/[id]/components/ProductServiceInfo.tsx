@@ -17,6 +17,7 @@ type Props = { product: Product };
 export default function ProductServiceInfo({ product }: Props) {
   const { t } = useLanguage();
   const service = getServiceInfo(product);
+  if (!service) return null;
 
   const cards = [
     {

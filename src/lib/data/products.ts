@@ -68,7 +68,7 @@ export type Product = {
   category: ProductCategory;
   tagline: Bilingual;
   description: Bilingual;
-  price: string; // hardcoded, never translated
+  price: string; // hardcoded, never translated; "" = not published yet (UI hides the price)
   oldPrice?: string;
   badge?: ProductBadge;
   mainImage: string;
@@ -132,6 +132,54 @@ export const products: Product[] = [
       titleBm: "AIHAA BIG | Kapasiti Besar 17 Liter",
       descriptionBm:
         "AIHAA BIG — kapasiti besar 17 liter. RM1,280. Sekali bayar, pemasangan percuma, waranti 2 tahun.",
+    },
+  },
+  {
+    // Specs and features follow the owner's Elite artwork (2026-10-16).
+    // No price is published on that artwork, so price stays empty.
+    slug: "aihaa-elite",
+    name: "AIHAA ELITE",
+    category: "indoor",
+    tagline: {
+      bm: "Rekaan Mewah Untuk Rumah Moden",
+      en: "Designed For Modern Luxury",
+    },
+    description: {
+      bm: "AIHAA ELITE — penapis air atas meja dengan air panas, biasa dan sejuk. Ada dalam warna White Matte dan Black Matte.",
+      en: "AIHAA ELITE — countertop water purifier with hot, ambient and cold water. Available in White Matte and Black Matte.",
+    },
+    price: "",
+    mainImage: "/images/products/elite/hero-banner.webp",
+    gallery: [
+      "/images/products/elite/hero-banner.webp",
+      "/images/products/elite/colours.webp",
+      "/images/products/elite/features-detail.webp",
+      "/images/products/elite/touch-panel.webp",
+      "/images/products/elite/top-touch.webp",
+      "/images/products/elite/capacity-highlight.webp",
+      "/images/products/elite/filter-flow.webp",
+      "/images/products/elite/gallery.webp",
+      "/images/products/elite/spec-price.webp",
+    ],
+    specs: [
+      { label: "Tahap Penapisan", value: "4 Tahap" },
+      { label: "Tangki Air", value: "Panas 2.5L · Biasa 3.5L · Sejuk 3.5L" },
+      { label: "Dimensi", value: "230 × 470 × 500 mm" },
+      { label: "Berat", value: "16 kg" },
+      { label: "Warna", value: "White Matte & Black Matte" },
+    ],
+    features: [
+      "Paparan jam LED",
+      "Sistem dua tombol",
+      "Kunci keselamatan kanak-kanak",
+      "Panel sentuh digital dengan lampu LED 3 warna",
+      "Kawalan sentuh di bahagian atas",
+      "4 Tahap Penapisan",
+    ],
+    seo: {
+      titleBm: "AIHAA ELITE | Rekaan Mewah Untuk Rumah Moden",
+      descriptionBm:
+        "AIHAA ELITE — penapis air atas meja dengan air panas, biasa dan sejuk. Ada dalam White Matte dan Black Matte.",
     },
   },
   // ─────────────────────── OUTDOOR ───────────────────────

@@ -16,25 +16,45 @@ export default function ProductOrderCta({ product }: Props) {
     <section className="bg-[#FAF7F0]">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-14 lg:py-16">
         <div className="max-w-3xl mx-auto flex flex-col items-center gap-6 rounded-2xl border border-black/5 bg-white px-6 py-10 sm:px-10 lg:px-12 text-center shadow-sm">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
-            Harga {product.name}
-          </p>
+          {product.price ? (
+            <>
+              <p className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
+                Harga {product.name}
+              </p>
 
-          <div className="flex items-baseline justify-center gap-3">
-            {product.oldPrice && (
-              <span className="text-lg md:text-xl text-muted line-through">
-                {product.oldPrice}
-              </span>
-            )}
-            <span className="font-editorial text-4xl md:text-5xl text-dark leading-none">
-              {product.price}
-            </span>
-          </div>
+              <div className="flex items-baseline justify-center gap-3">
+                {product.oldPrice && (
+                  <span className="text-lg md:text-xl text-muted line-through">
+                    {product.oldPrice}
+                  </span>
+                )}
+                <span className="font-editorial text-4xl md:text-5xl text-dark leading-none">
+                  {product.price}
+                </span>
+              </div>
 
-          <p className="text-[13.5px] leading-relaxed text-muted max-w-md">
-            Sekali bayar, terus milik anda. WhatsApp kami sekarang untuk tempah
-            atau tanya apa-apa soalan.
-          </p>
+              <p className="text-[13.5px] leading-relaxed text-muted max-w-md">
+                Sekali bayar, terus milik anda. WhatsApp kami sekarang untuk
+                tempah atau tanya apa-apa soalan.
+              </p>
+            </>
+          ) : (
+            // No published price (e.g. AIHAA ELITE): send the visitor to
+            // the sales team instead of showing an empty price slot.
+            <>
+              <p className="text-[11px] uppercase tracking-[0.22em] text-muted font-semibold">
+                {product.name}
+              </p>
+
+              <p className="font-editorial text-3xl md:text-4xl text-dark leading-tight">
+                Tanya harga terkini
+              </p>
+
+              <p className="text-[13.5px] leading-relaxed text-muted max-w-md">
+                WhatsApp jurujual kami untuk harga, pilihan warna dan tempahan.
+              </p>
+            </>
+          )}
 
           <a
             href={`/api/wa/product?id=${product.slug}`}
