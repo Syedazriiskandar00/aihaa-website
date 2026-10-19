@@ -10,6 +10,7 @@
 //
 // Categorization rule:
 //   - indoor (all models, incl. Ultra One)         → RM 160 filter service
+//       except AIHAA Elite: cost differs, not confirmed → no service info
 //   - outdoor UF Double Backwash                   → RM 390 (UF membrane)
 //   - outdoor Fiber 9x42 / 10x44 / Steel
 //       (air kerajaan, 5-layer sand)               → RM 250
@@ -78,7 +79,13 @@ const OUTDOOR_SERVICE_MAP: Record<string, ServiceInfo> = {
   "pvdf-plus": OUTDOOR_PVDF_PLUS,
 };
 
-export const getServiceInfo = (product: Product): ServiceInfo => {
+// Products whose service cost differs from their category default but
+// has not been confirmed yet. They return no service info, so the
+// detail page hides the section and the chatbot does not quote a price.
+const SERVICE_NOT_PUBLISHED = new Set<string>(["aihaa-elite"]);
+
+export const getServiceInfo = (product: Product): ServiceInfo | undefined => {
+  if (SERVICE_NOT_PUBLISHED.has(product.slug)) return undefined;
   if (product.category === "indoor") return INDOOR_DEFAULT;
   return OUTDOOR_SERVICE_MAP[product.slug] ?? INDOOR_DEFAULT;
 };

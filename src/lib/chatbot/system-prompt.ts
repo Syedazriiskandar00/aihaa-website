@@ -8,7 +8,8 @@ import { getServiceInfo } from "@/lib/data/services";
 
 // One product line: "Nama | Harga | kelebihan utama (tagline BM)".
 function productLine(p: Product): string {
-  return `- ${p.name} | ${p.price} | ${p.tagline.bm}`;
+  const price = p.price || "harga belum diumumkan, rujuk jurujual";
+  return `- ${p.name} | ${price} | ${p.tagline.bm}`;
 }
 
 // Service pricing summarised by tier, grouped from services.ts so the
@@ -16,10 +17,12 @@ function productLine(p: Product): string {
 function serviceSummary(): string {
   const byTier = new Map<string, string[]>();
   for (const p of products) {
-    const { servicePrice, yearlyEstimate } = getServiceInfo(p);
-    const key = yearlyEstimate
-      ? `${servicePrice} / servis (anggaran ${yearlyEstimate}/tahun)`
-      : `${servicePrice} / servis`;
+    const service = getServiceInfo(p);
+    const key = !service
+      ? "Kos servis belum diumumkan, rujuk jurujual"
+      : service.yearlyEstimate
+        ? `${service.servicePrice} / servis (anggaran ${service.yearlyEstimate}/tahun)`
+        : `${service.servicePrice} / servis`;
     byTier.set(key, [...(byTier.get(key) ?? []), p.name]);
   }
   return [...byTier.entries()]

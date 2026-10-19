@@ -23,9 +23,11 @@ import { getProductBySlug } from "@/lib/data/products";
 // Outdoor pure-banner pilots — render through ProductBannerShowcase with
 // a 16px gap and no HTML interleave. Phase 7.1 shipped pvdf-plus solo;
 // Phase 7.2B added the remaining 7 outdoor produk listed below.
+// AIHAA ELITE (indoor) joined on 2026-10-19 with the same pure-banner stack.
 const OUTDOOR_PURE_BANNER_PILOTS = new Set<string>([
   "pvdf-plus",
   "ultra-one",
+  "aihaa-elite",
   "fiber-9x42",
   "fiber-10x44",
   "steel",

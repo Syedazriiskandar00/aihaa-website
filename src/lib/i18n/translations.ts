@@ -447,6 +447,7 @@ export type TranslationKeys = {
   // Product detail — Phase 6
   product_detail_hero_cta_secondary: string;
   product_detail_features_heading: string;
+  product_card_price_on_request: string;
   product_detail_service_heading: string;
   product_detail_service_subheading: string;
   product_detail_service_label_price: string;
@@ -1038,6 +1039,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     // Product detail — Phase 6
     product_detail_hero_cta_secondary: "Lihat Spesifikasi",
     product_detail_features_heading: "Ciri-Ciri Utama",
+    product_card_price_on_request: "Tanya harga",
     product_detail_service_heading: "Info Servis",
     product_detail_service_subheading:
       "Maklumat servis utama untuk produk ini. Butiran penuh semasa konsultasi.",
@@ -1647,6 +1649,7 @@ export const translations: Record<Locale, TranslationKeys> = {
     // Product detail — Phase 6
     product_detail_hero_cta_secondary: "View Specifications",
     product_detail_features_heading: "Key Features",
+    product_card_price_on_request: "Ask for price",
     product_detail_service_heading: "Service Information",
     product_detail_service_subheading:
       "Core service details for this product. Full specifics during consultation.",

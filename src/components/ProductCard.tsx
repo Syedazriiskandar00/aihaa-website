@@ -24,7 +24,7 @@ export default function ProductCard({
   oldPrice,
   image,
 }: ProductCardProps) {
-  const { locale } = useLanguage();
+  const { locale, t } = useLanguage();
 
   // Card image config takes priority. Falls back to `image` prop
   // (product.mainImage), then to gradient placeholder. Single edit
@@ -111,7 +111,9 @@ export default function ProductCard({
         <p className="text-muted text-sm mb-3 truncate">{tagline}</p>
 
         <div className="flex items-baseline gap-2">
-          <span className="text-gold-dark text-lg font-semibold">{price}</span>
+          <span className="text-gold-dark text-lg font-semibold">
+            {price || t.product_card_price_on_request}
+          </span>
           {oldPrice && (
             <span className="text-muted text-sm line-through">{oldPrice}</span>
           )}
