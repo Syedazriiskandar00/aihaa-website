@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "AIHAA Water Purifier",
   },
+  // Meta (Facebook) Business domain verification for www.aihaaofficial.com.
+  // Rendered server-side in <head>; removing it un-verifies the domain.
+  other: {
+    "facebook-domain-verification": "9mzaumg5spkqfcbe090j3kmwegtjdj",
+  },
 };
 
 export default function RootLayout({
